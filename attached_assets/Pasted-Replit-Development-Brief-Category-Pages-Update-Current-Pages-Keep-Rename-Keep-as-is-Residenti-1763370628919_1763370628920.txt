@@ -1,0 +1,122 @@
+Replit Development Brief: Category Pages Update
+Current Pages (Keep & Rename)
+Keep as-is:
+
+Residential Window Tint → Rename to "Residential Window Tinting"
+Commercial Window Tint → Rename to "Commercial Window Tinting"
+Marble Protection → Rename to "Marble Protection Film"
+Decorative & Frosted Films → Rename to "Frosted & Decorative Window Film"
+
+New Pages to Create
+Main Services:
+
+Automotive Window Tinting (brand: Protekt Auto)
+Mobile Window Tinting
+Window Film Installation
+
+Film Types:
+
+Ceramic Window Tint
+Privacy Window Film
+Window Protection Film
+UV Protection Window Film
+
+Location Pages:
+
+Window Tinting Liverpool
+Window Tinting Parramatta
+Window Tinting Penrith
+
+Navigation Structure
+Primary Navigation (Header):
+Services ▾    Film Types ▾    Locations ▾    Contact
+Services Dropdown:
+
+Residential Window Tinting
+Automotive Window Tinting
+Commercial Window Tinting
+Mobile Window Tinting
+Window Film Installation
+
+Film Types Dropdown:
+
+Ceramic Window Tint
+Privacy Window Film
+Frosted & Decorative Film
+Window Protection Film
+Marble Protection Film
+UV Protection Film
+
+Locations Dropdown:
+
+Liverpool
+Parramatta
+Penrith
+View All Areas (links to locations overview or map)
+
+Contact:
+
+Single link to contact page
+
+URL Structure
+/services/residential-window-tinting
+/services/automotive-window-tinting
+/services/commercial-window-tinting
+/services/mobile-window-tinting
+/services/window-film-installation
+/film-types/ceramic-window-tint
+/film-types/privacy-window-film
+/film-types/frosted-decorative-window-film
+/film-types/window-protection-film
+/film-types/marble-protection-film
+/film-types/uv-protection-window-film
+/locations/liverpool
+/locations/parramatta
+/locations/penrith
+Key SEO Requirements
+Homepage:
+
+Primary keyword: "window tinting sydney"
+
+Target Keywords by Page:
+
+Residential: "house window tinting" (900 vol)
+Automotive: "car window tinting sydney" (300 vol)
+Mobile: "mobile window tinting" (500 vol)
+Ceramic: "ceramic window tint" (700 vol)
+Privacy: "privacy window film" (800 vol)
+Frosted: "frosted glass film" (400 vol)
+Protection: "window protection film" (150 vol)
+Marble: "marble protection film" (150 vol)
+UV: "uv blocking window film" (200 vol)
+
+Design Requirements
+
+Consistent page templates across all category pages
+Mobile-responsive navigation with hamburger menu
+Clear CTAs on every page (Get a Quote, Call Now)
+Breadcrumb navigation on all pages
+Internal linking between related categories
+
+Priority Order
+Phase 1 (Launch Critical):
+
+Update navigation structure
+Rename existing 4 pages
+Create Automotive Window Tinting page
+Create Mobile Window Tinting page
+Create Ceramic Window Tint page
+
+Phase 2:
+6. Create Privacy Window Film page
+7. Create Window Protection Film page
+8. Create UV Protection Window Film page
+9. Create Window Film Installation page
+Phase 3:
+10. Create 3 location pages (Liverpool, Parramatta, Penrith)
+Notes
+
+Automotive page should prominently feature "Protekt Auto" branding
+All pages need unique meta titles and descriptions
+Include schema markup for LocalBusiness on location pages
+Set up 301 redirects from old URLs if URL structure changes
