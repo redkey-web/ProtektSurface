@@ -28,9 +28,37 @@ export function Navigation() {
             />
           </Link>
 
+          <div className="hidden md:flex items-center gap-1">
+            {navItems.slice(1).map((item) => (
+              <Link
+                key={item.path}
+                href={item.path}
+                data-testid={`link-desktop-nav-${item.name.toLowerCase().replace(/\s+/g, "-")}`}
+              >
+                <div
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors hover-elevate active-elevate-2 ${
+                    location === item.path
+                      ? "bg-primary/10 text-primary"
+                      : "text-foreground"
+                  }`}
+                >
+                  {item.name}
+                </div>
+              </Link>
+            ))}
+            <a href="tel:0286062842" className="ml-2" data-testid="button-call-desktop">
+              <Button
+                className="bg-primary text-primary-foreground hover-elevate active-elevate-2"
+                size="sm"
+              >
+                (02) 8606 2842
+              </Button>
+            </a>
+          </div>
+
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 hover-elevate active-elevate-2 rounded-md"
+            className="md:hidden p-2 hover-elevate active-elevate-2 rounded-md"
             aria-label="Toggle menu"
             data-testid="button-menu-toggle"
           >
