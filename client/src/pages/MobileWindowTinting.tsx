@@ -26,7 +26,7 @@ export default function MobileWindowTinting() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background/50" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
