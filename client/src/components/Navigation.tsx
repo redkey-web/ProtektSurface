@@ -114,14 +114,24 @@ export function Navigation() {
               </div>
             </Link>
 
-            <a href="tel:0286062842" className="ml-2" data-testid="button-call-desktop">
+            <Link href="/tint-selector" data-testid="link-desktop-quiz">
+              <div
+                className={`px-4 py-2 rounded-md text-sm font-medium hover-elevate active-elevate-2 ${
+                  location === "/tint-selector" ? "bg-primary/10 text-primary" : "text-foreground"
+                }`}
+              >
+                Quiz
+              </div>
+            </Link>
+
+            <Link href="/get-quote" className="ml-2" data-testid="button-quote-desktop">
               <Button
                 className="bg-primary text-primary-foreground hover-elevate active-elevate-2"
                 size="sm"
               >
-                (02) 8606 2842
+                Get Quote
               </Button>
-            </a>
+            </Link>
           </div>
 
           <button

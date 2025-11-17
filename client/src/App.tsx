@@ -15,6 +15,9 @@ import FrostedDecorativeWindowFilm from "@/pages/FrostedDecorativeWindowFilm";
 import MarbleProtectionFilm from "@/pages/MarbleProtectionFilm";
 import Contact from "@/pages/Contact";
 import About from "@/pages/About";
+import GetQuote from "@/pages/GetQuote";
+import QuoteEstimator from "@/pages/QuoteEstimator";
+import TintSelector from "@/pages/TintSelector";
 import Granville from "@/pages/ServiceAreas/Granville";
 import Auburn from "@/pages/ServiceAreas/Auburn";
 import Parramatta from "@/pages/ServiceAreas/Parramatta";
@@ -53,6 +56,11 @@ function Router() {
         {/* Info Pages */}
         <Route path="/contact" component={Contact} />
         <Route path="/about" component={About} />
+        
+        {/* Interactive Tools & Quote Pages */}
+        <Route path="/get-quote" component={GetQuote} />
+        <Route path="/quote-estimator" component={QuoteEstimator} />
+        <Route path="/tint-selector" component={TintSelector} />
         
         {/* Service Area Pages */}
         <Route path="/service-areas/granville" component={Granville} />

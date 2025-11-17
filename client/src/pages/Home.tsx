@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Testimonials } from "@/components/Testimonials";
 import heroImage from "@assets/generated_images/Hero_background_residential_interior_2b09e675.png";
 import residentialImage from "@assets/generated_images/Residential_window_tinting_service_4f42a2a0.png";
 import commercialImage from "@assets/generated_images/Commercial_window_tinting_service_1caab67d.png";
@@ -94,6 +95,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Testimonials />
 
       <section id="services" className="py-16 sm:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

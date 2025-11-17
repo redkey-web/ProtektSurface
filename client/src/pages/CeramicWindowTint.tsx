@@ -1,7 +1,10 @@
 import { Check, Phone, Zap, Shield, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import heroImage from "@assets/generated_images/Ceramic_window_tint_technology_097ec1d8.png";
+import beforeImage from "@assets/generated_images/Car_interior_before_tinting_a38c6703.png";
+import afterImage from "@assets/generated_images/Car_interior_after_tinting_1e0b91e7.png";
 
 export default function CeramicWindowTint() {
   const benefits = [
@@ -109,6 +112,21 @@ export default function CeramicWindowTint() {
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 text-center">
+              Experience the Clarity
+            </h3>
+            <p className="text-center text-muted-foreground mb-8">
+              Drag the slider to see the dramatic difference ceramic tint makes
+            </p>
+            <BeforeAfterSlider
+              beforeImage={beforeImage}
+              afterImage={afterImage}
+              beforeLabel="Without Ceramic Tint"
+              afterLabel="With Ceramic Tint"
+            />
           </div>
 
           <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">
