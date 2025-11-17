@@ -56,7 +56,7 @@ export default function Home() {
           <img
             src={logoUrl}
             alt="Protekt Surface Solutions"
-            className="h-16 sm:h-24 w-auto mx-auto mb-8"
+            className="h-20 sm:h-32 w-auto mx-auto mb-8"
             data-testid="img-hero-logo"
           />
 

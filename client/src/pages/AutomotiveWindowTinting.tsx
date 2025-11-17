@@ -35,7 +35,7 @@ export default function AutomotiveWindowTinting() {
             <img 
               src={protektAutoLogo} 
               alt="Protekt Auto" 
-              className="h-16 sm:h-20 md:h-24 w-auto"
+              className="h-20 sm:h-26 md:h-32 w-auto"
               data-testid="img-protekt-auto-logo"
             />
           </div>
