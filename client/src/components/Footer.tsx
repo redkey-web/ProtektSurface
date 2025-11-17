@@ -21,10 +21,28 @@ export function Footer() {
     { name: "Contact", path: "/contact" },
   ];
 
+  const serviceAreas = [
+    { name: "Granville", path: "/service-areas/granville" },
+    { name: "Auburn", path: "/service-areas/auburn" },
+    { name: "Parramatta", path: "/service-areas/parramatta" },
+    { name: "Silverwater", path: "/service-areas/silverwater" },
+    { name: "Rosehill", path: "/service-areas/rosehill" },
+    { name: "Camellia", path: "/service-areas/camellia" },
+    { name: "Rydalmere", path: "/service-areas/rydalmere" },
+    { name: "Ermington", path: "/service-areas/ermington" },
+    { name: "Dundas", path: "/service-areas/dundas" },
+    { name: "Telopea", path: "/service-areas/telopea" },
+    { name: "Carlingford", path: "/service-areas/carlingford" },
+    { name: "North Parramatta", path: "/service-areas/north-parramatta" },
+    { name: "Harris Park", path: "/service-areas/harris-park" },
+    { name: "Westmead", path: "/service-areas/westmead" },
+    { name: "Merrylands", path: "/service-areas/merrylands" },
+  ];
+
   return (
     <footer className="bg-background border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12">
           <div>
             <img
               src={logoUrl}
@@ -45,13 +63,12 @@ export function Footer() {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.path}>
-                  <Link href={service.path}>
-                    <a
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                      data-testid={`link-footer-${service.name.toLowerCase().replace(/\s+/g, "-")}`}
-                    >
-                      {service.name}
-                    </a>
+                  <Link
+                    href={service.path}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    data-testid={`link-footer-${service.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {service.name}
                   </Link>
                 </li>
               ))}
@@ -65,13 +82,12 @@ export function Footer() {
             <ul className="space-y-3">
               {filmTypes.map((film) => (
                 <li key={film.path}>
-                  <Link href={film.path}>
-                    <a
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                      data-testid={`link-footer-${film.name.toLowerCase().replace(/\s+/g, "-")}`}
-                    >
-                      {film.name}
-                    </a>
+                  <Link
+                    href={film.path}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    data-testid={`link-footer-${film.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {film.name}
                   </Link>
                 </li>
               ))}
@@ -80,18 +96,36 @@ export function Footer() {
                 <ul className="space-y-3">
                   {company.map((item) => (
                     <li key={item.path}>
-                      <Link href={item.path}>
-                        <a
-                          className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                          data-testid={`link-footer-${item.name.toLowerCase().replace(/\s+/g, "-")}`}
-                        >
-                          {item.name}
-                        </a>
+                      <Link
+                        href={item.path}
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                        data-testid={`link-footer-${item.name.toLowerCase().replace(/\s+/g, "-")}`}
+                      >
+                        {item.name}
                       </Link>
                     </li>
                   ))}
                 </ul>
               </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-4">
+              Service Areas
+            </h3>
+            <ul className="space-y-3">
+              {serviceAreas.map((area) => (
+                <li key={area.path}>
+                  <Link
+                    href={area.path}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    data-testid={`link-footer-${area.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {area.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

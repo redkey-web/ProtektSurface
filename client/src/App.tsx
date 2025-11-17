@@ -15,6 +15,21 @@ import FrostedDecorativeWindowFilm from "@/pages/FrostedDecorativeWindowFilm";
 import MarbleProtectionFilm from "@/pages/MarbleProtectionFilm";
 import Contact from "@/pages/Contact";
 import About from "@/pages/About";
+import Granville from "@/pages/ServiceAreas/Granville";
+import Auburn from "@/pages/ServiceAreas/Auburn";
+import Parramatta from "@/pages/ServiceAreas/Parramatta";
+import Silverwater from "@/pages/ServiceAreas/Silverwater";
+import Rosehill from "@/pages/ServiceAreas/Rosehill";
+import Camellia from "@/pages/ServiceAreas/Camellia";
+import Rydalmere from "@/pages/ServiceAreas/Rydalmere";
+import Ermington from "@/pages/ServiceAreas/Ermington";
+import Dundas from "@/pages/ServiceAreas/Dundas";
+import Telopea from "@/pages/ServiceAreas/Telopea";
+import Carlingford from "@/pages/ServiceAreas/Carlingford";
+import NorthParramatta from "@/pages/ServiceAreas/NorthParramatta";
+import HarrisPark from "@/pages/ServiceAreas/HarrisPark";
+import Westmead from "@/pages/ServiceAreas/Westmead";
+import Merrylands from "@/pages/ServiceAreas/Merrylands";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -38,6 +53,23 @@ function Router() {
         {/* Info Pages */}
         <Route path="/contact" component={Contact} />
         <Route path="/about" component={About} />
+        
+        {/* Service Area Pages */}
+        <Route path="/service-areas/granville" component={Granville} />
+        <Route path="/service-areas/auburn" component={Auburn} />
+        <Route path="/service-areas/parramatta" component={Parramatta} />
+        <Route path="/service-areas/silverwater" component={Silverwater} />
+        <Route path="/service-areas/rosehill" component={Rosehill} />
+        <Route path="/service-areas/camellia" component={Camellia} />
+        <Route path="/service-areas/rydalmere" component={Rydalmere} />
+        <Route path="/service-areas/ermington" component={Ermington} />
+        <Route path="/service-areas/dundas" component={Dundas} />
+        <Route path="/service-areas/telopea" component={Telopea} />
+        <Route path="/service-areas/carlingford" component={Carlingford} />
+        <Route path="/service-areas/north-parramatta" component={NorthParramatta} />
+        <Route path="/service-areas/harris-park" component={HarrisPark} />
+        <Route path="/service-areas/westmead" component={Westmead} />
+        <Route path="/service-areas/merrylands" component={Merrylands} />
         
         {/* Legacy redirects - old URLs still work */}
         <Route path="/residential-window-tint" component={ResidentialWindowTinting} />
