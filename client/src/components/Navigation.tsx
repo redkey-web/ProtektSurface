@@ -17,14 +17,14 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" data-testid="link-home">
             <img
               src={logoUrl}
               alt="Protekt Surface Solutions"
-              className="h-8 sm:h-12 w-auto hover-elevate active-elevate-2 rounded-sm"
+              className="h-16 sm:h-20 w-auto hover-elevate active-elevate-2 rounded-sm -my-4 sm:-my-6"
             />
           </Link>
 
