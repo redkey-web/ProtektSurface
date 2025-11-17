@@ -13,6 +13,8 @@ import MobileWindowTinting from "@/pages/MobileWindowTinting";
 import CeramicWindowTint from "@/pages/CeramicWindowTint";
 import FrostedDecorativeWindowFilm from "@/pages/FrostedDecorativeWindowFilm";
 import MarbleProtectionFilm from "@/pages/MarbleProtectionFilm";
+import Contact from "@/pages/Contact";
+import About from "@/pages/About";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -32,6 +34,10 @@ function Router() {
         <Route path="/film-types/ceramic-window-tint" component={CeramicWindowTint} />
         <Route path="/film-types/frosted-decorative-window-film" component={FrostedDecorativeWindowFilm} />
         <Route path="/film-types/marble-protection-film" component={MarbleProtectionFilm} />
+        
+        {/* Info Pages */}
+        <Route path="/contact" component={Contact} />
+        <Route path="/about" component={About} />
         
         {/* Legacy redirects - old URLs still work */}
         <Route path="/residential-window-tint" component={ResidentialWindowTinting} />

@@ -94,6 +94,26 @@ export function Navigation() {
               </div>
             ))}
 
+            <Link href="/about" data-testid="link-desktop-about">
+              <div
+                className={`px-4 py-2 rounded-md text-sm font-medium hover-elevate active-elevate-2 ${
+                  location === "/about" ? "bg-primary/10 text-primary" : "text-foreground"
+                }`}
+              >
+                About
+              </div>
+            </Link>
+
+            <Link href="/contact" data-testid="link-desktop-contact">
+              <div
+                className={`px-4 py-2 rounded-md text-sm font-medium hover-elevate active-elevate-2 ${
+                  location === "/contact" ? "bg-primary/10 text-primary" : "text-foreground"
+                }`}
+              >
+                Contact
+              </div>
+            </Link>
+
             <a href="tel:0286062842" className="ml-2" data-testid="button-call-desktop">
               <Button
                 className="bg-primary text-primary-foreground hover-elevate active-elevate-2"
@@ -165,6 +185,34 @@ export function Navigation() {
                 )}
               </div>
             ))}
+
+            <Link
+              href="/about"
+              onClick={() => setIsOpen(false)}
+              data-testid="link-mobile-about"
+            >
+              <div
+                className={`px-4 py-3 rounded-md text-base font-medium hover-elevate active-elevate-2 ${
+                  location === "/about" ? "bg-primary/10 text-primary" : "text-foreground"
+                }`}
+              >
+                About
+              </div>
+            </Link>
+
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              data-testid="link-mobile-contact"
+            >
+              <div
+                className={`px-4 py-3 rounded-md text-base font-medium hover-elevate active-elevate-2 ${
+                  location === "/contact" ? "bg-primary/10 text-primary" : "text-foreground"
+                }`}
+              >
+                Contact
+              </div>
+            </Link>
           </div>
 
           <div className="mt-auto pt-8">
