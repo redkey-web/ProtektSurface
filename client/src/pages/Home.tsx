@@ -48,7 +48,7 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background/75" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-20">
@@ -65,7 +65,7 @@ export default function Home() {
             <span className="text-primary">Sydney</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-muted-foreground mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-foreground mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
             Residential, commercial & automotive window tinting. Premium ceramic
             films, privacy solutions & decorative frosted glass
           </p>
@@ -85,7 +85,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto border-primary text-primary hover-elevate active-elevate-2 px-8 backdrop-blur-md bg-background/50"
+                className="w-full sm:w-auto border-foreground text-foreground hover-elevate active-elevate-2 px-8 backdrop-blur-md bg-background/80"
                 data-testid="button-contact-hero"
               >
                 Contact Us
