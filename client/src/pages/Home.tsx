@@ -17,28 +17,28 @@ export default function Home() {
       description:
         "Enhance your home's comfort, energy efficiency, and privacy with premium residential window films—designed to reduce heat, glare, and UV damage.",
       image: residentialImage,
-      path: "/services/residential-window-tinting",
+      path: "/residential-window-tinting",
     },
     {
       title: "Commercial Window Tinting",
       description:
         "Boost energy efficiency, tenant comfort, and security in your commercial space with high-performance window films engineered for business environments.",
       image: commercialImage,
-      path: "/services/commercial-window-tinting",
+      path: "/commercial-window-tinting",
     },
     {
       title: "Automotive Window Tinting",
       description:
         "Professional car window tinting by Protekt Auto. Premium ceramic and carbon films with lifetime warranty. Reduce heat, block UV rays, and enhance your vehicle.",
       image: residentialImage,
-      path: "/services/automotive-window-tinting",
+      path: "/automotive-window-tinting",
     },
     {
       title: "Ceramic Window Tint",
       description:
         "Advanced nano-ceramic technology for superior heat rejection and clarity. Non-metallic formula that won't interfere with electronics. The premium choice.",
       image: frostedImage,
-      path: "/film-types/ceramic-window-tint",
+      path: "/ceramic-window-tint",
     },
   ];
 

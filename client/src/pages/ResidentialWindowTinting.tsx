@@ -22,7 +22,7 @@ export default function ResidentialWindowTint() {
   return (
     <div className="min-h-screen pt-16 sm:pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <Breadcrumbs items={[{ label: "Services", path: "/services/residential-window-tinting" }, { label: "Residential Window Tinting" }]} />
+        <Breadcrumbs items={[{ label: "Services" }, { label: "Residential Window Tinting" }]} />
       </div>
 
       <section className="relative h-[50vh] sm:h-[60vh] flex items-center justify-center overflow-hidden">

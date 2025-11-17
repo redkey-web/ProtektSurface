@@ -80,7 +80,7 @@ export function ServiceAreaPage({ suburb, postcode, description }: ServiceAreaPa
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-            <Link href="/services/residential-window-tinting">
+            <Link href="/residential-window-tinting">
               <div className="p-6 bg-card rounded-lg border border-border hover-elevate cursor-pointer">
                 <h4 className="text-lg font-semibold text-primary mb-2">
                   Residential
@@ -91,7 +91,7 @@ export function ServiceAreaPage({ suburb, postcode, description }: ServiceAreaPa
               </div>
             </Link>
 
-            <Link href="/services/commercial-window-tinting">
+            <Link href="/commercial-window-tinting">
               <div className="p-6 bg-card rounded-lg border border-border hover-elevate cursor-pointer">
                 <h4 className="text-lg font-semibold text-primary mb-2">
                   Commercial
@@ -102,7 +102,7 @@ export function ServiceAreaPage({ suburb, postcode, description }: ServiceAreaPa
               </div>
             </Link>
 
-            <Link href="/services/automotive-window-tinting">
+            <Link href="/automotive-window-tinting">
               <div className="p-6 bg-card rounded-lg border border-border hover-elevate cursor-pointer">
                 <h4 className="text-lg font-semibold text-primary mb-2">
                   Automotive

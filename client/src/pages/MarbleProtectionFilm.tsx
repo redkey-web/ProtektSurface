@@ -1,5 +1,6 @@
 import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import heroImage from "@assets/generated_images/Marble_stone_protection_service_9d639889.png";
 import marbleTexture from "@assets/generated_images/White_marble_texture_background_644270aa.png";
 
@@ -17,12 +18,16 @@ export default function MarbleProtection() {
 
   return (
     <div className="min-h-screen pt-16 sm:pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <Breadcrumbs items={[{ label: "Film Types" }, { label: "Marble Protection Film" }]} />
+      </div>
+
       <section className="relative h-[50vh] sm:h-[60vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-gray-800/40 to-gray-900/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-800/50 to-gray-900/70" style={{ mixBlendMode: 'multiply' }} />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">

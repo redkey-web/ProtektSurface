@@ -76,7 +76,7 @@ const recommendations = {
       "Lifetime warranty included",
       "Crystal clear visibility",
     ],
-    path: "/film-types/ceramic-window-tint",
+    path: "/ceramic-window-tint",
   },
   frosted: {
     title: "Frosted & Decorative Film",
@@ -89,7 +89,7 @@ const recommendations = {
       "Easy to maintain",
       "Various patterns available",
     ],
-    path: "/film-types/frosted-decorative-window-film",
+    path: "/frosted-decorative-window-film",
   },
   standard: {
     title: "Standard Window Tint",
@@ -102,7 +102,7 @@ const recommendations = {
       "5-year warranty",
       "Proven performance",
     ],
-    path: "/services/residential-window-tinting",
+    path: "/residential-window-tinting",
   },
 };
 
