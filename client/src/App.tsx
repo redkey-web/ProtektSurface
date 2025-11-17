@@ -36,6 +36,8 @@ import NorthParramatta from "@/pages/ServiceAreas/NorthParramatta";
 import HarrisPark from "@/pages/ServiceAreas/HarrisPark";
 import Westmead from "@/pages/ServiceAreas/Westmead";
 import Merrylands from "@/pages/ServiceAreas/Merrylands";
+import Liverpool from "@/pages/ServiceAreas/Liverpool";
+import Penrith from "@/pages/ServiceAreas/Penrith";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -84,6 +86,8 @@ function Router() {
         <Route path="/service-areas/harris-park" component={HarrisPark} />
         <Route path="/service-areas/westmead" component={Westmead} />
         <Route path="/service-areas/merrylands" component={Merrylands} />
+        <Route path="/service-areas/liverpool" component={Liverpool} />
+        <Route path="/service-areas/penrith" component={Penrith} />
         
         {/* Redirects from old /services/* URLs */}
         <Route path="/services/residential-window-tinting">

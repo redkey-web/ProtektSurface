@@ -40,6 +40,8 @@ export function Footer() {
     { name: "Harris Park", path: "/service-areas/harris-park" },
     { name: "Westmead", path: "/service-areas/westmead" },
     { name: "Merrylands", path: "/service-areas/merrylands" },
+    { name: "Liverpool", path: "/service-areas/liverpool" },
+    { name: "Penrith", path: "/service-areas/penrith" },
   ];
 
   return (
