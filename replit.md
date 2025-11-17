@@ -5,8 +5,8 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 
 ## Project Status
 **Created**: November 17, 2025
-**Last Updated**: November 17, 2025 - Phase 3 Complete with advanced visual demonstrations
-**Status**: Phase 3 Complete - All core features, interactive tools, visual enhancements, and advanced demonstrations implemented
+**Last Updated**: November 17, 2025 - URL Restructure & SEO Expansion Complete
+**Status**: Phase 3 Complete + SEO Enhancement - Flat root-level URLs, 3 new high-volume keyword pages added
 
 ## Tech Stack
 - **Frontend**: React 18 + TypeScript + Vite
@@ -38,18 +38,23 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 
 ### Pages & URL Structure
 
-**Services** (`/services/*`):
-1. Residential Window Tinting - `/services/residential-window-tinting`
-2. Automotive Window Tinting - `/services/automotive-window-tinting` (Protekt Auto brand)
-3. Commercial Window Tinting - `/services/commercial-window-tinting`
-4. Mobile Window Tinting - `/services/mobile-window-tinting`
+**IMPORTANT**: Site uses flat root-level URL structure (not nested) for optimal SEO performance.
 
-**Film Types** (`/film-types/*`):
-1. Ceramic Window Tint - `/film-types/ceramic-window-tint`
-2. Frosted & Decorative Film - `/film-types/frosted-decorative-window-film`
-3. Marble Protection Film - `/film-types/marble-protection-film`
+**Services** (root level):
+1. Residential Window Tinting - `/residential-window-tinting`
+2. Automotive Window Tinting - `/automotive-window-tinting` (Protekt Auto brand)
+3. Commercial Window Tinting - `/commercial-window-tinting`
+4. Mobile Window Tinting - `/mobile-window-tinting`
 
-**Interactive Tools** (`/tools/*`):
+**Film Types** (root level):
+1. Ceramic Window Tint - `/ceramic-window-tint`
+2. Privacy Window Film - `/privacy-window-film` ⭐ NEW - High-volume keyword (800/mo)
+3. UV Blocking Film - `/uv-blocking-film` ⭐ NEW - Target keyword (200/mo)
+4. Window Protection Film - `/window-protection-film` ⭐ NEW - Target keyword (150/mo)
+5. Frosted & Decorative Film - `/frosted-decorative-window-film`
+6. Marble Protection Film - `/marble-protection-film`
+
+**Interactive Tools**:
 1. Tint Selector Quiz - `/tint-selector` - Personalized film recommendations
 2. Quote Estimator - `/quote-estimator` - Multi-step price estimation wizard
 3. Get Quote - `/get-quote` - Comprehensive quote request form
@@ -59,11 +64,18 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 2. Contact - `/contact` - Contact form + Google Maps embed
 3. About - `/about` - Company information
 
-**Legacy URL Redirects** (maintained for SEO):
-- `/residential-window-tint` → Residential Window Tinting
-- `/commercial-window-tint` → Commercial Window Tinting
-- `/decorative-frosted-film` → Frosted & Decorative Film
-- `/marble-protection` → Marble Protection Film
+**SEO Redirects** (preserves old URLs):
+- `/services/residential-window-tinting` → `/residential-window-tinting`
+- `/services/automotive-window-tinting` → `/automotive-window-tinting`
+- `/services/commercial-window-tinting` → `/commercial-window-tinting`
+- `/services/mobile-window-tinting` → `/mobile-window-tinting`
+- `/film-types/ceramic-window-tint` → `/ceramic-window-tint`
+- `/film-types/frosted-decorative-window-film` → `/frosted-decorative-window-film`
+- `/film-types/marble-protection-film` → `/marble-protection-film`
+- `/residential-window-tint` → `/residential-window-tinting`
+- `/commercial-window-tint` → `/commercial-window-tinting`
+- `/decorative-frosted-film` → `/frosted-decorative-window-film`
+- `/marble-protection` → `/marble-protection-film`
 
 ### Key Components
 
@@ -103,6 +115,9 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 - Automotive: car window tinting sydney (300 vol)
 - Mobile: mobile window tinting (500 vol)
 - Ceramic: ceramic window tint (700 vol)
+- Privacy: privacy window film (800 vol) ⭐ NEW
+- UV Blocking: uv blocking window film (200 vol) ⭐ NEW
+- Protection: window protection film (150 vol) ⭐ NEW
 
 **SEO Features**:
 - Breadcrumb navigation on all pages
@@ -125,14 +140,21 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 - **Email**: info@protektsurfacesolutions.com.au
 - **Address**: 24 George Street, Clyde, NSW 2142
 
-## Services Offered
+## Services & Film Types Offered
+
+**Services:**
 1. **Residential Window Tinting** - Home energy efficiency and privacy
 2. **Automotive Window Tinting** - Professional car tinting by Protekt Auto brand
 3. **Commercial Window Tinting** - Business property protection
 4. **Mobile Window Tinting** - On-site service at customer location
-5. **Ceramic Window Tint** - Premium nano-ceramic film technology
-6. **Frosted & Decorative Film** - Privacy with elegant etched glass look
-7. **Marble Protection Film** - Invisible protective films for natural stone
+
+**Film Types:**
+1. **Ceramic Window Tint** - Premium nano-ceramic film technology
+2. **Privacy Window Film** ⭐ NEW - Elegant privacy with natural light
+3. **UV Blocking Film** ⭐ NEW - 99% UV protection for health and interiors
+4. **Window Protection Film** ⭐ NEW - Invisible strength and impact resistance
+5. **Frosted & Decorative Film** - Privacy with elegant etched glass look
+6. **Marble Protection Film** - Invisible protective films for natural stone
 
 ## Development Notes
 - Light theme (not dark) for logo visibility - black logo elements must be visible
@@ -167,6 +189,16 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 - ✅ Heat Map Visualization (heat rejection color transition demo)
 - ✅ Enhanced Hero Sections (realistic tinted gradients with white text)
 - ✅ Marble Texture Background (subtle texture on Marble Protection page)
+
+**Phase 4 - SEO Enhancement & URL Restructure (✅ Complete):**
+- ✅ Flat root-level URL structure for all pages (better SEO)
+- ✅ Privacy Window Film page (/privacy-window-film) - 800 vol/mo keyword
+- ✅ UV Blocking Film page (/uv-blocking-film) - 200 vol/mo keyword
+- ✅ Window Protection Film page (/window-protection-film) - 150 vol/mo keyword
+- ✅ Comprehensive redirect system from old nested URLs
+- ✅ Updated all navigation, footer, and internal links
+- ✅ All hero sections updated to Phase 3 design standards
+- ✅ Breadcrumbs simplified for root-level structure
 
 **Future Enhancements (Not Yet Implemented):**
 - Energy Savings Calculator
