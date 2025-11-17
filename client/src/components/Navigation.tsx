@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoUrl from "@assets/Untitled+(500+x+210+px).png_1763361350526.webp";
 
@@ -135,6 +135,15 @@ export function Navigation() {
                 Get Quote
               </Button>
             </Link>
+
+            <a 
+              href="tel:0286062842" 
+              className="ml-3 flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-primary hover-elevate active-elevate-2"
+              data-testid="link-phone-desktop"
+            >
+              <Phone className="w-4 h-4" />
+              <span className="hidden lg:inline">(02) 8606 2842</span>
+            </a>
           </div>
 
           <button
