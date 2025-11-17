@@ -86,7 +86,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto border-foreground text-foreground hover-elevate active-elevate-2 px-8 backdrop-blur-md bg-background/80"
+                className="w-full sm:w-auto border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary transition-all duration-300"
                 data-testid="button-contact-hero"
               >
                 Contact Us

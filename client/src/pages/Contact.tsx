@@ -137,7 +137,7 @@ export default function Contact() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-primary-foreground text-primary border-primary-foreground hover-elevate active-elevate-2 px-8"
+                className="border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary transition-all duration-300"
                 data-testid="button-call-cta"
               >
                 <Phone className="mr-2 w-5 h-5" />
