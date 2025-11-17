@@ -21,16 +21,19 @@ export function Navigation() {
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
 
   const servicesItems: NavItem[] = [
-    { name: "Residential Window Tinting", path: "/services/residential-window-tinting" },
-    { name: "Automotive Window Tinting", path: "/services/automotive-window-tinting" },
-    { name: "Commercial Window Tinting", path: "/services/commercial-window-tinting" },
-    { name: "Mobile Window Tinting", path: "/services/mobile-window-tinting" },
+    { name: "Residential Window Tinting", path: "/residential-window-tinting" },
+    { name: "Automotive Window Tinting", path: "/automotive-window-tinting" },
+    { name: "Commercial Window Tinting", path: "/commercial-window-tinting" },
+    { name: "Mobile Window Tinting", path: "/mobile-window-tinting" },
   ];
 
   const filmTypesItems: NavItem[] = [
-    { name: "Ceramic Window Tint", path: "/film-types/ceramic-window-tint" },
-    { name: "Frosted & Decorative Film", path: "/film-types/frosted-decorative-window-film" },
-    { name: "Marble Protection Film", path: "/film-types/marble-protection-film" },
+    { name: "Ceramic Window Tint", path: "/ceramic-window-tint" },
+    { name: "Privacy Window Film", path: "/privacy-window-film" },
+    { name: "UV Blocking Film", path: "/uv-blocking-film" },
+    { name: "Window Protection Film", path: "/window-protection-film" },
+    { name: "Frosted & Decorative Film", path: "/frosted-decorative-window-film" },
+    { name: "Marble Protection Film", path: "/marble-protection-film" },
   ];
 
   const dropdowns: DropdownSection[] = [
