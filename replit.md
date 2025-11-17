@@ -89,6 +89,7 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 - **HeatMapVisualization**: Heat rejection color transition demo (38°C → 24°C) with statistics on Ceramic page
 - **Enhanced Hero Sections**: Realistic tinted gradients (gray-900 overlay with multiply blend mode) across all service pages
 - **Marble Texture Background**: Subtle marble texture overlay (10% opacity) on Marble Protection Film page
+- **Protekt Auto Branding**: White Protekt Auto logo prominently displayed on Automotive page hero with dark contrasting background
 
 ### SEO Optimization
 **Primary Keyword**: window tinting sydney
@@ -111,6 +112,7 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 
 ### Assets
 - Logo: Protekt Surface Solutions house logo with gold accents (black elements visible on light background)
+- Protekt Auto Logo: White logo for Automotive page (displayed on dark contrasting background)
 - Generated Images: AI-generated service images for heroes, cards, and interactive features
   - Service pages: Residential, Commercial, Automotive, Mobile window tinting
   - Film types: Ceramic window tint, Decorative frosted film, Marble protection film

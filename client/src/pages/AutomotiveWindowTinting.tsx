@@ -2,6 +2,7 @@ import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import heroImage from "@assets/generated_images/Automotive_window_tinting_service_32a1f23d.png";
+import protektAutoLogo from "@assets/Protekt Logo_1761708306237_1763380244480.webp";
 
 export default function AutomotiveWindowTinting() {
   const benefits = [
@@ -26,17 +27,25 @@ export default function AutomotiveWindowTinting() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-gray-900/70 to-gray-900/85" style={{ mixBlendMode: 'multiply' }} />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
-            Automotive Window Tinting
+          <div className="mb-6 flex justify-center">
+            <img 
+              src={protektAutoLogo} 
+              alt="Protekt Auto" 
+              className="h-16 sm:h-20 md:h-24 w-auto"
+              data-testid="img-protekt-auto-logo"
+            />
+          </div>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+            Professional Automotive
             <br />
-            <span className="text-primary">by Protekt Auto</span>
+            Window Tinting Sydney
           </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Premium car window tinting in Sydney. Professional installation with
+          <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Premium car window tinting with professional installation and
             lifetime warranty
           </p>
         </div>
