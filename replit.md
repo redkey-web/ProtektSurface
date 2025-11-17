@@ -126,7 +126,7 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 - Window Film Installation page
 
 **Phase 3**:
-- Location pages (Liverpool, Parramatta, Penrith)
+- Service Area pages (Liverpool, Parramatta, Penrith)
 - LocalBusiness schema markup
 - Additional service area coverage
 
