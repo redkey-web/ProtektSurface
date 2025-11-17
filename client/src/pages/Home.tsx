@@ -67,7 +67,7 @@ export default function Home() {
           </h1>
 
           <p className="text-lg sm:text-xl text-foreground mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
-            Professional window tinting & surface protection solutions. Residential, commercial & automotive services with premium ceramic films, privacy solutions & protective coatings
+            Sydney's premier window tinting & surface protection specialists. Premium films and protective solutions for homes, businesses and vehicles
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
