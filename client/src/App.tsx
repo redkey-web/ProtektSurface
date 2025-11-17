@@ -6,10 +6,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import Home from "@/pages/Home";
-import ResidentialWindowTint from "@/pages/ResidentialWindowTint";
-import CommercialWindowTint from "@/pages/CommercialWindowTint";
-import DecorativeFrostedFilm from "@/pages/DecorativeFrostedFilm";
-import MarbleProtection from "@/pages/MarbleProtection";
+import ResidentialWindowTinting from "@/pages/ResidentialWindowTinting";
+import AutomotiveWindowTinting from "@/pages/AutomotiveWindowTinting";
+import CommercialWindowTinting from "@/pages/CommercialWindowTinting";
+import MobileWindowTinting from "@/pages/MobileWindowTinting";
+import CeramicWindowTint from "@/pages/CeramicWindowTint";
+import FrostedDecorativeWindowFilm from "@/pages/FrostedDecorativeWindowFilm";
+import MarbleProtectionFilm from "@/pages/MarbleProtectionFilm";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -18,10 +21,24 @@ function Router() {
       <Navigation />
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/residential-window-tint" component={ResidentialWindowTint} />
-        <Route path="/commercial-window-tint" component={CommercialWindowTint} />
-        <Route path="/decorative-frosted-film" component={DecorativeFrostedFilm} />
-        <Route path="/marble-protection" component={MarbleProtection} />
+        
+        {/* Services Routes */}
+        <Route path="/services/residential-window-tinting" component={ResidentialWindowTinting} />
+        <Route path="/services/automotive-window-tinting" component={AutomotiveWindowTinting} />
+        <Route path="/services/commercial-window-tinting" component={CommercialWindowTinting} />
+        <Route path="/services/mobile-window-tinting" component={MobileWindowTinting} />
+        
+        {/* Film Types Routes */}
+        <Route path="/film-types/ceramic-window-tint" component={CeramicWindowTint} />
+        <Route path="/film-types/frosted-decorative-window-film" component={FrostedDecorativeWindowFilm} />
+        <Route path="/film-types/marble-protection-film" component={MarbleProtectionFilm} />
+        
+        {/* Legacy redirects - old URLs still work */}
+        <Route path="/residential-window-tint" component={ResidentialWindowTinting} />
+        <Route path="/commercial-window-tint" component={CommercialWindowTinting} />
+        <Route path="/decorative-frosted-film" component={FrostedDecorativeWindowFilm} />
+        <Route path="/marble-protection" component={MarbleProtectionFilm} />
+        
         <Route component={NotFound} />
       </Switch>
       <Footer />

@@ -1,5 +1,6 @@
 import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import heroImage from "@assets/generated_images/Residential_window_tinting_service_4f42a2a0.png";
 
 export default function ResidentialWindowTint() {
@@ -16,6 +17,10 @@ export default function ResidentialWindowTint() {
 
   return (
     <div className="min-h-screen pt-16 sm:pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <Breadcrumbs items={[{ label: "Services", path: "/services/residential-window-tinting" }, { label: "Residential Window Tinting" }]} />
+      </div>
+
       <section className="relative h-[50vh] sm:h-[60vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"

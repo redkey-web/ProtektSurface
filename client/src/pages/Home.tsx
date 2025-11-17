@@ -12,32 +12,32 @@ import logoUrl from "@assets/Untitled+(500+x+210+px).png_1763361350526.webp";
 export default function Home() {
   const services = [
     {
-      title: "Residential Window Tint",
+      title: "Residential Window Tinting",
       description:
         "Enhance your home's comfort, energy efficiency, and privacy with premium residential window films—designed to reduce heat, glare, and UV damage.",
       image: residentialImage,
-      path: "/residential-window-tint",
+      path: "/services/residential-window-tinting",
     },
     {
-      title: "Commercial Window Tint",
+      title: "Commercial Window Tinting",
       description:
         "Boost energy efficiency, tenant comfort, and security in your commercial space with high-performance window films engineered for business environments.",
       image: commercialImage,
-      path: "/commercial-window-tint",
+      path: "/services/commercial-window-tinting",
     },
     {
-      title: "Decorative Frosted Film",
+      title: "Automotive Window Tinting",
       description:
-        "Add stylish privacy to any space with frosted window films—offering the elegant look of etched glass while letting natural light shine through.",
+        "Professional car window tinting by Protekt Auto. Premium ceramic and carbon films with lifetime warranty. Reduce heat, block UV rays, and enhance your vehicle.",
+      image: residentialImage,
+      path: "/services/automotive-window-tinting",
+    },
+    {
+      title: "Ceramic Window Tint",
+      description:
+        "Advanced nano-ceramic technology for superior heat rejection and clarity. Non-metallic formula that won't interfere with electronics. The premium choice.",
       image: frostedImage,
-      path: "/decorative-frosted-film",
-    },
-    {
-      title: "Marble & Stone Protection",
-      description:
-        "Protect and preserve the beauty of your marble and natural stone with invisible, self-healing film—designed to guard against stains, scratches, and UV damage.",
-      image: marbleImage,
-      path: "/marble-protection",
+      path: "/film-types/ceramic-window-tint",
     },
   ];
 
@@ -60,14 +60,14 @@ export default function Home() {
           />
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-            Premium Surface
+            Professional Window Tinting
             <br />
-            Protection Solutions
+            <span className="text-primary">Sydney</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-muted-foreground mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
-            Sydney's premier specialists in residential and commercial surface
-            protection, window tinting, and decorative films
+            Residential, commercial & automotive window tinting. Premium ceramic
+            films, privacy solutions & decorative frosted glass
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
