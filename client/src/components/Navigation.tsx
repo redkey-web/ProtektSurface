@@ -50,7 +50,7 @@ export function Navigation() {
             <img
               src={logoUrl}
               alt="Protekt Surface Solutions"
-              className="h-16 sm:h-20 w-auto hover-elevate active-elevate-2 rounded-sm -my-6 sm:-my-8"
+              className="h-16 sm:h-20 w-auto hover-elevate active-elevate-2 rounded-sm -my-4 sm:-my-5"
             />
           </Link>
 
