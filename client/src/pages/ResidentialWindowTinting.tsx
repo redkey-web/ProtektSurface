@@ -2,6 +2,7 @@ import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BeforeAfterGallery } from "@/components/BeforeAfterGallery";
+import { UVRayAnimation } from "@/components/UVRayAnimation";
 import heroImage from "@assets/generated_images/Residential_window_tinting_service_4f42a2a0.png";
 import beforeImage from "@assets/generated_images/Residential_room_before_tinting_b92acfb7.png";
 import afterImage from "@assets/generated_images/Residential_room_after_tinting_193fd047.png";
@@ -29,16 +30,16 @@ export default function ResidentialWindowTint() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-800/50 to-gray-900/70" style={{ mixBlendMode: 'multiply' }} />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Residential Flat Glass
             <br />
             Window Tint
           </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             Enhance your home's comfort, energy efficiency, and privacy with
             premium residential window films
           </p>
@@ -96,6 +97,10 @@ export default function ResidentialWindowTint() {
                 },
               ]}
             />
+          </div>
+
+          <div className="mb-12 sm:mb-16">
+            <UVRayAnimation />
           </div>
 
           <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">

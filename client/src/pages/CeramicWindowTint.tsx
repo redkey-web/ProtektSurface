@@ -2,6 +2,8 @@ import { Check, Phone, Zap, Shield, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import { InteractiveTintSlider } from "@/components/InteractiveTintSlider";
+import { HeatMapVisualization } from "@/components/HeatMapVisualization";
 import heroImage from "@assets/generated_images/Ceramic_window_tint_technology_097ec1d8.png";
 import beforeImage from "@assets/generated_images/Car_interior_before_tinting_a38c6703.png";
 import afterImage from "@assets/generated_images/Car_interior_after_tinting_1e0b91e7.png";
@@ -29,14 +31,14 @@ export default function CeramicWindowTint() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-800/50 to-gray-900/70" style={{ mixBlendMode: 'multiply' }} />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Ceramic Window Tint
           </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             Advanced nano-ceramic technology for superior heat rejection and
             clarity
           </p>
@@ -127,6 +129,15 @@ export default function CeramicWindowTint() {
               beforeLabel="Without Ceramic Tint"
               afterLabel="With Ceramic Tint"
             />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12 sm:mb-16">
+            <InteractiveTintSlider
+              demoImage={beforeImage}
+              title="Try Different Tint Levels"
+              description="Adjust the slider to see how different tint percentages look"
+            />
+            <HeatMapVisualization />
           </div>
 
           <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">

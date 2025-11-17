@@ -1,6 +1,7 @@
 import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@assets/generated_images/Marble_stone_protection_service_9d639889.png";
+import marbleTexture from "@assets/generated_images/White_marble_texture_background_644270aa.png";
 
 export default function MarbleProtection() {
   const benefits = [
@@ -21,23 +22,31 @@ export default function MarbleProtection() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-gray-800/40 to-gray-900/60" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Marble & Natural Stone
             <br />
             Protection Film
           </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             Protect and preserve the beauty of your natural stone surfaces
           </p>
         </div>
       </section>
 
-      <section className="py-12 sm:py-20 bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="py-12 sm:py-20 bg-background relative overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{ 
+            backgroundImage: `url(${marbleTexture})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
               Invisible Protection for Luxury Surfaces
