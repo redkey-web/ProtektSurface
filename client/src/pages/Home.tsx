@@ -15,6 +15,7 @@ import commercialImage from "@assets/generated_images/Commercial_window_tinting_
 import frostedImage from "@assets/generated_images/Decorative_frosted_film_service_185776ce.png";
 import marbleImage from "@assets/generated_images/Marble_stone_protection_service_9d639889.png";
 import logoUrl from "@assets/Untitled+(500+x+210+px).png_1763361350526.webp";
+import patternImage from "@assets/protekt_icon_pattern_600_1764034694000.png";
 
 export default function Home() {
   const filmTypes = [
@@ -178,8 +179,17 @@ export default function Home() {
 
       <Testimonials />
 
-      <section id="services" className="py-16 sm:py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section id="services" className="relative py-16 sm:py-24 bg-background overflow-hidden">
+        <div 
+          className="absolute inset-0 pointer-events-none opacity-[0.06]"
+          style={{ 
+            backgroundImage: `url(${patternImage})`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '150px 150px',
+            backgroundPosition: '-25px -25px',
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
               Our Services
