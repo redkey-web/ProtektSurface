@@ -134,7 +134,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gray-600/20" />
         </div>
 
-        <div className="absolute top-20 sm:top-24 left-4 sm:left-6 z-20">
+        <div className="absolute top-20 sm:top-24 left-8 sm:left-16 md:left-24 z-20">
           <img
             src={logoUrl}
             alt="Protekt Surface Solutions"
