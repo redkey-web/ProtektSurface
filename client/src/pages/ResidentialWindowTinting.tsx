@@ -1,11 +1,7 @@
 import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { BeforeAfterGallery } from "@/components/BeforeAfterGallery";
-import { UVRayAnimation } from "@/components/UVRayAnimation";
 import heroImage from "@assets/generated_images/Residential_window_tinting_service_4f42a2a0.png";
-import beforeImage from "@assets/generated_images/Residential_room_before_tinting_b92acfb7.png";
-import afterImage from "@assets/generated_images/Residential_room_after_tinting_193fd047.png";
 
 export default function ResidentialWindowTint() {
   const benefits = [
@@ -81,26 +77,6 @@ export default function ResidentialWindowTint() {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="mb-12 sm:mb-16">
-            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 text-center">
-              See the Difference
-            </h3>
-            <BeforeAfterGallery
-              images={[
-                {
-                  before: beforeImage,
-                  after: afterImage,
-                  title: "Living Room Transformation",
-                  description: "Notice the dramatic reduction in glare and heat while maintaining natural light and clear views",
-                },
-              ]}
-            />
-          </div>
-
-          <div className="mb-12 sm:mb-16">
-            <UVRayAnimation />
           </div>
 
           <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">

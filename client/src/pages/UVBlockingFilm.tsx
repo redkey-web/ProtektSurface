@@ -1,7 +1,6 @@
 import { Check, Phone, Sun, Shield, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { UVRayAnimation } from "@/components/UVRayAnimation";
 import heroImage from "@assets/generated_images/UV_blocking_window_film_025b3425.png";
 
 export default function UVBlockingFilm() {
@@ -109,10 +108,6 @@ export default function UVBlockingFilm() {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="mb-12 sm:mb-16">
-            <UVRayAnimation />
           </div>
 
           <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">
