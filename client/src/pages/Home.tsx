@@ -139,13 +139,13 @@ export default function Home() {
             <div className="absolute inset-0 -inset-x-[100vw] -top-6 -bottom-8 bg-white/15 backdrop-blur-[2px]" />
             
             <div className="relative">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
                 Professional Window Tinting
                 <br />
                 <span className="text-primary">Sydney</span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl text-black/80 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
                 Sydney's premier window tinting & surface protection specialists. Premium films and protective solutions for homes, businesses and vehicles
               </p>
 
