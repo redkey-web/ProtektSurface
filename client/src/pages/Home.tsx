@@ -188,7 +188,7 @@ export default function Home() {
               alt="Protekt Surface Solutions"
               className="h-[74px] sm:h-[92px] md:h-[110px] w-auto"
               style={{
-                filter: 'drop-shadow(0 0 8px rgba(255,250,240,0.9)) drop-shadow(0 0 4px rgba(255,248,235,0.7))',
+                filter: 'drop-shadow(0 0 6px rgba(255,250,240,0.3)) drop-shadow(0 0 3px rgba(255,248,235,0.2))',
               }}
               data-testid="img-hero-logo"
             />
