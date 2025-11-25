@@ -49,34 +49,14 @@ export function Footer() {
   ];
 
   const suppliers = [
-    { name: "Duraflex", logo: duraflexLogo },
     { name: "XPEL Certified Installer", logo: xpelCertifiedLogo },
     { name: "XPEL Ultimate", logo: xpelUltimateLogo },
+    { name: "Duraflex", logo: duraflexLogo },
     { name: "Vision Window Film", logo: visionLogo },
   ];
 
   return (
     <footer className="bg-background border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 border-b border-border">
-        <h3 className="text-center text-lg font-semibold text-foreground mb-8">
-          We Only Use Trusted Suppliers
-        </h3>
-        <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
-          {suppliers.map((supplier) => (
-            <div
-              key={supplier.name}
-              className="flex items-center justify-center"
-              data-testid={`supplier-logo-${supplier.name.toLowerCase().replace(/\s+/g, "-")}`}
-            >
-              <img
-                src={supplier.logo}
-                alt={supplier.name}
-                className="h-12 sm:h-16 w-auto object-contain"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12">
           <div>
@@ -208,12 +188,36 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border">
-          <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Protekt Surface Solutions. All rights
-            reserved.
-          </p>
+      </div>
+
+      <div className="bg-gray-900 py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <h3 className="text-center text-lg font-semibold text-white mb-8">
+            We Only Use Trusted Suppliers
+          </h3>
+          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
+            {suppliers.map((supplier) => (
+              <div
+                key={supplier.name}
+                className="flex items-center justify-center"
+                data-testid={`supplier-logo-${supplier.name.toLowerCase().replace(/\s+/g, "-")}`}
+              >
+                <img
+                  src={supplier.logo}
+                  alt={supplier.name}
+                  className="h-12 sm:h-16 w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
+
+      <div className="bg-gray-900 border-t border-white/10 py-6">
+        <p className="text-center text-sm text-white/60">
+          © {new Date().getFullYear()} Protekt Surface Solutions. All rights
+          reserved.
+        </p>
       </div>
     </footer>
   );
