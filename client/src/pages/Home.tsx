@@ -24,6 +24,7 @@ import privacyTexture from "@assets/image_1764067265072.png";
 import protectionTexture from "@assets/image_1764067354002.png";
 import uvTexture from "@assets/image_1764067444238.png";
 import frostedTexture from "@assets/image_1764067553522.png";
+import ceramicTexture from "@assets/image_1764068739357.png";
 
 export default function Home() {
   const filmTypes = [
@@ -287,12 +288,24 @@ export default function Home() {
               const isProtection = film.path === "/window-protection-film";
               const isUV = film.path === "/uv-blocking-film";
               const isFrosted = film.path === "/frosted-decorative-window-film";
+              const isCeramic = film.path === "/ceramic-window-tint";
+              const hasOverlay = isMarble || isPrivacy || isProtection || isUV || isFrosted || isCeramic;
               return (
                 <Link key={film.path} href={film.path}>
                   <Card
                     className="p-6 h-full hover-elevate active-elevate-2 transition-all duration-300 cursor-pointer group bg-muted relative overflow-hidden"
                     data-testid={`card-film-type-${index}`}
                   >
+                    {isCeramic && (
+                      <div 
+                        className="absolute inset-0 opacity-15 group-hover:opacity-30 pointer-events-none transition-opacity duration-300"
+                        style={{ 
+                          backgroundImage: `url(${ceramicTexture})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                        }}
+                      />
+                    )}
                     {isMarble && (
                       <div 
                         className="absolute inset-0 opacity-20 group-hover:opacity-40 pointer-events-none transition-opacity duration-300"
@@ -348,7 +361,7 @@ export default function Home() {
                         <film.icon className="w-6 h-6" />
                       </div>
                       <div className="flex-1">
-                        <h3 className={`text-lg font-semibold text-foreground mb-2 transition-colors ${(isMarble || isPrivacy || isProtection || isUV || isFrosted) ? "group-hover:text-gray-600" : "group-hover:text-primary"}`}>
+                        <h3 className={`text-lg font-semibold text-foreground mb-2 transition-colors ${hasOverlay ? "group-hover:text-gray-600" : "group-hover:text-primary"}`}>
                           {film.title}
                         </h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
