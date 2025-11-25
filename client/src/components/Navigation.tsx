@@ -138,7 +138,7 @@ export function Navigation() {
 
             <a 
               href="tel:0286062842" 
-              className="ml-3 flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-primary hover-elevate active-elevate-2"
+              className="ml-3 flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:text-primary transition-colors duration-200"
               data-testid="link-phone-desktop"
             >
               <Phone className="w-4 h-4" />
