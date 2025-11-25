@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import tintTexture from "@assets/image_1764073523731.png";
 
 interface Testimonial {
   name: string;
@@ -68,33 +69,56 @@ export function Testimonials() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <Card
-              key={index}
-              className="p-6 hover-elevate"
-              data-testid={`testimonial-${index}`}
-            >
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 fill-primary text-primary"
-                  />
-                ))}
-              </div>
-              <p className="text-sm text-foreground mb-4 leading-relaxed">
-                "{testimonial.text}"
-              </p>
-              <div className="border-t border-border pt-4">
-                <p className="font-semibold text-foreground text-sm">
-                  {testimonial.name}
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  {testimonial.location} • {testimonial.service}
-                </p>
-              </div>
-            </Card>
-          ))}
+          {testimonials.map((testimonial, index) => {
+            const tintOpacities = [0.08, 0.15, 0.22, 0.30, 0.40, 0.50];
+            const tintLabels = ["5% Light", "15% Light-Medium", "25% Medium", "35% Medium-Dark", "50% Dark", "70% Extra Dark"];
+            const opacity = tintOpacities[index % tintOpacities.length];
+            const tintLabel = tintLabels[index % tintLabels.length];
+            
+            return (
+              <Card
+                key={index}
+                className="p-6 hover-elevate relative overflow-hidden"
+                data-testid={`testimonial-${index}`}
+              >
+                <div 
+                  className="absolute inset-0 pointer-events-none"
+                  style={{ 
+                    backgroundImage: `url(${tintTexture})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    opacity: opacity,
+                  }}
+                />
+                <div className="absolute top-2 right-2 z-10">
+                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-foreground/10 text-muted-foreground font-medium">
+                    {tintLabel}
+                  </span>
+                </div>
+                <div className="relative z-10">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-5 h-5 fill-primary text-primary"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-sm text-foreground mb-4 leading-relaxed">
+                    "{testimonial.text}"
+                  </p>
+                  <div className="border-t border-border pt-4">
+                    <p className="font-semibold text-foreground text-sm">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {testimonial.location} • {testimonial.service}
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
