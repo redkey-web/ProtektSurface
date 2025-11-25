@@ -348,7 +348,7 @@ export default function Home() {
                         <film.icon className="w-6 h-6" />
                       </div>
                       <div className="flex-1">
-                        <h3 className={`text-lg font-semibold text-foreground mb-2 transition-colors ${(isMarble || isPrivacy || isProtection || isUV || isFrosted) ? "group-hover:text-white" : "group-hover:text-primary"}`}>
+                        <h3 className={`text-lg font-semibold text-foreground mb-2 transition-colors ${(isMarble || isPrivacy || isProtection || isUV || isFrosted) ? "group-hover:text-gray-600" : "group-hover:text-primary"}`}>
                           {film.title}
                         </h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
