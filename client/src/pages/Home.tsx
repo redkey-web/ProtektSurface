@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { useState, useEffect } from "react";
 import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -27,6 +28,23 @@ import frostedTexture from "@assets/image_1764067553522.png";
 import ceramicTexture from "@assets/image_1764068739357.png";
 
 export default function Home() {
+  const [currentTint, setCurrentTint] = useState(0);
+  
+  const tintVariants = [
+    { name: "Clear", color: "transparent", opacity: 0 },
+    { name: "Light", color: "rgb(50, 50, 50)", opacity: 0.15 },
+    { name: "Medium", color: "rgb(40, 40, 40)", opacity: 0.35 },
+    { name: "Dark", color: "rgb(30, 30, 30)", opacity: 0.55 },
+    { name: "Limo", color: "rgb(20, 20, 20)", opacity: 0.75 },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTint((prev) => (prev + 1) % tintVariants.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const filmTypes = [
     {
       title: "Ceramic Window Tint",
@@ -132,6 +150,35 @@ export default function Home() {
           style={{ backgroundImage: `url(${heroImage})` }}
         >
           <div className="absolute inset-0 bg-gray-600/20" />
+          
+          {tintVariants.map((tint, index) => (
+            <div
+              key={tint.name}
+              className="absolute inset-0 transition-all duration-1000 ease-in-out"
+              style={{
+                backgroundColor: tint.color,
+                opacity: currentTint === index ? tint.opacity : 0,
+                transform: currentTint === index ? 'translateX(0)' : currentTint > index ? 'translateX(-100%)' : 'translateX(100%)',
+              }}
+            />
+          ))}
+          
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2 items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full">
+            <span className="text-white/80 text-xs font-medium">Tint Level:</span>
+            <span className="text-white text-sm font-semibold min-w-[60px]">{tintVariants[currentTint].name}</span>
+            <div className="flex gap-1.5 ml-2">
+              {tintVariants.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTint(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    currentTint === index ? 'bg-primary scale-125' : 'bg-white/50 hover:bg-white/80'
+                  }`}
+                  data-testid={`tint-dot-${index}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="absolute top-24 sm:top-28 left-0 right-0 z-20">
