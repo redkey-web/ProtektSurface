@@ -105,14 +105,14 @@ export default function Home() {
       title: "Automotive Window Tinting",
       description:
         "Professional car window tinting by Protekt Auto. Premium ceramic and carbon films with lifetime warranty. Reduce heat, block UV rays, and enhance your vehicle.",
-      image: automotiveImage,
+      image: windowTintImage,
       path: "/automotive-window-tinting",
     },
     {
       title: "Ceramic Window Tint",
       description:
         "Advanced nano-ceramic technology for superior heat rejection and clarity. Non-metallic formula that won't interfere with electronics. The premium choice.",
-      image: windowTintImage,
+      image: frostedImage,
       path: "/ceramic-window-tint",
     },
   ];
