@@ -77,7 +77,7 @@ export function Testimonials() {
             
             const getTransform = () => {
               if (index === 3) return 'scaleX(-1)';
-              if (index === 4) return 'rotate(90deg) scale(1.5)';
+              if (index === 4) return 'rotate(90deg) scale(2)';
               return 'none';
             };
             
