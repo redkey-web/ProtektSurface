@@ -1,0 +1,137 @@
+import { Check, Phone, Shield, Zap, AlertTriangle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import heroImage from "@assets/generated_images/Window_protection_film_installation_373938df.png";
+
+export default function WindowProtectionFilm() {
+  const benefits = [
+    "Protects against scratches, chips, and impact damage",
+    "Holds shattered glass together for safety",
+    "Blocks 99% of harmful UV rays",
+    "Virtually invisible clear protection",
+    "Self-healing technology on premium films",
+    "Reduces risk of injury from broken glass",
+    "Extends the life of your windows",
+    "Ideal for storm protection and security",
+  ];
+
+  return (
+    <div className="min-h-screen pt-16 sm:pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <Breadcrumbs items={[{ label: "Film Types" }, { label: "Window Protection Film" }]} />
+      </div>
+
+      <section className="relative h-[50vh] sm:h-[60vh] flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-800/50 to-gray-900/70" style={{ mixBlendMode: 'multiply' }} />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+            Window Protection Film
+          </h1>
+          <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Invisible protection that strengthens and safeguards your windows
+          </p>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-20 bg-background">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+              Strengthen and Protect Your Glass
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
+              Window protection film provides an invisible shield that dramatically
+              increases the strength and safety of your glass windows. Whether you're
+              concerned about storm damage, break-ins, or accidental impacts, our
+              protection films help hold glass together even when shattered, reducing
+              the risk of injury and property damage.
+            </p>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+              These films are virtually invisible once installed, maintaining your views
+              while providing robust protection. They also block 99% of UV rays, helping
+              to protect your interiors from fading and sun damage. Perfect for homes,
+              businesses, and high-risk areas.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="flex flex-col items-center text-center p-6 rounded-md hover-elevate">
+              <Shield className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                Impact Resistance
+              </h3>
+              <p className="text-muted-foreground text-sm">
+                Protects against impacts, scratches, and breakage
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center text-center p-6 rounded-md hover-elevate">
+              <AlertTriangle className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                Safety First
+              </h3>
+              <p className="text-muted-foreground text-sm">
+                Holds shattered glass together to prevent injuries
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center text-center p-6 rounded-md hover-elevate">
+              <Zap className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                Storm Protection
+              </h3>
+              <p className="text-muted-foreground text-sm">
+                Shields windows from severe weather and flying debris
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">
+              Benefits
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {benefits.map((benefit, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-3 p-4 rounded-md hover-elevate"
+                  data-testid={`benefit-${index}`}
+                >
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-base text-foreground">{benefit}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">
+            <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
+              Protect your property today
+            </h3>
+            <p className="text-base sm:text-lg text-primary-foreground/90 mb-6 sm:mb-8 max-w-2xl mx-auto">
+              Get a free consultation to learn how window protection film can
+              safeguard your windows and enhance safety.
+            </p>
+            <a href="tel:0286062842">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary transition-all duration-300"
+                data-testid="button-get-quote"
+              >
+                <Phone className="mr-2 w-5 h-5" />
+                (02) 8606 2842
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
