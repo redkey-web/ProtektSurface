@@ -74,6 +74,9 @@ export function Testimonials() {
             const opacity = tintOpacities[index % tintOpacities.length];
             
             const getTransform = () => {
+              if (index === 0) return 'scaleX(-1) scaleY(-1)';
+              if (index === 1) return 'rotate(90deg) scale(2) scaleY(-1)';
+              if (index === 2) return 'scaleY(-1)';
               if (index === 3) return 'scaleX(-1)';
               if (index === 4) return 'rotate(90deg) scale(2)';
               return 'none';
