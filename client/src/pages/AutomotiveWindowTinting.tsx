@@ -48,17 +48,16 @@ export default function AutomotiveWindowTinting() {
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-gray-900/70 to-gray-900/85" style={{ mixBlendMode: 'multiply' }} />
         </div>
 
-        <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10">
-          <img 
-            src={protektAutoLogo} 
-            alt="Protekt Auto" 
-            className="h-12 sm:h-16 md:h-20 w-auto"
-            data-testid="img-protekt-auto-logo"
-          />
-        </div>
-
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+          <div className="mb-6 flex justify-center">
+            <img 
+              src={protektAutoLogo} 
+              alt="Protekt Auto" 
+              className="h-20 sm:h-26 md:h-32 w-auto"
+              data-testid="img-protekt-auto-logo"
+            />
+          </div>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Professional Automotive
             <br />
             Window Tinting Sydney
