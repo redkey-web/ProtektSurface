@@ -1,10 +1,21 @@
-import { Switch, Route, Redirect } from "wouter";
+import { useEffect } from "react";
+import { Switch, Route, Redirect, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+
+function ScrollToTop() {
+  const [location] = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+  
+  return null;
+}
 import Home from "@/pages/Home";
 import ResidentialWindowTinting from "@/pages/ResidentialWindowTinting";
 import AutomotiveWindowTinting from "@/pages/AutomotiveWindowTinting";
@@ -43,6 +54,7 @@ import NotFound from "@/pages/not-found";
 function Router() {
   return (
     <>
+      <ScrollToTop />
       <Navigation />
       <Switch>
         <Route path="/" component={Home} />
