@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,6 +19,28 @@ export function Navigation() {
   const [location] = useLocation();
   const [openDesktopDropdown, setOpenDesktopDropdown] = useState<string | null>(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
+  const [logoOpacity, setLogoOpacity] = useState(0);
+
+  const isHomePage = location === "/";
+
+  useEffect(() => {
+    if (!isHomePage) {
+      setLogoOpacity(1);
+      return;
+    }
+
+    const handleScroll = () => {
+      const heroHeight = window.innerHeight;
+      const scrollY = window.scrollY;
+      const fadePoint = heroHeight * 0.5;
+      const opacity = Math.min(scrollY / fadePoint, 1);
+      setLogoOpacity(opacity);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHomePage]);
 
   const servicesItems: NavItem[] = [
     { name: "Residential Window Tinting", path: "/residential-window-tinting" },
@@ -53,7 +75,8 @@ export function Navigation() {
             <img
               src={logoUrl}
               alt="Protekt Surface Solutions"
-              className="h-16 sm:h-20 w-auto hover-elevate active-elevate-2 rounded-sm -my-3"
+              className="h-16 sm:h-20 w-auto hover-elevate active-elevate-2 rounded-sm -my-3 transition-opacity duration-200"
+              style={{ opacity: logoOpacity }}
             />
           </Link>
 
