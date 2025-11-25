@@ -134,19 +134,21 @@ export default function Home() {
           <div className="absolute inset-0 bg-gray-600/20" />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-20">
+        <div className="absolute top-20 sm:top-24 left-4 sm:left-6 z-20">
           <img
             src={logoUrl}
             alt="Protekt Surface Solutions"
-            className="h-24 sm:h-40 md:h-44 w-auto mx-auto mb-10"
+            className="h-16 sm:h-20 md:h-24 w-auto"
             data-testid="img-hero-logo"
           />
+        </div>
 
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-20">
           <div className="relative">
             <div className="absolute inset-0 -inset-x-[100vw] -top-6 -bottom-8 bg-white/40 backdrop-blur-[2px]" />
             
             <div className="relative">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black mb-6 leading-tight">
                 Professional Window Tinting
                 <br />
                 <span className="text-primary">Sydney</span>
