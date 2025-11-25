@@ -14,6 +14,7 @@ import residentialImage from "@assets/generated_images/Residential_window_tintin
 import commercialImage from "@assets/generated_images/Commercial_window_tinting_service_1caab67d.png";
 import frostedImage from "@assets/generated_images/Decorative_frosted_film_service_185776ce.png";
 import marbleImage from "@assets/generated_images/Marble_stone_protection_service_9d639889.png";
+import automotiveImage from "@assets/generated_images/tinted_luxury_car_showcase.png";
 import logoUrl from "@assets/Untitled+(500+x+210+px).png_1763361350526.webp";
 import patternImage from "@assets/protekt_icon_pattern_600_1764034694000.png";
 
@@ -103,7 +104,7 @@ export default function Home() {
       title: "Automotive Window Tinting",
       description:
         "Professional car window tinting by Protekt Auto. Premium ceramic and carbon films with lifetime warranty. Reduce heat, block UV rays, and enhance your vehicle.",
-      image: residentialImage,
+      image: automotiveImage,
       path: "/automotive-window-tinting",
     },
     {
