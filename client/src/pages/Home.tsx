@@ -18,6 +18,7 @@ import automotiveImage from "@assets/generated_images/tinted_luxury_car_showcase
 import windowTintImage from "@assets/window tint_1764036010561.webp";
 import logoUrl from "@assets/Untitled+(500+x+210+px).png_1763361350526.webp";
 import patternImage from "@assets/protekt_icon_pattern_600_1764034694000.png";
+import protektAutoLogo from "@assets/image_1764039173355.png";
 
 export default function Home() {
   const filmTypes = [
@@ -216,12 +217,21 @@ export default function Home() {
                   className="overflow-hidden hover-elevate active-elevate-2 transition-all duration-300 cursor-pointer group h-full"
                   data-testid={`card-service-${index}`}
                 >
-                  <div className="aspect-video overflow-hidden">
+                  <div className="aspect-video overflow-hidden relative">
                     <img
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
+                    {service.path === "/automotive-window-tinting" && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                        <img 
+                          src={protektAutoLogo} 
+                          alt="Protekt Auto" 
+                          className="w-2/3 max-w-[280px] h-auto"
+                        />
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl sm:text-2xl font-semibold text-primary mb-3">
