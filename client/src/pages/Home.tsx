@@ -185,9 +185,9 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-center">
             <div className="relative">
               <div 
-                className="absolute inset-0 -inset-x-12 -inset-y-6 rounded-full blur-2xl"
+                className="absolute inset-0 -inset-x-3 -inset-y-2 rounded-full blur-lg"
                 style={{
-                  background: 'radial-gradient(ellipse at center, rgba(255,250,240,0.85) 0%, rgba(255,248,235,0.6) 40%, transparent 70%)',
+                  background: 'radial-gradient(ellipse at center, rgba(255,250,240,0.8) 0%, rgba(255,248,235,0.5) 50%, transparent 80%)',
                 }}
               />
               <img
