@@ -58,9 +58,16 @@ export function Navigation() {
     { name: "Marble Protection Film", path: "/marble-protection-film" },
   ];
 
+  const moreItems: NavItem[] = [
+    { name: "About Us", path: "/about" },
+    { name: "Tint Selector Quiz", path: "/tint-selector" },
+    { name: "Blog", path: "/blog" },
+  ];
+
   const dropdowns: DropdownSection[] = [
     { title: "Services", items: servicesItems },
     { title: "Film Types", items: filmTypesItems },
+    { title: "More", items: moreItems },
   ];
 
   const toggleMobileDropdown = (title: string) => {
@@ -120,16 +127,6 @@ export function Navigation() {
               </div>
             ))}
 
-            <Link href="/about" data-testid="link-desktop-about">
-              <div
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  location === "/about" ? "text-primary" : "text-black/90 hover:text-primary"
-                }`}
-              >
-                About
-              </div>
-            </Link>
-
             <Link href="/contact" data-testid="link-desktop-contact">
               <div
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
@@ -137,16 +134,6 @@ export function Navigation() {
                 }`}
               >
                 Contact
-              </div>
-            </Link>
-
-            <Link href="/tint-selector" data-testid="link-desktop-quiz">
-              <div
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  location === "/tint-selector" ? "text-primary" : "text-black/90 hover:text-primary"
-                }`}
-              >
-                Quiz
               </div>
             </Link>
 
@@ -230,20 +217,6 @@ export function Navigation() {
                 )}
               </div>
             ))}
-
-            <Link
-              href="/about"
-              onClick={() => setIsOpen(false)}
-              data-testid="link-mobile-about"
-            >
-              <div
-                className={`px-4 py-3 rounded-md text-base font-medium hover-elevate active-elevate-2 ${
-                  location === "/about" ? "bg-primary/10 text-primary" : "text-foreground"
-                }`}
-              >
-                About
-              </div>
-            </Link>
 
             <Link
               href="/contact"
