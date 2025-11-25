@@ -52,8 +52,8 @@ export function Footer() {
   const suppliers = [
     { name: "XPEL Certified Installer", logo: xpelCertifiedLogo },
     { name: "Vision Window Film", logo: visionLogo },
-    { name: "XPEL Ultimate", logo: xpelUltimateLogo },
     { name: "Duraflex", logo: duraflexLogo },
+    { name: "XPEL Ultimate", logo: xpelUltimateLogo },
   ];
 
   return (
