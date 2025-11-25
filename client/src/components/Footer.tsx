@@ -205,19 +205,22 @@ export function Footer() {
             We Only Use Trusted Suppliers
           </h3>
           <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
-            {suppliers.map((supplier) => (
-              <div
-                key={supplier.name}
-                className={`flex items-center justify-center ${supplier.name === "XPEL Ultimate" ? "-my-4 sm:-my-6" : ""}`}
-                data-testid={`supplier-logo-${supplier.name.toLowerCase().replace(/\s+/g, "-")}`}
-              >
-                <img
-                  src={supplier.logo}
-                  alt={supplier.name}
-                  className={supplier.name === "XPEL Ultimate" ? "h-20 sm:h-28 w-auto object-contain" : "h-12 sm:h-16 w-auto object-contain"}
-                />
-              </div>
-            ))}
+            {suppliers.map((supplier) => {
+              const isLarge = supplier.name === "XPEL Ultimate" || supplier.name === "Vision Window Film";
+              return (
+                <div
+                  key={supplier.name}
+                  className={`flex items-center justify-center ${isLarge ? "-my-4 sm:-my-6" : ""}`}
+                  data-testid={`supplier-logo-${supplier.name.toLowerCase().replace(/\s+/g, "-")}`}
+                >
+                  <img
+                    src={supplier.logo}
+                    alt={supplier.name}
+                    className={isLarge ? "h-20 sm:h-28 w-auto object-contain" : "h-12 sm:h-16 w-auto object-contain"}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
