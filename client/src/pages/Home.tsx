@@ -74,7 +74,7 @@ export default function Home() {
             <Link href="#services">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-primary text-primary-foreground px-8 transition-all duration-300 hover:shadow-[inset_0_0_20px_rgba(255,255,255,0.4)] [&:hover]:text-white [&:hover_*]:drop-shadow-[0_0_8px_rgba(212,165,116,1)]"
+                className="w-full sm:w-auto bg-primary text-primary-foreground px-8 transition-all duration-300 hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] [&:hover]:text-white [&:hover_*]:drop-shadow-[0_0_8px_rgba(212,165,116,1)]"
                 style={{ 
                   textShadow: 'none',
                 }}
