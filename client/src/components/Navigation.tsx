@@ -19,22 +19,22 @@ export function Navigation() {
   const [location] = useLocation();
   const [openDesktopDropdown, setOpenDesktopDropdown] = useState<string | null>(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
-  const [logoOpacity, setLogoOpacity] = useState(0);
+  const [headerProgress, setHeaderProgress] = useState(0);
 
   const isHomePage = location === "/";
 
   useEffect(() => {
     if (!isHomePage) {
-      setLogoOpacity(1);
+      setHeaderProgress(1);
       return;
     }
 
     const handleScroll = () => {
       const heroHeight = window.innerHeight;
       const scrollY = window.scrollY;
-      const fadePoint = heroHeight * 0.5;
-      const opacity = Math.min(scrollY / fadePoint, 1);
-      setLogoOpacity(opacity);
+      const revealPoint = heroHeight * 0.5;
+      const progress = Math.min(scrollY / revealPoint, 1);
+      setHeaderProgress(progress);
     };
 
     handleScroll();
@@ -74,16 +74,20 @@ export function Navigation() {
     setOpenMobileDropdown(openMobileDropdown === title ? null : title);
   };
 
+  const headerTranslateY = (1 - headerProgress) * -100;
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-background/50 via-background/40 to-background/30 backdrop-blur-md border-b border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
+    <nav 
+      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-background/50 via-background/40 to-background/30 backdrop-blur-md border-b border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
+      style={{ transform: `translateY(${headerTranslateY}%)` }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" data-testid="link-home">
             <img
               src={logoUrl}
               alt="Protekt Surface Solutions"
-              className="h-16 sm:h-20 w-auto hover-elevate active-elevate-2 rounded-sm -my-3 transition-opacity duration-200"
-              style={{ opacity: logoOpacity }}
+              className="h-16 sm:h-20 w-auto hover-elevate active-elevate-2 rounded-sm -my-3"
             />
           </Link>
 
