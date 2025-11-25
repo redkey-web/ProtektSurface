@@ -116,24 +116,26 @@ export function Navigation() {
                 </button>
 
                 {openDesktopDropdown === dropdown.title && (
-                  <div className="absolute top-full left-0 mt-1 w-64 bg-gray-900/80 backdrop-blur-md border border-white/10 rounded-md shadow-lg py-2">
-                    {dropdown.items.map((item) => (
-                      <Link
-                        key={item.path}
-                        href={item.path}
-                        data-testid={`link-desktop-dropdown-${item.name.toLowerCase().replace(/\s+/g, "-")}`}
-                      >
-                        <div
-                          className={`px-4 py-2 text-sm transition-colors duration-200 ${
-                            location === item.path
-                              ? "text-primary"
-                              : "text-white/80 hover:text-primary hover:bg-white/5"
-                          }`}
+                  <div className="absolute top-full left-0 pt-2 w-64">
+                    <div className="bg-gray-900/80 backdrop-blur-md border border-white/10 rounded-md shadow-lg py-2">
+                      {dropdown.items.map((item) => (
+                        <Link
+                          key={item.path}
+                          href={item.path}
+                          data-testid={`link-desktop-dropdown-${item.name.toLowerCase().replace(/\s+/g, "-")}`}
                         >
-                          {item.name}
-                        </div>
-                      </Link>
-                    ))}
+                          <div
+                            className={`px-4 py-2 text-sm transition-colors duration-200 ${
+                              location === item.path
+                                ? "text-primary"
+                                : "text-white/80 hover:text-primary hover:bg-white/5"
+                            }`}
+                          >
+                            {item.name}
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
