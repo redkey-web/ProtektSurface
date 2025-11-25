@@ -1,6 +1,10 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "wouter";
 import logoUrl from "@assets/Untitled+(500+x+210+px).png_1763361350526.webp";
+import duraflexLogo from "@assets/image_1764065339473.png";
+import xpelCertifiedLogo from "@assets/xpel-certified-ppf-installers_1764065373300.png";
+import xpelUltimateLogo from "@assets/xpel-ultimate_1764065406968.png";
+import visionLogo from "@assets/VISION-Home-Office-Window-Tint-logo-black.png_1764065527611.webp";
 
 export function Footer() {
   const services = [
@@ -44,8 +48,35 @@ export function Footer() {
     { name: "Penrith", path: "/service-areas/penrith" },
   ];
 
+  const suppliers = [
+    { name: "Duraflex", logo: duraflexLogo },
+    { name: "XPEL Certified Installer", logo: xpelCertifiedLogo },
+    { name: "XPEL Ultimate", logo: xpelUltimateLogo },
+    { name: "Vision Window Film", logo: visionLogo },
+  ];
+
   return (
     <footer className="bg-background border-t border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 border-b border-border">
+        <h3 className="text-center text-lg font-semibold text-foreground mb-8">
+          We Only Use Trusted Suppliers
+        </h3>
+        <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
+          {suppliers.map((supplier) => (
+            <div
+              key={supplier.name}
+              className="flex items-center justify-center"
+              data-testid={`supplier-logo-${supplier.name.toLowerCase().replace(/\s+/g, "-")}`}
+            >
+              <img
+                src={supplier.logo}
+                alt={supplier.name}
+                className="h-12 sm:h-16 w-auto object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12">
           <div>
