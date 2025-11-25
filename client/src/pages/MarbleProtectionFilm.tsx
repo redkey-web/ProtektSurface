@@ -2,7 +2,6 @@ import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import heroImage from "@assets/generated_images/Marble_stone_protection_service_9d639889.png";
-import marbleTexture from "@assets/generated_images/White_marble_texture_background_644270aa.png";
 import marbleTile from "@assets/image_1764066116112.png";
 
 export default function MarbleProtection() {
@@ -45,11 +44,11 @@ export default function MarbleProtection() {
 
       <section className="py-12 sm:py-20 bg-background relative overflow-hidden">
         <div 
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-30"
           style={{ 
-            backgroundImage: `url(${marbleTexture})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
+            backgroundImage: `url(${marbleTile})`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '400px auto',
           }}
         />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
@@ -88,35 +87,25 @@ export default function MarbleProtection() {
             </div>
           </div>
 
-          <div className="relative bg-primary rounded-xl p-8 sm:p-12 text-center overflow-hidden">
-            <div 
-              className="absolute inset-0 opacity-15"
-              style={{ 
-                backgroundImage: `url(${marbleTile})`,
-                backgroundRepeat: 'repeat',
-                backgroundSize: '300px auto',
-              }}
-            />
-            <div className="relative z-10">
-              <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
-                Protect your investment
-              </h3>
-              <p className="text-base sm:text-lg text-primary-foreground/90 mb-6 sm:mb-8 max-w-2xl mx-auto">
-                Get a free consultation to learn how our stone protection films
-                can preserve the beauty and value of your natural stone surfaces.
-              </p>
-              <a href="tel:0286062842">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary transition-all duration-300"
-                  data-testid="button-get-quote"
-                >
-                  <Phone className="mr-2 w-5 h-5" />
-                  (02) 8606 2842
-                </Button>
-              </a>
-            </div>
+          <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">
+            <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
+              Protect your investment
+            </h3>
+            <p className="text-base sm:text-lg text-primary-foreground/90 mb-6 sm:mb-8 max-w-2xl mx-auto">
+              Get a free consultation to learn how our stone protection films
+              can preserve the beauty and value of your natural stone surfaces.
+            </p>
+            <a href="tel:0286062842">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary transition-all duration-300"
+                data-testid="button-get-quote"
+              >
+                <Phone className="mr-2 w-5 h-5" />
+                (02) 8606 2842
+              </Button>
+            </a>
           </div>
         </div>
       </section>
