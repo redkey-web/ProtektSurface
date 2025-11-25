@@ -135,46 +135,52 @@ export default function Home() {
             data-testid="img-hero-logo"
           />
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Professional Window Tinting
-            <br />
-            <span className="text-primary">Sydney</span>
-          </h1>
+          <div className="relative">
+            <div className="absolute inset-0 -inset-x-[100vw] -top-6 -bottom-8 bg-white/15 backdrop-blur-[2px]" />
+            
+            <div className="relative">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                Professional Window Tinting
+                <br />
+                <span className="text-primary">Sydney</span>
+              </h1>
 
-          <p className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
-            Sydney's premier window tinting & surface protection specialists. Premium films and protective solutions for homes, businesses and vehicles
-          </p>
+              <p className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
+                Sydney's premier window tinting & surface protection specialists. Premium films and protective solutions for homes, businesses and vehicles
+              </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="#services">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-primary text-primary-foreground px-8 transition-all duration-300 hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] [&:hover]:text-white [&:hover_*]:drop-shadow-[0_0_8px_rgba(212,165,116,1)]"
-                style={{ 
-                  textShadow: 'none',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.textShadow = '0 0 10px rgba(212,165,116,0.9), 0 0 20px rgba(212,165,116,0.6), 0 0 30px rgba(212,165,116,0.4)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.textShadow = 'none';
-                }}
-                data-testid="button-view-services"
-              >
-                View Services
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-            <a href="tel:0286062842">
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] transition-all duration-300"
-                data-testid="button-contact-hero"
-              >
-                Contact Us
-              </Button>
-            </a>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link href="#services">
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto bg-primary text-primary-foreground px-8 transition-all duration-300 hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] [&:hover]:text-white [&:hover_*]:drop-shadow-[0_0_8px_rgba(212,165,116,1)]"
+                    style={{ 
+                      textShadow: 'none',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.textShadow = '0 0 10px rgba(212,165,116,0.9), 0 0 20px rgba(212,165,116,0.6), 0 0 30px rgba(212,165,116,0.4)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.textShadow = 'none';
+                    }}
+                    data-testid="button-view-services"
+                  >
+                    View Services
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <a href="tel:0286062842">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] transition-all duration-300"
+                    data-testid="button-contact-hero"
+                  >
+                    Contact Us
+                  </Button>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
