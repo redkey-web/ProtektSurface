@@ -428,7 +428,7 @@ export default function Home() {
           style={{ 
             backgroundImage: `url(${patternImage})`,
             backgroundRepeat: 'repeat',
-            backgroundSize: '500px 500px',
+            backgroundSize: '800px 800px',
             backgroundPosition: '-50px -50px',
             backgroundAttachment: 'fixed',
           }}
