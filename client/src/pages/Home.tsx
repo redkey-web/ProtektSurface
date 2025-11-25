@@ -467,7 +467,7 @@ export default function Home() {
 
       <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
         <div 
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-25"
           style={{
             backgroundImage: `url(${marbleTexture})`,
             backgroundSize: 'cover',
