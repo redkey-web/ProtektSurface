@@ -74,7 +74,16 @@ export default function Home() {
             <Link href="#services">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-primary text-primary-foreground hover-elevate active-elevate-2 px-8"
+                className="w-full sm:w-auto bg-primary text-primary-foreground px-8 transition-all duration-300 hover:shadow-[inset_0_0_20px_rgba(255,255,255,0.4)] [&:hover]:text-white [&:hover_*]:drop-shadow-[0_0_8px_rgba(212,165,116,1)]"
+                style={{ 
+                  textShadow: 'none',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.textShadow = '0 0 10px rgba(212,165,116,0.9), 0 0 20px rgba(212,165,116,0.6), 0 0 30px rgba(212,165,116,0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.textShadow = 'none';
+                }}
                 data-testid="button-view-services"
               >
                 View Services
