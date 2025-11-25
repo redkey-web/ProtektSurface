@@ -134,13 +134,13 @@ export default function Home() {
             data-testid="img-hero-logo"
           />
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Professional Window Tinting
             <br />
             <span className="text-primary">Sydney</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-foreground mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
             Sydney's premier window tinting & surface protection specialists. Premium films and protective solutions for homes, businesses and vehicles
           </p>
 

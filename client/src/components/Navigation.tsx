@@ -66,7 +66,7 @@ export function Navigation() {
                 onMouseLeave={() => setOpenDesktopDropdown(null)}
               >
                 <button
-                  className="px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 text-white/90 hover:text-primary transition-colors duration-200"
+                  className="px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 text-black/90 hover:text-primary transition-colors duration-200"
                   data-testid={`button-desktop-dropdown-${dropdown.title.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   {dropdown.title}
@@ -100,7 +100,7 @@ export function Navigation() {
             <Link href="/about" data-testid="link-desktop-about">
               <div
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  location === "/about" ? "text-primary" : "text-white/90 hover:text-primary"
+                  location === "/about" ? "text-primary" : "text-black/90 hover:text-primary"
                 }`}
               >
                 About
@@ -110,7 +110,7 @@ export function Navigation() {
             <Link href="/contact" data-testid="link-desktop-contact">
               <div
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  location === "/contact" ? "text-primary" : "text-white/90 hover:text-primary"
+                  location === "/contact" ? "text-primary" : "text-black/90 hover:text-primary"
                 }`}
               >
                 Contact
@@ -120,7 +120,7 @@ export function Navigation() {
             <Link href="/tint-selector" data-testid="link-desktop-quiz">
               <div
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  location === "/tint-selector" ? "text-primary" : "text-white/90 hover:text-primary"
+                  location === "/tint-selector" ? "text-primary" : "text-black/90 hover:text-primary"
                 }`}
               >
                 Quiz
@@ -138,7 +138,7 @@ export function Navigation() {
 
             <a 
               href="tel:0286062842" 
-              className="ml-3 flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:text-primary transition-colors duration-200"
+              className="ml-3 flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-black/90 hover:text-primary transition-colors duration-200"
               data-testid="link-phone-desktop"
             >
               <Phone className="w-4 h-4" />
