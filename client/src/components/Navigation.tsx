@@ -46,7 +46,7 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-sm border-b border-border/30">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/70 backdrop-blur-md border-b border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" data-testid="link-home">
@@ -66,7 +66,7 @@ export function Navigation() {
                 onMouseLeave={() => setOpenDesktopDropdown(null)}
               >
                 <button
-                  className="px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 hover-elevate active-elevate-2"
+                  className="px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 text-white/90 hover:text-primary transition-colors duration-200"
                   data-testid={`button-desktop-dropdown-${dropdown.title.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   {dropdown.title}
@@ -74,7 +74,7 @@ export function Navigation() {
                 </button>
 
                 {openDesktopDropdown === dropdown.title && (
-                  <div className="absolute top-full left-0 mt-1 w-64 bg-background border border-border rounded-md shadow-lg py-2">
+                  <div className="absolute top-full left-0 mt-1 w-64 bg-gray-900/80 backdrop-blur-md border border-white/10 rounded-md shadow-lg py-2">
                     {dropdown.items.map((item) => (
                       <Link
                         key={item.path}
@@ -82,10 +82,10 @@ export function Navigation() {
                         data-testid={`link-desktop-dropdown-${item.name.toLowerCase().replace(/\s+/g, "-")}`}
                       >
                         <div
-                          className={`px-4 py-2 text-sm hover-elevate ${
+                          className={`px-4 py-2 text-sm transition-colors duration-200 ${
                             location === item.path
-                              ? "bg-primary/10 text-primary"
-                              : "text-foreground"
+                              ? "text-primary"
+                              : "text-white/80 hover:text-primary hover:bg-white/5"
                           }`}
                         >
                           {item.name}
@@ -99,8 +99,8 @@ export function Navigation() {
 
             <Link href="/about" data-testid="link-desktop-about">
               <div
-                className={`px-4 py-2 rounded-md text-sm font-medium hover-elevate active-elevate-2 ${
-                  location === "/about" ? "bg-primary/10 text-primary" : "text-foreground"
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  location === "/about" ? "text-primary" : "text-white/90 hover:text-primary"
                 }`}
               >
                 About
@@ -109,8 +109,8 @@ export function Navigation() {
 
             <Link href="/contact" data-testid="link-desktop-contact">
               <div
-                className={`px-4 py-2 rounded-md text-sm font-medium hover-elevate active-elevate-2 ${
-                  location === "/contact" ? "bg-primary/10 text-primary" : "text-foreground"
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  location === "/contact" ? "text-primary" : "text-white/90 hover:text-primary"
                 }`}
               >
                 Contact
@@ -119,8 +119,8 @@ export function Navigation() {
 
             <Link href="/tint-selector" data-testid="link-desktop-quiz">
               <div
-                className={`px-4 py-2 rounded-md text-sm font-medium hover-elevate active-elevate-2 ${
-                  location === "/tint-selector" ? "bg-primary/10 text-primary" : "text-foreground"
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  location === "/tint-selector" ? "text-primary" : "text-white/90 hover:text-primary"
                 }`}
               >
                 Quiz
