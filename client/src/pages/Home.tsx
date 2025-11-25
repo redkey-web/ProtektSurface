@@ -131,7 +131,7 @@ export default function Home() {
           <img
             src={logoUrl}
             alt="Protekt Surface Solutions"
-            className="h-20 sm:h-32 w-auto mx-auto mb-8"
+            className="h-32 sm:h-48 md:h-56 w-auto mx-auto mb-10"
             data-testid="img-hero-logo"
           />
 
@@ -139,7 +139,7 @@ export default function Home() {
             <div className="absolute inset-0 -inset-x-[100vw] -top-6 -bottom-8 bg-white/15 backdrop-blur-[2px]" />
             
             <div className="relative">
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
                 Professional Window Tinting
                 <br />
                 <span className="text-primary">Sydney</span>
