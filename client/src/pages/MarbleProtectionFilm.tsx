@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import heroImage from "@assets/generated_images/Marble_stone_protection_service_9d639889.png";
 import marbleTexture from "@assets/generated_images/White_marble_texture_background_644270aa.png";
-import marbleTile from "@assets/image_1764066116112.png";
+import marbleTile from "@assets/image_1764066353591.png";
 
 export default function MarbleProtection() {
   const benefits = [
