@@ -90,7 +90,7 @@ export function Navigation() {
       />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <Link href="/" data-testid="link-home">
+          <Link href="/" data-testid="link-home" className="flex-shrink-0">
             <img
               src={logoUrl}
               alt="Protekt Surface Solutions"
@@ -99,59 +99,63 @@ export function Navigation() {
             />
           </Link>
 
-          <div className="hidden md:flex items-center gap-1">
-            {dropdowns.map((dropdown) => (
-              <div
-                key={dropdown.title}
-                className="relative"
-                onMouseEnter={() => setOpenDesktopDropdown(dropdown.title)}
-                onMouseLeave={() => setOpenDesktopDropdown(null)}
-              >
-                <button
-                  className="px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 text-black/90 hover:text-primary transition-colors duration-200"
-                  data-testid={`button-desktop-dropdown-${dropdown.title.toLowerCase().replace(/\s+/g, "-")}`}
+          <div className="hidden md:flex items-center justify-center flex-1">
+            <div className="flex items-center gap-1">
+              {dropdowns.map((dropdown) => (
+                <div
+                  key={dropdown.title}
+                  className="relative"
+                  onMouseEnter={() => setOpenDesktopDropdown(dropdown.title)}
+                  onMouseLeave={() => setOpenDesktopDropdown(null)}
                 >
-                  {dropdown.title}
-                  <ChevronDown className="w-4 h-4" />
-                </button>
+                  <button
+                    className="px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 text-black/90 hover:text-primary transition-colors duration-200"
+                    data-testid={`button-desktop-dropdown-${dropdown.title.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {dropdown.title}
+                    <ChevronDown className="w-4 h-4" />
+                  </button>
 
-                {openDesktopDropdown === dropdown.title && (
-                  <div className="absolute top-full left-0 pt-2 w-64">
-                    <div className="bg-gray-900/80 backdrop-blur-md border border-white/10 rounded-md shadow-lg py-2">
-                      {dropdown.items.map((item) => (
-                        <Link
-                          key={item.path}
-                          href={item.path}
-                          data-testid={`link-desktop-dropdown-${item.name.toLowerCase().replace(/\s+/g, "-")}`}
-                        >
-                          <div
-                            className={`px-4 py-2 text-sm transition-colors duration-200 ${
-                              location === item.path
-                                ? "text-primary"
-                                : "text-white/80 hover:text-primary hover:bg-white/5"
-                            }`}
+                  {openDesktopDropdown === dropdown.title && (
+                    <div className="absolute top-full left-0 pt-2 w-64">
+                      <div className="bg-gray-900/80 backdrop-blur-md border border-white/10 rounded-md shadow-lg py-2">
+                        {dropdown.items.map((item) => (
+                          <Link
+                            key={item.path}
+                            href={item.path}
+                            data-testid={`link-desktop-dropdown-${item.name.toLowerCase().replace(/\s+/g, "-")}`}
                           >
-                            {item.name}
-                          </div>
-                        </Link>
-                      ))}
+                            <div
+                              className={`px-4 py-2 text-sm transition-colors duration-200 ${
+                                location === item.path
+                                  ? "text-primary"
+                                  : "text-white/80 hover:text-primary hover:bg-white/5"
+                              }`}
+                            >
+                              {item.name}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              ))}
 
-            <Link href="/contact" data-testid="link-desktop-contact">
-              <div
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  location === "/contact" ? "text-primary" : "text-black/90 hover:text-primary"
-                }`}
-              >
-                Contact
-              </div>
-            </Link>
+              <Link href="/contact" data-testid="link-desktop-contact">
+                <div
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                    location === "/contact" ? "text-primary" : "text-black/90 hover:text-primary"
+                  }`}
+                >
+                  Contact
+                </div>
+              </Link>
+            </div>
+          </div>
 
-            <Link href="/get-quote" className="ml-2" data-testid="button-quote-desktop">
+          <div className="hidden md:flex items-center gap-2 flex-shrink-0">
+            <Link href="/get-quote" data-testid="button-quote-desktop">
               <Button
                 className="bg-primary text-primary-foreground hover-elevate active-elevate-2"
                 size="sm"
@@ -162,7 +166,7 @@ export function Navigation() {
 
             <a 
               href="tel:0286062842" 
-              className="ml-3 flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-black/90 hover:text-primary transition-colors duration-200"
+              className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-black/90 hover:text-primary transition-colors duration-200"
               data-testid="link-phone-desktop"
             >
               <Phone className="w-4 h-4" />
