@@ -295,7 +295,7 @@ export default function Home() {
                   >
                     {isMarble && (
                       <div 
-                        className="absolute inset-0 opacity-20 group-hover:opacity-10 pointer-events-none transition-opacity duration-300"
+                        className="absolute inset-0 opacity-20 group-hover:opacity-40 pointer-events-none transition-opacity duration-300"
                         style={{ 
                           backgroundImage: `url(${marbleTexture})`,
                           backgroundSize: 'cover',
@@ -305,7 +305,7 @@ export default function Home() {
                     )}
                     {isPrivacy && (
                       <div 
-                        className="absolute inset-0 opacity-30 group-hover:opacity-15 pointer-events-none transition-opacity duration-300"
+                        className="absolute inset-0 opacity-30 group-hover:opacity-60 pointer-events-none transition-opacity duration-300"
                         style={{ 
                           backgroundImage: `url(${privacyTexture})`,
                           backgroundSize: 'cover',
@@ -315,7 +315,7 @@ export default function Home() {
                     )}
                     {isProtection && (
                       <div 
-                        className="absolute inset-0 opacity-15 group-hover:opacity-[0.075] pointer-events-none transition-opacity duration-300"
+                        className="absolute inset-0 opacity-15 group-hover:opacity-30 pointer-events-none transition-opacity duration-300"
                         style={{ 
                           backgroundImage: `url(${protectionTexture})`,
                           backgroundSize: 'cover',
@@ -325,7 +325,7 @@ export default function Home() {
                     )}
                     {isUV && (
                       <div 
-                        className="absolute inset-0 opacity-15 group-hover:opacity-[0.075] pointer-events-none transition-opacity duration-300"
+                        className="absolute inset-0 opacity-15 group-hover:opacity-30 pointer-events-none transition-opacity duration-300"
                         style={{ 
                           backgroundImage: `url(${uvTexture})`,
                           backgroundSize: 'cover',
@@ -335,7 +335,7 @@ export default function Home() {
                     )}
                     {isFrosted && (
                       <div 
-                        className="absolute inset-0 opacity-20 group-hover:opacity-10 pointer-events-none transition-opacity duration-300"
+                        className="absolute inset-0 opacity-20 group-hover:opacity-40 pointer-events-none transition-opacity duration-300"
                         style={{ 
                           backgroundImage: `url(${frostedTexture})`,
                           backgroundSize: 'cover',
