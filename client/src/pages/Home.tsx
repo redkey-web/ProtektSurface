@@ -263,53 +263,53 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {services.map((service, index) => (
-              <Link key={service.path} href={service.path}>
-                <Card
-                  className="overflow-hidden hover-elevate active-elevate-2 transition-all duration-300 cursor-pointer group h-full"
-                  data-testid={`card-service-${index}`}
-                >
-                  <div className="aspect-video overflow-hidden relative">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    {service.path === "/automotive-window-tinting" && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                        <img 
-                          src={protektAutoLogo} 
-                          alt="Protekt Auto" 
-                          className="w-2/3 max-w-[280px] h-auto"
-                        />
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl sm:text-2xl font-semibold text-primary mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">
-                      {service.description}
-                    </p>
-                    {service.path === "/automotive-window-tinting" && (
-                      <a 
-                        href="https://protektauto.com.au" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-block text-sm text-primary hover:underline mb-4"
-                        data-testid="link-protekt-auto-website"
-                      >
-                        Visit protektauto.com.au
-                      </a>
-                    )}
-                    <div className="flex items-center text-primary font-medium group-hover:gap-2 transition-all">
+              <Card
+                key={service.path}
+                className="overflow-hidden hover-elevate active-elevate-2 transition-all duration-300 group h-full"
+                data-testid={`card-service-${index}`}
+              >
+                <div className="aspect-video overflow-hidden relative">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  {service.path === "/automotive-window-tinting" && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                      <img 
+                        src={protektAutoLogo} 
+                        alt="Protekt Auto" 
+                        className="w-2/3 max-w-[280px] h-auto"
+                      />
+                    </div>
+                  )}
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-primary mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">
+                    {service.description}
+                  </p>
+                  {service.path === "/automotive-window-tinting" && (
+                    <a 
+                      href="https://protektauto.com.au" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-block text-sm text-primary hover:underline mb-4"
+                      data-testid="link-protekt-auto-website"
+                    >
+                      Visit protektauto.com.au
+                    </a>
+                  )}
+                  <Link href={service.path}>
+                    <div className="flex items-center text-primary font-medium group-hover:gap-2 transition-all cursor-pointer">
                       Learn More
                       <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </div>
-                  </div>
-                </Card>
-              </Link>
+                  </Link>
+                </div>
+              </Card>
             ))}
           </div>
         </div>
