@@ -207,10 +207,11 @@ export function Footer() {
           <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
             {suppliers.map((supplier) => {
               const isLarge = supplier.name === "XPEL Ultimate" || supplier.name === "Vision Window Film";
+              const isUltimate = supplier.name === "XPEL Ultimate";
               return (
                 <div
                   key={supplier.name}
-                  className={`flex items-center justify-center ${isLarge ? "-my-4 sm:-my-6" : ""}`}
+                  className={`flex items-center justify-center ${isLarge ? "-my-4 sm:-my-6" : ""} ${isUltimate ? "ml-4 sm:ml-6" : ""}`}
                   data-testid={`supplier-logo-${supplier.name.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   <img
