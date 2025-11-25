@@ -74,13 +74,10 @@ export function Navigation() {
     setOpenMobileDropdown(openMobileDropdown === title ? null : title);
   };
 
-  const headerTranslateY = (1 - headerProgress) * -100;
+  const logoTranslateY = (1 - headerProgress) * -150;
 
   return (
-    <nav 
-      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-background/50 via-background/40 to-background/30 backdrop-blur-md border-b border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
-      style={{ transform: `translateY(${headerTranslateY}%)` }}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-background/50 via-background/40 to-background/30 backdrop-blur-md border-b border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" data-testid="link-home">
@@ -88,6 +85,7 @@ export function Navigation() {
               src={logoUrl}
               alt="Protekt Surface Solutions"
               className="h-16 sm:h-20 w-auto hover-elevate active-elevate-2 rounded-sm -my-3"
+              style={{ transform: `translateY(${logoTranslateY}%)` }}
             />
           </Link>
 
