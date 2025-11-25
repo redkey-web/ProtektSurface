@@ -23,6 +23,7 @@ import marbleTexture from "@assets/image_1764067045247.png";
 import privacyTexture from "@assets/image_1764067265072.png";
 import protectionTexture from "@assets/image_1764067354002.png";
 import uvTexture from "@assets/image_1764067444238.png";
+import frostedTexture from "@assets/image_1764067553522.png";
 
 export default function Home() {
   const filmTypes = [
@@ -285,6 +286,7 @@ export default function Home() {
               const isPrivacy = film.path === "/privacy-window-film";
               const isProtection = film.path === "/window-protection-film";
               const isUV = film.path === "/uv-blocking-film";
+              const isFrosted = film.path === "/frosted-decorative-window-film";
               return (
                 <Link key={film.path} href={film.path}>
                   <Card
@@ -326,6 +328,16 @@ export default function Home() {
                         className="absolute inset-0 opacity-15 pointer-events-none"
                         style={{ 
                           backgroundImage: `url(${uvTexture})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                        }}
+                      />
+                    )}
+                    {isFrosted && (
+                      <div 
+                        className="absolute inset-0 opacity-20 pointer-events-none"
+                        style={{ 
+                          backgroundImage: `url(${frostedTexture})`,
                           backgroundSize: 'cover',
                           backgroundPosition: 'center',
                         }}
