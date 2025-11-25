@@ -181,7 +181,7 @@ export default function Home() {
 
       <section id="services" className="relative py-16 sm:py-24 bg-background overflow-hidden">
         <div 
-          className="absolute inset-0 pointer-events-none opacity-[0.06]"
+          className="absolute inset-0 pointer-events-none opacity-[0.12]"
           style={{ 
             backgroundImage: `url(${patternImage})`,
             backgroundRepeat: 'repeat',
