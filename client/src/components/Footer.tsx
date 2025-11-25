@@ -5,6 +5,7 @@ import duraflexLogo from "@assets/image_1764065339473.png";
 import xpelCertifiedLogo from "@assets/xpel-certified-ppf-installers_1764065373300.png";
 import xpelUltimateLogo from "@assets/xpel-ultimate_1764065406968.png";
 import visionLogo from "@assets/VISION-Home-Office-Window-Tint-logo-black.png_1764065527611.webp";
+import marbleTile from "@assets/image_1764066353591.png";
 
 export function Footer() {
   const services = [
@@ -190,8 +191,16 @@ export function Footer() {
 
       </div>
 
-      <div className="bg-stone-500 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="relative bg-stone-500 py-10 overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{ 
+            backgroundImage: `url(${marbleTile})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           <h3 className="text-center text-lg font-semibold text-white mb-8">
             We Only Use Trusted Suppliers
           </h3>
