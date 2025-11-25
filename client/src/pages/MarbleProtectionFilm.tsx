@@ -2,6 +2,7 @@ import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import heroImage from "@assets/generated_images/Marble_stone_protection_service_9d639889.png";
+import marbleTexture from "@assets/generated_images/White_marble_texture_background_644270aa.png";
 import marbleTile from "@assets/image_1764066116112.png";
 
 export default function MarbleProtection() {
@@ -44,11 +45,11 @@ export default function MarbleProtection() {
 
       <section className="py-12 sm:py-20 bg-background relative overflow-hidden">
         <div 
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-10"
           style={{ 
-            backgroundImage: `url(${marbleTile})`,
-            backgroundRepeat: 'repeat',
-            backgroundSize: '400px auto',
+            backgroundImage: `url(${marbleTexture})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
           }}
         />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
@@ -98,8 +99,12 @@ export default function MarbleProtection() {
             <a href="tel:0286062842">
               <Button
                 size="lg"
-                variant="outline"
-                className="border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary transition-all duration-300"
+                className="relative overflow-hidden border-2 border-primary/30 text-gray-800 px-8 font-semibold hover:border-primary transition-all duration-300"
+                style={{
+                  backgroundImage: `url(${marbleTile})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
                 data-testid="button-get-quote"
               >
                 <Phone className="mr-2 w-5 h-5" />
