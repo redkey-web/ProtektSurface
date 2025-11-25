@@ -5,8 +5,8 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 
 ## Project Status
 **Created**: November 17, 2025
-**Last Updated**: November 17, 2025 - URL Restructure & SEO Expansion Complete
-**Status**: Phase 3 Complete + SEO Enhancement - Flat root-level URLs, 3 new high-volume keyword pages added
+**Last Updated**: November 25, 2025 - Blog Section Added
+**Status**: Phase 5 Complete - Blog with 5 SEO-optimized articles, "More" navigation dropdown
 
 ## Tech Stack
 - **Frontend**: React 18 + TypeScript + Vite
@@ -27,14 +27,16 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 ### Navigation Structure
 **Desktop Navigation:**
 - Transparent header with enlarged logo
-- Hover-based dropdown menus for Services and Film Types
-- Quiz link to Tint Selector tool
+- Hover-based dropdown menus for Services, Film Types, and More
+- More dropdown contains: About Us, Tint Selector Quiz, Blog
 - Get Quote CTA button prominently displayed
+- Contact link in main nav
 
 **Mobile Navigation:**
 - Hamburger menu with slide-in drawer
-- Accordion-style dropdowns for Services and Film Types
-- Quiz and Get Quote links accessible in drawer
+- Accordion-style dropdowns for Services, Film Types, and More
+- Contact link in drawer
+- Phone call button at bottom
 
 ### Pages & URL Structure
 
@@ -63,6 +65,15 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 1. Home - `/` - Hero with primary keyword "window tinting sydney" + Testimonials
 2. Contact - `/contact` - Contact form + Google Maps embed
 3. About - `/about` - Company information
+
+**Blog** (SEO content marketing):
+1. Blog Listing - `/blog` - All articles with excerpts and categories
+2. Individual Posts - `/blog/:slug` - Full articles with internal/external links
+   - "5 Key Benefits of Ceramic Window Tinting for Sydney Homes" (Nov 25, 2025)
+   - "Car Window Tinting Laws in NSW: What You Need to Know in 2025" (Nov 18, 2025)
+   - "How UV Blocking Window Film Protects Your Health and Home" (Nov 11, 2025)
+   - "Commercial Window Tinting: How Much Can Sydney Businesses Save on Energy?" (Nov 4, 2025)
+   - "How to Choose the Right Window Tint Shade for Your Needs" (Oct 28, 2025)
 
 **SEO Redirects** (preserves old URLs):
 - `/services/residential-window-tinting` → `/residential-window-tinting`
@@ -200,12 +211,20 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 - ✅ All hero sections updated to Phase 3 design standards
 - ✅ Breadcrumbs simplified for root-level structure
 
+**Phase 5 - Blog & Content Marketing (✅ Complete):**
+- ✅ Blog listing page (/blog) with article cards
+- ✅ Individual blog post pages (/blog/:slug)
+- ✅ 5 SEO-optimized articles with dates 1 week apart
+- ✅ Internal linking to relevant service/film type pages
+- ✅ External links to authoritative sources (open in new windows)
+- ✅ "More" dropdown in navigation (About Us, Tint Selector Quiz, Blog)
+- ✅ Breadcrumb navigation on blog pages
+
 **Future Enhancements (Not Yet Implemented):**
 - Energy Savings Calculator
 - Virtual Tint Simulator (AR/image upload)
 - Commercial Quote Builder
 - Room/Building Visualizer
-- Blog Section
 - Google Analytics Integration
 - LocalBusiness schema markup
 
