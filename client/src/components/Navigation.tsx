@@ -77,8 +77,18 @@ export function Navigation() {
   const logoTranslateY = (1 - headerProgress) * -150;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-background/50 via-background/40 to-background/30 backdrop-blur-md border-b border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      <div 
+        className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background/50 backdrop-blur-md border-b border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
+        style={{ 
+          transform: `translateY(${logoTranslateY}%)`,
+          opacity: headerProgress 
+        }}
+      />
+      <div 
+        className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-transparent"
+      />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" data-testid="link-home">
             <img
