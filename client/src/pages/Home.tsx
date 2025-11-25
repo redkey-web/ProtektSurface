@@ -139,7 +139,7 @@ export default function Home() {
             <img
               src={logoUrl}
               alt="Protekt Surface Solutions"
-              className="h-[74px] sm:h-[92px] md:h-[110px] w-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)]"
+              className="h-[74px] sm:h-[92px] md:h-[110px] w-auto"
               data-testid="img-hero-logo"
             />
           </div>

@@ -86,7 +86,7 @@ export function Navigation() {
         }}
       />
       <div 
-        className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-transparent backdrop-blur-sm"
+        className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-transparent"
       />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
