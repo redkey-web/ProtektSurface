@@ -206,6 +206,7 @@ export default function Home() {
             backgroundRepeat: 'repeat',
             backgroundSize: '300px 300px',
             backgroundPosition: '-50px -50px',
+            backgroundAttachment: 'fixed',
           }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
@@ -389,6 +390,7 @@ export default function Home() {
             backgroundRepeat: 'repeat',
             backgroundSize: '300px 300px',
             backgroundPosition: '-50px -50px',
+            backgroundAttachment: 'fixed',
           }}
         />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6">
