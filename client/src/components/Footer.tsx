@@ -208,7 +208,7 @@ export function Footer() {
             {suppliers.map((supplier) => (
               <div
                 key={supplier.name}
-                className={`flex items-center justify-center ${supplier.name === "XPEL Ultimate" ? "-mx-6 sm:-mx-8" : ""}`}
+                className={`flex items-center justify-center ${supplier.name === "XPEL Ultimate" ? "-mx-6 sm:-mx-8 -my-4 sm:-my-6" : ""}`}
                 data-testid={`supplier-logo-${supplier.name.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 <img
