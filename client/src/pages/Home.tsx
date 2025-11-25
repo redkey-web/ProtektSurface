@@ -186,7 +186,7 @@ export default function Home() {
             backgroundImage: `url(${patternImage})`,
             backgroundRepeat: 'repeat',
             backgroundSize: '150px 150px',
-            backgroundPosition: '-25px -25px',
+            backgroundPosition: '-50px -50px',
           }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
