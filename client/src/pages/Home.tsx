@@ -183,12 +183,20 @@ export default function Home() {
 
         <div className="absolute top-[186px] sm:top-[202px] left-0 right-0 z-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-center">
-            <img
-              src={logoUrl}
-              alt="Protekt Surface Solutions"
-              className="h-[74px] sm:h-[92px] md:h-[110px] w-auto"
-              data-testid="img-hero-logo"
-            />
+            <div className="relative">
+              <div 
+                className="absolute inset-0 -inset-x-12 -inset-y-6 rounded-full blur-2xl"
+                style={{
+                  background: 'radial-gradient(ellipse at center, rgba(255,250,240,0.85) 0%, rgba(255,248,235,0.6) 40%, transparent 70%)',
+                }}
+              />
+              <img
+                src={logoUrl}
+                alt="Protekt Surface Solutions"
+                className="relative h-[74px] sm:h-[92px] md:h-[110px] w-auto"
+                data-testid="img-hero-logo"
+              />
+            </div>
           </div>
         </div>
 
