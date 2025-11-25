@@ -136,7 +136,7 @@ export default function Home() {
           />
 
           <div className="relative">
-            <div className="absolute inset-0 -inset-x-[100vw] -top-6 -bottom-8 bg-white/15 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 -inset-x-[100vw] -top-6 -bottom-8 bg-white/40 backdrop-blur-[2px]" />
             
             <div className="relative">
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
