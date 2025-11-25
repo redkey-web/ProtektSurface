@@ -3,23 +3,29 @@ import { buttonVariants } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Link } from "wouter";
 
+interface FeaturedLink {
+  title: string;
+  path: string;
+  description: string;
+}
+
 interface ServiceAreaPageProps {
   suburb: string;
   postcode: string;
   description: string;
+  localInfo: string;
+  services: string[];
+  featuredLinks: FeaturedLink[];
 }
 
-export function ServiceAreaPage({ suburb, postcode, description }: ServiceAreaPageProps) {
-  const services = [
-    "Residential window tinting for homes and apartments",
-    "Commercial window tinting for offices and shopfronts",
-    "Automotive window tinting by Protekt Auto",
-    "Mobile window tinting - we come to you",
-    "Ceramic window tint installation",
-    "Privacy and decorative window films",
-    "Marble and stone protection films",
-  ];
-
+export function ServiceAreaPage({ 
+  suburb, 
+  postcode, 
+  description, 
+  localInfo, 
+  services, 
+  featuredLinks 
+}: ServiceAreaPageProps) {
   return (
     <div className="min-h-screen pt-16 sm:pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -46,12 +52,7 @@ export function ServiceAreaPage({ suburb, postcode, description }: ServiceAreaPa
               Professional Window Tinting Services in {suburb}
             </h2>
             <p className="text-base sm:text-lg text-foreground leading-relaxed mb-6">
-              Protekt Surface Solutions is proud to serve {suburb} and surrounding
-              areas with premium window tinting and surface protection services.
-              Whether you're a homeowner looking to reduce energy costs, a business
-              owner wanting to protect your commercial space, or a car owner seeking
-              professional automotive tinting, we have the expertise and quality
-              films to meet your needs.
+              {localInfo}
             </p>
             <p className="text-base sm:text-lg text-foreground leading-relaxed">
               Our experienced team serves {suburb} residents with mobile and
@@ -80,38 +81,18 @@ export function ServiceAreaPage({ suburb, postcode, description }: ServiceAreaPa
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-            <Link href="/residential-window-tinting">
-              <div className="p-6 bg-card rounded-lg border border-border hover-elevate cursor-pointer">
-                <h4 className="text-lg font-semibold text-primary mb-2">
-                  Residential
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  Home window tinting for energy efficiency and privacy
-                </p>
-              </div>
-            </Link>
-
-            <Link href="/commercial-window-tinting">
-              <div className="p-6 bg-card rounded-lg border border-border hover-elevate cursor-pointer">
-                <h4 className="text-lg font-semibold text-primary mb-2">
-                  Commercial
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  Office and retail space window film solutions
-                </p>
-              </div>
-            </Link>
-
-            <Link href="/automotive-window-tinting">
-              <div className="p-6 bg-card rounded-lg border border-border hover-elevate cursor-pointer">
-                <h4 className="text-lg font-semibold text-primary mb-2">
-                  Automotive
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  Professional car tinting by Protekt Auto
-                </p>
-              </div>
-            </Link>
+            {featuredLinks.map((link, index) => (
+              <Link key={index} href={link.path}>
+                <div className="p-6 bg-card rounded-lg border border-border hover-elevate cursor-pointer h-full">
+                  <h4 className="text-lg font-semibold text-primary mb-2">
+                    {link.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    {link.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
 
           <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">
