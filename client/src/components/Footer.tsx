@@ -190,7 +190,7 @@ export function Footer() {
 
       </div>
 
-      <div className="bg-gray-500 py-10">
+      <div className="bg-stone-500 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h3 className="text-center text-lg font-semibold text-white mb-8">
             We Only Use Trusted Suppliers
