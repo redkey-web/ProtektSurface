@@ -134,12 +134,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-gray-600/20" />
         </div>
 
-        <div className="absolute top-20 sm:top-24 left-0 right-0 z-20">
+        <div className="absolute top-2 sm:top-4 left-0 right-0 z-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <img
               src={logoUrl}
               alt="Protekt Surface Solutions"
-              className="h-16 sm:h-20 md:h-24 w-auto"
+              className="h-[74px] sm:h-[92px] md:h-[110px] w-auto"
               data-testid="img-hero-logo"
             />
           </div>
