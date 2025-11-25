@@ -75,6 +75,12 @@ export function Testimonials() {
             const opacity = tintOpacities[index % tintOpacities.length];
             const tintLabel = tintLabels[index % tintLabels.length];
             
+            const getTransform = () => {
+              if (index === 3) return 'scaleX(-1)';
+              if (index === 4) return 'rotate(90deg) scale(1.5)';
+              return 'none';
+            };
+            
             return (
               <Card
                 key={index}
@@ -88,6 +94,7 @@ export function Testimonials() {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     opacity: opacity,
+                    transform: getTransform(),
                   }}
                 />
                 <div className="absolute top-2 right-2 z-10">
