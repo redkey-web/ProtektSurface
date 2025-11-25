@@ -1,7 +1,13 @@
 import { Link } from "wouter";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Testimonials } from "@/components/Testimonials";
 import heroImage from "@assets/generated_images/Hero_background_residential_interior_2b09e675.png";
 import residentialImage from "@assets/generated_images/Residential_window_tinting_service_4f42a2a0.png";
@@ -11,6 +17,72 @@ import marbleImage from "@assets/generated_images/Marble_stone_protection_servic
 import logoUrl from "@assets/Untitled+(500+x+210+px).png_1763361350526.webp";
 
 export default function Home() {
+  const filmTypes = [
+    {
+      title: "Ceramic Window Tint",
+      description: "Premium nano-ceramic technology for superior heat rejection without signal interference.",
+      icon: Gem,
+      path: "/ceramic-window-tint",
+    },
+    {
+      title: "Privacy Window Film",
+      description: "Elegant one-way privacy solutions that maintain natural light while blocking outside views.",
+      icon: Eye,
+      path: "/privacy-window-film",
+    },
+    {
+      title: "UV Blocking Film",
+      description: "Block 99% of harmful UV rays to protect your skin, furniture, and flooring from sun damage.",
+      icon: Sun,
+      path: "/uv-blocking-film",
+    },
+    {
+      title: "Window Protection Film",
+      description: "Invisible strength that holds glass together on impact, enhancing safety and security.",
+      icon: Shield,
+      path: "/window-protection-film",
+    },
+    {
+      title: "Frosted & Decorative Film",
+      description: "Transform plain glass into elegant design features with etched glass and decorative patterns.",
+      icon: Sparkles,
+      path: "/frosted-decorative-window-film",
+    },
+    {
+      title: "Marble Protection Film",
+      description: "Invisible protective films for natural stone surfaces, preventing stains and etching.",
+      icon: Lock,
+      path: "/marble-protection-film",
+    },
+  ];
+
+  const faqs = [
+    {
+      question: "How long does window tinting installation take?",
+      answer: "Most residential window tinting jobs are completed within 2-4 hours. Commercial projects may take 1-2 days depending on the size of the building. Automotive window tinting typically takes 1-3 hours depending on the vehicle type.",
+    },
+    {
+      question: "What is the difference between ceramic and carbon window tint?",
+      answer: "Ceramic window tint uses advanced nano-ceramic particles that provide superior heat rejection (up to 96% infrared blocking) without interfering with electronic signals. Carbon tint is more affordable and offers good heat reduction and UV protection, but ceramic provides better overall performance and clarity.",
+    },
+    {
+      question: "How long does window tint last?",
+      answer: "Quality window tint films installed by professionals typically last 15-25 years. Our premium ceramic and carbon films come with lifetime warranties, ensuring long-lasting performance and peace of mind.",
+    },
+    {
+      question: "Will window tinting make my home too dark?",
+      answer: "Not at all! Modern window films come in various shades from nearly clear to darker tints. We'll help you choose a film that reduces heat and glare while maintaining your desired level of natural light. Many of our films reject heat without significantly darkening your windows.",
+    },
+    {
+      question: "Is window tinting legal for cars in NSW?",
+      answer: "Yes, window tinting is legal in NSW with certain restrictions. The front windscreen must allow at least 75% of light through, front side windows must allow at least 35% light transmission, and there are no restrictions on rear windows. We ensure all our automotive installations comply with NSW regulations.",
+    },
+    {
+      question: "Do you offer warranties on your window tinting?",
+      answer: "Yes! We offer comprehensive warranties on all our window tinting services. Our premium ceramic films come with lifetime warranties covering bubbling, peeling, cracking, and discoloration. We stand behind the quality of our work and materials.",
+    },
+  ];
+
   const services = [
     {
       title: "Residential Window Tinting",
@@ -149,6 +221,70 @@ export default function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-24 bg-card">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
+              Our Film Types
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              We offer a comprehensive range of premium window films to meet every need - from heat rejection to privacy, UV protection to decorative solutions
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filmTypes.map((film, index) => (
+              <Link key={film.path} href={film.path}>
+                <Card
+                  className="p-6 h-full hover-elevate active-elevate-2 transition-all duration-300 cursor-pointer group"
+                  data-testid={`card-film-type-${index}`}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                      <film.icon className="w-6 h-6" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                        {film.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {film.description}
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-24 bg-background">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Got questions about window tinting? We've got answers
+            </p>
+          </div>
+
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`faq-${index}`} data-testid={`accordion-faq-${index}`}>
+                <AccordionTrigger className="text-left text-base sm:text-lg font-medium hover:text-primary transition-colors">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
