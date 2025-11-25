@@ -2,7 +2,6 @@ import { Check, Phone, Zap, Shield, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
-import { InteractiveTintSlider } from "@/components/InteractiveTintSlider";
 import { HeatMapVisualization } from "@/components/HeatMapVisualization";
 import heroImage from "@assets/generated_images/Ceramic_window_tint_technology_097ec1d8.png";
 import beforeImage from "@assets/generated_images/Car_interior_before_tinting_a38c6703.png";
@@ -131,12 +130,7 @@ export default function CeramicWindowTint() {
             />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12 sm:mb-16">
-            <InteractiveTintSlider
-              demoImage={beforeImage}
-              title="Try Different Tint Levels"
-              description="Adjust the slider to see how different tint percentages look"
-            />
+          <div className="mb-12 sm:mb-16">
             <HeatMapVisualization />
           </div>
 

@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Thermometer } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
@@ -11,15 +10,6 @@ export function HeatMapVisualization({
   title = "Heat Rejection Technology",
   description = "See how ceramic tint dramatically reduces interior heat" 
 }: HeatMapVisualizationProps) {
-  const [showCooling, setShowCooling] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowCooling(prev => !prev);
-    }, 3500);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <Card className="overflow-hidden" data-testid="card-heat-map">
       <div className="p-6">
@@ -47,9 +37,9 @@ export function HeatMapVisualization({
               </svg>
             </div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-background/90 backdrop-blur-sm px-4 py-2 rounded-md">
+              <div className="bg-background/90 backdrop-blur-sm px-4 py-2 rounded-md text-center">
                 <p className="text-2xl font-bold text-red-500">38°C</p>
-                <p className="text-xs text-muted-foreground text-center">Without Tint</p>
+                <p className="text-xs text-muted-foreground">Without Tint</p>
               </div>
             </div>
           </div>
@@ -57,12 +47,7 @@ export function HeatMapVisualization({
           <div className="relative aspect-square rounded-lg overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center">
               <svg viewBox="0 0 200 200" className="w-full h-full">
-                <rect 
-                  width="200" 
-                  height="200" 
-                  fill={showCooling ? "url(#coolGradient)" : "url(#transitionGradient)"} 
-                  className="transition-all duration-1000"
-                />
+                <rect width="200" height="200" fill="url(#coolGradient)" />
                 <defs>
                   <radialGradient id="coolGradient">
                     <stop offset="0%" stopColor="#4488FF" />
@@ -70,22 +55,13 @@ export function HeatMapVisualization({
                     <stop offset="70%" stopColor="#88BBFF" />
                     <stop offset="100%" stopColor="#AACCFF" />
                   </radialGradient>
-                  <radialGradient id="transitionGradient">
-                    <stop offset="0%" stopColor="#FF8844" />
-                    <stop offset="50%" stopColor="#FFAA66" />
-                    <stop offset="100%" stopColor="#88BBFF" />
-                  </radialGradient>
                 </defs>
               </svg>
             </div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-background/90 backdrop-blur-sm px-4 py-2 rounded-md">
-                <p className={`text-2xl font-bold transition-colors duration-1000 ${
-                  showCooling ? 'text-blue-500' : 'text-orange-500'
-                }`}>
-                  {showCooling ? '24°C' : '31°C'}
-                </p>
-                <p className="text-xs text-muted-foreground text-center">With Ceramic Tint</p>
+              <div className="bg-background/90 backdrop-blur-sm px-4 py-2 rounded-md text-center">
+                <p className="text-2xl font-bold text-blue-500">24°C</p>
+                <p className="text-xs text-muted-foreground">With Ceramic Tint</p>
               </div>
             </div>
           </div>
