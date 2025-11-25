@@ -20,6 +20,7 @@ import logoUrl from "@assets/Untitled+(500+x+210+px).png_1763361350526.webp";
 import patternImage from "@assets/protekt_icon_pattern_600_1764034694000.png";
 import protektAutoLogo from "@assets/image_1764039173355.png";
 import marbleTexture from "@assets/image_1764067045247.png";
+import privacyTexture from "@assets/image_1764067265072.png";
 
 export default function Home() {
   const filmTypes = [
@@ -279,6 +280,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filmTypes.map((film, index) => {
               const isMarble = film.path === "/marble-protection-film";
+              const isPrivacy = film.path === "/privacy-window-film";
               return (
                 <Link key={film.path} href={film.path}>
                   <Card
@@ -290,6 +292,16 @@ export default function Home() {
                         className="absolute inset-0 opacity-20 pointer-events-none"
                         style={{ 
                           backgroundImage: `url(${marbleTexture})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                        }}
+                      />
+                    )}
+                    {isPrivacy && (
+                      <div 
+                        className="absolute inset-0 opacity-30 pointer-events-none"
+                        style={{ 
+                          backgroundImage: `url(${privacyTexture})`,
                           backgroundSize: 'cover',
                           backgroundPosition: 'center',
                         }}
