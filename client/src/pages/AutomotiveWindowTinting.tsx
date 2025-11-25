@@ -1,7 +1,7 @@
 import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import heroImage from "@assets/generated_images/car_window_tinting_service.png";
+import heroImage from "@assets/ppf wrap 1_1764071517320.webp";
 import protektAutoLogo from "@assets/Protekt Logo_1761708306237_1763380244480.webp";
 
 export default function AutomotiveWindowTinting() {
