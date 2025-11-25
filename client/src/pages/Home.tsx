@@ -240,6 +240,18 @@ export default function Home() {
                     <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">
                       {service.description}
                     </p>
+                    {service.path === "/automotive-window-tinting" && (
+                      <a 
+                        href="https://protektauto.com.au" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-block text-sm text-primary hover:underline mb-4"
+                        data-testid="link-protekt-auto-website"
+                      >
+                        Visit protektauto.com.au
+                      </a>
+                    )}
                     <div className="flex items-center text-primary font-medium group-hover:gap-2 transition-all">
                       Learn More
                       <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
