@@ -1,10 +1,28 @@
 import { Check, Phone } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import heroImage from "@assets/ppf wrap 1_1764071517320.webp";
 import protektAutoLogo from "@assets/Protekt Logo_1761708306237_1763380244480.webp";
+import galleryImg1 from "@assets/car Window tinting_1764072867159.jpg";
+import galleryImg2 from "@assets/image_1764072903074.png";
+import galleryImg3 from "@assets/image_1764072959295.png";
+import galleryImg4 from "@assets/image_1764072998094.png";
+import galleryImg5 from "@assets/image_1764073028217.png";
+import galleryImg6 from "@assets/image_1764073133471.png";
 
 export default function AutomotiveWindowTinting() {
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  
+  const galleryImages = [
+    { src: galleryImg1, alt: "Black Ford Mustang with professional window tinting" },
+    { src: galleryImg2, alt: "RAM truck with ceramic window tint in workshop" },
+    { src: galleryImg3, alt: "White Tesla Model Y with tinted windows" },
+    { src: galleryImg4, alt: "Protekt technician working on Volvo XC60" },
+    { src: galleryImg5, alt: "White Toyota Camry Hybrid with window tinting" },
+    { src: galleryImg6, alt: "Toyota Camry Hybrid rear view in workshop" },
+  ];
+
   const benefits = [
     "Reduce cabin heat by up to 60%",
     "Block 99% of harmful UV rays",
@@ -89,6 +107,28 @@ export default function AutomotiveWindowTinting() {
             </div>
           </div>
 
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">
+              Our Work
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+              {galleryImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer hover-elevate active-elevate-2 transition-all duration-300"
+                  onClick={() => setLightboxImage(image.src)}
+                  data-testid={`gallery-image-${index}`}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">
             <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
               Get professional car window tinting today
@@ -111,6 +151,28 @@ export default function AutomotiveWindowTinting() {
           </div>
         </div>
       </section>
+
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setLightboxImage(null)}
+          data-testid="lightbox-overlay"
+        >
+          <img
+            src={lightboxImage}
+            alt="Gallery image enlarged"
+            className="max-w-full max-h-full object-contain rounded-lg"
+            data-testid="lightbox-image"
+          />
+          <button
+            className="absolute top-4 right-4 text-white text-4xl font-light hover:text-primary transition-colors"
+            onClick={() => setLightboxImage(null)}
+            data-testid="lightbox-close"
+          >
+            ×
+          </button>
+        </div>
+      )}
     </div>
   );
 }
