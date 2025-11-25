@@ -235,7 +235,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-muted">
+      <section className="py-16 sm:py-24 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
@@ -250,7 +250,7 @@ export default function Home() {
             {filmTypes.map((film, index) => (
               <Link key={film.path} href={film.path}>
                 <Card
-                  className="p-6 h-full hover-elevate active-elevate-2 transition-all duration-300 cursor-pointer group"
+                  className="p-6 h-full hover-elevate active-elevate-2 transition-all duration-300 cursor-pointer group bg-muted"
                   data-testid={`card-film-type-${index}`}
                 >
                   <div className="flex items-start gap-4">
