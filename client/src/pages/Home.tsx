@@ -15,6 +15,7 @@ import commercialImage from "@assets/generated_images/Commercial_window_tinting_
 import frostedImage from "@assets/generated_images/Decorative_frosted_film_service_185776ce.png";
 import marbleImage from "@assets/generated_images/Marble_stone_protection_service_9d639889.png";
 import logoUrl from "@assets/Untitled+(500+x+210+px).png_1763361350526.webp";
+import patternImage from "@assets/protekt_icon_pattern_600_1764034694000.png";
 
 export default function Home() {
   const filmTypes = [
@@ -123,6 +124,17 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/40 to-background/55" />
         </div>
+        
+        <div 
+          className="absolute inset-x-0 top-0 h-1/3 pointer-events-none"
+          style={{ 
+            backgroundImage: `url(${patternImage})`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '200px',
+            maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.08) 50%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.08) 50%, transparent 100%)',
+          }}
+        />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-20">
           <img
