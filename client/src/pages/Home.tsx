@@ -280,8 +280,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="relative py-16 sm:py-24 bg-background overflow-hidden">
+        <div 
+          className="absolute inset-0 pointer-events-none opacity-[0.12]"
+          style={{ 
+            backgroundImage: `url(${patternImage})`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '150px 150px',
+            backgroundPosition: '-50px -50px',
+          }}
+        />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
               Frequently Asked Questions
