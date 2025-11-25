@@ -135,7 +135,7 @@ export default function Home() {
         </div>
 
         <div className="absolute top-7 sm:top-9 left-0 right-0 z-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-center">
             <img
               src={logoUrl}
               alt="Protekt Surface Solutions"
