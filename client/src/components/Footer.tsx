@@ -208,13 +208,13 @@ export function Footer() {
             {suppliers.map((supplier) => (
               <div
                 key={supplier.name}
-                className={`flex items-center justify-center ${supplier.name === "XPEL Ultimate" ? "-mx-6 sm:-mx-8 -my-4 sm:-my-6" : ""}`}
+                className={`flex items-center justify-center ${supplier.name === "XPEL Ultimate" ? "-my-4 sm:-my-6" : ""}`}
                 data-testid={`supplier-logo-${supplier.name.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 <img
                   src={supplier.logo}
                   alt={supplier.name}
-                  className="h-12 sm:h-16 w-auto object-contain"
+                  className={supplier.name === "XPEL Ultimate" ? "h-20 sm:h-28 w-auto object-contain" : "h-12 sm:h-16 w-auto object-contain"}
                 />
               </div>
             ))}
