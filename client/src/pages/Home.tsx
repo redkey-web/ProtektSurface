@@ -204,7 +204,7 @@ export default function Home() {
           style={{ 
             backgroundImage: `url(${patternImage})`,
             backgroundRepeat: 'repeat',
-            backgroundSize: '150px 150px',
+            backgroundSize: '300px 300px',
             backgroundPosition: '-50px -50px',
           }}
         />
@@ -387,7 +387,7 @@ export default function Home() {
           style={{ 
             backgroundImage: `url(${patternImage})`,
             backgroundRepeat: 'repeat',
-            backgroundSize: '150px 150px',
+            backgroundSize: '300px 300px',
             backgroundPosition: '-50px -50px',
           }}
         />
