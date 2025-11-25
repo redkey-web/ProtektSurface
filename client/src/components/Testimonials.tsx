@@ -71,9 +71,7 @@ export function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => {
             const tintOpacities = [0.08, 0.15, 0.22, 0.30, 0.40, 0.50];
-            const tintLabels = ["5% Light", "15% Light-Medium", "25% Medium", "35% Medium-Dark", "50% Dark", "70% Extra Dark"];
             const opacity = tintOpacities[index % tintOpacities.length];
-            const tintLabel = tintLabels[index % tintLabels.length];
             
             const getTransform = () => {
               if (index === 3) return 'scaleX(-1)';
@@ -97,11 +95,6 @@ export function Testimonials() {
                     transform: getTransform(),
                   }}
                 />
-                <div className="absolute top-2 right-2 z-10">
-                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-foreground/10 text-muted-foreground font-medium">
-                    {tintLabel}
-                  </span>
-                </div>
                 <div className="relative z-10">
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
