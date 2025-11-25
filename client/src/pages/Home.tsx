@@ -19,6 +19,7 @@ import windowTintImage from "@assets/window tint_1764036010561.webp";
 import logoUrl from "@assets/Untitled+(500+x+210+px).png_1763361350526.webp";
 import patternImage from "@assets/protekt_icon_pattern_600_1764034694000.png";
 import protektAutoLogo from "@assets/image_1764039173355.png";
+import marbleTexture from "@assets/image_1764067045247.png";
 
 export default function Home() {
   const filmTypes = [
@@ -276,28 +277,41 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filmTypes.map((film, index) => (
-              <Link key={film.path} href={film.path}>
-                <Card
-                  className="p-6 h-full hover-elevate active-elevate-2 transition-all duration-300 cursor-pointer group bg-muted"
-                  data-testid={`card-film-type-${index}`}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                      <film.icon className="w-6 h-6" />
+            {filmTypes.map((film, index) => {
+              const isMarble = film.path === "/marble-protection-film";
+              return (
+                <Link key={film.path} href={film.path}>
+                  <Card
+                    className="p-6 h-full hover-elevate active-elevate-2 transition-all duration-300 cursor-pointer group bg-muted relative overflow-hidden"
+                    data-testid={`card-film-type-${index}`}
+                  >
+                    {isMarble && (
+                      <div 
+                        className="absolute inset-0 opacity-20 pointer-events-none"
+                        style={{ 
+                          backgroundImage: `url(${marbleTexture})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                        }}
+                      />
+                    )}
+                    <div className="relative flex items-start gap-4">
+                      <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                        <film.icon className="w-6 h-6" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                          {film.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {film.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                        {film.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {film.description}
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              </Link>
-            ))}
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
