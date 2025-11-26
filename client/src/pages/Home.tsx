@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Testimonials } from "@/components/Testimonials";
+import { OurProcess } from "@/components/OurProcess";
 import heroImage from "@assets/generated_images/Hero_background_residential_interior_2b09e675.png";
 import residentialImage from "@assets/generated_images/Residential_window_tinting_service_4f42a2a0.png";
 import commercialImage from "@assets/generated_images/Commercial_window_tinting_service_1caab67d.png";
@@ -421,6 +422,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <OurProcess />
 
       <section className="relative py-16 sm:py-24 bg-background overflow-hidden">
         <div 

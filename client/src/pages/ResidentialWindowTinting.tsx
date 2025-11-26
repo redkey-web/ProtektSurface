@@ -2,6 +2,7 @@ import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { OurProcess } from "@/components/OurProcess";
 import heroImage from "@assets/generated_images/Residential_window_tinting_service_4f42a2a0.png";
 import livingRoomImage from "@assets/generated_images/living_room_tinted_windows.png";
 import bedroomImage from "@assets/generated_images/bedroom_privacy_window_film.png";
@@ -147,6 +148,13 @@ export default function ResidentialWindowTint() {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      <OurProcess showCTA={false} />
+
+      <section className="py-12 sm:py-16 bg-background">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">
             <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
               Ready to enhance your home?

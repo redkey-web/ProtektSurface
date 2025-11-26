@@ -2,6 +2,7 @@ import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { OurProcess } from "@/components/OurProcess";
 import heroImage from "@assets/generated_images/Commercial_window_tinting_service_1caab67d.png";
 import officeInteriorImage from "@assets/generated_images/office_interior_tinted_windows.png";
 import buildingExteriorImage from "@assets/generated_images/commercial_building_exterior_tinted.png";
@@ -150,6 +151,13 @@ export default function CommercialWindowTint() {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      <OurProcess showCTA={false} />
+
+      <section className="py-12 sm:py-16 bg-background">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">
             <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
               Upgrade your commercial space

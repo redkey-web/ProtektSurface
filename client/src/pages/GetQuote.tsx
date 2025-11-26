@@ -1,6 +1,7 @@
 import { Phone, Mail, Clock } from "lucide-react";
 import { QuoteRequestForm } from "@/components/QuoteRequestForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { OurProcess } from "@/components/OurProcess";
 
 export default function GetQuote() {
   return (
@@ -56,6 +57,10 @@ export default function GetQuote() {
           <QuoteRequestForm />
         </div>
       </section>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <OurProcess compact showCTA={false} />
+      </div>
     </div>
   );
 }
