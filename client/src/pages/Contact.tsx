@@ -122,6 +122,11 @@ export default function Contact() {
                 title="Protekt Surface Solutions Location"
               />
             </div>
+            <div className="mt-4 p-4 bg-muted rounded-lg border border-border" data-testid="map-note">
+              <p className="text-sm text-muted-foreground">
+                <strong className="text-foreground">Note:</strong> For residential and commercial enquiries, please call us or submit an enquiry to arrange an on-site inspection and meeting. Our team will come to you to assess your requirements and provide an accurate quote.
+              </p>
+            </div>
           </div>
 
           <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">
