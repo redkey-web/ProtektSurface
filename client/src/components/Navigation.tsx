@@ -77,13 +77,14 @@ export function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      <div 
-        className="absolute inset-0 bg-background border-b border-border"
-        style={{ 
-          transform: `translateY(${logoTranslateY}%)`,
-          opacity: headerProgress 
-        }}
-      />
+      {headerProgress > 0 && (
+        <div 
+          className="absolute inset-0 bg-background border-b border-border"
+          style={{ 
+            opacity: headerProgress 
+          }}
+        />
+      )}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" data-testid="link-home" className="flex-shrink-0">
