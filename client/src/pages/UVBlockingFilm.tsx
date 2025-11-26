@@ -1,6 +1,8 @@
-import { Check, Phone, Sun, Shield, Home } from "lucide-react";
+import { Check, Phone, Sun, Shield, Home, Zap, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Link } from "wouter";
 import heroImage from "@assets/generated_images/UV_blocking_window_film_025b3425.png";
 
 export default function UVBlockingFilm() {
@@ -59,6 +61,67 @@ export default function UVBlockingFilm() {
               reducing cooling costs by rejecting solar heat.
             </p>
           </div>
+
+          <Card className="bg-primary/10 border-primary/20 p-6 sm:p-8 mb-12" data-testid="card-film-comparison">
+            <div className="flex items-start gap-4">
+              <div className="p-3 bg-primary/20 rounded-lg flex-shrink-0">
+                <Sun className="w-8 h-8 text-primary" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
+                  All Our Films Block 99% UV Rays
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Every window film we install provides the same exceptional 99% UV protection. 
+                  Where our films differ is in their <strong className="text-foreground">Solar Energy Rejection</strong> and{" "}
+                  <strong className="text-foreground">Infrared Blocking</strong> capabilities—key factors 
+                  that determine how much heat enters your space.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                  <div className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-medium text-foreground">Standard Films</span>
+                      <p className="text-sm text-muted-foreground">99% UV blocking with good solar rejection</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Zap className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-medium text-foreground">Ceramic Films</span>
+                      <p className="text-sm text-muted-foreground">99% UV + best solar & infrared rejection</p>
+                    </div>
+                  </div>
+                </div>
+                <Link href="/ceramic-window-tint">
+                  <Button variant="default" className="group" data-testid="button-ceramic-link">
+                    Explore Ceramic Window Tint
+                    <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="border-primary bg-gradient-to-br from-primary/5 to-primary/10 p-6 sm:p-8 mb-12" data-testid="card-ceramic-upgrade">
+            <div className="text-center">
+              <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
+                Want Maximum Heat Protection?
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-6 max-w-2xl mx-auto">
+                While all our films block 99% of UV rays, our <strong className="text-foreground">Ceramic Window Tint</strong> offers 
+                the highest solar energy rejection (up to 70%) and superior infrared blocking. This means significantly 
+                cooler interiors and lower energy bills—without sacrificing visibility or clarity.
+              </p>
+              <Link href="/ceramic-window-tint">
+                <Button size="lg" className="group" data-testid="button-upgrade-ceramic">
+                  Discover Ceramic Technology
+                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+            </div>
+          </Card>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <div className="flex flex-col items-center text-center p-6 rounded-md hover-elevate">
