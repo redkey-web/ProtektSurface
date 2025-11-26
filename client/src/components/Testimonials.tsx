@@ -11,7 +11,13 @@ interface Testimonial {
 }
 
 const testimonials: Testimonial[] = [
-  // Add reviews directly from Google Business profile for Protekt Surface Solutions (Sydney) here
+  {
+    name: "Sarah Pantaleo",
+    location: "Sydney",
+    service: "Window Tinting & Coating",
+    rating: 5,
+    text: "Andy is fantastic at what he does! He's very friendly, professional, and always makes sure the job is done right. I've been so impressed with his attention to detail and the quality of his work. Highly recommend Protekt Surface Solutions if you want reliable service and great results!",
+  },
 ];
 
 export function Testimonials() {
