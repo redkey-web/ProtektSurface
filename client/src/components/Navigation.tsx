@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, ChevronDown, Phone } from "lucide-react";
+import { Menu, X, ChevronDown, Phone, Home, Car, Building2, Layers, MessageSquare, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoUrl from "@assets/Untitled+(500+x+210+px).png_1763361350526.webp";
 
@@ -187,77 +187,121 @@ export function Navigation() {
       </div>
 
       <div
-        className={`md:hidden fixed inset-y-0 right-0 w-full sm:w-80 bg-background border-l border-border transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed inset-y-0 right-0 w-full sm:w-96 bg-background border-l border-border transform transition-transform duration-300 ease-in-out z-50 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col h-full pt-20 pb-6 px-6 overflow-y-auto">
-          <div className="flex flex-col gap-2">
-            {dropdowns.map((dropdown) => (
-              <div key={dropdown.title}>
-                <button
-                  onClick={() => toggleMobileDropdown(dropdown.title)}
-                  className="w-full px-4 py-3 rounded-md text-base font-medium flex items-center justify-between hover-elevate active-elevate-2"
-                  data-testid={`button-mobile-dropdown-${dropdown.title.toLowerCase().replace(/\s+/g, "-")}`}
-                >
-                  {dropdown.title}
-                  <ChevronDown
-                    className={`w-5 h-5 transition-transform ${
-                      openMobileDropdown === dropdown.title ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {openMobileDropdown === dropdown.title && (
-                  <div className="mt-1 ml-4 flex flex-col gap-1">
-                    {dropdown.items.map((item) => (
-                      <Link
-                        key={item.path}
-                        href={item.path}
-                        onClick={() => setIsOpen(false)}
-                        data-testid={`link-mobile-dropdown-${item.name.toLowerCase().replace(/\s+/g, "-")}`}
-                      >
-                        <div
-                          className={`px-4 py-2 rounded-md text-sm hover-elevate active-elevate-2 ${
-                            location === item.path
-                              ? "bg-primary/10 text-primary"
-                              : "text-foreground/80"
-                          }`}
-                        >
-                          {item.name}
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-
-            <Link
-              href="/contact"
+        <div className="flex flex-col h-full">
+          {/* Header with close button */}
+          <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+            <span className="text-lg font-semibold text-foreground">Menu</span>
+            <button
               onClick={() => setIsOpen(false)}
-              data-testid="link-mobile-contact"
+              className="p-2 rounded-md hover-elevate active-elevate-2"
+              aria-label="Close menu"
+              data-testid="button-close-mobile-menu"
             >
-              <div
-                className={`px-4 py-3 rounded-md text-base font-medium hover-elevate active-elevate-2 ${
-                  location === "/contact" ? "bg-primary/10 text-primary" : "text-foreground"
-                }`}
-              >
-                Contact
-              </div>
-            </Link>
+              <X className="w-6 h-6 text-foreground" />
+            </button>
           </div>
 
-          <div className="mt-auto pt-8">
+          {/* Scrollable content */}
+          <div className="flex-1 overflow-y-auto px-4 py-4">
+            <div className="flex flex-col gap-1">
+              {dropdowns.map((dropdown, dropdownIndex) => (
+                <div key={dropdown.title}>
+                  <button
+                    onClick={() => toggleMobileDropdown(dropdown.title)}
+                    className="w-full px-4 py-4 rounded-lg text-base font-semibold flex items-center justify-between hover-elevate active-elevate-2 text-foreground"
+                    data-testid={`button-mobile-dropdown-${dropdown.title.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    <span className="flex items-center gap-3">
+                      {dropdown.title === "Services" && <Home className="w-5 h-5 text-primary" />}
+                      {dropdown.title === "Film Types" && <Layers className="w-5 h-5 text-primary" />}
+                      {dropdown.title === "More" && <FileText className="w-5 h-5 text-primary" />}
+                      {dropdown.title}
+                    </span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${
+                        openMobileDropdown === dropdown.title ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  <div 
+                    className={`overflow-hidden transition-all duration-200 ease-in-out ${
+                      openMobileDropdown === dropdown.title ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="ml-8 mr-2 py-2 flex flex-col gap-1 border-l-2 border-primary/20 pl-4">
+                      {dropdown.items.map((item) => (
+                        <Link
+                          key={item.path}
+                          href={item.path}
+                          onClick={() => setIsOpen(false)}
+                          data-testid={`link-mobile-dropdown-${item.name.toLowerCase().replace(/\s+/g, "-")}`}
+                        >
+                          <div
+                            className={`px-3 py-3 rounded-md text-base transition-colors duration-150 ${
+                              location === item.path
+                                ? "bg-primary/10 text-primary font-medium"
+                                : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                            }`}
+                          >
+                            {item.name}
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  {dropdownIndex < dropdowns.length - 1 && (
+                    <div className="mx-4 my-1 border-b border-border/50" />
+                  )}
+                </div>
+              ))}
+
+              <div className="mx-4 my-1 border-b border-border/50" />
+
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                data-testid="link-mobile-contact"
+              >
+                <div
+                  className={`px-4 py-4 rounded-lg text-base font-semibold flex items-center gap-3 hover-elevate active-elevate-2 ${
+                    location === "/contact" ? "bg-primary/10 text-primary" : "text-foreground"
+                  }`}
+                >
+                  <MessageSquare className="w-5 h-5 text-primary" />
+                  Contact
+                </div>
+              </Link>
+            </div>
+          </div>
+
+          {/* Footer with CTAs */}
+          <div className="px-4 py-4 border-t border-border bg-muted/30 space-y-3">
+            <Link href="/get-quote" onClick={() => setIsOpen(false)}>
+              <Button
+                className="w-full bg-primary text-primary-foreground"
+                size="lg"
+                data-testid="button-mobile-get-quote"
+              >
+                Get a Free Quote
+              </Button>
+            </Link>
             <a
               href="tel:0286062842"
               className="block"
               data-testid="button-call-nav"
             >
               <Button
-                className="w-full bg-primary text-primary-foreground hover-elevate active-elevate-2"
+                variant="outline"
+                className="w-full border-primary/30 text-foreground"
                 size="lg"
               >
+                <Phone className="w-4 h-4 mr-2" />
                 (02) 8606 2842
               </Button>
             </a>
