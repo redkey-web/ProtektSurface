@@ -33,6 +33,7 @@ import QuoteEstimator from "@/pages/QuoteEstimator";
 import TintSelector from "@/pages/TintSelector";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
+import AuthorDavidTrieu from "@/pages/AuthorDavidTrieu";
 import Granville from "@/pages/ServiceAreas/Granville";
 import Auburn from "@/pages/ServiceAreas/Auburn";
 import Parramatta from "@/pages/ServiceAreas/Parramatta";
@@ -85,6 +86,9 @@ function Router() {
         {/* Blog Pages */}
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
+        
+        {/* Author Pages */}
+        <Route path="/author/david-trieu" component={AuthorDavidTrieu} />
         
         {/* Service Area Pages */}
         <Route path="/service-areas/granville" component={Granville} />
