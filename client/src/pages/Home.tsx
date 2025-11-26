@@ -182,26 +182,24 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute top-[186px] sm:top-[202px] left-0 right-0 z-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-center">
-            <img
-              src={logoUrl}
-              alt="Protekt Surface Solutions"
-              className="h-[89px] sm:h-[110px] md:h-[132px] w-auto"
-              style={{
-                filter: 'drop-shadow(0 0 3px rgba(255,250,240,0.45)) drop-shadow(0 0 1px rgba(255,248,235,0.35))',
-              }}
-              data-testid="img-hero-logo"
-            />
-          </div>
-        </div>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-20">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-16 sm:py-20">
           <div className="relative">
             <div className="absolute inset-0 -inset-x-[100vw] -top-6 -bottom-8 bg-white/40 backdrop-blur-[2px]" />
             
             <div className="relative">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black mb-6 leading-tight">
+              <div className="flex justify-center mb-4 sm:mb-6">
+                <img
+                  src={logoUrl}
+                  alt="Protekt Surface Solutions"
+                  className="h-[70px] sm:h-[90px] md:h-[110px] w-auto"
+                  style={{
+                    filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))',
+                  }}
+                  data-testid="img-hero-logo"
+                />
+              </div>
+              
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 sm:mb-6 leading-tight">
                 Professional Window Tinting
                 <br />
                 <span className="text-primary">Sydney</span>
