@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { ArrowRight, Calendar, Clock, User } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
@@ -10,6 +10,8 @@ export interface BlogPost {
   date: string;
   readTime: string;
   category: string;
+  author: string;
+  authorSlug: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -20,6 +22,8 @@ export const blogPosts: BlogPost[] = [
     date: "2025-11-25",
     readTime: "6 min read",
     category: "Residential",
+    author: "David Trieu",
+    authorSlug: "david-trieu",
   },
   {
     slug: "car-window-tinting-laws-nsw-guide",
@@ -28,6 +32,8 @@ export const blogPosts: BlogPost[] = [
     date: "2025-11-18",
     readTime: "5 min read",
     category: "Automotive",
+    author: "David Trieu",
+    authorSlug: "david-trieu",
   },
   {
     slug: "uv-protection-window-film-health-benefits",
@@ -36,6 +42,8 @@ export const blogPosts: BlogPost[] = [
     date: "2025-11-11",
     readTime: "7 min read",
     category: "Health & Safety",
+    author: "David Trieu",
+    authorSlug: "david-trieu",
   },
   {
     slug: "commercial-window-tinting-energy-savings",
@@ -44,6 +52,8 @@ export const blogPosts: BlogPost[] = [
     date: "2025-11-04",
     readTime: "6 min read",
     category: "Commercial",
+    author: "David Trieu",
+    authorSlug: "david-trieu",
   },
   {
     slug: "choosing-right-window-tint-shade-guide",
@@ -52,6 +62,8 @@ export const blogPosts: BlogPost[] = [
     date: "2025-10-28",
     readTime: "8 min read",
     category: "Guide",
+    author: "David Trieu",
+    authorSlug: "david-trieu",
   },
 ];
 
@@ -103,7 +115,11 @@ export default function Blog() {
                       <p className="text-muted-foreground mb-4 leading-relaxed">
                         {post.excerpt}
                       </p>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+                        <span className="flex items-center gap-1">
+                          <User className="w-4 h-4" />
+                          {post.author}
+                        </span>
                         <span className="flex items-center gap-1">
                           <Calendar className="w-4 h-4" />
                           {formatDate(post.date)}

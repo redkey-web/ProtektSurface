@@ -1,5 +1,5 @@
 import { Link, useParams, Redirect } from "wouter";
-import { ArrowLeft, Calendar, Clock, ExternalLink } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, ExternalLink, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { blogPosts } from "./Blog";
@@ -619,7 +619,11 @@ export default function BlogPost() {
             {post.title}
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-muted-foreground mb-8 pb-8 border-b border-border">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground mb-8 pb-8 border-b border-border">
+            <Link href={`/author/${post.authorSlug}`} className="flex items-center gap-1 hover:text-primary transition-colors" data-testid="link-author">
+              <User className="w-4 h-4" />
+              {post.author}
+            </Link>
             <span className="flex items-center gap-1">
               <Calendar className="w-4 h-4" />
               {formatDate(post.date)}
