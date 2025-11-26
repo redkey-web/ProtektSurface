@@ -1,6 +1,7 @@
-import { Check, Phone } from "lucide-react";
+import { Check, Phone, MapPin, Wrench } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import heroImage from "@assets/ppf wrap 1_1764071517320.webp";
 import protektAutoLogo from "@assets/Protekt Logo_1761708306237_1763380244480.webp";
@@ -88,6 +89,46 @@ export default function AutomotiveWindowTinting() {
               our comprehensive lifetime warranty for your peace of mind.
             </p>
           </div>
+
+          <Card className="mb-12 p-6 sm:p-8 bg-muted border-primary/20" data-testid="workshop-notice">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-lg bg-primary/10 text-primary flex-shrink-0">
+                <MapPin className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
+                  Workshop-Only Service
+                </h3>
+                <p className="text-base text-muted-foreground leading-relaxed mb-4">
+                  All automotive window tinting is performed exclusively at our dedicated workshop in <strong className="text-foreground">Clyde, Parramatta</strong>. We do not offer mobile tinting services for vehicles.
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed mb-4">
+                  Our purpose-built facility is equipped with specialised tools and professional-grade equipment that simply cannot be replicated in a mobile setting. The controlled workshop environment ensures:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                  <div className="flex items-center gap-2">
+                    <Wrench className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-sm text-foreground">Dust-free installation environment</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Wrench className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-sm text-foreground">Optimal temperature and humidity control</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Wrench className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-sm text-foreground">Professional lighting for precision work</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Wrench className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-sm text-foreground">Specialised cutting and application tools</span>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground italic">
+                  This commitment to quality is why we can confidently offer a lifetime warranty on all our automotive tinting work.
+                </p>
+              </div>
+            </div>
+          </Card>
 
           <div className="mb-12 sm:mb-16">
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">
