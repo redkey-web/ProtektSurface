@@ -1,5 +1,6 @@
-import { Check, Phone, Shield, Zap, AlertTriangle } from "lucide-react";
+import { Check, Phone, Shield, Zap, AlertTriangle, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import heroImage from "@assets/generated_images/Window_protection_film_installation_373938df.png";
 
@@ -18,7 +19,7 @@ export default function WindowProtectionFilm() {
   return (
     <div className="min-h-screen pt-16 sm:pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <Breadcrumbs items={[{ label: "Film Types" }, { label: "Window Protection Film" }]} />
+        <Breadcrumbs items={[{ label: "Film Types" }, { label: "Security Protection Film" }]} />
       </div>
 
       <section className="relative h-[50vh] sm:h-[60vh] flex items-center justify-center overflow-hidden">
@@ -31,10 +32,12 @@ export default function WindowProtectionFilm() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-            Window Protection Film
+            Window Security
+            <br />
+            Protection Film
           </h1>
           <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Invisible protection that strengthens and safeguards your windows
+            Premium security film that strengthens and safeguards your windows against break-ins, storms, and impacts
           </p>
         </div>
       </section>
@@ -43,20 +46,20 @@ export default function WindowProtectionFilm() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              Strengthen and Protect Your Glass
+              Professional Security Protection Film Installation
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
-              Window protection film provides an invisible shield that dramatically
+              Security protection film provides an invisible shield that dramatically
               increases the strength and safety of your glass windows. Whether you're
               concerned about storm damage, break-ins, or accidental impacts, our
-              protection films help hold glass together even when shattered, reducing
+              window protection films help hold glass together even when shattered, reducing
               the risk of injury and property damage.
             </p>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              These films are virtually invisible once installed, maintaining your views
+              These security films are virtually invisible once installed, maintaining your views
               while providing robust protection. They also block 99% of UV rays, helping
               to protect your interiors from fading and sun damage. Perfect for homes,
-              businesses, and high-risk areas.
+              businesses, and high-risk areas requiring enhanced window security.
             </p>
           </div>
 
@@ -108,6 +111,121 @@ export default function WindowProtectionFilm() {
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 text-center">
+              Premium Security Film Brands We Install
+            </h3>
+            <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+              We offer industry-leading security protection films from trusted manufacturers. 
+              Here's how our two premium options compare:
+            </p>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+              <Card className="p-6 sm:p-8 border-2 hover-elevate" data-testid="card-3m-security">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Award className="w-8 h-8 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground">3M Security Film</h4>
+                    <p className="text-sm text-muted-foreground">Industry Standard</p>
+                  </div>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Trusted brand with decades of proven performance</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Multiple thickness options (4mil to 14mil)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Excellent optical clarity with minimal distortion</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Strong adhesive system for reliable glass retention</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Comprehensive manufacturer warranty</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">99% UV protection included</span>
+                  </li>
+                </ul>
+                <div className="pt-4 border-t border-border">
+                  <p className="text-sm text-muted-foreground">
+                    <strong className="text-foreground">Best for:</strong> Commercial buildings, storefronts, schools, and properties requiring proven, cost-effective security film solutions.
+                  </p>
+                </div>
+              </Card>
+
+              <Card className="p-6 sm:p-8 border-2 border-primary hover-elevate relative overflow-visible" data-testid="card-xpel-security">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                  Premium Choice
+                </div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Shield className="w-8 h-8 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground">XPEL Security Clear Series</h4>
+                    <p className="text-sm text-muted-foreground">Advanced Protection</p>
+                  </div>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Superior impact resistance with advanced polymer technology</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Self-healing top coat resists scratches and scuffs</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Crystal-clear optical quality with no haze or yellowing</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Enhanced tear resistance for forced-entry protection</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">Premium 10-year manufacturer warranty</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">99% UV protection with superior clarity retention</span>
+                  </li>
+                </ul>
+                <div className="pt-4 border-t border-border">
+                  <p className="text-sm text-muted-foreground">
+                    <strong className="text-foreground">Best for:</strong> High-end residential properties, luxury retail, museums, and applications demanding the highest level of protection and optical quality.
+                  </p>
+                </div>
+              </Card>
+            </div>
+
+            <Card className="bg-muted/50 p-6 text-center" data-testid="card-comparison-summary">
+              <h4 className="text-lg font-semibold text-foreground mb-2">Not Sure Which Security Film Is Right for You?</h4>
+              <p className="text-muted-foreground mb-4">
+                Both 3M and XPEL security films provide excellent protection. Our team will assess your property 
+                and recommend the best window protection film solution based on your security needs, budget, and aesthetic preferences.
+              </p>
+              <a href="tel:0286062842">
+                <Button variant="outline" data-testid="button-consultation">
+                  <Phone className="mr-2 w-4 h-4" />
+                  Get Expert Advice
+                </Button>
+              </a>
+            </Card>
           </div>
 
           <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">
