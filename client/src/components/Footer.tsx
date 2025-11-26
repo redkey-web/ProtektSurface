@@ -12,7 +12,6 @@ export function Footer() {
     { name: "Residential Window Tinting", path: "/residential-window-tinting" },
     { name: "Automotive Window Tinting", path: "/automotive-window-tinting" },
     { name: "Commercial Window Tinting", path: "/commercial-window-tinting" },
-    { name: "Mobile Window Tinting", path: "/mobile-window-tinting" },
   ];
 
   const filmTypes = [

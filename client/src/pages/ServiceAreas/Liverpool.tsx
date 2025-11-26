@@ -12,11 +12,11 @@ export default function Liverpool() {
         "Commercial solutions for Westfield Liverpool retailers",
         "Healthcare facility window films for privacy and UV protection",
         "Automotive window tinting with ceramic and carbon options",
-        "Mobile window tinting across Liverpool and surrounds",
+        "On-site flat glass installation across Liverpool and surrounds",
         "Marble protection films for luxury home surfaces",
       ]}
       featuredLinks={[
-        { title: "Mobile Tinting", path: "/mobile-window-tinting", description: "We come to your Liverpool location" },
+        { title: "Automotive Tinting", path: "/automotive-window-tinting", description: "Premium car tinting at our Clyde workshop" },
         { title: "Marble Protection", path: "/marble-protection-film", description: "Protect luxury stone surfaces" },
         { title: "Residential Tinting", path: "/residential-window-tinting", description: "Home comfort and efficiency" },
       ]}

@@ -42,9 +42,9 @@ const testimonials: Testimonial[] = [
   {
     name: "James R.",
     location: "Rydalmere",
-    service: "Mobile Window Tinting",
+    service: "Automotive Window Tinting",
     rating: 5,
-    text: "The mobile service is so convenient! They came to my workplace and tinted my car windows during lunch. Saved me so much time. The quality is top-notch and the price was very competitive.",
+    text: "Dropped my car off at the Clyde workshop and picked it up a few hours later looking incredible. The controlled environment really makes a difference - perfect finish with no dust or bubbles. Lifetime warranty gives great peace of mind!",
   },
   {
     name: "Emma W.",

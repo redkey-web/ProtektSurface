@@ -163,10 +163,9 @@ export function QuoteRequestForm() {
                     <SelectItem value="residential">Residential Window Tinting</SelectItem>
                     <SelectItem value="commercial">Commercial Window Tinting</SelectItem>
                     <SelectItem value="automotive">Automotive Window Tinting</SelectItem>
-                    <SelectItem value="mobile">Mobile Window Tinting</SelectItem>
                     <SelectItem value="ceramic">Ceramic Window Tint</SelectItem>
                     <SelectItem value="frosted">Frosted & Decorative Film</SelectItem>
-                    <SelectItem value="marble">Marble Protection Film</SelectItem>
+                    <SelectItem value="marble">Marble & Stone Protection Film</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />

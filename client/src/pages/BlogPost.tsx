@@ -216,11 +216,11 @@ const blogContent: BlogContent[] = [
         <div className="bg-primary/10 rounded-lg p-6 mt-8">
           <h3 className="text-xl font-semibold text-foreground mb-3">Need Legal Car Tinting in Sydney?</h3>
           <p className="text-muted-foreground mb-4">
-            Our team ensures every installation meets NSW requirements. We also offer{" "}
-            <Link href="/mobile-window-tinting" className="text-primary hover:underline">
-              mobile window tinting
+            Our team ensures every installation meets NSW requirements. Visit our professional{" "}
+            <Link href="/automotive-window-tinting" className="text-primary hover:underline">
+              automotive tinting workshop
             </Link>{" "}
-            for your convenience—we come to you!
+            in Clyde, Parramatta for expert installation with lifetime warranty.
           </p>
           <Link href="/get-quote">
             <Button className="bg-primary text-primary-foreground">Book Your Appointment</Button>
