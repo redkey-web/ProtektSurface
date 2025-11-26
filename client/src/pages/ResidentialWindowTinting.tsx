@@ -10,7 +10,7 @@ import installationImage from "@assets/generated_images/window_tinting_installat
 
 export default function ResidentialWindowTint() {
   const benefits = [
-    "Reduce heat and energy costs by up to 80%",
+    "Reduce solar energy and cooling costs with up to 70% rejection",
     "Block 99% of harmful UV rays",
     "Enhance privacy without losing natural light",
     "Reduce glare for comfortable living spaces",

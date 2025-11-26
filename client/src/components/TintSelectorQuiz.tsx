@@ -68,9 +68,9 @@ const recommendations = {
   ceramic: {
     title: "Ceramic Window Tint",
     subtitle: "Premium Performance",
-    description: "Based on your needs, we recommend our premium ceramic window film. It offers superior heat rejection (up to 80%), blocks 99% of UV rays, and comes with a lifetime warranty. Perfect for maximum comfort and protection.",
+    description: "Based on your needs, we recommend our premium ceramic window film. It offers superior solar energy rejection (up to 70%), blocks 99% of UV rays, and comes with a lifetime warranty. Perfect for maximum comfort and protection.",
     benefits: [
-      "Superior heat rejection without dark tint",
+      "Superior solar energy rejection without dark tint",
       "Blocks 99% harmful UV rays",
       "Won't interfere with electronics",
       "Lifetime warranty included",

@@ -1,4 +1,4 @@
-import { Thermometer } from "lucide-react";
+import { Sun } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 interface HeatMapVisualizationProps {
@@ -7,14 +7,14 @@ interface HeatMapVisualizationProps {
 }
 
 export function HeatMapVisualization({ 
-  title = "Heat Rejection Technology",
-  description = "See how ceramic tint dramatically reduces interior heat" 
+  title = "Solar Energy Rejection",
+  description = "See how ceramic tint blocks solar energy from entering your space" 
 }: HeatMapVisualizationProps) {
   return (
     <Card className="overflow-hidden" data-testid="card-heat-map">
       <div className="p-6">
         <h3 className="text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
-          <Thermometer className="w-6 h-6 text-primary" />
+          <Sun className="w-6 h-6 text-primary" />
           {title}
         </h3>
         <p className="text-muted-foreground mb-6">
@@ -38,7 +38,7 @@ export function HeatMapVisualization({
             </div>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="bg-background/90 backdrop-blur-sm px-4 py-2 rounded-md text-center">
-                <p className="text-2xl font-bold text-red-500">38°C</p>
+                <p className="text-2xl font-bold text-red-500">0%</p>
                 <p className="text-xs text-muted-foreground">Without Tint</p>
               </div>
             </div>
@@ -60,7 +60,7 @@ export function HeatMapVisualization({
             </div>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="bg-background/90 backdrop-blur-sm px-4 py-2 rounded-md text-center">
-                <p className="text-2xl font-bold text-blue-500">24°C</p>
+                <p className="text-2xl font-bold text-blue-500">70%</p>
                 <p className="text-xs text-muted-foreground">With Ceramic Tint</p>
               </div>
             </div>
@@ -69,12 +69,12 @@ export function HeatMapVisualization({
 
         <div className="space-y-3">
           <div className="flex items-center justify-between p-3 rounded-md bg-muted">
-            <span className="text-sm font-medium text-foreground">Heat Rejection</span>
-            <span className="text-sm font-bold text-primary">Up to 80%</span>
+            <span className="text-sm font-medium text-foreground">Solar Energy Rejection</span>
+            <span className="text-sm font-bold text-primary">Up to 70%</span>
           </div>
           <div className="flex items-center justify-between p-3 rounded-md bg-muted">
-            <span className="text-sm font-medium text-foreground">Temperature Reduction</span>
-            <span className="text-sm font-bold text-primary">14°C Cooler</span>
+            <span className="text-sm font-medium text-foreground">UV Protection</span>
+            <span className="text-sm font-bold text-primary">Up to 99%</span>
           </div>
           <div className="flex items-center justify-between p-3 rounded-md bg-muted">
             <span className="text-sm font-medium text-foreground">Energy Savings</span>

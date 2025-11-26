@@ -11,7 +11,7 @@ export default function Telopea() {
         "Residential window tinting for family homes",
         "UV blocking films to protect furniture and floors",
         "Privacy films for bedrooms and bathrooms",
-        "Ceramic tint for maximum heat rejection",
+        "Ceramic tint for maximum solar energy rejection",
         "Decorative frosted films for stylish privacy",
         "On-site installation at your Telopea home",
       ]}

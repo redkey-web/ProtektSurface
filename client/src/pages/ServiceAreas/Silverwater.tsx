@@ -18,7 +18,7 @@ export default function Silverwater() {
       featuredLinks={[
         { title: "Commercial Tinting", path: "/commercial-window-tinting", description: "Industrial business solutions" },
         { title: "Window Protection", path: "/window-protection-film", description: "Security for warehouses" },
-        { title: "Ceramic Tint", path: "/ceramic-window-tint", description: "Premium heat rejection" },
+        { title: "Ceramic Tint", path: "/ceramic-window-tint", description: "Premium solar energy rejection" },
       ]}
     />
   );

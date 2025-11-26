@@ -13,7 +13,7 @@ export default function Granville() {
         "Commercial shopfront tinting for retail businesses on Parramatta Road",
         "Privacy window films for apartments and townhouses",
         "On-site flat glass installation at your Granville location",
-        "Ceramic window tint for maximum heat rejection",
+        "Ceramic window tint for maximum solar energy rejection",
       ]}
       featuredLinks={[
         { title: "UV Blocking Film", path: "/uv-blocking-film", description: "Protect your interiors from harsh UV rays" },

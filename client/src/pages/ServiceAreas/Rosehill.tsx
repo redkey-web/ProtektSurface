@@ -18,7 +18,7 @@ export default function Rosehill() {
       featuredLinks={[
         { title: "Commercial Tinting", path: "/commercial-window-tinting", description: "Industrial and office solutions" },
         { title: "Window Protection", path: "/window-protection-film", description: "Security for commercial properties" },
-        { title: "Ceramic Tint", path: "/ceramic-window-tint", description: "Maximum heat rejection" },
+        { title: "Ceramic Tint", path: "/ceramic-window-tint", description: "Maximum solar energy rejection" },
       ]}
     />
   );
