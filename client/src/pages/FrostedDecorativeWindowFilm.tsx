@@ -1,5 +1,6 @@
-import { Check, Phone } from "lucide-react";
+import { Check, Phone, Palette, Building2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import heroImage from "@assets/generated_images/Decorative_frosted_film_service_185776ce.png";
 
@@ -79,6 +80,41 @@ export default function DecorativeFrostedFilm() {
               ))}
             </div>
           </div>
+
+          <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20 p-6 sm:p-8 mb-12 sm:mb-16" data-testid="card-custom-signwriting">
+            <div className="flex flex-col md:flex-row md:items-start gap-6">
+              <div className="flex-shrink-0">
+                <div className="p-4 bg-primary/20 rounded-lg inline-block">
+                  <Palette className="w-10 h-10 text-primary" />
+                </div>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+                  Custom Designs & Business Logos
+                </h3>
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
+                  We work with specialist signwriters to create custom frosted film designs tailored 
+                  to your exact specifications. Whether you need your business logo on office glass, 
+                  bespoke patterns for privacy screens, or unique decorative elements for your space, 
+                  we can bring your vision to life.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="flex items-center gap-3 p-3 bg-background/50 rounded-md">
+                    <Building2 className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-sm font-medium text-foreground">Business Logos</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-background/50 rounded-md">
+                    <Sparkles className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-sm font-medium text-foreground">Custom Patterns</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-background/50 rounded-md">
+                    <Palette className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-sm font-medium text-foreground">Bespoke Designs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
 
           <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">
             <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
