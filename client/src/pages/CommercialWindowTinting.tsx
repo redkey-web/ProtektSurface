@@ -1,7 +1,12 @@
 import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import heroImage from "@assets/generated_images/Commercial_window_tinting_service_1caab67d.png";
+import officeInteriorImage from "@assets/generated_images/office_interior_tinted_windows.png";
+import buildingExteriorImage from "@assets/generated_images/commercial_building_exterior_tinted.png";
+import retailImage from "@assets/generated_images/retail_storefront_window_tinting.png";
+import conferenceImage from "@assets/generated_images/conference_room_tinted_windows.png";
 
 export default function CommercialWindowTint() {
   const benefits = [
@@ -76,6 +81,69 @@ export default function CommercialWindowTint() {
                   <span className="text-base text-foreground">{benefit}</span>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">
+              Commercial Applications
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="overflow-hidden group" data-testid="gallery-office">
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={officeInteriorImage}
+                    alt="Modern office with tinted windows reducing glare"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-semibold text-foreground mb-1">Office Spaces</h4>
+                  <p className="text-sm text-muted-foreground">Reduce glare on screens and improve employee comfort</p>
+                </div>
+              </Card>
+              
+              <Card className="overflow-hidden group" data-testid="gallery-building">
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={buildingExteriorImage}
+                    alt="Commercial building with professional window tinting"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-semibold text-foreground mb-1">Building Exteriors</h4>
+                  <p className="text-sm text-muted-foreground">Enhance aesthetics and energy efficiency</p>
+                </div>
+              </Card>
+              
+              <Card className="overflow-hidden group" data-testid="gallery-retail">
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={retailImage}
+                    alt="Retail storefront with window tinting"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-semibold text-foreground mb-1">Retail Storefronts</h4>
+                  <p className="text-sm text-muted-foreground">Protect merchandise while maintaining visibility</p>
+                </div>
+              </Card>
+              
+              <Card className="overflow-hidden group" data-testid="gallery-conference">
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={conferenceImage}
+                    alt="Conference room with tinted windows"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-semibold text-foreground mb-1">Meeting Rooms</h4>
+                  <p className="text-sm text-muted-foreground">Privacy and comfort for productive meetings</p>
+                </div>
+              </Card>
             </div>
           </div>
 
