@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import heroImage from "@assets/ppf wrap 1_1764071517320.webp";
 import protektAutoLogo from "@assets/Protekt Logo_1761708306237_1763380244480.webp";
+import featuredCarImage from "@assets/window tint_1764036010561.webp";
 import galleryImg1 from "@assets/car Window tinting_1764072867159.jpg";
 import galleryImg2 from "@assets/image_1764072903074.png";
 import galleryImg3 from "@assets/image_1764072959295.png";
@@ -88,6 +89,24 @@ export default function AutomotiveWindowTinting() {
               vehicle that sleek, professional look. All installations come with
               our comprehensive lifetime warranty for your peace of mind.
             </p>
+          </div>
+
+          <div className="mb-12 sm:mb-16" data-testid="featured-car-image">
+            <div className="relative overflow-hidden rounded-xl">
+              <img
+                src={featuredCarImage}
+                alt="Premium automotive window tinting - sleek tinted vehicle showcase"
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 sm:p-8">
+                <p className="text-white text-lg sm:text-xl font-semibold">
+                  Premium Window Tinting for Every Vehicle
+                </p>
+                <p className="text-white/80 text-sm sm:text-base mt-1">
+                  From luxury sedans to family SUVs - we deliver exceptional results
+                </p>
+              </div>
+            </div>
           </div>
 
           <Card className="mb-12 p-6 sm:p-8 bg-muted border-primary/20" data-testid="workshop-notice">
