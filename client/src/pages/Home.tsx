@@ -78,7 +78,7 @@ export default function Home() {
       path: "/frosted-decorative-window-film",
     },
     {
-      title: "Marble Protection Film",
+      title: "Natural Stone Protection",
       description: "Invisible protective films for natural stone surfaces, preventing stains and etching.",
       icon: Lock,
       path: "/marble-protection-film",
