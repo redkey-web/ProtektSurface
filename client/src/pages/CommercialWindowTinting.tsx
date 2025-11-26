@@ -65,7 +65,7 @@ export default function CommercialWindowTint() {
               property.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Our team is fully certified for working at heights with all relevant insurances and safety certifications. We can organise scaffolding and access equipment as needed to complete projects of any scale.
+              Our team is fully certified for working at heights with all relevant insurances and safety certifications. We can organise scaffolding and access equipment as needed to complete projects of any scale. All commercial installations include warranties ranging from 5 to 15 years depending on the type of film and application.
             </p>
           </div>
 
