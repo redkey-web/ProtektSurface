@@ -1,4 +1,4 @@
-import { Phone, ClipboardCheck, FileText, MessageSquare, Users, CheckCircle, HeadphonesIcon } from "lucide-react";
+import { Phone, ClipboardCheck, FileText, MessageSquare, Users, CheckCircle, HeadphonesIcon, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -80,7 +80,7 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
           {processSteps.map((step) => (
             <div
               key={step.number}
@@ -91,7 +91,8 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
                 <step.icon className="w-5 h-5 text-primary" />
               </div>
               <div className="text-xs font-medium text-primary mb-1">Step {step.number}</div>
-              <h4 className="text-sm font-semibold text-foreground leading-tight">{step.title}</h4>
+              <h4 className="text-sm font-semibold text-foreground leading-tight mb-1">{step.title}</h4>
+              <p className="text-xs text-muted-foreground leading-tight">{step.customerBenefit}</p>
             </div>
           ))}
         </div>
@@ -124,19 +125,19 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
                 data-testid={`process-step-${step.number}`}
               >
                 <div className={`flex-1 ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
-                  <Card className="p-6 hover-elevate inline-block w-full">
+                  <Card className="p-6 hover-elevate w-full">
                     <div className={`flex items-start gap-4 ${index % 2 === 0 ? "lg:flex-row-reverse lg:text-right" : ""}`}>
                       <div className="flex-shrink-0">
                         <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                           <step.icon className="w-6 h-6 text-primary-foreground" />
                         </div>
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <div className="text-sm font-medium text-primary mb-1">Step {step.number}</div>
                         <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
                         <p className="text-muted-foreground mb-3">{step.description}</p>
                         <div className="inline-flex items-center gap-2 text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">
-                          <CheckCircle className="w-4 h-4" />
+                          <Sparkles className="w-4 h-4" />
                           {step.customerBenefit}
                         </div>
                       </div>
