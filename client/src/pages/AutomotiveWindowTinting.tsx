@@ -170,6 +170,11 @@ export default function AutomotiveWindowTinting() {
                 title="Protekt Auto Workshop Location - Clyde, Parramatta"
               />
             </div>
+            <div className="mt-4 p-4 bg-muted rounded-lg border border-border" data-testid="map-note-automotive">
+              <p className="text-sm text-muted-foreground">
+                <strong className="text-foreground">Note:</strong> For residential and commercial enquiries, please call us or submit an enquiry to arrange an on-site inspection and meeting rather than visiting the workshop. Our team will come to you to assess your requirements.
+              </p>
+            </div>
           </div>
 
           <div className="mb-12 sm:mb-16">
