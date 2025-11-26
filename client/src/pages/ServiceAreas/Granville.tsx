@@ -12,7 +12,7 @@ export default function Granville() {
         "UV blocking films to protect furniture and flooring from sun damage",
         "Commercial shopfront tinting for retail businesses on Parramatta Road",
         "Privacy window films for apartments and townhouses",
-        "Mobile window tinting - we come to your Granville location",
+        "On-site flat glass installation at your Granville location",
         "Ceramic window tint for maximum heat rejection",
       ]}
       featuredLinks={[

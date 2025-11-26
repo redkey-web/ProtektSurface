@@ -20,7 +20,6 @@ import Home from "@/pages/Home";
 import ResidentialWindowTinting from "@/pages/ResidentialWindowTinting";
 import AutomotiveWindowTinting from "@/pages/AutomotiveWindowTinting";
 import CommercialWindowTinting from "@/pages/CommercialWindowTinting";
-import MobileWindowTinting from "@/pages/MobileWindowTinting";
 import CeramicWindowTint from "@/pages/CeramicWindowTint";
 import FrostedDecorativeWindowFilm from "@/pages/FrostedDecorativeWindowFilm";
 import MarbleProtectionFilm from "@/pages/MarbleProtectionFilm";
@@ -65,7 +64,6 @@ function Router() {
         <Route path="/residential-window-tinting" component={ResidentialWindowTinting} />
         <Route path="/automotive-window-tinting" component={AutomotiveWindowTinting} />
         <Route path="/commercial-window-tinting" component={CommercialWindowTinting} />
-        <Route path="/mobile-window-tinting" component={MobileWindowTinting} />
         
         {/* Film Type Pages - Root Level */}
         <Route path="/ceramic-window-tint" component={CeramicWindowTint} />
@@ -116,9 +114,6 @@ function Router() {
         </Route>
         <Route path="/services/commercial-window-tinting">
           <Redirect to="/commercial-window-tinting" />
-        </Route>
-        <Route path="/services/mobile-window-tinting">
-          <Redirect to="/mobile-window-tinting" />
         </Route>
         
         {/* Redirects from old /film-types/* URLs */}

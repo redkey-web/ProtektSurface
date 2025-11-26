@@ -13,12 +13,12 @@ export default function Rydalmere() {
         "Residential tinting for riverfront homes",
         "Glare reduction for offices and study spaces",
         "UV protection for classroom environments",
-        "Mobile service throughout Rydalmere and Dundas Valley",
+        "On-site service throughout Rydalmere and Dundas Valley",
       ]}
       featuredLinks={[
         { title: "Commercial Tinting", path: "/commercial-window-tinting", description: "Educational and office solutions" },
         { title: "UV Blocking Film", path: "/uv-blocking-film", description: "Classroom UV protection" },
-        { title: "Mobile Service", path: "/mobile-window-tinting", description: "Convenient on-site installation" },
+        { title: "Residential Tinting", path: "/residential-window-tinting", description: "Home comfort solutions" },
       ]}
     />
   );

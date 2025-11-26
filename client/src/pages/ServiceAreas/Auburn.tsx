@@ -13,7 +13,7 @@ export default function Auburn() {
         "Automotive window tinting by Protekt Auto",
         "Frosted decorative films for bathroom and office privacy",
         "Window protection films for ground-floor security",
-        "Mobile tinting service throughout Auburn and surrounds",
+        "On-site flat glass installation throughout Auburn and surrounds",
       ]}
       featuredLinks={[
         { title: "Automotive Tinting", path: "/automotive-window-tinting", description: "Professional car tinting by Protekt Auto" },

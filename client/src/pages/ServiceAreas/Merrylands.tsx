@@ -13,7 +13,7 @@ export default function Merrylands() {
         "Automotive tinting by Protekt Auto",
         "UV protection for sun-exposed rooms",
         "Window protection films for enhanced security",
-        "Mobile tinting across Merrylands and Guildford",
+        "On-site flat glass installation across Merrylands and Guildford",
       ]}
       featuredLinks={[
         { title: "Commercial Tinting", path: "/commercial-window-tinting", description: "Retail and office solutions" },

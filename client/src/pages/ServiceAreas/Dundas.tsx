@@ -13,12 +13,12 @@ export default function Dundas() {
         "Heat reduction for west-facing rooms",
         "Automotive window tinting by Protekt Auto",
         "UV protection for furniture and flooring",
-        "Mobile tinting service to your Dundas home",
+        "On-site flat glass installation for your Dundas home",
       ]}
       featuredLinks={[
         { title: "Privacy Film", path: "/privacy-window-film", description: "Elegant solutions for home privacy" },
         { title: "Automotive Tinting", path: "/automotive-window-tinting", description: "Professional car tinting" },
-        { title: "Mobile Service", path: "/mobile-window-tinting", description: "We come to your location" },
+        { title: "Residential Tinting", path: "/residential-window-tinting", description: "Home window solutions" },
       ]}
     />
   );
