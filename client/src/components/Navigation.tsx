@@ -78,7 +78,7 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
       <div 
-        className="absolute inset-0 bg-background/70 backdrop-blur-md border-b border-white/10"
+        className="absolute inset-0 bg-background border-b border-border"
         style={{ 
           transform: `translateY(${logoTranslateY}%)`,
           opacity: headerProgress 
@@ -114,7 +114,7 @@ export function Navigation() {
 
                   {openDesktopDropdown === dropdown.title && (
                     <div className="absolute top-full left-0 pt-2 w-64">
-                      <div className="bg-gray-900/80 backdrop-blur-md border border-white/10 rounded-md shadow-lg py-2">
+                      <div className="bg-gray-900 border border-gray-700 rounded-md shadow-lg py-2">
                         {dropdown.items.map((item) => (
                           <Link
                             key={item.path}
@@ -266,7 +266,7 @@ export function Navigation() {
 
       {isOpen && (
         <div
-          className="fixed inset-0 bg-background/80 backdrop-blur-sm"
+          className="fixed inset-0 bg-black/50"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
           data-testid="overlay-menu-close"
