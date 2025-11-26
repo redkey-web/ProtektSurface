@@ -151,6 +151,28 @@ export default function AutomotiveWindowTinting() {
           </Card>
 
           <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
+              Find Our Workshop
+            </h3>
+            <p className="text-base text-muted-foreground mb-6">
+              Visit us at 24 George Street, Clyde NSW 2142 - conveniently located near Parramatta with easy access from the M4 motorway.
+            </p>
+            <div className="overflow-hidden rounded-xl" data-testid="workshop-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.8842637!2d151.0119!3d-33.8327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a31e8e8e8e8f%3A0x0!2s24%20George%20Street%2C%20Clyde%20NSW%202142!5e0!3m2!1sen!2sau!4v1234567890"
+                width="100%"
+                height="350"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                data-testid="google-maps-automotive"
+                title="Protekt Auto Workshop Location - Clyde, Parramatta"
+              />
+            </div>
+          </div>
+
+          <div className="mb-12 sm:mb-16">
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">
               Benefits
             </h3>
