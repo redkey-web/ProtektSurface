@@ -11,48 +11,7 @@ interface Testimonial {
 }
 
 const testimonials: Testimonial[] = [
-  {
-    name: "Sarah M.",
-    location: "Parramatta",
-    service: "Residential Window Tinting",
-    rating: 5,
-    text: "Absolutely fantastic service! The team came to our home in Parramatta and installed ceramic tint on all our windows. The difference in temperature is incredible - our cooling bills have dropped significantly. Highly recommend!",
-  },
-  {
-    name: "David L.",
-    location: "Silverwater",
-    service: "Commercial Window Tinting",
-    rating: 5,
-    text: "Professional job on our office building. The glare on computer screens was a major issue, but now everyone can work comfortably. The installation was quick and the results are outstanding.",
-  },
-  {
-    name: "Michael T.",
-    location: "Auburn",
-    service: "Automotive Window Tinting",
-    rating: 5,
-    text: "Protekt Auto did an amazing job on my BMW. The ceramic tint looks factory-perfect and keeps the car so much cooler. Best investment I've made for the car. Lifetime warranty is a huge plus!",
-  },
-  {
-    name: "Lisa K.",
-    location: "Granville",
-    service: "Privacy Film Installation",
-    rating: 5,
-    text: "We needed privacy film for our street-facing bathroom and the frosted film looks beautiful. You can't even tell it's not etched glass. Great quality and the installation was flawless.",
-  },
-  {
-    name: "James R.",
-    location: "Rydalmere",
-    service: "Automotive Window Tinting",
-    rating: 5,
-    text: "Dropped my car off at the Clyde workshop and picked it up a few hours later looking incredible. The controlled environment really makes a difference - perfect finish with no dust or bubbles. Lifetime warranty gives great peace of mind!",
-  },
-  {
-    name: "Emma W.",
-    location: "Dundas",
-    service: "Marble Protection Film",
-    rating: 5,
-    text: "Protected our beautiful marble kitchen countertops with their clear film. It's completely invisible but we can now use the kitchen worry-free. Amazing product and expert installation!",
-  },
+  // Add reviews directly from Google Business profile for Protekt Surface Solutions (Sydney) here
 ];
 
 export function Testimonials() {
