@@ -1,7 +1,12 @@
 import { Check, Phone, Eye, Shield, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import heroImage from "@assets/generated_images/Privacy_window_film_office_3493ebe2.png";
+import bathroomImage from "@assets/generated_images/bathroom_frosted_privacy_window.png";
+import conferenceImage from "@assets/generated_images/office_conference_room_privacy.png";
+import livingRoomImage from "@assets/generated_images/street-facing_privacy_window_living.png";
+import textureImage from "@assets/generated_images/frosted_film_texture_detail.png";
 
 export default function PrivacyWindowFilm() {
   const benefits = [
@@ -106,6 +111,69 @@ export default function PrivacyWindowFilm() {
                   <span className="text-base text-foreground">{benefit}</span>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 text-center">
+              Privacy Film Applications
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <Card className="overflow-hidden group" data-testid="card-bathroom-privacy">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={bathroomImage} 
+                    alt="Bathroom with elegant frosted privacy window film" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-semibold text-foreground mb-1">Bathroom Privacy</h4>
+                  <p className="text-sm text-muted-foreground">Elegant frosted film for complete privacy while maintaining natural light</p>
+                </div>
+              </Card>
+              
+              <Card className="overflow-hidden group" data-testid="card-conference-privacy">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={conferenceImage} 
+                    alt="Office conference room with decorative privacy film on glass partitions" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-semibold text-foreground mb-1">Office & Conference Rooms</h4>
+                  <p className="text-sm text-muted-foreground">Professional privacy solutions for meeting spaces and glass partitions</p>
+                </div>
+              </Card>
+              
+              <Card className="overflow-hidden group" data-testid="card-living-privacy">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={livingRoomImage} 
+                    alt="Living room with street-facing privacy window film" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-semibold text-foreground mb-1">Street-Facing Windows</h4>
+                  <p className="text-sm text-muted-foreground">Block outside views while enjoying bright, natural light indoors</p>
+                </div>
+              </Card>
+              
+              <Card className="overflow-hidden group" data-testid="card-texture-detail">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={textureImage} 
+                    alt="Close-up of elegant frosted window film texture" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-semibold text-foreground mb-1">Premium Film Quality</h4>
+                  <p className="text-sm text-muted-foreground">Sophisticated etched glass appearance with premium materials</p>
+                </div>
+              </Card>
             </div>
           </div>
 
