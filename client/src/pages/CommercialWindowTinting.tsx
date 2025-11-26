@@ -58,11 +58,14 @@ export default function CommercialWindowTint() {
               views. Perfect for office buildings, retail spaces, and commercial
               properties of all sizes.
             </p>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
               We work with building managers, architects, and business owners to
               deliver cost-effective solutions that improve comfort, reduce
               energy consumption, and enhance the value of your commercial
               property.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Our team is fully certified for working at heights with all relevant insurances and safety certifications. We can organise scaffolding and access equipment as needed to complete projects of any scale.
             </p>
           </div>
 
