@@ -147,10 +147,18 @@ export default function Home() {
     <div className="min-h-screen">
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          className="absolute inset-0 bg-cover"
+          style={{ 
+            backgroundImage: `url(${heroImage})`,
+            backgroundPosition: 'center 40%'
+          }}
         >
-          <div className="absolute inset-0 bg-gray-600/20" />
+          <div 
+            className="absolute inset-x-0 top-0 h-40 sm:h-28 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 40%, rgba(255,255,255,0) 100%)'
+            }}
+          />
           
           {tintVariants.map((tint, index) => (
             <div
