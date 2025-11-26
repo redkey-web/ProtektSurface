@@ -30,10 +30,10 @@ const blogContent: BlogContent[] = [
           for Sydney homes, offering benefits that go far beyond simple sun protection.
         </p>
 
-        <h2 className="text-2xl font-bold text-foreground mb-4 mt-8">1. Superior Heat Rejection Without Darkness</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-4 mt-8">1. Superior Solar Energy Rejection Without Darkness</h2>
         <p className="text-muted-foreground mb-6 leading-relaxed">
           Unlike traditional window films, ceramic tint uses advanced nano-ceramic particles to 
-          block up to 80% of infrared heat while maintaining excellent visibility. This means your 
+          block up to 70% of solar energy while maintaining excellent visibility. This means your 
           home stays cooler without the cave-like darkness associated with older tint technologies. 
           According to the{" "}
           <a 

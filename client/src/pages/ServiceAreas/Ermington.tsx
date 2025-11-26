@@ -13,12 +13,12 @@ export default function Ermington() {
         "Privacy solutions for street-facing windows",
         "Heat reduction for older homes with large windows",
         "Ceramic films for energy-efficient living",
-        "Mobile service across Ermington and Rydalmere",
+        "On-site service across Ermington and Rydalmere",
       ]}
       featuredLinks={[
         { title: "UV Blocking Film", path: "/uv-blocking-film", description: "Protect floors and furnishings" },
         { title: "Residential Tinting", path: "/residential-window-tinting", description: "Complete home solutions" },
-        { title: "Ceramic Tint", path: "/ceramic-window-tint", description: "Premium heat rejection" },
+        { title: "Ceramic Tint", path: "/ceramic-window-tint", description: "Premium solar energy rejection" },
       ]}
     />
   );

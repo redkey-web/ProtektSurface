@@ -9,7 +9,7 @@ import afterImage from "@assets/generated_images/Car_interior_after_tinting_1e0b
 
 export default function CeramicWindowTint() {
   const benefits = [
-    "Superior heat rejection up to 80%",
+    "Superior solar energy rejection up to 70%",
     "Non-metallic, won't interfere with electronics",
     "Blocks 99% of harmful UV rays",
     "Exceptional clarity and color stability",
@@ -38,7 +38,7 @@ export default function CeramicWindowTint() {
             Ceramic Window Tint
           </h1>
           <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Advanced nano-ceramic technology for superior heat rejection and
+            Advanced nano-ceramic technology for superior solar energy rejection and
             clarity
           </p>
         </div>
@@ -53,7 +53,7 @@ export default function CeramicWindowTint() {
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
               Ceramic window tint represents the pinnacle of window film
               technology. Using advanced nano-ceramic particles, these films
-              deliver exceptional heat rejection and UV protection without the
+              deliver exceptional solar energy rejection and UV protection without the
               drawbacks of metallic films. The result is superior performance
               with crystal-clear visibility.
             </p>
@@ -69,10 +69,10 @@ export default function CeramicWindowTint() {
             <div className="flex flex-col items-center text-center p-6 rounded-md hover-elevate">
               <Zap className="w-12 h-12 text-primary mb-4" />
               <h3 className="text-xl font-semibold text-foreground mb-2">
-                Heat Rejection
+                Solar Energy Rejection
               </h3>
               <p className="text-muted-foreground text-sm">
-                Block up to 80% of infrared heat for maximum comfort
+                Block up to 70% of solar energy for maximum comfort
               </p>
             </div>
 

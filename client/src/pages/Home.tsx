@@ -48,7 +48,7 @@ export default function Home() {
   const filmTypes = [
     {
       title: "Ceramic Window Tint",
-      description: "Premium nano-ceramic technology for superior heat rejection without signal interference.",
+      description: "Premium nano-ceramic technology for superior solar energy rejection without signal interference.",
       icon: Gem,
       path: "/ceramic-window-tint",
     },
@@ -91,7 +91,7 @@ export default function Home() {
     },
     {
       question: "What is the difference between ceramic and carbon window tint?",
-      answer: "Ceramic window tint uses advanced nano-ceramic particles that provide superior heat rejection (up to 96% infrared blocking) without interfering with electronic signals. Carbon tint is more affordable and offers good heat reduction and UV protection, but ceramic provides better overall performance and clarity.",
+      answer: "Ceramic window tint uses advanced nano-ceramic particles that provide superior solar energy rejection (up to 70%) without interfering with electronic signals. Carbon tint is more affordable and offers good heat reduction and UV protection, but ceramic provides better overall performance and clarity.",
     },
     {
       question: "How long does window tint last?",
@@ -136,7 +136,7 @@ export default function Home() {
     {
       title: "Ceramic Window Tint",
       description:
-        "Advanced nano-ceramic technology for superior heat rejection and clarity. Non-metallic formula that won't interfere with electronics. The premium choice.",
+        "Advanced nano-ceramic technology for superior solar energy rejection and clarity. Non-metallic formula that won't interfere with electronics. The premium choice.",
       image: frostedImage,
       path: "/ceramic-window-tint",
     },
@@ -322,7 +322,7 @@ export default function Home() {
               Our Film Types
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We offer a comprehensive range of premium window films to meet every need - from heat rejection to privacy, UV protection to decorative solutions
+              We offer a comprehensive range of premium window films to meet every need - from solar energy rejection to privacy, UV protection to decorative solutions
             </p>
           </div>
 

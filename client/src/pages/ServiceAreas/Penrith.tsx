@@ -12,13 +12,13 @@ export default function Penrith() {
         "Commercial films for Westfield Penrith and local businesses",
         "Automotive tinting for Penrith's car enthusiast community",
         "UV blocking films to protect furnishings from intense sun",
-        "Energy-efficient ceramic films for maximum heat rejection",
-        "Mobile service across Penrith, St Marys, and surrounds",
+        "Energy-efficient ceramic films for maximum solar energy rejection",
+        "On-site service across Penrith, St Marys, and surrounds",
       ]}
       featuredLinks={[
         { title: "UV Blocking Film", path: "/uv-blocking-film", description: "Essential protection from intense sun" },
         { title: "Automotive Tinting", path: "/automotive-window-tinting", description: "Premium car window solutions" },
-        { title: "Ceramic Tint", path: "/ceramic-window-tint", description: "Maximum heat rejection technology" },
+        { title: "Ceramic Tint", path: "/ceramic-window-tint", description: "Maximum solar energy rejection" },
       ]}
     />
   );

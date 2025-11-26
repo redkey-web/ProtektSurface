@@ -10,14 +10,14 @@ export default function Parramatta() {
       services={[
         "Commercial window tinting for Parramatta CBD offices and retail",
         "High-rise apartment window film installation",
-        "Ceramic window tint for maximum heat rejection",
+        "Ceramic window tint for maximum solar energy rejection",
         "Privacy films for ground-floor offices and shopfronts",
         "UV protection for heritage homes and modern builds",
         "After-hours installation available for commercial clients",
       ]}
       featuredLinks={[
         { title: "Commercial Tinting", path: "/commercial-window-tinting", description: "Solutions for offices and retail spaces" },
-        { title: "Ceramic Window Tint", path: "/ceramic-window-tint", description: "Premium heat rejection technology" },
+        { title: "Ceramic Window Tint", path: "/ceramic-window-tint", description: "Premium solar energy rejection" },
         { title: "Privacy Film", path: "/privacy-window-film", description: "Professional privacy solutions" },
       ]}
     />

@@ -117,7 +117,7 @@ export function InstantQuoteEstimator() {
                       Standard Film
                     </Label>
                     <p className="text-sm text-muted-foreground">
-                      Good heat rejection, 5-year warranty
+                      Good solar energy rejection, 5-year warranty
                     </p>
                   </div>
                 </label>
@@ -129,7 +129,7 @@ export function InstantQuoteEstimator() {
                       Ceramic Film (Recommended)
                     </Label>
                     <p className="text-sm text-muted-foreground">
-                      Superior heat rejection, lifetime warranty
+                      Superior solar energy rejection, lifetime warranty
                     </p>
                   </div>
                 </label>
