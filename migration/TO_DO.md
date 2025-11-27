@@ -651,7 +651,7 @@ vercel promote status
 - [x] Document rollback procedure (see `_deprecated/README.md`)
 
 ### 11.2 Update Configuration ✓
-- [-] Clean up unused Vite dependencies - Kept for rollback reference
+- [x] Clean up unused Vite dependencies (removed 20+ packages)
 - [x] Update README.md with new workflow
 - [x] Document environment variables (in README.md)
 - [x] Document Replit → GitHub → Vercel workflow (in README.md)
