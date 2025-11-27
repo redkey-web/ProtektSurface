@@ -24,7 +24,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle2 } from "lucide-react";
 
 const quoteFormSchema = z.object({
@@ -36,7 +35,6 @@ const quoteFormSchema = z.object({
   address: z.string().min(5, "Please enter your address"),
   urgency: z.string().min(1, "Please select a timeframe"),
   message: z.string().optional(),
-  smsConsent: z.boolean().optional().default(false),
 });
 
 type QuoteFormData = z.infer<typeof quoteFormSchema>;
@@ -56,7 +54,6 @@ export function QuoteRequestForm() {
       address: "",
       urgency: "",
       message: "",
-      smsConsent: false,
     },
   });
 
@@ -275,31 +272,6 @@ export function QuoteRequestForm() {
                   />
                 </FormControl>
                 <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="smsConsent"
-            render={({ field }) => (
-              <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 bg-muted/50">
-                <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                    data-testid="checkbox-sms-consent"
-                  />
-                </FormControl>
-                <div className="space-y-1 leading-none">
-                  <FormLabel className="text-sm font-normal cursor-pointer">
-                    I agree to receive SMS updates about my quote request
-                  </FormLabel>
-                  <p className="text-xs text-muted-foreground">
-                    We&apos;ll send you a confirmation and updates via text message.
-                    Reply STOP to unsubscribe anytime.
-                  </p>
-                </div>
               </FormItem>
             )}
           />
