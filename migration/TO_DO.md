@@ -520,13 +520,13 @@
 - [x] Port mapping set (5000 → 80)
 - [x] Added `REPLIT = "1"` env var for platform detection
 
-### 9.4 Test on Replit
-- [ ] Push/clone code to Replit
-- [ ] Run `npm install` on Replit
-- [ ] Run `npm run build` - verify all pages build
-- [ ] Run `npm run dev` - verify site loads
-- [ ] Test all pages on `*.replit.dev` URL
-- [ ] Verify images load (unoptimized mode)
+### 9.4 Test on Replit ✓
+- [x] Push/clone code to Replit
+- [x] Run `npm install` on Replit
+- [x] Run `npm run build` - verify all pages build (42 pages SSG, 0 errors)
+- [x] Run `npm run dev` - verify site loads (Next.js 16.0.5 on port 5000)
+- [x] Test all pages on `*.replit.dev` URL (homepage, services, blog, service areas all working)
+- [x] Verify images load (unoptimized mode active via REPLIT=1 env var)
 
 ### 9.5 Connect Replit to GitHub
 - [ ] Go to Version Control tab in Replit
