@@ -214,7 +214,8 @@ npm run start    # Runs production build
 All interactive components use `'use client'` directive:
 - `InteractiveTintDemo` - Adjustable tint darkness slider
 - `BeforeAfterSlider` - Draggable comparison
-- `QuoteRequestForm` - Contact form (frontend-only, no API)
+- `QuoteRequestForm` - Quote form with Turnstile protection → `/api/quote`
+- `SimpleContactForm` - Contact form with Turnstile protection → `/api/contact`
 - `TintSelectorQuiz` - Recommendation quiz (frontend-only)
 - `InstantQuoteEstimator` - Price estimator (frontend-only)
 
@@ -223,6 +224,86 @@ All interactive components use `'use client'` directive:
 - Gold primary color (#D4A574) for CTAs and accents
 - All interactive elements have `data-testid` attributes
 - Use `hover-elevate` and `active-elevate-2` utilities
+
+## Adding Turnstile Protection to New Forms
+
+When creating a new form that submits to an API endpoint, add Cloudflare Turnstile for bot protection.
+
+### 1. Client-Side (Component)
+
+```tsx
+'use client';
+
+import { useState, useRef } from "react";
+import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
+import { useToast } from "@/hooks/use-toast";
+
+export function MyNewForm() {
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
+  const { toast } = useToast();
+
+  const onSubmit = async (data: FormData) => {
+    // Require token if Turnstile is configured
+    if (!turnstileToken && process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY) {
+      toast({ title: "Verification required", variant: "destructive" });
+      return;
+    }
+
+    const response = await fetch('/api/my-endpoint', {
+      method: 'POST',
+      body: JSON.stringify({ ...data, turnstileToken }),
+    });
+    // Handle response...
+  };
+
+  return (
+    <form>
+      {/* Form fields... */}
+
+      {/* Add Turnstile widget before submit button */}
+      {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+        <Turnstile
+          ref={turnstileRef}
+          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+          onSuccess={(token) => setTurnstileToken(token)}
+          onError={() => setTurnstileToken(null)}
+          onExpire={() => setTurnstileToken(null)}
+        />
+      )}
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+
+### 2. Server-Side (API Route)
+
+```typescript
+import { validateTurnstileToken, isTurnstileConfigured, getClientIp } from '@/lib/spam-protection';
+
+export async function POST(request: NextRequest) {
+  const { turnstileToken, ...formData } = await request.json();
+
+  // Validate Turnstile
+  if (isTurnstileConfigured()) {
+    const result = await validateTurnstileToken(turnstileToken, getClientIp(request.headers));
+    if (!result.success) {
+      return NextResponse.json({ error: result.error }, { status: 400 });
+    }
+  }
+
+  // Process form...
+}
+```
+
+### Key Files
+- `lib/spam-protection/turnstile.ts` - Validation helper
+- `config/CLOUDFLARE.md` - Setup documentation
+- `services/spam_protection/CLOUDFLARE_TURNSTILE_IMPLEMENTATION.md` - Full guide
+
+---
 
 ## Migration Reference
 See `migration/` folder for:

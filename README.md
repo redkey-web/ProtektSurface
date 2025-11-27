@@ -102,6 +102,11 @@ protektsurface/
 |----------|----------|-------------|
 | `REPLIT` | Replit only | Auto-set by Replit, enables standalone mode |
 | `VERCEL` | Vercel only | Auto-set by Vercel, enables optimizations |
+| `SENDGRID_API_KEY` | Production | SendGrid API key for emails |
+| `FROM_EMAIL` | Production | Sender email address |
+| `BUSINESS_EMAIL` | Production | Recipient for form notifications |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Production | Cloudflare Turnstile site key |
+| `TURNSTILE_SECRET_KEY` | Production | Cloudflare Turnstile secret key |
 | `DATABASE_URL` | Optional | PostgreSQL connection (if using DB) |
 
 ---
@@ -140,10 +145,31 @@ Preview URLs (`*.vercel.app`) are blocked from Google indexing via `X-Robots-Tag
 
 ---
 
+## Third-Party Services
+
+| Service | Purpose | Documentation |
+|---------|---------|---------------|
+| **SendGrid** | Email delivery | [`config/SENDGRID_SETUP.md`](./config/SENDGRID_SETUP.md) |
+| **Cloudflare Turnstile** | Bot protection | [`config/CLOUDFLARE.md`](./config/CLOUDFLARE.md) |
+
+### Forms with Backend
+
+| Form | Page | API | Features |
+|------|------|-----|----------|
+| QuoteRequestForm | `/get-quote` | `/api/quote` | Email + Turnstile |
+| SimpleContactForm | `/contact` | `/api/contact` | Email + Turnstile |
+
+See [`config/FORMS.md`](./config/FORMS.md) for form architecture.
+
+---
+
 ## Documentation
 
+- [`config/FORMS.md`](./config/FORMS.md) - Form architecture and API endpoints
+- [`config/SENDGRID_SETUP.md`](./config/SENDGRID_SETUP.md) - Email configuration
+- [`config/CLOUDFLARE.md`](./config/CLOUDFLARE.md) - Turnstile spam protection
+- [`config/HOSTING.md`](./config/HOSTING.md) - Domain and hosting setup
 - [`migration/MIGRATION_PLAN.md`](./migration/MIGRATION_PLAN.md) - Architecture and deployment guide
-- [`migration/TO_DO.md`](./migration/TO_DO.md) - Migration checklist
 - [`_deprecated/README.md`](./_deprecated/README.md) - Rollback procedure
 
 ---
