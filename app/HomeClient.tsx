@@ -199,11 +199,6 @@ export default function HomeClient() {
                 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-500 ${
                   isCurrentTintDark ? 'text-white' : 'text-black'
                 }`}
-                style={{
-                  textShadow: isCurrentTintDark 
-                    ? '0 2px 10px rgba(0,0,0,0.5)' 
-                    : '0 0 20px rgba(255,255,255,0.5)'
-                }}
               >
                 Professional Window Tinting
                 <br />
@@ -214,11 +209,6 @@ export default function HomeClient() {
                 className={`text-lg sm:text-xl mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${
                   isCurrentTintDark ? 'text-white/90' : 'text-black/80'
                 }`}
-                style={{
-                  textShadow: isCurrentTintDark 
-                    ? '0 2px 10px rgba(0,0,0,0.5)' 
-                    : '0 0 20px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.7), 0 0 60px rgba(255,255,255,0.5)'
-                }}
               >
                 Sydney&apos;s premier window tinting & surface protection specialists. Premium films and protective solutions for homes, businesses and vehicles
               </p>
