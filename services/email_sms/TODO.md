@@ -2,7 +2,7 @@
 
 **Project**: ProtektSurface
 **Created**: November 27, 2025
-**Status**: Phase 1 In Progress (Code Complete - Awaiting API Keys)
+**Status**: Phase 1 Complete ✅ | Phase 2 Ready to Implement
 
 ---
 
@@ -11,18 +11,18 @@
 > **Goal**: Get quote form submissions flowing to business email
 
 ### Twilio/SendGrid Setup
-- [ ] Create Twilio account at [twilio.com](https://www.twilio.com)
-- [ ] Complete identity verification (required for AU)
-- [ ] Enable SendGrid from Twilio console
-- [ ] Create SendGrid API key (Full Access for dev, Restricted for prod)
-- [ ] Verify sending domain (`protektsurface.com.au`)
-- [ ] Add DNS records (SPF, DKIM, DMARC)
+- [x] Create Twilio account at [twilio.com](https://www.twilio.com)
+- [x] Complete identity verification (required for AU)
+- [x] Enable SendGrid from Twilio console
+- [x] Create SendGrid API key (Full Access for dev, Restricted for prod)
+- [x] Verify sending domain (`protektsurfacesolutions.com.au`)
+- [x] Add DNS records (SPF, DKIM, DMARC) - See [SENDGRID_SETUP.md](../../config/SENDGRID_SETUP.md)
 
 ### Environment Variables
-- [ ] Add `SENDGRID_API_KEY` to `.env.local`
-- [ ] Add `SENDGRID_API_KEY` to Vercel environment variables
-- [ ] Add `BUSINESS_EMAIL` (destination for notifications)
-- [ ] Add `FROM_EMAIL` (verified sender address)
+- [x] Add `SENDGRID_API_KEY` to `.env.local`
+- [x] Add `SENDGRID_API_KEY` to Vercel environment variables
+- [x] Add `BUSINESS_EMAIL` (destination for notifications)
+- [x] Add `FROM_EMAIL` (verified sender address)
 
 ### API Development
 - [x] Install dependencies: `npm install @sendgrid/mail`
@@ -53,12 +53,14 @@
 ## Phase 2 - SMS Follow-up (Priority: High)
 
 > **Goal**: Automated SMS to customers after quote request
+>
+> **📖 See**: [AUSTRALIA_GUIDE.md](./AUSTRALIA_GUIDE.md) for AU-specific regulations, pricing, and compliance requirements
 
 ### Twilio SMS Setup
 - [ ] Enable Programmable Messaging in Twilio console
-- [ ] Purchase Australian mobile number (~$6/month)
+- [ ] Purchase Australian mobile number (~$6.50/month) - See [AU Pricing](./AUSTRALIA_GUIDE.md#sms-pricing-summary-australia)
 - [ ] Configure messaging service
-- [ ] Set up A2P 10DLC registration (if required)
+- [ ] Register Alphanumeric Sender ID (if using) - 5 business days lead time
 
 ### Environment Variables
 - [ ] Add `TWILIO_ACCOUNT_SID` to environment
@@ -216,18 +218,52 @@ SENDGRID_MARKETING_API_KEY=SG.xxxxx
 
 ## Quick Start Checklist
 
-For immediate implementation (Phase 1 only):
+### Phase 1 (Email) - COMPLETE ✅
 
 ```
-[ ] 1. Create Twilio account
-[ ] 2. Enable SendGrid
-[ ] 3. Get API key
-[ ] 4. Add to Vercel env vars
+[x] 1. Create Twilio/SendGrid account
+[x] 2. Enable SendGrid
+[x] 3. Get API key
+[x] 4. Add to Vercel env vars
 [x] 5. Run: npm install @sendgrid/mail
 [x] 6. Create API route
 [x] 7. Update form component
-[ ] 8. Test & deploy
+[x] 8. Deploy to production
+[ ] 9. Test email delivery (pending)
 ```
+
+### Phase 2 (SMS) - Ready to Start
+
+```
+[ ] 1. Enable Programmable Messaging in Twilio
+[ ] 2. Purchase AU mobile number ($6.50/mo)
+[ ] 3. Add SMS compliance to forms (consent checkbox)
+[ ] 4. Run: npm install twilio
+[ ] 5. Create SMS sending function
+[ ] 6. Integrate into /api/quote
+[ ] 7. Test & deploy
+```
+
+---
+
+## Documentation Index
+
+| Document | Purpose |
+|----------|---------|
+| [TODO.md](./TODO.md) | This file - implementation checklist |
+| [AUSTRALIA_GUIDE.md](./AUSTRALIA_GUIDE.md) | **AU regulations, pricing, compliance** |
+| [FEATURES_ROADMAP.md](./FEATURES_ROADMAP.md) | All planned features and business value |
+| [IMPLEMENTATION_PLAN.md](./IMPLEMENTATION_PLAN.md) | Technical implementation details |
+| [TWILIO_SETUP_GUIDE.md](./TWILIO_SETUP_GUIDE.md) | Twilio account setup walkthrough |
+| [ARCHITECTURE.md](./ARCHITECTURE.md) | System architecture diagrams |
+
+### Related Documentation
+
+| Document | Purpose |
+|----------|---------|
+| [config/SENDGRID_SETUP.md](../../config/SENDGRID_SETUP.md) | SendGrid setup record (Phase 1) |
+| [config/SERVICES.md](../../config/SERVICES.md) | All third-party services |
+| [config/FORMS.md](../../config/FORMS.md) | Form architecture |
 
 ---
 
