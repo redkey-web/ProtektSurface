@@ -297,7 +297,7 @@ export function QuoteRequestForm() {
                   </FormLabel>
                   <p className="text-xs text-muted-foreground">
                     We&apos;ll send you a confirmation and updates via text message.
-                    Standard message rates may apply. Reply STOP to unsubscribe anytime.
+                    Reply STOP to unsubscribe anytime.
                   </p>
                 </div>
               </FormItem>
