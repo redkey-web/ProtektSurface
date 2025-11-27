@@ -146,13 +146,6 @@ export default function HomeClient() {
             backgroundPosition: 'center 40%'
           }}
         >
-          <div
-            className="absolute inset-x-0 top-0 h-40 sm:h-28 pointer-events-none"
-            style={{
-              background: 'linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 40%, rgba(255,255,255,0) 100%)'
-            }}
-          />
-
           {tintVariants.map((tint, index) => (
             <div
               key={tint.name}
