@@ -439,6 +439,75 @@ export function validateAustralianMobile(phone: string): PhoneValidation {
 
 ---
 
+## SMS Consent Implementation (For Later)
+
+When ready to implement SMS, add this consent checkbox to the quote form.
+
+### 1. Update Zod Schema
+
+Add to `lib/validations/quote.ts`:
+
+```typescript
+// Add to the schema object
+smsConsent: z.boolean().optional().default(false),
+```
+
+### 2. Update Form Component
+
+Add to `components/QuoteRequestForm.tsx`:
+
+```tsx
+// Import checkbox
+import { Checkbox } from "@/components/ui/checkbox";
+
+// Add to defaultValues
+smsConsent: false,
+
+// Add this field before the submit button
+<FormField
+  control={form.control}
+  name="smsConsent"
+  render={({ field }) => (
+    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 bg-muted/50">
+      <FormControl>
+        <Checkbox
+          checked={field.value}
+          onCheckedChange={field.onChange}
+          data-testid="checkbox-sms-consent"
+        />
+      </FormControl>
+      <div className="space-y-1 leading-none">
+        <FormLabel className="text-sm font-normal cursor-pointer">
+          I agree to receive SMS updates about my quote request
+        </FormLabel>
+        <p className="text-xs text-muted-foreground">
+          We&apos;ll send you a confirmation and updates via text message.
+          Reply STOP to unsubscribe anytime.
+        </p>
+      </div>
+    </FormItem>
+  )}
+/>
+```
+
+### 3. Handle in API Route
+
+Update `app/api/quote/route.ts` to check consent before sending SMS:
+
+```typescript
+// Only send SMS if consent given
+if (data.smsConsent && isSmsConfigured()) {
+  await sendSmsFollowUp(data.phone, data.name);
+}
+```
+
+### Notes
+- Checkbox is unchecked by default (ACMA compliant)
+- No cost to customer - business pays for SMS
+- STOP instruction included for unsubscribe compliance
+
+---
+
 ## Compliance Checklist for ProtektSurface
 
 Before launching SMS:
