@@ -12,7 +12,6 @@ const BUSINESS = {
   logo: 'https://protektsurface.com.au/images/brand/logo.webp',
   phone: '+61286062842',
   phoneDisplay: '(02) 8606 2842',
-  email: 'info@protektsurfacesolutions.com.au',
   address: {
     street: '24 George Street',
     locality: 'Clyde',
@@ -38,7 +37,6 @@ export type LocalBusinessSchema = {
   logo: string;
   image: string;
   telephone: string;
-  email: string;
   address: {
     '@type': string;
     streetAddress: string;
@@ -79,7 +77,6 @@ export function generateLocalBusinessSchema(pageUrl?: string): LocalBusinessSche
     logo: BUSINESS.logo,
     image: `${BUSINESS.url}/images/og-image.png`,
     telephone: BUSINESS.phone,
-    email: BUSINESS.email,
     address: {
       '@type': 'PostalAddress',
       streetAddress: BUSINESS.address.street,

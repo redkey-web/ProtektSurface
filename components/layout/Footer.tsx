@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, MapPin, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -156,18 +156,6 @@ export function Footer() {
                   <Phone className="w-4 h-4 text-primary flex-shrink-0" />
                   <span className="text-primary font-medium">
                     (02) 8606 2842
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:info@protektsurfacesolutions.com.au"
-                  className="flex items-center gap-3 text-sm hover-elevate active-elevate-2 rounded-md p-2 -ml-2"
-                  data-testid="link-email-footer"
-                >
-                  <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span className="text-muted-foreground break-all">
-                    info@protektsurfacesolutions.com.au
                   </span>
                 </a>
               </li>
