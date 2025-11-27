@@ -25,14 +25,65 @@ _deprecated/
 
 ## Rollback Procedure
 
-If rollback is needed:
+If rollback to Vite + Express is needed:
 
-1. Move contents back to project root
-2. Restore `package.json` dependencies (Vite, wouter, etc.)
-3. Restore build scripts
-4. Remove Next.js `app/` directory
-5. Run `npm install`
-6. Test with `npm run dev`
+### Step 1: Restore Legacy Code
+```bash
+# From project root
+mv _deprecated/client ./client
+mv _deprecated/server ./server
+```
+
+### Step 2: Restore package.json Dependencies
+Add these back to `dependencies`:
+```json
+{
+  "wouter": "^3.x",
+  "express": "^4.x"
+}
+```
+
+Add these back to `devDependencies`:
+```json
+{
+  "vite": "^6.x",
+  "@vitejs/plugin-react": "^4.x",
+  "@replit/vite-plugin-cartographer": "latest",
+  "@replit/vite-plugin-runtime-error-modal": "latest",
+  "@replit/vite-plugin-shadcn-theme-json": "latest"
+}
+```
+
+### Step 3: Restore Build Scripts
+Update `package.json` scripts:
+```json
+{
+  "scripts": {
+    "dev": "NODE_ENV=development tsx server/index.ts",
+    "build": "vite build",
+    "start": "NODE_ENV=production tsx server/index.ts"
+  }
+}
+```
+
+### Step 4: Remove Next.js
+```bash
+rm -rf app/
+rm -rf .next/
+rm next.config.js
+rm next-env.d.ts
+```
+
+### Step 5: Reinstall and Test
+```bash
+rm -rf node_modules
+npm install
+npm run dev
+```
+
+### Step 6: Update Vercel/Deployment
+- Disconnect Vercel from the repository
+- Or update Vercel build settings for Vite
 
 ## When to Delete
 
@@ -44,5 +95,5 @@ This folder can be safely deleted when:
 
 ---
 
-**Migration started**: [DATE]
-**Safe to delete after**: [DATE + 30 days]
+**Migration started**: November 27, 2025
+**Safe to delete after**: December 27, 2025

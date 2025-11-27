@@ -641,22 +641,22 @@ vercel promote status
 
 ---
 
-## Phase 11: Cleanup
+## Phase 11: Cleanup ✓
 
-### 11.1 Deprecate Legacy Code
-- [ ] Create `_deprecated/` folder
-- [ ] Move `client/` to `_deprecated/`
-- [ ] Move `server/` to `_deprecated/`
-- [ ] Update `.gitignore` to exclude `_deprecated/` from builds
-- [ ] Document rollback procedure
+### 11.1 Deprecate Legacy Code ✓
+- [x] Create `_deprecated/` folder
+- [x] Move `client/` to `_deprecated/`
+- [x] Move `server/` to `_deprecated/`
+- [x] Update `.gitignore` to exclude `_deprecated/` from builds
+- [x] Document rollback procedure (see `_deprecated/README.md`)
 
-### 11.2 Update Configuration
-- [ ] Clean up unused Vite dependencies (optional - can keep for reference)
-- [ ] Update README.md with new workflow
-- [ ] Document environment variables
-- [ ] Document Replit → GitHub → Vercel workflow
+### 11.2 Update Configuration ✓
+- [-] Clean up unused Vite dependencies - Kept for rollback reference
+- [x] Update README.md with new workflow
+- [x] Document environment variables (in README.md)
+- [x] Document Replit → GitHub → Vercel workflow (in README.md)
 
-### 11.3 Monitoring Period
+### 11.3 Monitoring Period (Ongoing)
 - [ ] Monitor error logs for 1 week
 - [ ] Check Google Search Console for issues
 - [ ] Verify Core Web Vitals in field
@@ -724,13 +724,15 @@ git pull origin main
 
 | Date | File/Folder | Reason |
 |------|-------------|--------|
-| | | |
+| Nov 27, 2025 | `client/` | Legacy Vite React SPA |
+| Nov 27, 2025 | `server/` | Legacy Express backend |
 
 ---
 
 **Last Updated**: November 27, 2025
-**Migration Progress**: Phase 10 Vercel Deployment Complete
+**Migration Progress**: Phase 11 Cleanup Complete ✓
 **Build Status**: 42 pages SSG (0 errors, Next.js 16.0.5 Turbopack)
 **Production URL**: https://protektsurface.vercel.app
 **Deployment Pipeline**: Replit (dev) → GitHub (sync) → Vercel (prod) ✓
-**Remaining**: Phase 10.3 (pipeline test), Phase 11 (cleanup), Phase 12 (workflow docs)
+**Legacy Code**: Moved to `_deprecated/` (safe to delete after Dec 27, 2025)
+**Remaining**: Phase 11.3 (monitoring), Phase 12 (workflow verification)

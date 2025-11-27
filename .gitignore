@@ -1,8 +1,25 @@
 node_modules
 dist
 .DS_Store
-server/public
 vite.config.ts.*
 *.tar.gz
 .next
 .vercel
+
+# Environment files
+.env*.local
+.env
+
+# OS files
+*.swp
+*.swo
+*~
+
+# IDE
+.idea/
+*.code-workspace
+
+# Build artifacts from deprecated Vite code
+_deprecated/client/node_modules
+_deprecated/server/node_modules
+_deprecated/dist
