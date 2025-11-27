@@ -33,15 +33,6 @@ export function Footer() {
     { name: "Camellia", path: "/service-areas/camellia" },
     { name: "Rydalmere", path: "/service-areas/rydalmere" },
     { name: "Ermington", path: "/service-areas/ermington" },
-    { name: "Dundas", path: "/service-areas/dundas" },
-    { name: "Telopea", path: "/service-areas/telopea" },
-    { name: "Carlingford", path: "/service-areas/carlingford" },
-    { name: "North Parramatta", path: "/service-areas/north-parramatta" },
-    { name: "Harris Park", path: "/service-areas/harris-park" },
-    { name: "Westmead", path: "/service-areas/westmead" },
-    { name: "Merrylands", path: "/service-areas/merrylands" },
-    { name: "Liverpool", path: "/service-areas/liverpool" },
-    { name: "Penrith", path: "/service-areas/penrith" },
   ];
 
   const suppliers = [
@@ -139,6 +130,15 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/service-areas"
+                  className="text-sm text-primary font-medium hover:underline transition-colors"
+                  data-testid="link-footer-all-service-areas"
+                >
+                  All Service Areas
+                </Link>
+              </li>
             </ul>
           </div>
 
