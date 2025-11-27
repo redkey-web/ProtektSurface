@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/accordion";
 import { Testimonials } from "@/components/Testimonials";
 import { OurProcess } from "@/components/OurProcess";
+import { TintSelectorQuiz } from "@/components/TintSelectorQuiz";
 
 export default function HomeClient() {
   const [currentTint, setCurrentTint] = useState(0);
@@ -359,6 +360,21 @@ export default function HomeClient() {
       </section>
 
       <OurProcess />
+
+      {/* Quiz Section */}
+      <section className="py-16 sm:py-24 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
+              Not Sure What You Need?
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Take our short quiz to discover the perfect window treatment for your needs. We&apos;ll help you find the right solution in just a few clicks.
+            </p>
+          </div>
+          <TintSelectorQuiz />
+        </div>
+      </section>
 
       <section className="relative py-16 sm:py-24 bg-background overflow-hidden">
         <div
