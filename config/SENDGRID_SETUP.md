@@ -2,6 +2,7 @@
 
 **Project**: ProtektSurface
 **Date Completed**: November 27, 2025
+**Last Updated**: November 28, 2025
 **Status**: Active
 
 ---
@@ -48,17 +49,20 @@ Authenticated `protektsurfacesolutions.com.au` for email sending.
 
 **Files Created**:
 ```
-app/api/quote/route.ts           # POST endpoint
+app/api/quote/route.ts           # Quote form endpoint
+app/api/contact/route.ts         # Contact form endpoint
 lib/validations/quote.ts         # Shared Zod schema
 lib/email/sendgrid.ts            # SendGrid client
 lib/email/templates.ts           # HTML email templates
 lib/email/index.ts               # Module exports
+lib/spam-protection/turnstile.ts # Cloudflare Turnstile validation
 ```
 
 **Files Modified**:
 ```
-components/QuoteRequestForm.tsx  # Now POSTs to /api/quote
-package.json                     # Added @sendgrid/mail
+components/QuoteRequestForm.tsx  # POSTs to /api/quote with Turnstile
+components/SimpleContactForm.tsx # POSTs to /api/contact with Turnstile
+package.json                     # Added @sendgrid/mail, @marsidev/react-turnstile
 ```
 
 ### 6. Deployment
@@ -69,8 +73,9 @@ package.json                     # Added @sendgrid/mail
 
 ## Email Flow
 
+### Quote Form (/get-quote → /api/quote)
 ```
-User submits /get-quote form
+User submits quote form
             │
             ▼
 POST /api/quote
@@ -89,6 +94,35 @@ FROM: quotes@        FROM: quotes@
       protektsurface       protektsurface
       solutions.           solutions.
       com.au               com.au
+
+Subject: "New Quote    Subject: "Your Quote
+Request - [service]"   Request - Protekt..."
+```
+
+### Contact Form (/contact → /api/contact)
+```
+User submits contact form
+            │
+            ▼
+POST /api/contact
+            │
+            ▼
+┌───────────┴───────────┐
+│                       │
+▼                       ▼
+Business Email       Customer Auto-Reply
+
+TO: david.trieu@     TO: [form email]
+    protektauto.
+    com.au
+
+FROM: quotes@        FROM: quotes@
+      protektsurface       protektsurface
+      solutions.           solutions.
+      com.au               com.au
+
+Subject: "New Contact  Subject: "Thank You
+Message from [name]"   for Contacting..."
 ```
 
 ---
@@ -99,9 +133,12 @@ FROM: quotes@        FROM: quotes@
 - [x] Domain authenticated (4 DNS records)
 - [x] API key created and stored securely
 - [x] Environment variables in Vercel
-- [x] Code implemented and deployed
-- [ ] Test email sent and received
-- [ ] Customer confirmation received
+- [x] Quote form code implemented and deployed
+- [x] Contact form code implemented and deployed
+- [x] Cloudflare Turnstile spam protection added
+- [ ] Test quote form email sent and received
+- [ ] Test contact form email sent and received
+- [ ] Customer confirmations received
 
 ---
 

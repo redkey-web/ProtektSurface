@@ -8,14 +8,35 @@ import {
   generateCustomerConfirmationHtml,
   generateCustomerConfirmationText,
 } from '@/lib/email';
+import {
+  validateTurnstileToken,
+  isTurnstileConfigured,
+  getClientIp,
+} from '@/lib/spam-protection';
 
 export async function POST(request: NextRequest) {
   try {
     // Parse request body
     const body = await request.json();
 
+    // Extract Turnstile token before form validation
+    const { turnstileToken, ...formData } = body;
+
+    // Validate Turnstile token if configured
+    if (isTurnstileConfigured()) {
+      const ip = getClientIp(request.headers);
+      const turnstileResult = await validateTurnstileToken(turnstileToken, ip);
+
+      if (!turnstileResult.success) {
+        return NextResponse.json(
+          { success: false, error: turnstileResult.error },
+          { status: 400 }
+        );
+      }
+    }
+
     // Validate input with Zod
-    const result = quoteFormSchema.safeParse(body);
+    const result = quoteFormSchema.safeParse(formData);
 
     if (!result.success) {
       return NextResponse.json(
