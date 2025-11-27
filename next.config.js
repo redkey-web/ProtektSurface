@@ -84,9 +84,27 @@ export default {
     ];
   },
 
-  // Security headers
+  // Security headers + SEO protection
   async headers() {
     return [
+      // Block Vercel preview URLs from Google indexing
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'protektsurface.vercel.app' }],
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'protektsurface-redkeys-projects.vercel.app' }],
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      // Catch any other Vercel preview deployments
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: '(?!protektsurface\\.com\\.au).*\\.vercel\\.app' }],
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      // Security headers for all requests
       {
         source: '/:path*',
         headers: [
