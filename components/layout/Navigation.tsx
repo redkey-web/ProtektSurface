@@ -84,7 +84,7 @@ export function Navigation() {
         <div
           className="absolute inset-0 bg-background border-b border-border"
           style={{
-            opacity: headerProgress
+            opacity: Math.min(headerProgress, 0.7)
           }}
         />
       )}
@@ -141,10 +141,10 @@ export function Navigation() {
               ))}
 
               <Link
-                href="/contact"
+                href="/get-quote"
                 data-testid="link-desktop-contact"
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  pathname === "/contact" ? "text-primary" : "text-black/90 hover:text-primary"
+                  pathname === "/get-quote" ? "text-primary" : "text-black/90 hover:text-primary"
                 }`}
               >
                 Contact
@@ -262,11 +262,11 @@ export function Navigation() {
               <div className="mx-4 my-1 border-b border-border/50" />
 
               <Link
-                href="/contact"
+                href="/get-quote"
                 onClick={() => setIsOpen(false)}
                 data-testid="link-mobile-contact"
                 className={`px-4 py-4 rounded-lg text-base font-semibold flex items-center gap-3 hover-elevate active-elevate-2 ${
-                  pathname === "/contact" ? "bg-primary/10 text-primary" : "text-foreground"
+                  pathname === "/get-quote" ? "bg-primary/10 text-primary" : "text-foreground"
                 }`}
               >
                 <MessageSquare className="w-5 h-5 text-primary" />
