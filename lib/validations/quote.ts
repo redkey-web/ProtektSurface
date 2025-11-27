@@ -25,6 +25,7 @@ export const quoteFormSchema = z.object({
   message: z.string()
     .max(2000, 'Message is too long')
     .optional(),
+  smsConsent: z.boolean().optional().default(false),
 });
 
 export type QuoteFormData = z.infer<typeof quoteFormSchema>;
