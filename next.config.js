@@ -1,13 +1,28 @@
 /** @type {import('next').NextConfig} */
 export default {
-  // Disable Turbopack for now due to CSS parsing issues
-  // Can re-enable once CSS is simplified
-  // turbopack: false,  // This is not a valid option, using experimental instead
+  // Auto-detect platform and adjust output mode
+  // Replit needs standalone output, Vercel uses default
+  output: process.env.REPLIT ? 'standalone' : undefined,
 
-  // Image optimization
+  // Image optimization: disabled on Replit (no optimizer), enabled on Vercel
   images: {
+    unoptimized: !!process.env.REPLIT,
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+  },
+
+  // Allow Replit dev origins for CORS
+  allowedDevOrigins: process.env.REPLIT
+    ? ['*.replit.dev', 'https://*.replit.dev']
+    : undefined,
+
+  // Platform detection for debugging
+  env: {
+    NEXT_PUBLIC_DEPLOYMENT: process.env.VERCEL
+      ? 'vercel'
+      : process.env.REPLIT
+        ? 'replit'
+        : 'local',
   },
 
   // Redirects for legacy URLs
