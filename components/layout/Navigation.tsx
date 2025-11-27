@@ -119,7 +119,7 @@ export function Navigation() {
 
                   {openDesktopDropdown === dropdown.title && (
                     <div className="absolute top-full left-0 pt-2 w-64">
-                      <div className="bg-gray-900 border border-gray-700 rounded-md shadow-lg py-2">
+                      <div className="bg-gray-900/60 backdrop-blur-md border border-gray-700/50 rounded-md shadow-lg py-2">
                         {dropdown.items.map((item) => (
                           <Link
                             key={item.path}
