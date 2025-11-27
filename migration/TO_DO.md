@@ -2,7 +2,7 @@
 
 **Migration**: Vite + Express → Next.js 16 App Router → Vercel
 **Started**: November 27, 2025
-**Status**: Phase 3 Complete - Ready for Page Migration
+**Status**: Phase 6 Complete, Phase 7 Skipped - Ready for Phase 8 (Testing) → Phase 9-12 (Deployment)
 
 ---
 
@@ -183,249 +183,255 @@
 
 ---
 
-## Phase 4: Page Migration
+## Phase 4: Page Migration ✓
 
-### 4.1 Home Page
-- [ ] Create `app/page.tsx`
-- [ ] Add metadata export
-- [ ] Port Home component (may need client component)
-- [ ] Test all sections
-- [ ] Visual comparison with original
-- [ ] Move `client/src/pages/Home.tsx` to `_deprecated/`
+### 4.1 Home Page ✓
+- [x] Create `app/page.tsx`
+- [x] Add metadata export
+- [x] Port Home component (may need client component)
+- [~] Test all sections - Deferred to visual testing phase
+- [~] Visual comparison with original - Deferred to visual testing phase
+- [-] Move `client/src/pages/Home.tsx` to `_deprecated/` - Keeping for reference
 
-### 4.2 About Page
-- [ ] Create `app/about/page.tsx`
-- [ ] Add metadata export
-- [ ] Port About component
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+### 4.2 About Page ✓
+- [x] Create `app/about/page.tsx`
+- [x] Add metadata export
+- [x] Port About component
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-### 4.3 Contact Page
-- [ ] Create `app/contact/page.tsx`
-- [ ] Add metadata export
-- [ ] Port Contact component
-- [ ] Test contact form functionality
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+### 4.3 Contact Page ✓
+- [x] Create `app/contact/page.tsx`
+- [x] Add metadata export
+- [x] Port Contact component
+- [-] Test contact form functionality - No form on this page
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-### 4.4 Service Pages
+### 4.4 Service Pages ✓
 
-**Residential Window Tinting:**
-- [ ] Create `app/residential-window-tinting/page.tsx`
-- [ ] Add metadata + JSON-LD schema
-- [ ] Port component (+ client component if needed)
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Residential Window Tinting:** ✓
+- [x] Create `app/residential-window-tinting/page.tsx`
+- [x] Add metadata + JSON-LD schema
+- [x] Port component (+ client component if needed)
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-**Automotive Window Tinting:**
-- [ ] Create `app/automotive-window-tinting/page.tsx`
-- [ ] Add metadata + JSON-LD schema
-- [ ] Port component
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Automotive Window Tinting:** ✓
+- [x] Create `app/automotive-window-tinting/page.tsx`
+- [x] Add metadata + JSON-LD schema
+- [x] Port component (+ client component for lightbox)
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-**Commercial Window Tinting:**
-- [ ] Create `app/commercial-window-tinting/page.tsx`
-- [ ] Add metadata + JSON-LD schema
-- [ ] Port component
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Commercial Window Tinting:** ✓
+- [x] Create `app/commercial-window-tinting/page.tsx`
+- [x] Add metadata + JSON-LD schema
+- [x] Port component
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-### 4.5 Film Type Pages
+### 4.5 Film Type Pages ✓
 
-**Ceramic Window Tint:**
-- [ ] Create `app/ceramic-window-tint/page.tsx`
-- [ ] Add metadata + JSON-LD
-- [ ] Port component
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Ceramic Window Tint:** ✓
+- [x] Create `app/ceramic-window-tint/page.tsx`
+- [x] Add metadata + JSON-LD
+- [x] Port component (+ client component for interactive slider/heatmap)
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-**Frosted/Decorative Window Film:**
-- [ ] Create `app/frosted-decorative-window-film/page.tsx`
-- [ ] Add metadata + JSON-LD
-- [ ] Port component
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Frosted/Decorative Window Film:** ✓
+- [x] Create `app/frosted-decorative-window-film/page.tsx`
+- [x] Add metadata + JSON-LD
+- [x] Port component
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-**Marble Protection Film:**
-- [ ] Create `app/marble-protection-film/page.tsx`
-- [ ] Add metadata + JSON-LD
-- [ ] Port component
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Marble Protection Film:** ✓
+- [x] Create `app/marble-protection-film/page.tsx`
+- [x] Add metadata + JSON-LD
+- [x] Port component
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-**Privacy Window Film:**
-- [ ] Create `app/privacy-window-film/page.tsx`
-- [ ] Add metadata + JSON-LD
-- [ ] Port component
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Privacy Window Film:** ✓
+- [x] Create `app/privacy-window-film/page.tsx`
+- [x] Add metadata + JSON-LD
+- [x] Port component
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-**Window Protection Film:**
-- [ ] Create `app/window-protection-film/page.tsx`
-- [ ] Add metadata + JSON-LD
-- [ ] Port component
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Window Protection Film:** ✓
+- [x] Create `app/window-protection-film/page.tsx`
+- [x] Add metadata + JSON-LD
+- [x] Port component
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-**UV Blocking Film:**
-- [ ] Create `app/uv-blocking-film/page.tsx`
-- [ ] Add metadata + JSON-LD
-- [ ] Port component
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**UV Blocking Film:** ✓
+- [x] Create `app/uv-blocking-film/page.tsx`
+- [x] Add metadata + JSON-LD
+- [x] Port component
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-### 4.6 Interactive Tool Pages
+### 4.6 Interactive Tool Pages ✓
 
-**Get Quote:**
-- [ ] Create `app/get-quote/page.tsx` (server)
-- [ ] Create `app/get-quote/GetQuoteClient.tsx` (client)
-- [ ] Add metadata
-- [ ] Port all form logic
-- [ ] Test form submission
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Get Quote:** ✓
+- [x] Create `app/get-quote/page.tsx` (server component - uses shared QuoteRequestForm)
+- [-] Create `app/get-quote/GetQuoteClient.tsx` (client) - Not needed, form logic in shared component
+- [x] Add metadata
+- [x] Port all form logic (in shared QuoteRequestForm component)
+- [~] Test form submission - Deferred to testing phase
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-**Quote Estimator:**
-- [ ] Create `app/quote-estimator/page.tsx` (server)
-- [ ] Create `app/quote-estimator/QuoteEstimatorClient.tsx` (client)
-- [ ] Add metadata
-- [ ] Port calculator/estimator logic
-- [ ] Test all interactions
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Quote Estimator:** ✓
+- [x] Create `app/quote-estimator/page.tsx` (server component - uses shared InstantQuoteEstimator)
+- [-] Create `app/quote-estimator/QuoteEstimatorClient.tsx` (client) - Not needed
+- [x] Add metadata
+- [x] Port calculator/estimator logic (in shared InstantQuoteEstimator component)
+- [~] Test all interactions - Deferred to testing phase
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-**Tint Selector:**
-- [ ] Create `app/tint-selector/page.tsx` (server)
-- [ ] Create `app/tint-selector/TintSelectorClient.tsx` (client)
-- [ ] Add metadata
-- [ ] Port quiz/selector logic
-- [ ] Test all interactions
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Tint Selector:** ✓
+- [x] Create `app/tint-selector/page.tsx` (server component - uses shared TintSelectorQuiz)
+- [-] Create `app/tint-selector/TintSelectorClient.tsx` (client) - Not needed
+- [x] Add metadata
+- [x] Port quiz/selector logic (in shared TintSelectorQuiz component)
+- [~] Test all interactions - Deferred to testing phase
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-### 4.7 Blog Pages
+### 4.7 Blog Pages ✓
 
-**Blog Index:**
-- [ ] Create `app/blog/page.tsx`
-- [ ] Add metadata
-- [ ] Port blog listing component
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Blog Index:** ✓
+- [x] Create `app/blog/page.tsx`
+- [x] Add metadata
+- [x] Port blog listing component
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-**Blog Post (Dynamic):**
-- [ ] Create `app/blog/[slug]/page.tsx`
-- [ ] Implement `generateStaticParams()`
-- [ ] Implement `generateMetadata()`
-- [ ] Port blog post component
-- [ ] Test with multiple posts
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Blog Post (Dynamic):** ✓
+- [x] Create `app/blog/[slug]/page.tsx`
+- [x] Implement `generateStaticParams()`
+- [x] Implement `generateMetadata()`
+- [x] Port blog post component (+ client component with JSX content)
+- [x] Test with multiple posts (5 posts via SSG)
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-**Author Page:**
-- [ ] Create `app/author/david-trieu/page.tsx`
-- [ ] Add metadata
-- [ ] Port author component
-- [ ] Visual comparison
-- [ ] Move to `_deprecated/`
+**Author Page:** ✓
+- [x] Create `app/author/david-trieu/page.tsx`
+- [x] Add metadata
+- [x] Port author component
+- [~] Visual comparison - Deferred
+- [-] Move to `_deprecated/` - Keeping for reference
 
-### 4.8 Service Area Pages
+### 4.8 Service Area Pages ✓
 
 **Setup Dynamic Route:**
-- [ ] Create `lib/service-areas-data.ts` with all suburb data
-- [ ] Create `app/service-areas/[suburb]/page.tsx`
-- [ ] Implement `generateStaticParams()` for all 17 suburbs
-- [ ] Implement `generateMetadata()`
-- [ ] Create shared `ServiceAreaPageClient.tsx`
+- [x] Create `lib/service-areas-data.ts` with all suburb data
+- [x] Create `app/service-areas/[suburb]/page.tsx`
+- [x] Implement `generateStaticParams()` for all 17 suburbs
+- [x] Implement `generateMetadata()`
+- [-] Create shared `ServiceAreaPageClient.tsx` - Not needed, using existing ServiceAreaPage component
 
-**Verify All Suburbs:**
-- [ ] granville
-- [ ] auburn
-- [ ] parramatta
-- [ ] silverwater
-- [ ] rosehill
-- [ ] camellia
-- [ ] rydalmere
-- [ ] ermington
-- [ ] dundas
-- [ ] telopea
-- [ ] carlingford
-- [ ] north-parramatta
-- [ ] harris-park
-- [ ] westmead
-- [ ] merrylands
-- [ ] liverpool
-- [ ] penrith
+**Verify All Suburbs (17 SSG pages):**
+- [x] granville
+- [x] auburn
+- [x] parramatta
+- [x] silverwater
+- [x] rosehill
+- [x] camellia
+- [x] rydalmere
+- [x] ermington
+- [x] dundas
+- [x] telopea
+- [x] carlingford
+- [x] north-parramatta
+- [x] harris-park
+- [x] westmead
+- [x] merrylands
+- [x] liverpool
+- [x] penrith
 
-- [ ] Visual comparison (sample 3-4 suburbs)
-- [ ] Move all `ServiceAreas/*.tsx` to `_deprecated/`
+- [~] Visual comparison (sample 3-4 suburbs) - Deferred to Phase 8
+- [-] Move all `ServiceAreas/*.tsx` to `_deprecated/` - Keeping for reference
 
-### 4.9 Error Pages
-- [ ] Create `app/not-found.tsx`
-- [ ] Port 404 styling
-- [ ] Test 404 behavior
-
----
-
-## Phase 5: Assets & Images
-
-### 5.1 Image Migration
-- [ ] Create `public/images/` structure
-- [ ] Copy images from `attached_assets/`
-- [ ] Organize into subfolders (services, blog, etc.)
-- [ ] Document image locations
-
-### 5.2 Update Image References
-- [ ] Replace all `<img>` with `<Image>` from next/image
-- [ ] Add `width` and `height` props to all images
-- [ ] Add `sizes` prop to all `fill` images
-- [ ] Add `priority` prop to above-fold images (hero, logo)
-- [ ] Verify no console warnings about images
-
-### 5.3 Static Assets
-- [ ] Copy `favicon.png` to `public/`
-- [ ] Create/update `public/robots.txt`
-- [ ] Create sitemap configuration
-- [ ] Update paths in layout
+### 4.9 Error Pages ✓
+- [x] Create `app/not-found.tsx`
+- [x] Port 404 styling
+- [~] Test 404 behavior - Deferred to Phase 8
 
 ---
 
-## Phase 6: SEO Implementation
+## Phase 5: Assets & Images ✓
 
-### 6.1 Metadata
-- [ ] Root metadata in `app/layout.tsx`
-- [ ] Unique metadata per page (all 22+ pages)
-- [ ] Open Graph configuration
-- [ ] Twitter card configuration
-- [ ] Canonical URLs for all pages
+### 5.1 Image Migration ✓
+- [x] Create `public/images/` structure
+- [x] Copy images from `attached_assets/`
+- [x] Organize into subfolders (services, automotive, films, brand, hero, suppliers, textures)
+- [x] Document image locations (see public/images/ structure)
 
-### 6.2 JSON-LD Schema
-- [ ] LocalBusiness schema (home, contact)
-- [ ] Service schema (service pages)
-- [ ] Product schema (film types)
-- [ ] Article schema (blog posts)
-- [ ] Validate with Google Rich Results Test
+### 5.2 Update Image References ✓
+- [x] Replace all `<img>` with `<Image>` from next/image (app/ pages use Image)
+- [x] Add `width` and `height` props to all images
+- [x] Add `sizes` prop to all `fill` images
+- [x] Add `priority` prop to above-fold images (hero logo)
+- [-] Verify no console warnings about images - Deferred to Phase 8 testing
+- Note: Some components (Navigation, Footer, BeforeAfterSlider) use `<img>` with eslint-disable for CSS transform/clip-path requirements
 
-### 6.3 Sitemap & Robots
-- [ ] Configure sitemap generation
-- [ ] Create `public/robots.txt`
-- [ ] Verify sitemap includes all pages
-- [ ] Test with Google Search Console
+### 5.3 Static Assets ✓
+- [x] Copy `favicon.png` to `public/`
+- [x] Create/update `public/robots.txt`
+- [x] Create sitemap configuration (`app/sitemap.ts`)
+- [x] Update paths in layout (icons, og-image.png)
 
 ---
 
-## Phase 7: API Routes (If Needed)
+## Phase 6: SEO Implementation ✓
+
+### 6.1 Metadata ✓
+- [x] Root metadata in `app/layout.tsx` (comprehensive: title template, description, keywords, OG, Twitter, robots)
+- [x] Unique metadata per page (all 22+ pages with title, description, canonical, OG)
+- [x] Open Graph configuration (all pages include OG title, description, url, images)
+- [x] Twitter card configuration (root layout)
+- [x] Canonical URLs for all pages
+
+### 6.2 JSON-LD Schema ✓
+- [x] LocalBusiness schema (home, contact) - `lib/schema.tsx`
+- [x] Service schema (residential, commercial, automotive)
+- [x] Product schema (6 film type pages)
+- [x] Article schema (5 blog posts)
+- [x] ServiceArea schema (17 suburb pages)
+- [~] Validate with Google Rich Results Test - Deferred to Phase 8 testing
+
+### 6.3 Sitemap & Robots ✓
+- [x] Configure sitemap generation (`app/sitemap.ts` - 40 routes)
+- [x] Create `public/robots.txt` (with sitemap reference, crawl-delay)
+- [x] Verify sitemap includes all pages (18 static + 5 blog + 17 service areas)
+- [~] Test with Google Search Console - Deferred to post-deployment
+
+---
+
+## Phase 7: API Routes [-] Skipped
+
+**Note**: All forms are frontend-only placeholders. No backend APIs exist to port.
 
 ### 7.1 Contact Form API
-- [ ] Create `app/api/contact/route.ts`
-- [ ] Port form handling logic
-- [ ] Test form submission
-- [ ] Verify email delivery (if applicable)
+- [-] Create `app/api/contact/route.ts` - Not needed for migration (forms are UI-only)
+- [-] Port form handling logic - No existing logic to port
+- [-] Test form submission - N/A
+- [-] Verify email delivery - N/A
 
 ### 7.2 Other APIs
-- [ ] Audit if any other API routes needed
-- [ ] Port Express routes (if any)
-- [ ] Test all API endpoints
+- [-] Audit if any other API routes needed - Audited: none exist
+- [-] Port Express routes - Express server was minimal, no API routes
+- [-] Test all API endpoints - N/A
+
+**Post-Migration**: Backend form integration (email, database, CRM) tracked in `/TODO.md`
 
 ---
 
@@ -490,63 +496,134 @@
 
 ---
 
-## Phase 9: Deployment
+## Phase 9: Pre-Deployment - Replit Setup
 
-### 9.1 Pre-Deployment
-- [ ] All tests passing
-- [ ] Environment variables documented
-- [ ] Build successful locally
-- [ ] Git repository clean
-- [ ] Legacy code in `_deprecated/`
+**Goal**: Configure dual-platform deployment (Replit for dev, Vercel for prod)
 
-### 9.2 Vercel Setup
-- [ ] Create Vercel project
-- [ ] Connect GitHub repository
-- [ ] Configure build settings
-- [ ] Set environment variables
-- [ ] Configure custom domain (if ready)
+### 9.1 Configure Dual-Platform next.config.js
+- [ ] Add `output: process.env.REPLIT ? 'standalone' : undefined`
+- [ ] Add `images.unoptimized: !!process.env.REPLIT`
+- [ ] Add `allowedDevOrigins` for Replit
+- [ ] Add platform detection env var
+- [ ] Test config works locally
 
-### 9.3 Deploy & Verify
-- [ ] Deploy to preview
-- [ ] Verify preview deployment
-- [ ] Test all critical paths on preview
-- [ ] Deploy to production
-- [ ] Verify production deployment
+### 9.2 Configure package.json for Replit
+- [ ] Update dev script: `next dev -p 5000 -H 0.0.0.0`
+- [ ] Update start script: `next start -p 5000 -H 0.0.0.0`
+- [ ] Verify scripts work locally
 
-### 9.4 Post-Deployment
-- [ ] Verify all pages load
-- [ ] Test contact form on production
-- [ ] Verify analytics working
-- [ ] Submit sitemap to Google
+### 9.3 Create .replit Configuration
+- [ ] Create `.replit` file with run command
+- [ ] Configure deployment settings
+- [ ] Set port mapping (5000 → 80)
+
+### 9.4 Test on Replit
+- [ ] Push/clone code to Replit
+- [ ] Run `npm install` on Replit
+- [ ] Run `npm run build` - verify all pages build
+- [ ] Run `npm run dev` - verify site loads
+- [ ] Test all pages on `*.replit.dev` URL
+- [ ] Verify images load (unoptimized mode)
+
+### 9.5 Connect Replit to GitHub
+- [ ] Go to Version Control tab in Replit
+- [ ] Connect to GitHub repository
+- [ ] Commit all changes
+- [ ] Push to GitHub: `git push origin main`
+- [ ] Verify code appears on GitHub
+
+---
+
+## Phase 10: Deployment - Vercel Setup
+
+**Goal**: Connect Vercel to GitHub for automatic production deployments
+
+### 10.1 Connect Vercel to GitHub
+- [ ] Log in to Vercel Dashboard
+- [ ] Click "Add New Project"
+- [ ] Select "Import Git Repository"
+- [ ] Choose the GitHub repository (same as Replit)
+- [ ] Accept auto-detected Next.js settings
+- [ ] Click "Deploy"
+
+### 10.2 Configure Vercel Project
+- [ ] Set environment variables (if needed): `DATABASE_URL`, etc.
+- [ ] Verify build settings (auto-detected)
+- [ ] Configure custom domain (when ready)
+
+### 10.3 Verify Deployment Pipeline
+- [ ] Make test change on Replit
+- [ ] Commit and push to GitHub
+- [ ] Verify Vercel dashboard shows deployment
+- [ ] Verify production site updates (1-2 min)
+
+### 10.4 Post-Deployment Verification
+- [ ] All pages load on production
+- [ ] Images display correctly (Vercel optimization)
+- [ ] Forms function properly
+- [ ] Sitemap accessible at `/sitemap.xml`
+- [ ] robots.txt accessible at `/robots.txt`
+- [ ] Submit sitemap to Google Search Console
 - [ ] Monitor for errors (24-48 hours)
 
 ---
 
-## Phase 10: Cleanup
+## Phase 11: Cleanup
 
-### 10.1 Remove Legacy Code
-- [ ] Verify `_deprecated/` contains all old code
+### 11.1 Deprecate Legacy Code
+- [ ] Create `_deprecated/` folder
+- [ ] Move `client/` to `_deprecated/`
+- [ ] Move `server/` to `_deprecated/`
 - [ ] Update `.gitignore` to exclude `_deprecated/` from builds
-- [ ] Update `tsconfig.json` exclude paths
 - [ ] Document rollback procedure
 
-### 10.2 Update Configuration
-- [ ] Remove Vite from `package.json`
-- [ ] Remove Replit plugins
-- [ ] Update npm scripts
-- [ ] Clean up unused dependencies
-
-### 10.3 Documentation
-- [ ] Update README.md
-- [ ] Document new npm scripts
+### 11.2 Update Configuration
+- [ ] Clean up unused Vite dependencies (optional - can keep for reference)
+- [ ] Update README.md with new workflow
 - [ ] Document environment variables
-- [ ] Document deployment process
+- [ ] Document Replit → GitHub → Vercel workflow
 
-### 10.4 Monitoring Period
+### 11.3 Monitoring Period
 - [ ] Monitor error logs for 1 week
 - [ ] Check Google Search Console for issues
 - [ ] Verify Core Web Vitals in field
 - [ ] Address any regressions
+
+---
+
+## Phase 12: Bidirectional Workflow (Ongoing)
+
+### 12.1 Verify Workflow
+- [ ] Test: Edit on Replit → commit → push → Vercel deploys
+- [ ] Test: Pull updates to Replit if changes made elsewhere
+- [ ] Document common commands for team
+
+### 12.2 Platform Roles
+| Platform | Role | URL |
+|----------|------|-----|
+| Replit | Development, editing | `*.replit.dev` |
+| GitHub | Source control, sync hub | `github.com/repo` |
+| Vercel | Production hosting | `protektsurface.com.au` |
+
+### 12.3 Daily Workflow Commands
+```bash
+# Edit on Replit, then:
+git add .
+git commit -m "description of changes"
+git push origin main
+# Vercel auto-deploys (1-2 min)
+
+# If changes made elsewhere:
+git pull origin main
+```
+
+### 12.4 Troubleshooting Reference
+| Issue | Solution |
+|-------|----------|
+| Replit not showing latest | `git pull origin main` |
+| Vercel not deploying | Check Vercel dashboard for build errors |
+| Images broken on Replit | Ensure `images.unoptimized: !!process.env.REPLIT` |
+| Changes lost | Always `git commit` before `git push` |
 
 ---
 
@@ -579,4 +656,6 @@
 ---
 
 **Last Updated**: November 27, 2025
-**Migration Progress**: Phase 3 Complete - Ready for Phase 4 (Page Migration)
+**Migration Progress**: Phase 6 Complete - SEO (metadata + JSON-LD schema + sitemap)
+**Pages with Schema**: 42 pages (LocalBusiness: 2, Service: 3, Product: 6, Article: 5, ServiceArea: 17)
+**Deployment Strategy**: Replit (dev) → GitHub (sync) → Vercel (prod) - See Phases 9-12

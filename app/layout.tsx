@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   keywords: ['window tinting', 'Sydney', 'ceramic window tint', 'residential window tinting', 'commercial window tinting', 'automotive window tinting', 'UV protection', 'privacy film'],
   authors: [{ name: 'ProtektSurface' }],
   creator: 'ProtektSurface',
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_AU',
@@ -22,7 +26,7 @@ export const metadata: Metadata = {
     description: 'Sydney\'s premier window tinting and surface protection specialists.',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/og-image.png',
         width: 1200,
         height: 630,
         alt: 'ProtektSurface - Professional Window Tinting Sydney',
@@ -33,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ProtektSurface | Professional Window Tinting Sydney',
     description: 'Sydney\'s premier window tinting and surface protection specialists.',
-    images: ['/images/og-image.jpg'],
+    images: ['/images/og-image.png'],
   },
   robots: {
     index: true,
