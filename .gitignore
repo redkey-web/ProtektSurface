@@ -6,6 +6,9 @@ vite.config.ts.*
 .next
 .vercel
 
+# Replit uploads folder (not used in production - assets go in public/images/)
+attached_assets
+
 # Environment files
 .env*.local
 .env

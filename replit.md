@@ -72,7 +72,17 @@ protekt-surface/
 
 ## Image Configuration
 
-**IMPORTANT**: Images are now in `public/images/` (NOT `attached_assets/`)
+### Asset Storage Rule
+**IMPORTANT**: All images and static assets used by the site MUST go in `public/images/`
+
+- `public/images/` - Production assets (deployed to Vercel)
+- `attached_assets/` - Replit chat uploads only (gitignored, NOT deployed)
+
+If you upload a file in chat, it goes to `attached_assets/`. To use it on the site:
+1. Copy the file to the appropriate `public/images/` subdirectory
+2. Reference it as `/images/...` in your code
+
+**DO NOT** reference `attached_assets/` in any component code - it won't work on Vercel.
 
 ### Image Import Pattern (Next.js)
 ```tsx
