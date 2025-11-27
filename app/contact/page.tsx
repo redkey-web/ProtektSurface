@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { Phone, MapPin, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SimpleContactForm } from "@/components/SimpleContactForm";
 import { generateLocalBusinessSchema, JsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
@@ -125,26 +125,11 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">
-            <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
-              Ready to get started?
-            </h3>
-            <p className="text-base sm:text-lg text-primary-foreground/90 mb-6 sm:mb-8 max-w-2xl mx-auto">
-              Call us now for a free consultation and quote. Our expert team is
-              ready to help you with professional window tinting and surface
-              protection solutions.
-            </p>
-            <a href="tel:0286062842">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary transition-all duration-300"
-                data-testid="button-call-cta"
-              >
-                <Phone className="mr-2 w-5 h-5" />
-                (02) 8606 2842
-              </Button>
-            </a>
+          <div className="mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 text-center">
+              Send Us a Message
+            </h2>
+            <SimpleContactForm />
           </div>
         </div>
       </section>

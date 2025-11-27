@@ -1,17 +1,18 @@
 # Forms Architecture
 
 **Project**: ProtektSurface
-**Last Updated**: November 27, 2025
+**Last Updated**: November 28, 2025
 
 ---
 
 ## Form Overview
 
-| Form | Location | Purpose | Backend |
-|------|----------|---------|---------|
-| **QuoteRequestForm** | `/get-quote` | Lead capture | `/api/quote` |
-| **InstantQuoteEstimator** | `/quote-estimator` | Price calculator | None (client-side) |
-| **TintSelectorQuiz** | `/tint-selector` | Product finder | None (client-side) |
+| Form | Location | Purpose | Backend | Spam Protection |
+|------|----------|---------|---------|-----------------|
+| **QuoteRequestForm** | `/get-quote` | Lead capture | `/api/quote` | Cloudflare Turnstile |
+| **SimpleContactForm** | `/contact` | General enquiries | `/api/contact` | Cloudflare Turnstile |
+| **InstantQuoteEstimator** | `/quote-estimator` | Price calculator | None (client-side) | None needed |
+| **TintSelectorQuiz** | `/tint-selector` | Product finder | None (client-side) | None needed |
 
 ---
 
@@ -126,10 +127,16 @@ Primary lead capture form. Collects customer details and sends to business.
 User fills form
        │
        ▼
+Cloudflare Turnstile verification
+       │
+       ▼
 Client-side Zod validation
        │
        ▼
-POST /api/quote (JSON body)
+POST /api/quote (JSON body + turnstileToken)
+       │
+       ▼
+Server-side Turnstile validation
        │
        ▼
 Server-side Zod validation
@@ -159,11 +166,71 @@ lib/validations/quote.ts         # Zod schema (shared)
 app/api/quote/route.ts           # API endpoint
 lib/email/sendgrid.ts            # SendGrid client
 lib/email/templates.ts           # Email HTML templates
+lib/spam-protection/turnstile.ts # Turnstile validation
 ```
 
 ---
 
-## 2. InstantQuoteEstimator
+## 2. SimpleContactForm
+
+**Component**: `components/SimpleContactForm.tsx`
+**Page**: `app/contact/page.tsx`
+**URL**: `/contact`
+**API**: `POST /api/contact`
+
+### Purpose
+Simple contact form for general enquiries. Lighter version of QuoteRequestForm.
+
+### Fields
+
+| Field | Type | Required | Validation |
+|-------|------|----------|------------|
+| `name` | text | Yes | Min 2 chars |
+| `email` | email | Yes | Valid email |
+| `message` | textarea | Yes | Min 10 chars, max 2000 |
+
+### Data Flow
+```
+User fills form
+       │
+       ▼
+Cloudflare Turnstile verification
+       │
+       ▼
+Client-side Zod validation
+       │
+       ▼
+POST /api/contact (JSON body + turnstileToken)
+       │
+       ▼
+Server-side Turnstile validation
+       │
+       ▼
+Server-side Zod validation
+       │
+       ▼
+SendGrid API calls
+       │
+       ├──▶ Business notification email
+       │         TO: BUSINESS_EMAIL env var
+       │
+       └──▶ Customer auto-reply email
+                 TO: form.email
+       │
+       ▼
+JSON response { success: true }
+```
+
+### Key Files
+```
+components/SimpleContactForm.tsx   # Form component
+app/api/contact/route.ts           # API endpoint
+lib/spam-protection/turnstile.ts   # Turnstile validation
+```
+
+---
+
+## 3. InstantQuoteEstimator
 
 **Component**: `components/InstantQuoteEstimator.tsx`
 **Page**: `app/quote-estimator/page.tsx`
@@ -230,7 +297,7 @@ CTA links to /get-quote
 
 ---
 
-## 3. TintSelectorQuiz
+## 4. TintSelectorQuiz
 
 **Component**: `components/TintSelectorQuiz.tsx`
 **Page**: `app/tint-selector/page.tsx`
@@ -334,7 +401,7 @@ export type QuoteFormData = z.infer<typeof quoteFormSchema>;
 
 ---
 
-## API Endpoint
+## API Endpoints
 
 ### POST /api/quote
 
@@ -353,7 +420,8 @@ Content-Type: application/json
   "propertyType": "3 bedroom house",
   "address": "123 Main St, Sydney",
   "urgency": "week",
-  "message": "Looking for heat reduction"
+  "message": "Looking for heat reduction",
+  "turnstileToken": "0.xxx..." // Cloudflare Turnstile token
 }
 ```
 
@@ -378,11 +446,56 @@ Content-Type: application/json
 }
 ```
 
+**Turnstile Error** (400):
+```typescript
+{
+  "success": false,
+  "error": "Verification failed. Please try again."
+}
+```
+
 **Server Error** (500):
 ```typescript
 {
   "success": false,
   "error": "Failed to process your request. Please try again."
+}
+```
+
+---
+
+### POST /api/contact
+
+**File**: `app/api/contact/route.ts`
+
+**Request**:
+```typescript
+POST /api/contact
+Content-Type: application/json
+
+{
+  "name": "John Smith",
+  "email": "john@example.com",
+  "message": "I have a question about your services...",
+  "turnstileToken": "0.xxx..." // Cloudflare Turnstile token
+}
+```
+
+**Success Response** (200):
+```typescript
+{
+  "success": true,
+  "message": "Message sent successfully",
+  "emailSent": true,
+  "autoReplySent": true
+}
+```
+
+**Validation/Turnstile Error** (400):
+```typescript
+{
+  "success": false,
+  "error": "Validation failed" | "Verification failed. Please try again."
 }
 ```
 
@@ -405,6 +518,41 @@ Content-Type: application/json
 - Contact info for urgent queries
 
 **Files**: `lib/email/templates.ts`
+
+---
+
+## Spam Protection
+
+### Cloudflare Turnstile
+
+Both `QuoteRequestForm` and `SimpleContactForm` use Cloudflare Turnstile for bot protection.
+
+**How it works:**
+1. Widget renders on form (invisible in most cases)
+2. User interaction generates a token
+3. Token sent with form submission
+4. Server validates token with Cloudflare API
+5. Request rejected if token invalid
+
+**Environment Variables:**
+```env
+# Client-side (public)
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=0x4AAAA...
+
+# Server-side (secret)
+TURNSTILE_SECRET_KEY=0x4AAAA...
+```
+
+**Key Files:**
+```
+lib/spam-protection/turnstile.ts  # Server-side validation
+lib/spam-protection/index.ts      # Exports
+```
+
+**Graceful Degradation:**
+- If `TURNSTILE_SECRET_KEY` not set in development, validation is skipped
+- If `NEXT_PUBLIC_TURNSTILE_SITE_KEY` not set, widget doesn't render
+- Forms still work without Turnstile (for testing)
 
 ---
 
@@ -432,7 +580,24 @@ Content-Type: application/json
 # Start dev server
 npm run dev
 
-# Test at http://localhost:3000/get-quote
+# Test quote form at http://localhost:5000/get-quote
+# Test contact form at http://localhost:5000/contact
+```
+
+### Turnstile Test Keys
+
+Use these dummy keys for local development:
+
+| Scenario | Site Key | Secret Key |
+|----------|----------|------------|
+| Always pass | `1x00000000000000000000AA` | `1x0000000000000000000000000000000AA` |
+| Always fail | `2x00000000000000000000AB` | `2x0000000000000000000000000000000AA` |
+| Force challenge | `3x00000000000000000000FF` | N/A |
+
+```env
+# .env.local for testing
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
 ```
 
 ### Without SendGrid (Development)
@@ -441,11 +606,18 @@ If `SENDGRID_API_KEY` is not set:
 - Logs to console instead of sending email
 - Returns success response
 
-### With SendGrid
-1. Set environment variables in `.env.local`
+### Without Turnstile (Development)
+If Turnstile keys not set:
+- Widget doesn't render
+- Server-side validation skipped
+- Forms work normally
+
+### With SendGrid + Turnstile
+1. Set all environment variables in `.env.local`
 2. Submit form
 3. Check inbox for emails
+4. Check Cloudflare dashboard for analytics
 
 ---
 
-**Document Version**: 1.0
+**Document Version**: 2.0

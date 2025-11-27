@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -41,6 +42,8 @@ type QuoteFormData = z.infer<typeof quoteFormSchema>;
 
 export function QuoteRequestForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
   const { toast } = useToast();
 
   const form = useForm<QuoteFormData>({
@@ -58,18 +61,33 @@ export function QuoteRequestForm() {
   });
 
   const onSubmit = async (data: QuoteFormData) => {
+    // Check for Turnstile token if configured
+    if (!turnstileToken && process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY) {
+      toast({
+        title: "Verification required",
+        description: "Please complete the security check and try again.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     try {
       const response = await fetch('/api/quote', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          turnstileToken,
+        }),
       });
 
       const result = await response.json();
 
       if (!response.ok || !result.success) {
+        turnstileRef.current?.reset();
+        setTurnstileToken(null);
         throw new Error(result.error || 'Failed to submit quote request');
       }
 
@@ -80,6 +98,8 @@ export function QuoteRequestForm() {
       });
     } catch (error) {
       console.error('Quote submission error:', error);
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
       toast({
         title: "Something went wrong",
         description: error instanceof Error ? error.message : "Please try again or call us directly.",
@@ -100,7 +120,12 @@ export function QuoteRequestForm() {
           you within 24 hours with a detailed quote.
         </p>
         <Button
-          onClick={() => setIsSubmitted(false)}
+          onClick={() => {
+            setIsSubmitted(false);
+            setTurnstileToken(null);
+            turnstileRef.current?.reset();
+            form.reset();
+          }}
           variant="outline"
           data-testid="button-submit-another"
         >
@@ -275,6 +300,30 @@ export function QuoteRequestForm() {
               </FormItem>
             )}
           />
+
+          {/* Cloudflare Turnstile Widget */}
+          {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+            <div className="flex justify-center">
+              <Turnstile
+                ref={turnstileRef}
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                onSuccess={(token) => setTurnstileToken(token)}
+                onError={() => {
+                  setTurnstileToken(null);
+                  toast({
+                    title: "Verification failed",
+                    description: "Please refresh the page and try again.",
+                    variant: "destructive",
+                  });
+                }}
+                onExpire={() => setTurnstileToken(null)}
+                options={{
+                  theme: 'auto',
+                  size: 'normal',
+                }}
+              />
+            </div>
+          )}
 
           <Button
             type="submit"
