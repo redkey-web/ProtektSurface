@@ -11,6 +11,7 @@
 |---------|---------|--------|--------------|
 | **Vercel** | Website hosting | Active | Free tier |
 | **SendGrid** | Transactional email | Active | Free (100/day) |
+| **Cloudflare Turnstile** | Spam protection (CAPTCHA) | Planned | Free |
 | **Twilio** | SMS (future) | Planned | ~$15/mo |
 | **TPP Wholesale** | Domain registrar & DNS | Active | Domain fee only |
 | **Google Workspace** | Business email hosting | Active | Existing |
@@ -122,7 +123,44 @@
 
 ---
 
-## 4. TPP Wholesale (Domain & DNS)
+## 4. Cloudflare Turnstile (Spam Protection)
+
+**Purpose**: Invisible CAPTCHA to protect forms from bot submissions
+
+**URLs**:
+- Dashboard: https://dash.cloudflare.com/?to=/:account/turnstile
+- Documentation: https://developers.cloudflare.com/turnstile/
+
+**Signup**:
+1. Go to cloudflare.com
+2. Create free account
+3. Navigate to Turnstile in sidebar
+4. Add site widget
+
+**Configuration Required**:
+- [ ] Create Cloudflare account
+- [ ] Add site widget for `protektsurfacesolutions.com.au`
+- [ ] Add environment variables:
+  - `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public)
+  - `TURNSTILE_SECRET_KEY` (sensitive)
+
+**Linking Method**:
+- `@marsidev/react-turnstile` npm package
+- Client-side widget in QuoteRequestForm
+- Server-side validation in `/api/quote` route
+
+**Free Tier**:
+- Unlimited verifications
+- No credit card required
+
+**Documentation**:
+- [Full Implementation Guide](../services/spam_protection/CLOUDFLARE_TURNSTILE_IMPLEMENTATION.md)
+- [Why Spam Protection](../services/spam_protection/WHY_SPAM_PROTECTION.md)
+- [Options Comparison](../services/spam_protection/OPTIONS_COMPARISON.md)
+
+---
+
+## 5. TPP Wholesale (Domain & DNS)
 
 **Purpose**: Domain registrar and DNS management
 
@@ -156,7 +194,7 @@ ns3.partnerconsole.net
 
 ---
 
-## 5. Google Workspace (Email)
+## 6. Google Workspace (Email)
 
 **Purpose**: Business email hosting (separate from SendGrid)
 
@@ -176,7 +214,7 @@ ns3.partnerconsole.net
 
 ---
 
-## 6. GitHub (Repository)
+## 7. GitHub (Repository)
 
 **Purpose**: Code repository, version control
 
@@ -204,25 +242,33 @@ ns3.partnerconsole.net
 │  │              Next.js Application                         │   │
 │  │  ┌─────────────────┐    ┌─────────────────────────────┐ │   │
 │  │  │ QuoteRequestForm│───▶│ POST /api/quote             │ │   │
-│  │  └─────────────────┘    │ (Serverless Function)       │ │   │
-│  │                         └──────────────┬──────────────┘ │   │
+│  │  │ + Turnstile     │    │ (Serverless Function)       │ │   │
+│  │  └─────────────────┘    └──────────────┬──────────────┘ │   │
 │  └─────────────────────────────────────────┼───────────────┘   │
 └─────────────────────────────────────────────┼───────────────────┘
                                               │
-                    ┌─────────────────────────┼─────────────────────────┐
-                    │                         │                         │
-                    ▼                         ▼                         ▼
-         ┌──────────────────┐      ┌──────────────────┐      ┌──────────────────┐
-         │    SENDGRID      │      │     TWILIO       │      │  GOOGLE EMAIL    │
-         │  (Send Email)    │      │   (Send SMS)     │      │  (Receive)       │
-         │                  │      │   [Future]       │      │                  │
-         │ FROM: quotes@    │      │                  │      │ TO: david.trieu@ │
-         │ protektsurface   │      │                  │      │ protektauto      │
-         └──────────────────┘      └──────────────────┘      └──────────────────┘
-                    │                                                  ▲
-                    │                                                  │
-                    └──────────────────────────────────────────────────┘
-                              Email delivered to inbox
+               ┌──────────────────────────────┼──────────────────────────────┐
+               │                              │                              │
+               ▼                              ▼                              │
+    ┌──────────────────┐           ┌─────────┴─────────┐                    │
+    │   CLOUDFLARE     │           │                   │                    │
+    │   TURNSTILE      │           │                   │                    │
+    │  (Verify Token)  │           │                   │                    │
+    │   [Planned]      │           │                   │                    │
+    └──────────────────┘           │                   │                    │
+               │                   │                   │                    │
+               │ ✓ Valid           ▼                   ▼                    ▼
+               │         ┌──────────────────┐ ┌──────────────────┐ ┌──────────────────┐
+               └────────▶│    SENDGRID      │ │     TWILIO       │ │  GOOGLE EMAIL    │
+                         │  (Send Email)    │ │   (Send SMS)     │ │  (Receive)       │
+                         │                  │ │   [Future]       │ │                  │
+                         │ FROM: quotes@    │ │                  │ │ TO: david.trieu@ │
+                         │ protektsurface   │ │                  │ │ protektauto      │
+                         └──────────────────┘ └──────────────────┘ └──────────────────┘
+                                   │                                         ▲
+                                   │                                         │
+                                   └─────────────────────────────────────────┘
+                                             Email delivered to inbox
 ```
 
 ---
@@ -232,11 +278,14 @@ ns3.partnerconsole.net
 | Service | Credential Type | Location |
 |---------|-----------------|----------|
 | SendGrid | API Key | Vercel env vars (sensitive) |
+| Cloudflare Turnstile | Site Key | Vercel env vars (public, future) |
+| Cloudflare Turnstile | Secret Key | Vercel env vars (sensitive, future) |
 | Twilio | Account SID | Vercel env vars (future) |
 | Twilio | Auth Token | Vercel env vars (future) |
 | TPP Wholesale | Login | Password manager |
 | Vercel | Login | GitHub OAuth |
 | Google Workspace | Login | Google account |
+| Cloudflare | Login | cloudflare.com (future) |
 
 ---
 
@@ -246,9 +295,19 @@ ns3.partnerconsole.net
 |---------|-------------|
 | Vercel | https://vercel.com/help |
 | SendGrid | https://support.sendgrid.com |
+| Cloudflare | https://support.cloudflare.com |
 | Twilio | https://support.twilio.com |
 | TPP Wholesale | https://www.tppwholesale.com.au/support |
 
 ---
 
-**Document Version**: 1.0
+## Related Documentation
+
+- [Email/SMS Services](../services/email_sms/) - Email and SMS implementation
+- [Spam Protection](../services/spam_protection/) - Form spam protection (Turnstile)
+- [Forms Architecture](./FORMS.md) - Form interconnections and data flow
+- [SendGrid Setup](./SENDGRID_SETUP.md) - Email setup record
+
+---
+
+**Document Version**: 1.1
