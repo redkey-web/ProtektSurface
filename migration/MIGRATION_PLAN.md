@@ -547,32 +547,194 @@ Route (app)                              Size    First Load JS
 
 ---
 
-## Phase 8: Deployment
+## Phase 8: Pre-Deployment - Replit Setup
 
-### 8.1 Vercel Setup
+**Goal**: Configure the project for dual-platform deployment (Replit for development, Vercel for production) so you can continue editing on Replit and push to Vercel.
 
-1. Connect GitHub repository to Vercel
-2. Configure build settings (auto-detected for Next.js)
-3. Set environment variables:
-   - `DATABASE_URL` (if using database)
-   - Any other secrets
-4. Deploy to preview
-5. Verify preview deployment
-6. Deploy to production
-7. Configure custom domain
+### 8.1 Configure Dual-Platform next.config.js
 
-### 8.2 Post-Deployment
+Update `next.config.js` to auto-detect platform:
 
-- [ ] Verify all pages load on production
-- [ ] Test contact forms
+```javascript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Auto-detect platform and adjust output mode
+  output: process.env.REPLIT ? 'standalone' : undefined,
+
+  // Image optimization: disabled on Replit (no optimizer), enabled on Vercel
+  images: {
+    unoptimized: !!process.env.REPLIT,
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+  },
+
+  // Allow Replit dev origins
+  allowedDevOrigins: process.env.REPLIT
+    ? ['*.replit.dev', 'https://*.replit.dev']
+    : undefined,
+
+  // Platform detection for debugging
+  env: {
+    NEXT_PUBLIC_DEPLOYMENT: process.env.VERCEL
+      ? 'vercel'
+      : process.env.REPLIT ? 'replit' : 'local',
+  },
+
+  // Security headers (work on both platforms)
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+        ],
+      },
+    ];
+  },
+
+  // SEO redirects (work on both platforms)
+  async redirects() {
+    return [
+      // Legacy service redirects
+      { source: '/services/residential-window-tinting', destination: '/residential-window-tinting', permanent: true },
+      // ... other redirects
+    ];
+  },
+};
+
+module.exports = nextConfig;
+```
+
+### 8.2 Configure package.json Scripts for Replit
+
+Update scripts to work on Replit (port 5000, bind to 0.0.0.0):
+
+```json
+{
+  "scripts": {
+    "dev": "next dev -p 5000 -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start -p 5000 -H 0.0.0.0",
+    "lint": "next lint"
+  }
+}
+```
+
+### 8.3 Create .replit Configuration File
+
+Create `.replit` file in project root:
+
+```toml
+run = "npm run dev"
+entrypoint = "app/page.tsx"
+
+[deployment]
+run = ["sh", "-c", "npm run build && npm run start"]
+deploymentTarget = "cloudrun"
+
+[nix]
+channel = "stable-24_05"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+```
+
+### 8.4 Test Build on Replit
+
+1. Push code to Replit (via Git clone or import)
+2. Run `npm install`
+3. Run `npm run build` - verify all 42 pages build successfully
+4. Run `npm run dev` - verify site loads on Replit preview URL
+5. Test navigation, images, forms on `*.replit.dev` URL
+
+### 8.5 Connect Replit to GitHub
+
+1. In Replit, go to Version Control tab
+2. Connect to GitHub repository (or create new repo)
+3. Commit all changes: `git add . && git commit -m "feat: complete Next.js migration"`
+4. Push to GitHub: `git push origin main`
+5. Verify code appears on GitHub
+
+---
+
+## Phase 9: Deployment - Vercel Setup
+
+**Goal**: Connect Vercel to the same GitHub repository for automatic production deployments.
+
+### 9.1 Connect Vercel to GitHub
+
+1. Log in to [Vercel Dashboard](https://vercel.com/dashboard)
+2. Click "Add New Project"
+3. Select "Import Git Repository"
+4. Choose the GitHub repository (same one Replit uses)
+5. Vercel auto-detects Next.js - accept default settings
+6. Click "Deploy"
+
+### 9.2 Configure Vercel Project
+
+1. **Environment Variables** (if needed):
+   - `DATABASE_URL` - add in Vercel Dashboard → Settings → Environment Variables
+   - Any other production secrets
+
+2. **Build Settings** (usually auto-detected):
+   - Framework Preset: Next.js
+   - Build Command: `npm run build`
+   - Output Directory: `.next`
+
+3. **Domain Configuration**:
+   - Add custom domain in Vercel Dashboard → Settings → Domains
+   - Configure DNS records as instructed
+
+### 9.3 Verify Deployment Pipeline
+
+Test the bidirectional workflow:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    DEPLOYMENT PIPELINE                           │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│   ┌──────────┐    git push    ┌──────────┐    auto-deploy       │
+│   │  Replit  │ ──────────────→│  GitHub  │────────────────→     │
+│   │  (Dev)   │                │  (Sync)  │                      │
+│   └──────────┘                └──────────┘                      │
+│       │                            │                             │
+│       │ Preview                    │              ┌──────────┐  │
+│       │ on *.replit.dev            └─────────────→│  Vercel  │  │
+│       ↓                                           │  (Prod)  │  │
+│   Test changes                                    └──────────┘  │
+│   locally                                              │        │
+│                                                        ↓        │
+│                                              Live at domain     │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+1. Make a test change on Replit
+2. Commit and push: `git add . && git commit -m "test" && git push`
+3. Verify Vercel dashboard shows new deployment
+4. Verify production site updates (typically 1-2 minutes)
+
+### 9.4 Post-Deployment Verification
+
+- [ ] All pages load on production (protektsurface.com.au)
+- [ ] Images display correctly (Vercel image optimization working)
+- [ ] Contact/quote forms function
+- [ ] Sitemap accessible at `/sitemap.xml`
+- [ ] robots.txt accessible at `/robots.txt`
 - [ ] Submit sitemap to Google Search Console
 - [ ] Monitor error logs for 48 hours
 
 ---
 
-## Phase 9: Cleanup
+## Phase 10: Cleanup
 
-### 9.1 Deprecate Legacy Code
+### 10.1 Deprecate Legacy Code
+
+Keep legacy Vite code for rollback capability:
 
 ```bash
 mkdir _deprecated
@@ -580,24 +742,86 @@ mv client _deprecated/
 mv server _deprecated/
 ```
 
-### 9.2 Update Configuration
+### 10.2 Update .gitignore
 
-Remove from `package.json`:
-- Vite scripts
-- Vite dependencies
-- Replit plugins
+```gitignore
+# Deprecated legacy code (keep in repo but exclude from builds)
+_deprecated/
 
-Update scripts:
-```json
-{
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  }
-}
+# Next.js build output
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Environment files
+.env*.local
 ```
+
+### 10.3 Documentation
+
+- [ ] Update README.md with new scripts and workflow
+- [ ] Document environment variables
+- [ ] Document Replit → GitHub → Vercel workflow
+- [ ] Create rollback procedure document
+
+---
+
+## Phase 11: Bidirectional Workflow Setup (Ongoing)
+
+### 11.1 Platform Roles
+
+| Platform | Role | Environment | URL |
+|----------|------|-------------|-----|
+| **Replit** | Development, editing | Development | `*.replit.dev` |
+| **GitHub** | Source control, sync hub | N/A | `github.com/repo` |
+| **Vercel** | Production hosting, SEO | Production | `protektsurface.com.au` |
+
+### 11.2 Daily Workflow
+
+**Making changes (edit on Replit, deploy to Vercel):**
+
+```bash
+# 1. Edit files in Replit IDE
+# 2. Preview changes on *.replit.dev
+
+# 3. When ready, commit and push
+git add .
+git commit -m "feat: add new service page"
+git push origin main
+
+# 4. Vercel auto-deploys from GitHub (1-2 min)
+# 5. Verify on production site
+```
+
+**Pulling updates (if changes made elsewhere):**
+
+```bash
+# In Replit terminal
+git pull origin main
+```
+
+### 11.3 Troubleshooting
+
+| Issue | Cause | Solution |
+|-------|-------|----------|
+| Replit not showing latest | Didn't pull | Run `git pull origin main` |
+| Vercel not deploying | Build failed | Check Vercel dashboard for errors |
+| Different behavior on platforms | Platform detection failed | Verify `REPLIT` env var is set |
+| Changes lost after deploy | Didn't commit | Always `git commit` before `git push` |
+| Images broken on Vercel | Wrong path | Use `/images/...` from public folder |
+| Images broken on Replit | Optimization enabled | Ensure `images.unoptimized: !!process.env.REPLIT` |
+
+### 11.4 Why This Works
+
+| Concern | How It's Handled |
+|---------|------------------|
+| Different configs needed? | `next.config.js` auto-detects platform via env vars |
+| Port differences? | Scripts use port 5000 for Replit, Vercel handles automatically |
+| Image optimization? | Disabled on Replit, enabled on Vercel |
+| Output mode? | `standalone` on Replit, default on Vercel |
+| Same codebase? | Yes - Git keeps everything in sync |
 
 ---
 
@@ -621,19 +845,20 @@ Update scripts:
 
 ## Migration Estimate
 
-| Phase | Estimated Effort |
-|-------|------------------|
-| Analysis & Audit | 2-3 hours |
-| Project Setup | 1-2 hours |
-| Core Infrastructure | 2-3 hours |
-| Page Migration (22 pages) | 8-12 hours |
-| Service Areas (17 pages via dynamic) | 2-3 hours |
-| Assets & Images | 1-2 hours |
-| SEO Implementation | 2-3 hours |
-| Testing & Validation | 2-3 hours |
-| Deployment | 1-2 hours |
-| Cleanup | 1 hour |
-| **Total** | **22-34 hours** |
+| Phase | Description | Estimated Effort |
+|-------|-------------|------------------|
+| 1. Analysis & Audit | Visual audit, dependency mapping | 2-3 hours |
+| 2. Project Setup | Next.js initialization, folder structure | 1-2 hours |
+| 3. Core Infrastructure | Layout, components, styles | 2-3 hours |
+| 4. Page Migration | Port 22 pages to Next.js | 8-12 hours |
+| 5. Assets & Images | Move images, next/image conversion | 1-2 hours |
+| 6. SEO Implementation | Metadata, JSON-LD, sitemap | 2-3 hours |
+| 7. Testing & Validation | Visual testing, Lighthouse | 2-3 hours |
+| 8. Pre-Deployment (Replit) | Configure dual-platform, test on Replit | 1-2 hours |
+| 9. Deployment (Vercel) | Connect GitHub, deploy to production | 1 hour |
+| 10. Cleanup | Deprecate legacy code, documentation | 1 hour |
+| 11. Bidirectional Workflow | Verify Replit → GitHub → Vercel pipeline | 0.5 hour |
+| **Total** | | **22-35 hours** |
 
 ---
 

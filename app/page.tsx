@@ -1,23 +1,28 @@
-import Link from 'next/link';
+import { Metadata } from 'next';
+import HomeClient from './HomeClient';
+import { generateLocalBusinessSchema, JsonLd } from '@/lib/schema';
+
+export const metadata: Metadata = {
+  title: 'Professional Window Tinting Sydney | ProtektSurface',
+  description: "Sydney's premier window tinting & surface protection specialists. Premium ceramic films for homes, businesses and vehicles. Professional installation with lifetime warranty.",
+  alternates: {
+    canonical: 'https://protektsurface.com.au',
+  },
+  openGraph: {
+    title: 'Professional Window Tinting Sydney | ProtektSurface',
+    description: "Sydney's premier window tinting & surface protection specialists.",
+    url: 'https://protektsurface.com.au',
+    images: ['/images/hero/hero-background.png'],
+  },
+};
 
 export default function HomePage() {
+  const localBusinessSchema = generateLocalBusinessSchema('https://protektsurface.com.au');
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center max-w-2xl px-4">
-        <h1 className="text-4xl font-bold text-foreground mb-4">
-          ProtektSurface
-        </h1>
-        <p className="text-lg text-muted-foreground mb-8">
-          Next.js migration in progress. This is a placeholder home page.
-        </p>
-        <div className="space-y-2 text-sm text-muted-foreground">
-          <p>✓ Next.js 16 installed</p>
-          <p>✓ Tailwind CSS configured</p>
-          <p>✓ shadcn/ui components copied</p>
-          <p>✓ Root layout created</p>
-          <p>→ Page migration pending</p>
-        </div>
-      </div>
-    </div>
+    <>
+      <JsonLd data={localBusinessSchema} />
+      <HomeClient />
+    </>
   );
 }
