@@ -178,9 +178,6 @@ export default function HomeClient() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-16 sm:py-20">
           <div className="relative">
-            <div className="absolute inset-0 -inset-x-[100vw] -top-6 -bottom-8 bg-white/40 backdrop-blur-[2px]" />
-
-            <div className="relative">
               <div className="flex justify-center mb-4 sm:mb-6">
                 <Image
                   src="/images/logo.webp"
@@ -206,28 +203,27 @@ export default function HomeClient() {
                 Sydney&apos;s premier window tinting & surface protection specialists. Premium films and protective solutions for homes, businesses and vehicles
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link href="#services">
-                  <Button
-                    size="lg"
-                    className="w-full sm:w-auto bg-primary text-primary-foreground px-8 transition-all duration-300 hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] [&:hover]:text-white [&:hover_*]:drop-shadow-[0_0_8px_rgba(212,165,116,1)]"
-                    data-testid="button-view-services"
-                  >
-                    View Services
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-                <a href="tel:0286062842">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="w-full sm:w-auto border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] transition-all duration-300"
-                    data-testid="button-contact-hero"
-                  >
-                    Contact Us
-                  </Button>
-                </a>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link href="#services">
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto bg-primary text-primary-foreground px-8 transition-all duration-300 hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] [&:hover]:text-white [&:hover_*]:drop-shadow-[0_0_8px_rgba(212,165,116,1)]"
+                  data-testid="button-view-services"
+                >
+                  View Services
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+              <a href="tel:0286062842">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full sm:w-auto border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] transition-all duration-300"
+                  data-testid="button-contact-hero"
+                >
+                  Contact Us
+                </Button>
+              </a>
             </div>
           </div>
         </div>
