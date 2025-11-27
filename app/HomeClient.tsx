@@ -19,12 +19,14 @@ export default function HomeClient() {
   const [currentTint, setCurrentTint] = useState(0);
 
   const tintVariants = [
-    { name: "Clear", color: "transparent", opacity: 0 },
-    { name: "Light", color: "rgb(50, 50, 50)", opacity: 0.15 },
-    { name: "Medium", color: "rgb(40, 40, 40)", opacity: 0.35 },
-    { name: "Dark", color: "rgb(30, 30, 30)", opacity: 0.55 },
-    { name: "Limo", color: "rgb(20, 20, 20)", opacity: 0.75 },
+    { name: "Clear", color: "transparent", opacity: 0, isDark: false },
+    { name: "Light", color: "rgb(50, 50, 50)", opacity: 0.15, isDark: false },
+    { name: "Medium", color: "rgb(40, 40, 40)", opacity: 0.35, isDark: true },
+    { name: "Dark", color: "rgb(30, 30, 30)", opacity: 0.55, isDark: true },
+    { name: "Limo", color: "rgb(20, 20, 20)", opacity: 0.75, isDark: true },
   ];
+
+  const isCurrentTintDark = tintVariants[currentTint].isDark;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -193,16 +195,29 @@ export default function HomeClient() {
                 />
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 sm:mb-6 leading-tight">
+              <h1 
+                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-500 ${
+                  isCurrentTintDark ? 'text-white' : 'text-black'
+                }`}
+                style={{
+                  textShadow: isCurrentTintDark 
+                    ? '0 2px 10px rgba(0,0,0,0.5)' 
+                    : '0 0 20px rgba(255,255,255,0.5)'
+                }}
+              >
                 Professional Window Tinting
                 <br />
                 <span className="text-primary">Sydney</span>
               </h1>
 
               <p 
-                className="text-lg sm:text-xl text-black/80 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed"
+                className={`text-lg sm:text-xl mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${
+                  isCurrentTintDark ? 'text-white/90' : 'text-black/80'
+                }`}
                 style={{
-                  textShadow: '0 0 20px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.7), 0 0 60px rgba(255,255,255,0.5)'
+                  textShadow: isCurrentTintDark 
+                    ? '0 2px 10px rgba(0,0,0,0.5)' 
+                    : '0 0 20px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.7), 0 0 60px rgba(255,255,255,0.5)'
                 }}
               >
                 Sydney&apos;s premier window tinting & surface protection specialists. Premium films and protective solutions for homes, businesses and vehicles
