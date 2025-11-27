@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { generateLocalBusinessSchema, JsonLd } from '@/lib/schema';
@@ -60,28 +60,6 @@ export default function ContactPage() {
               </div>
             </Card>
 
-            <Card className="p-6 hover-elevate">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <Mail className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    Email
-                  </h3>
-                  <a
-                    href="mailto:info@protektsurfacesolutions.com.au"
-                    className="text-primary hover:underline break-all"
-                    data-testid="link-email"
-                  >
-                    info@protektsurfacesolutions.com.au
-                  </a>
-                  <p className="text-muted-foreground text-sm mt-1">
-                    We&apos;ll respond within 24 hours
-                  </p>
-                </div>
-              </div>
-            </Card>
 
             <Card className="p-6 hover-elevate">
               <div className="flex items-start gap-4">
