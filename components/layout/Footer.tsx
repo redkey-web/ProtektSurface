@@ -52,7 +52,7 @@ export function Footer() {
             <img
               src="/images/logo.webp"
               alt="Protekt Surface Solutions"
-              className="h-12 w-auto mb-6"
+              className="h-[86px] w-auto mb-6"
             />
             <p className="text-sm text-muted-foreground leading-relaxed">
               Sydney&apos;s premier window tinting and surface protection specialists.
