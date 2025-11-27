@@ -199,7 +199,12 @@ export default function HomeClient() {
                 <span className="text-primary">Sydney</span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-black/80 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
+              <p 
+                className="text-lg sm:text-xl text-black/80 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed"
+                style={{
+                  textShadow: '0 0 20px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.7), 0 0 60px rgba(255,255,255,0.5)'
+                }}
+              >
                 Sydney&apos;s premier window tinting & surface protection specialists. Premium films and protective solutions for homes, businesses and vehicles
               </p>
 
