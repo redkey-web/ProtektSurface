@@ -728,6 +728,100 @@ Test the bidirectional workflow:
 - [ ] Submit sitemap to Google Search Console
 - [ ] Monitor error logs for 48 hours
 
+### 9.5 SEO Protection (Block Preview URLs from Google)
+
+**Goal**: Only production domain should be indexed by Google. Block all Vercel preview URLs.
+
+**Two-Layer Approach**:
+
+**Layer 1: X-Robots-Tag Headers** in `next.config.js`:
+
+```javascript
+// next.config.js - async headers()
+async headers() {
+  return [
+    // Block Vercel preview URLs from Google indexing
+    {
+      source: '/:path*',
+      has: [{ type: 'host', value: 'protektsurface.vercel.app' }],
+      headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+    },
+    {
+      source: '/:path*',
+      has: [{ type: 'host', value: 'protektsurface-redkeys-projects.vercel.app' }],
+      headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+    },
+    // Catch any other Vercel preview deployments
+    {
+      source: '/:path*',
+      has: [{ type: 'host', value: '(?!protektsurface\\.com\\.au).*\\.vercel\\.app' }],
+      headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+    },
+    // Security headers...
+  ];
+}
+```
+
+**Layer 2: robots.txt + Sitemap**:
+
+```
+# public/robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap points to PRODUCTION domain only
+Sitemap: https://protektsurface.com.au/sitemap.xml
+```
+
+**Verification**:
+```bash
+curl -sI https://protektsurface.vercel.app/ | grep x-robots-tag
+# Should return: x-robots-tag: noindex, nofollow
+```
+
+**Result**:
+| URL | Indexed? | Why |
+|-----|----------|-----|
+| `protektsurface.com.au/*` | ✅ Yes | robots.txt allows, sitemap lists |
+| `*.vercel.app/*` | ❌ No | X-Robots-Tag: noindex, nofollow |
+| `*.replit.dev/*` | ❌ No | Not in sitemap, not discovered |
+
+### 9.6 Deployment Protection (Manual Promotion)
+
+**Goal**: Prevent automatic production deployments. All pushes create testable previews; promote manually when ready.
+
+**Dashboard Configuration**:
+1. Vercel Dashboard → Project → **Settings**
+2. **Environments** → **Production**
+3. Under **Branch Tracking**, disable **"Auto-assign Custom Production Domains"**
+4. Save
+
+**Workflow After Setup**:
+
+| Action | Result |
+|--------|--------|
+| `git push origin main` | Creates deployment at unique preview URL |
+| Test at preview URL | Verify changes work correctly |
+| `vercel promote <url>` | Promotes to production (goes live) |
+
+**CLI Commands**:
+```bash
+# List recent deployments
+vercel ls
+
+# Promote a specific deployment to production
+vercel promote https://protektsurface-abc123-redkeys-projects.vercel.app
+
+# Check promotion status
+vercel promote status
+```
+
+**Benefits**:
+- Single `main` branch (no release branches needed)
+- Every push is testable before going live
+- Production stays stable until explicitly promoted
+- Full control over releases
+
 ---
 
 ## Phase 10: Cleanup

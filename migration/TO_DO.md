@@ -572,6 +572,73 @@
 
 **Production URL**: https://protektsurface.vercel.app
 
+### 10.5 SEO Protection (Block Preview URLs from Google) ✓
+
+**Goal**: Prevent Vercel preview URLs from being indexed by Google while allowing production domain.
+
+**Implementation** (Two-Layer Approach):
+
+**Layer 1: X-Robots-Tag Headers** (`next.config.js`):
+- [x] Add `X-Robots-Tag: noindex, nofollow` header for `protektsurface.vercel.app`
+- [x] Add `X-Robots-Tag: noindex, nofollow` header for `*-redkeys-projects.vercel.app`
+- [x] Add catch-all pattern for any `*.vercel.app` domain
+- [x] Verify header is served: `curl -sI https://protektsurface.vercel.app/ | grep x-robots-tag`
+
+```javascript
+// next.config.js - headers() section
+{
+  source: '/:path*',
+  has: [{ type: 'host', value: 'protektsurface.vercel.app' }],
+  headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+},
+```
+
+**Layer 2: robots.txt + Sitemap** (`public/robots.txt`):
+- [x] Sitemap URL points to production domain only: `https://protektsurface.com.au/sitemap.xml`
+- [x] Google's sitemap crawler only discovers pages on production domain
+
+**Result**:
+| URL | Indexed? | Why |
+|-----|----------|-----|
+| `protektsurface.com.au/*` | ✅ Yes | robots.txt allows, sitemap lists |
+| `protektsurface.vercel.app/*` | ❌ No | X-Robots-Tag: noindex |
+| `*-redkeys-projects.vercel.app/*` | ❌ No | X-Robots-Tag: noindex |
+| `*.replit.dev/*` | ❌ No | Not in sitemap |
+
+### 10.6 Deployment Protection (Manual Promotion) ✓
+
+**Goal**: Prevent automatic production deployments - require manual promotion.
+
+**Dashboard Configuration**:
+- [x] Go to Vercel Dashboard → Settings → Environments → Production
+- [x] Under Branch Tracking, disable **"Auto-assign Custom Production Domains"**
+- [x] Save settings
+
+**How It Works**:
+| Action | Result |
+|--------|--------|
+| Push to `main` | Creates deployment at unique URL (e.g., `protektsurface-abc123-redkeys-projects.vercel.app`) |
+| Test deployment | Access unique URL to verify changes |
+| `vercel promote <url>` | Promotes deployment to production (`protektsurface.vercel.app`) |
+
+**CLI Commands**:
+```bash
+# List recent deployments
+vercel ls
+
+# Promote a specific deployment to production
+vercel promote <deployment-url>
+
+# Check promotion status
+vercel promote status
+```
+
+**Benefits**:
+- All pushes create testable preview deployments
+- Production stays stable until explicitly promoted
+- Single `main` branch workflow (no release branches needed)
+- Full control over what goes live
+
 ---
 
 ## Phase 11: Cleanup
