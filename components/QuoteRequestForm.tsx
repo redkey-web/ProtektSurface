@@ -58,12 +58,34 @@ export function QuoteRequestForm() {
   });
 
   const onSubmit = async (data: QuoteFormData) => {
-    console.log("Quote request:", data);
-    setIsSubmitted(true);
-    toast({
-      title: "Quote Request Received!",
-      description: "We'll contact you within 24 hours with a detailed quote.",
-    });
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Failed to submit quote request');
+      }
+
+      setIsSubmitted(true);
+      toast({
+        title: "Quote Request Sent!",
+        description: "We've received your request and will contact you within 24 hours.",
+      });
+    } catch (error) {
+      console.error('Quote submission error:', error);
+      toast({
+        title: "Something went wrong",
+        description: error instanceof Error ? error.message : "Please try again or call us directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   if (isSubmitted) {
