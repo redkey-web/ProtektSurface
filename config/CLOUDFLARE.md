@@ -1,7 +1,19 @@
+> **DEPRECATED**: This document has been superseded by the webdev documentation system.
+>
+> **New Locations**:
+> - Turnstile: `webdev/services/cloudflare/TURNSTILE.md`
+> - DNS: `webdev/services/cloudflare/DNS.md`
+> - Form Integration: `webdev/forms/TURNSTILE_PROTECTION.md`
+>
+> This file is kept for historical reference only.
+
+---
+
 # Cloudflare Configuration
 
 **Project**: ProtektSurface
 **Last Updated**: November 28, 2025
+**Status**: DEPRECATED - See webdev/services/cloudflare/
 
 ---
 

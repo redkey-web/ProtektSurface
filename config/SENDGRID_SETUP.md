@@ -1,9 +1,20 @@
+> **DEPRECATED**: This document has been superseded by the webdev documentation system.
+>
+> **New Locations**:
+> - Integration Guide: `webdev/forms/SENDGRID_INTEGRATION.md`
+> - Service Reference: `webdev/services/email/SENDGRID.md`
+> - Domain Auth: `webdev/services/email/DOMAIN_AUTH.md`
+>
+> This file is kept for historical reference only.
+
+---
+
 # SendGrid Setup Record
 
 **Project**: ProtektSurface
 **Date Completed**: November 27, 2025
 **Last Updated**: November 28, 2025
-**Status**: Active
+**Status**: DEPRECATED - See webdev/services/email/
 
 ---
 

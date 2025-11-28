@@ -1,8 +1,20 @@
+> **DEPRECATED**: This folder has been superseded by the webdev documentation system.
+>
+> **New Locations**:
+> - Email: `webdev/services/email/SENDGRID.md`
+> - SMS: `webdev/services/sms/TWILIO.md`
+> - Forms: `webdev/forms/SENDGRID_INTEGRATION.md`
+>
+> This folder is kept for historical reference only.
+
+---
+
 # Communication Services Architecture
 
 **Project**: ProtektSurface
 **Version**: 1.0
 **Date**: November 27, 2025
+**Status**: DEPRECATED - See webdev/services/
 
 ---
 

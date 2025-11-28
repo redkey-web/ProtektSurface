@@ -1,6 +1,18 @@
+> **DEPRECATED**: This document has been superseded by the webdev documentation system.
+>
+> **New Locations**:
+> - Deployment: `webdev/deploy/VERCEL_DEPLOYMENT.md`
+> - DNS: `webdev/deploy/DNS_CONFIGURATION.md`
+> - Environment Variables: `webdev/deploy/ENVIRONMENT_VARIABLES.md`
+>
+> This file is kept for historical reference only.
+
+---
+
 # ProtektSurface Hosting & Domain Configuration
 
 **Last Updated**: November 27, 2025
+**Status**: DEPRECATED - See webdev/deploy/
 
 ---
 

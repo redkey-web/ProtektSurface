@@ -1,7 +1,16 @@
+> **DEPRECATED**: This document has been superseded by the webdev documentation system.
+>
+> **New Location**: `webdev/forms/FORM_ARCHITECTURE.md`
+>
+> This file is kept for historical reference only.
+
+---
+
 # Forms Architecture
 
 **Project**: ProtektSurface
 **Last Updated**: November 28, 2025
+**Status**: DEPRECATED - See webdev/forms/
 
 ---
 
