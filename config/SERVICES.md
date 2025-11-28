@@ -1,7 +1,16 @@
+> **DEPRECATED**: This document has been superseded by the webdev documentation system.
+>
+> **New Location**: `webdev/services/SERVICE_INDEX.md`
+>
+> This file is kept for historical reference only.
+
+---
+
 # Third-Party Services Reference
 
 **Project**: ProtektSurface
 **Last Updated**: November 27, 2025
+**Status**: DEPRECATED - See webdev/services/
 
 ---
 

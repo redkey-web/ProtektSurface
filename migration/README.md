@@ -1,6 +1,21 @@
+> **NOTE**: Reusable migration templates have been moved to the webdev documentation system.
+>
+> **New Location**: `webdev/migrate/`
+>
+> This folder contains project-specific migration tracking for ProtektSurface.
+> For reusable migration guides, see webdev/migrate/.
+
+---
+
 # Migration Documentation
 
-This folder contains all documentation for the Vite → Next.js → Vercel migration.
+This folder contains project-specific documentation for the ProtektSurface Vite → Next.js migration.
+
+**For reusable migration guides**, see:
+- `webdev/migrate/VITE_TO_NEXTJS.md` - Migration framework
+- `webdev/migrate/CODE_PATTERNS.md` - Code conversion patterns
+- `webdev/migrate/COMMON_PITFALLS.md` - Mistakes to avoid
+- `webdev/migrate/CHECKLIST_TEMPLATE.md` - Copyable checklist
 
 ## Contents
 

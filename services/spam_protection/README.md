@@ -1,8 +1,18 @@
+> **DEPRECATED**: This folder has been superseded by the webdev documentation system.
+>
+> **New Locations**:
+> - Turnstile: `webdev/services/cloudflare/TURNSTILE.md`
+> - Form Integration: `webdev/forms/TURNSTILE_PROTECTION.md`
+>
+> This folder is kept for historical reference only.
+
+---
+
 # Spam Protection Services
 
 **Project**: ProtektSurface
 **Created**: November 27, 2025
-**Status**: Planning
+**Status**: DEPRECATED - See webdev/services/cloudflare/
 
 ---
 
