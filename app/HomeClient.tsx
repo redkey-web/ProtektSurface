@@ -110,6 +110,13 @@ export default function HomeClient() {
 
   const services = [
     {
+      title: "Natural Stone Protection",
+      description:
+        "Invisible protective films for marble, granite, and engineered stone surfaces. Prevent stains, etching, and damage while preserving the natural beauty of your stone.",
+      image: "/images/marble-tile.png",
+      path: "/natural-stone-protection",
+    },
+    {
       title: "Residential Window Tinting",
       description:
         "Enhance your home's comfort, energy efficiency, and privacy with premium residential window films—designed to reduce heat, glare, and UV damage.",
@@ -129,13 +136,6 @@ export default function HomeClient() {
         "Professional car window tinting by Protekt Auto. Premium ceramic and carbon films with lifetime warranty. Reduce heat, block UV rays, and enhance your vehicle.",
       image: "/images/services/automotive.webp",
       path: "/automotive-window-tinting",
-    },
-    {
-      title: "Natural Stone Protection",
-      description:
-        "Invisible protective films for marble, granite, and engineered stone surfaces. Prevent stains, etching, and damage while preserving the natural beauty of your stone.",
-      image: "/images/marble-tile.png",
-      path: "/natural-stone-protection",
     },
   ];
 
