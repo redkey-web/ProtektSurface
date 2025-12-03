@@ -131,11 +131,11 @@ export default function HomeClient() {
       path: "/automotive-window-tinting",
     },
     {
-      title: "Ceramic Window Tint",
+      title: "Natural Stone Protection",
       description:
-        "Advanced nano-ceramic technology for superior solar energy rejection and clarity. Non-metallic formula that won't interfere with electronics. The premium choice.",
-      image: "/images/services/decorative.png",
-      path: "/ceramic-window-tint",
+        "Invisible protective films for marble, granite, and engineered stone surfaces. Prevent stains, etching, and damage while preserving the natural beauty of your stone.",
+      image: "/images/marble-tile.png",
+      path: "/natural-stone-protection",
     },
   ];
 
