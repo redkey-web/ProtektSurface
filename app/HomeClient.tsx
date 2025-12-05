@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -18,6 +19,59 @@ import { TintSelectorQuiz } from "@/components/TintSelectorQuiz";
 
 export default function HomeClient() {
   const [currentTint, setCurrentTint] = useState(0);
+  const heroRef = useRef<HTMLElement>(null);
+  
+  // Parallax scroll effect
+  const { scrollY } = useScroll();
+  const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
+  const contentY = useTransform(scrollY, [0, 500], [0, 100]);
+  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
+
+  // Staggered animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 40,
+      filter: "blur(10px)",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.4, 0.25, 1],
+      },
+    },
+  };
+
+  const wordVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 30,
+      rotateX: -40,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.4, 0.25, 1],
+      },
+    },
+  };
 
   const tintVariants = [
     { name: "Clear", color: "transparent", opacity: 0, isDark: false },
@@ -141,12 +195,15 @@ export default function HomeClient() {
 
   return (
     <div className="min-h-screen">
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover"
+      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Parallax Background */}
+        <motion.div
+          className="absolute inset-0 bg-cover will-change-transform"
           style={{
             backgroundImage: `url(/images/hero/hero-background.png)`,
-            backgroundPosition: 'center 40%'
+            backgroundPosition: 'center 40%',
+            y: backgroundY,
+            scale: 1.1,
           }}
         >
           {tintVariants.map((tint, index) => (
@@ -161,7 +218,10 @@ export default function HomeClient() {
             />
           ))}
 
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2 items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full">
+          <motion.div 
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2 items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full"
+            style={{ opacity }}
+          >
             <span className="text-white/80 text-xs font-medium">Tint Level:</span>
             <span className="text-white text-sm font-semibold min-w-[60px]">{tintVariants[currentTint].name}</span>
             <div className="flex gap-1.5 ml-2">
@@ -176,12 +236,25 @@ export default function HomeClient() {
                 />
               ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-16 sm:py-20">
-          <div className="relative">
-              <div className="flex justify-center mb-4 sm:mb-6">
+        {/* Hero Content with Staggered Animations */}
+        <motion.div 
+          className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-16 sm:py-20"
+          style={{ y: contentY }}
+        >
+          <motion.div 
+            className="relative"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+              {/* Logo */}
+              <motion.div 
+                className="flex justify-center mb-4 sm:mb-6"
+                variants={itemVariants}
+              >
                 <Image
                   src="/images/logo.webp"
                   alt="Protekt Surface Solutions"
@@ -194,28 +267,63 @@ export default function HomeClient() {
                   priority
                   data-testid="img-hero-logo"
                 />
-              </div>
+              </motion.div>
 
-              <h1 
+              {/* Animated Headline - Word by Word */}
+              <motion.h1 
                 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-500 ${
                   isCurrentTintDark ? 'text-white' : 'text-black'
                 }`}
+                style={{ perspective: "1000px" }}
               >
-                Professional Window Tinting
+                <motion.span className="inline-block overflow-hidden">
+                  <motion.span 
+                    className="inline-block"
+                    variants={wordVariants}
+                  >
+                    Professional{" "}
+                  </motion.span>
+                </motion.span>
+                <motion.span className="inline-block overflow-hidden">
+                  <motion.span 
+                    className="inline-block"
+                    variants={wordVariants}
+                  >
+                    Window{" "}
+                  </motion.span>
+                </motion.span>
+                <motion.span className="inline-block overflow-hidden">
+                  <motion.span 
+                    className="inline-block"
+                    variants={wordVariants}
+                  >
+                    Tinting
+                  </motion.span>
+                </motion.span>
                 <br />
-                <span className="text-primary">Sydney</span>
-              </h1>
+                <motion.span 
+                  className="text-primary inline-block overflow-hidden"
+                  variants={wordVariants}
+                >
+                  Sydney
+                </motion.span>
+              </motion.h1>
 
-              <p 
+              {/* Animated Description */}
+              <motion.p 
                 className={`text-lg sm:text-xl mb-6 max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${
                   isCurrentTintDark ? 'text-white/90' : 'text-black/80'
                 }`}
+                variants={itemVariants}
               >
                 Sydney&apos;s premier window tinting & surface protection specialists. Premium films and protective solutions for homes, businesses and vehicles
-              </p>
+              </motion.p>
 
             {/* Quick Quote Form */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 sm:p-6 max-w-2xl mx-auto mb-6 shadow-lg">
+            <motion.div 
+              className="bg-white/95 backdrop-blur-sm rounded-lg p-4 sm:p-6 max-w-2xl mx-auto mb-6 shadow-lg"
+              variants={itemVariants}
+            >
               <p className="text-sm font-semibold text-foreground mb-3">Get Your Free Quote</p>
               <form 
                 action="/get-quote" 
@@ -257,9 +365,12 @@ export default function HomeClient() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </form>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              variants={itemVariants}
+            >
               <Link href="#services">
                 <Button
                   size="lg"
@@ -282,9 +393,9 @@ export default function HomeClient() {
                   (02) 8606 2842
                 </Button>
               </a>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </section>
 
       <section id="services" className="py-16 sm:py-24 bg-background">
