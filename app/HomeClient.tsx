@@ -319,51 +319,57 @@ export default function HomeClient() {
                 Sydney&apos;s premier window tinting & surface protection specialists. Premium films and protective solutions for homes, businesses and vehicles
               </motion.p>
 
-            {/* Quick Quote Form */}
+            {/* Quick Quote Form - Glassmorphic Design */}
             <motion.div 
-              className="bg-white/95 backdrop-blur-sm rounded-lg p-4 sm:p-6 max-w-2xl mx-auto mb-6 shadow-lg"
+              className="backdrop-blur-md bg-gray-900/50 border border-white/20 rounded-xl p-5 sm:p-6 max-w-2xl mx-auto mb-6 shadow-2xl"
               variants={itemVariants}
             >
-              <p className="text-sm font-semibold text-foreground mb-3">Get Your Free Quote</p>
+              <p className="text-sm font-semibold text-white/90 mb-4 tracking-wide uppercase">Get Your Free Quote</p>
               <form 
                 action="/get-quote" 
                 method="GET"
-                className="flex flex-col sm:flex-row gap-3"
+                className="flex flex-col gap-3"
               >
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  className="flex-1 px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
-                  data-testid="input-hero-name"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  className="flex-1 px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
-                  data-testid="input-hero-phone"
-                />
-                <select
-                  name="service"
-                  className="flex-1 px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
-                  data-testid="select-hero-service"
-                  defaultValue=""
-                >
-                  <option value="" disabled>Select Service</option>
-                  <option value="residential">Residential Tinting</option>
-                  <option value="commercial">Commercial Tinting</option>
-                  <option value="automotive">Automotive Tinting</option>
-                  <option value="stone">Natural Stone Protection</option>
-                </select>
-                <Button
-                  type="submit"
-                  className="bg-primary text-primary-foreground px-6"
-                  data-testid="button-hero-quote"
-                >
-                  Get Quote
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    className="flex-1 px-4 py-3 rounded-lg border border-white/20 bg-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary/60 focus:border-primary/40 transition-all duration-200"
+                    data-testid="input-hero-name"
+                  />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    className="flex-1 px-4 py-3 rounded-lg border border-white/20 bg-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary/60 focus:border-primary/40 transition-all duration-200"
+                    data-testid="input-hero-phone"
+                  />
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <select
+                    name="service"
+                    className="flex-1 px-4 py-3 rounded-lg border border-white/20 bg-white/10 text-white text-sm focus:outline-none focus:ring-2 focus:ring-primary/60 focus:border-primary/40 transition-all duration-200 appearance-none cursor-pointer"
+                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: '16px' }}
+                    data-testid="select-hero-service"
+                    defaultValue=""
+                  >
+                    <option value="" disabled className="bg-gray-900 text-white">Select Service</option>
+                    <option value="residential" className="bg-gray-900 text-white">Residential Tinting</option>
+                    <option value="commercial" className="bg-gray-900 text-white">Commercial Tinting</option>
+                    <option value="automotive" className="bg-gray-900 text-white">Automotive Tinting</option>
+                    <option value="stone" className="bg-gray-900 text-white">Natural Stone Protection</option>
+                  </select>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 font-semibold shadow-lg shadow-primary/25"
+                    data-testid="button-hero-quote"
+                  >
+                    Get Quote
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </div>
               </form>
             </motion.div>
 
