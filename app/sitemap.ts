@@ -10,14 +10,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/about',
     '/contact',
     '/get-quote',
-    '/quote-estimator',
     '/tint-selector',
     '/blog',
+    '/service-areas',
     '/author/david-trieu',
     // Services
     '/residential-window-tinting',
     '/automotive-window-tinting',
     '/commercial-window-tinting',
+    '/natural-stone-protection',
     // Film Types
     '/ceramic-window-tint',
     '/privacy-window-film',
