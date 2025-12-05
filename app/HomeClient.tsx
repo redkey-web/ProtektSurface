@@ -201,7 +201,7 @@ export default function HomeClient() {
           className="absolute inset-0 bg-cover will-change-transform"
           style={{
             backgroundImage: `url(/images/hero/hero-background.png)`,
-            backgroundPosition: 'center 40%',
+            backgroundPosition: 'center 65%',
             y: backgroundY,
             scale: 1.1,
           }}
