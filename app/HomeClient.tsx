@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem } from "lucide-react";
+import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -207,18 +207,64 @@ export default function HomeClient() {
               </h1>
 
               <p 
-                className={`text-lg sm:text-xl mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${
+                className={`text-lg sm:text-xl mb-6 max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${
                   isCurrentTintDark ? 'text-white/90' : 'text-black/80'
                 }`}
               >
                 Sydney&apos;s premier window tinting & surface protection specialists. Premium films and protective solutions for homes, businesses and vehicles
               </p>
 
+            {/* Quick Quote Form */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 sm:p-6 max-w-2xl mx-auto mb-6 shadow-lg">
+              <p className="text-sm font-semibold text-foreground mb-3">Get Your Free Quote</p>
+              <form 
+                action="/get-quote" 
+                method="GET"
+                className="flex flex-col sm:flex-row gap-3"
+              >
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  className="flex-1 px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  data-testid="input-hero-name"
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  className="flex-1 px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  data-testid="input-hero-phone"
+                />
+                <select
+                  name="service"
+                  className="flex-1 px-4 py-2.5 rounded-md border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  data-testid="select-hero-service"
+                  defaultValue=""
+                >
+                  <option value="" disabled>Select Service</option>
+                  <option value="residential">Residential Tinting</option>
+                  <option value="commercial">Commercial Tinting</option>
+                  <option value="automotive">Automotive Tinting</option>
+                  <option value="stone">Natural Stone Protection</option>
+                </select>
+                <Button
+                  type="submit"
+                  className="bg-primary text-primary-foreground px-6"
+                  data-testid="button-hero-quote"
+                >
+                  Get Quote
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </form>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="#services">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-primary text-primary-foreground px-8 transition-all duration-300 hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] [&:hover]:text-white [&:hover_*]:drop-shadow-[0_0_8px_rgba(212,165,116,1)]"
+                  variant="outline"
+                  className="w-full sm:w-auto border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] transition-all duration-300"
                   data-testid="button-view-services"
                 >
                   View Services
@@ -232,7 +278,8 @@ export default function HomeClient() {
                   className="w-full sm:w-auto border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] transition-all duration-300"
                   data-testid="button-contact-hero"
                 >
-                  Contact Us
+                  <Phone className="mr-2 w-5 h-5" />
+                  (02) 8606 2842
                 </Button>
               </a>
             </div>
