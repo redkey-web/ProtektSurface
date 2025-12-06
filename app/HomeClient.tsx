@@ -195,7 +195,7 @@ export default function HomeClient() {
 
   return (
     <div className="min-h-screen">
-      <section ref={heroRef} className="relative h-[105vh] min-h-[700px] flex items-start justify-center overflow-hidden pt-24 pb-20">
+      <section ref={heroRef} className="relative min-h-screen lg:h-[105vh] flex items-start justify-center overflow-hidden pt-20 pb-24 lg:pt-24 lg:pb-20">
         {/* Parallax Background */}
         <motion.div
           className="absolute inset-0 bg-cover will-change-transform"
@@ -219,7 +219,7 @@ export default function HomeClient() {
           ))}
 
           <motion.div 
-            className="absolute bottom-[8vh] left-1/2 -translate-x-1/2 z-30 flex gap-2 items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full"
+            className="absolute bottom-[8vh] left-1/2 -translate-x-1/2 z-30 hidden lg:flex gap-2 items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full"
             style={{ opacity }}
           >
             <span className="text-white/80 text-xs font-medium">Tint Level:</span>
