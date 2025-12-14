@@ -493,26 +493,29 @@ export default function HomeClient() {
             <h2 className="font-display text-display-md">Surface Protection in Action</h2>
           </div>
           <div className="rounded-xl overflow-hidden shadow-lg">
-            <video 
-              ref={videoRef}
-              autoPlay 
-              muted 
-              playsInline
-              className="w-full aspect-video object-cover"
-              data-testid="video-featured"
-              onEnded={() => {
-                const nextPart = currentVideoPart === 1 ? 2 : 1;
-                setCurrentVideoPart(nextPart);
-                if (videoRef.current) {
-                  videoRef.current.src = `/images/hero/protekt-video-part${nextPart}.mov`;
-                  videoRef.current.load();
-                  videoRef.current.play();
-                }
-              }}
-            >
-              <source src={`/images/hero/protekt-video-part${currentVideoPart}.mov`} type="video/quicktime" />
-              <source src={`/images/hero/protekt-video-part${currentVideoPart}.mov`} type="video/mp4" />
-            </video>
+            <div className="overflow-hidden" style={{ marginTop: '-10px', paddingTop: '10px' }}>
+              <video 
+                ref={videoRef}
+                autoPlay 
+                muted 
+                playsInline
+                className="w-full aspect-video object-cover"
+                style={{ marginTop: '-10px' }}
+                data-testid="video-featured"
+                onEnded={() => {
+                  const nextPart = currentVideoPart === 1 ? 2 : 1;
+                  setCurrentVideoPart(nextPart);
+                  if (videoRef.current) {
+                    videoRef.current.src = `/images/hero/protekt-video-part${nextPart}.mov`;
+                    videoRef.current.load();
+                    videoRef.current.play();
+                  }
+                }}
+              >
+                <source src={`/images/hero/protekt-video-part${currentVideoPart}.mov`} type="video/quicktime" />
+                <source src={`/images/hero/protekt-video-part${currentVideoPart}.mov`} type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </section>
