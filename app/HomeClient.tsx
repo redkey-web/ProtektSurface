@@ -101,8 +101,96 @@ export default function HomeClient() {
     { label: "Glare Reduction", icon: Sun },
   ];
 
+  // Structured Data for SEO
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Protekt Surface Solutions",
+    "image": "https://protektsurface.com.au/images/logo.webp",
+    "url": "https://protektsurface.com.au",
+    "telephone": "(02) 8606 2842",
+    "email": "info@protektsurfacesolutions.com.au",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "24 George Street",
+      "addressLocality": "Clyde",
+      "addressRegion": "NSW",
+      "postalCode": "2142",
+      "addressCountry": "AU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -33.8367,
+      "longitude": 151.0144
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "07:00",
+      "closes": "18:00"
+    },
+    "priceRange": "$$",
+    "areaServed": {
+      "@type": "City",
+      "name": "Sydney"
+    },
+    "serviceType": ["Window Tinting", "Surface Protection", "Automotive Window Tinting", "Stone Protection"]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Protekt Surface Solutions",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "2"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Sarah Pantaleo" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Andy is fantastic at what he does! He's very friendly, professional, and always makes sure the job is done right. I've been so impressed with his attention to detail and the quality of his work. Highly recommend Protekt Surface Solutions if you want reliable service and great results!"
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Richard F-P." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "This Applicator has applied protective film to several cars in our fleet over the past few years, including our McLaren 650s spider, Audi R8 V10 plus, Porsche 981 spyder & most recently our Mercedes SL55AMG. His work is exemplary, his organisation skills are superb, his reliability impeccable & his charges are reasonable."
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen">
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+
       {/* HERO - Full width with asymmetric grid */}
       <section ref={heroRef} className="relative min-h-screen lg:min-h-[105vh] flex items-center overflow-hidden">
         <motion.div
