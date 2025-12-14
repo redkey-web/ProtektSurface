@@ -93,7 +93,7 @@ export default {
         sans: ["var(--font-sans)", "IBM Plex Sans", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
         serif: ["var(--font-serif)"],
         mono: ["var(--font-mono)"],
-        display: ["var(--font-display)", "IBM Plex Serif", "Georgia", "serif"],
+        display: ["var(--font-sans)", "IBM Plex Sans", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
       fontSize: {
         'display-xl': ['clamp(3rem, 8vw, 6rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
