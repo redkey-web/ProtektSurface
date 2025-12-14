@@ -160,7 +160,14 @@ export function Navigation() {
               onMouseEnter={() => setIsQuoteHovered(true)}
               onMouseLeave={() => setIsQuoteHovered(false)}
             >
-              <Button size="sm">
+              <Button 
+                size="sm"
+                className={`transition-all duration-300 ${
+                  isQuoteHovered 
+                    ? 'bg-[#FFF8E7] text-[#2a2a2a] border-[#FFF0D0] shadow-[0_0_20px_rgba(255,248,231,0.6),0_0_40px_rgba(255,240,200,0.3)]' 
+                    : ''
+                }`}
+              >
                 Get Quote
               </Button>
             </Link>
