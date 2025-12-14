@@ -22,7 +22,6 @@ export function Navigation() {
   const [openDesktopDropdown, setOpenDesktopDropdown] = useState<string | null>(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
   const [headerProgress, setHeaderProgress] = useState(0);
-  const [isQuoteHovered, setIsQuoteHovered] = useState(false);
 
   const isHomePage = pathname === "/";
 
@@ -82,11 +81,9 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
       <div
-        className={`absolute inset-0 border-b border-border transition-all duration-300 ${
-          isQuoteHovered ? 'bg-[rgb(20,20,20)]' : 'bg-background'
-        }`}
+        className="absolute inset-0 border-b border-border transition-all duration-300 bg-background"
         style={{
-          opacity: isQuoteHovered ? 0.85 : Math.min(headerProgress, 0.7)
+          opacity: Math.min(headerProgress, 0.7)
         }}
       />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
@@ -157,17 +154,8 @@ export function Navigation() {
             <Link 
               href="/get-quote" 
               data-testid="button-quote-desktop"
-              onMouseEnter={() => setIsQuoteHovered(true)}
-              onMouseLeave={() => setIsQuoteHovered(false)}
             >
-              <Button 
-                size="sm"
-                className={`transition-all duration-300 ${
-                  isQuoteHovered 
-                    ? '!bg-[#FFF8E7] !text-[#2a2a2a] !border-[#FFF0D0] shadow-[0_0_20px_rgba(255,248,231,0.6),0_0_40px_rgba(255,240,200,0.3)]' 
-                    : ''
-                }`}
-              >
+              <Button size="sm">
                 Get Quote
               </Button>
             </Link>
