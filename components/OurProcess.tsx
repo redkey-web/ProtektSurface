@@ -1,5 +1,7 @@
 'use client';
 
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Phone, ClipboardCheck, FileText, MessageSquare, Users, CheckCircle, HeadphonesIcon, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -71,6 +73,13 @@ interface OurProcessProps {
 }
 
 export function OurProcess({ showCTA = true, compact = false }: OurProcessProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
   if (compact) {
     return (
       <div className="py-12 sm:py-16">
@@ -104,13 +113,14 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
   }
 
   return (
-    <section className="py-16 sm:py-24 bg-foreground/5 relative overflow-hidden">
-      <div 
-        className="absolute inset-0 opacity-[0.08]"
+    <section ref={sectionRef} className="py-16 sm:py-24 bg-foreground/5 relative overflow-hidden">
+      <motion.div 
+        className="absolute inset-0 opacity-[0.08] will-change-transform"
         style={{
           backgroundImage: `url(/images/patterns/logo-pattern.png)`,
           backgroundSize: '40px',
           backgroundRepeat: 'repeat',
+          y: backgroundY,
         }}
       />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
