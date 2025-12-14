@@ -272,8 +272,8 @@ export default function HomeClient() {
                 }}
               >
                 <span 
-                  className={`transition-opacity duration-500 ${currentTint === 0 ? 'opacity-60' : 'opacity-100'}`}
-                  style={currentTint === 0 ? {
+                  className={`transition-opacity duration-500 ${currentTint <= 1 ? 'opacity-60' : 'opacity-100'}`}
+                  style={currentTint <= 1 ? {
                     background: 'linear-gradient(90deg, currentColor 0%, #8B7355 15%, currentColor 30%, #4A90A4 45%, currentColor 60%, #6B8E23 75%, currentColor 90%)',
                     backgroundSize: '300% 100%',
                     WebkitBackgroundClip: 'text',
@@ -283,8 +283,8 @@ export default function HomeClient() {
                   } : undefined}
                 >Professional</span><br />
                 <span 
-                  className={`italic font-semibold transition-opacity duration-500 ${currentTint === 0 ? 'opacity-60' : 'opacity-100'}`}
-                  style={currentTint === 0 ? {
+                  className={`italic font-semibold transition-opacity duration-500 ${currentTint <= 1 ? 'opacity-60' : 'opacity-100'}`}
+                  style={currentTint <= 1 ? {
                     background: 'linear-gradient(90deg, currentColor 0%, #C4A35A 20%, currentColor 40%, #708090 55%, currentColor 70%, #8B4513 85%, currentColor 100%)',
                     backgroundSize: '400% 100%',
                     WebkitBackgroundClip: 'text',
