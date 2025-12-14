@@ -20,12 +20,27 @@ import { TrustedSuppliers } from "@/components/TrustedSuppliers";
 
 export default function HomeClient() {
   const [currentTint, setCurrentTint] = useState(0);
+  const [isMarqueeFixed, setIsMarqueeFixed] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
+  const marqueeRef = useRef<HTMLElement>(null);
   
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
   const contentY = useTransform(scrollY, [0, 500], [0, 100]);
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (marqueeRef.current) {
+        const marqueeRect = marqueeRef.current.getBoundingClientRect();
+        const navHeight = window.innerWidth >= 640 ? 80 : 64;
+        setIsMarqueeFixed(marqueeRect.top <= navHeight);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -361,8 +376,15 @@ export default function HomeClient() {
         </motion.div>
       </section>
 
-      {/* BENEFITS MARQUEE - Infinite Scroll - Sticky */}
-      <section className="py-4 lg:py-5 bg-muted/50 overflow-hidden sticky top-16 sm:top-20 z-[45] border-b border-border/50 shadow-sm">
+      {/* BENEFITS MARQUEE - Infinite Scroll - JS-controlled Fixed */}
+      <section 
+        ref={marqueeRef}
+        className={`py-4 lg:py-5 bg-muted/50 overflow-hidden border-b border-border/50 shadow-sm transition-none ${
+          isMarqueeFixed 
+            ? 'fixed left-0 right-0 top-16 sm:top-20 z-[45]' 
+            : 'relative z-[45]'
+        }`}
+      >
         <div className="relative">
           <div className="flex animate-marquee">
             {[...benefits, ...benefits].map((benefit, index) => (
@@ -378,6 +400,8 @@ export default function HomeClient() {
           </div>
         </div>
       </section>
+      {/* Spacer when marquee is fixed */}
+      {isMarqueeFixed && <div className="h-[52px] lg:h-[60px]" />}
 
       {/* SERVICES - Masonry-like Grid */}
       <section id="services" className="py-16 lg:py-24 bg-background">
