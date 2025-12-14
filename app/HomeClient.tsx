@@ -22,7 +22,7 @@ export default function HomeClient() {
   const [currentTint, setCurrentTint] = useState(0);
   const [isMarqueeFixed, setIsMarqueeFixed] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
-  const marqueeRef = useRef<HTMLElement>(null);
+  const marqueePlaceholderRef = useRef<HTMLDivElement>(null);
   
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
@@ -31,10 +31,10 @@ export default function HomeClient() {
   
   useEffect(() => {
     const handleScroll = () => {
-      if (marqueeRef.current) {
-        const marqueeRect = marqueeRef.current.getBoundingClientRect();
+      if (marqueePlaceholderRef.current) {
+        const placeholderRect = marqueePlaceholderRef.current.getBoundingClientRect();
         const navHeight = window.innerWidth >= 640 ? 80 : 64;
-        setIsMarqueeFixed(marqueeRect.top <= navHeight);
+        setIsMarqueeFixed(placeholderRect.top <= navHeight);
       }
     };
     
@@ -376,32 +376,47 @@ export default function HomeClient() {
         </motion.div>
       </section>
 
-      {/* BENEFITS MARQUEE - Infinite Scroll - JS-controlled Fixed */}
-      <section 
-        ref={marqueeRef}
-        className={`py-2 bg-muted/50 overflow-hidden border-b border-border/50 shadow-sm transition-none ${
-          isMarqueeFixed 
-            ? 'fixed left-0 right-0 top-16 sm:top-20 z-[45]' 
-            : 'relative z-[45]'
-        }`}
-      >
-        <div className="relative">
-          <div className="flex animate-marquee">
-            {[...benefits, ...benefits].map((benefit, index) => (
-              <div 
-                key={index} 
-                className="flex items-center gap-2 px-6 lg:px-8 flex-shrink-0"
-                data-testid={`benefit-${index}`}
-              >
-                <benefit.icon className="w-4 h-4 lg:w-5 lg:h-5 text-primary" strokeWidth={1.5} />
-                <span className="text-xs lg:text-sm font-medium text-foreground whitespace-nowrap">{benefit.label}</span>
+      {/* BENEFITS MARQUEE - Placeholder to track original position */}
+      <div ref={marqueePlaceholderRef} className="h-[36px]">
+        {!isMarqueeFixed && (
+          <section className="py-2 bg-muted/50 overflow-hidden border-b border-border/50 shadow-sm">
+            <div className="relative">
+              <div className="flex animate-marquee">
+                {[...benefits, ...benefits].map((benefit, index) => (
+                  <div 
+                    key={index} 
+                    className="flex items-center gap-2 px-6 lg:px-8 flex-shrink-0"
+                    data-testid={`benefit-${index}`}
+                  >
+                    <benefit.icon className="w-4 h-4 lg:w-5 lg:h-5 text-primary" strokeWidth={1.5} />
+                    <span className="text-xs lg:text-sm font-medium text-foreground whitespace-nowrap">{benefit.label}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+          </section>
+        )}
+      </div>
+      
+      {/* Fixed marquee when scrolled */}
+      {isMarqueeFixed && (
+        <section className="fixed left-0 right-0 top-16 sm:top-20 z-[45] py-2 bg-muted/50 overflow-hidden border-b border-border/50 shadow-sm">
+          <div className="relative">
+            <div className="flex animate-marquee">
+              {[...benefits, ...benefits].map((benefit, index) => (
+                <div 
+                  key={index} 
+                  className="flex items-center gap-2 px-6 lg:px-8 flex-shrink-0"
+                  data-testid={`benefit-fixed-${index}`}
+                >
+                  <benefit.icon className="w-4 h-4 lg:w-5 lg:h-5 text-primary" strokeWidth={1.5} />
+                  <span className="text-xs lg:text-sm font-medium text-foreground whitespace-nowrap">{benefit.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-      {/* Spacer when marquee is fixed */}
-      {isMarqueeFixed && <div className="h-[28px]" />}
+        </section>
+      )}
 
       {/* SERVICES - Masonry-like Grid */}
       <section id="services" className="py-16 lg:py-24 bg-background">
