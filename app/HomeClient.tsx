@@ -158,10 +158,10 @@ export default function HomeClient() {
             >
               <motion.h1 
                 variants={itemVariants}
-                className={`font-display text-display-lg lg:text-display-xl mb-6 lg:mb-8 transition-colors duration-500 ${isCurrentTintDark ? 'text-white' : 'text-foreground'}`}
+                className={`font-display font-bold text-display-lg lg:text-display-xl tracking-tight mb-6 lg:mb-8 transition-colors duration-500 ${isCurrentTintDark ? 'text-white' : 'text-foreground'}`}
               >
                 Professional<br />
-                <span className="italic">Window Tinting</span><br />
+                <span className="italic font-semibold">Window Tinting</span><br />
                 <span className="text-primary">Sydney</span>
               </motion.h1>
 
