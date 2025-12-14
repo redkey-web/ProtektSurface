@@ -120,7 +120,7 @@ export default function HomeClient() {
 
         {/* Logo - Top Left */}
         <motion.div 
-          className="absolute top-6 left-4 sm:left-6 lg:left-8 z-20"
+          className="absolute top-8 left-6 sm:left-8 lg:left-12 z-20"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -138,7 +138,7 @@ export default function HomeClient() {
         </motion.div>
 
         {/* 12-Column Grid Hero Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 lg:pt-32 lg:pb-0">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-24 lg:pt-36 lg:pb-24">
           <div className="grid grid-cols-12 gap-6 lg:gap-12 items-center">
             {/* Left Content - 6 columns on desktop */}
             <motion.div 
@@ -241,7 +241,7 @@ export default function HomeClient() {
 
         {/* Tint Level Indicator */}
         <motion.div 
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 hidden lg:flex gap-2 items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 hidden lg:flex gap-2 items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full"
           style={{ opacity }}
         >
           <span className="text-white/80 text-xs font-medium">Tint Level:</span>
