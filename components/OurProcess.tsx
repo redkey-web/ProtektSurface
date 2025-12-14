@@ -106,10 +106,10 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
   return (
     <section className="py-16 sm:py-24 bg-foreground/5 relative overflow-hidden">
       <div 
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.08]"
         style={{
           backgroundImage: `url(/images/patterns/logo-pattern.png)`,
-          backgroundSize: '120px',
+          backgroundSize: '100px',
           backgroundRepeat: 'repeat',
         }}
       />
