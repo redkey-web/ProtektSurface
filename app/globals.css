@@ -259,9 +259,9 @@ html, body {
     }
   }
 
-  /* Text Sunglasses Effect - colored tint sweep across text (brown, gold, slate) */
+  /* Text Sunglasses Effect - colored tint sweep across text (brown, gold, blue, slate) */
   .text-sunglasses-effect-1 {
-    background: linear-gradient(90deg, currentColor 0%, #8B7355 20%, currentColor 40%, #C4A35A 60%, currentColor 80%, #708090 95%);
+    background: linear-gradient(90deg, currentColor 0%, #8B7355 15%, currentColor 30%, #4A90A4 50%, currentColor 70%, #C4A35A 85%, currentColor 100%);
     background-size: 300% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -270,7 +270,7 @@ html, body {
   }
 
   .text-sunglasses-effect-2 {
-    background: linear-gradient(90deg, currentColor 0%, #C4A35A 25%, currentColor 50%, #8B4513 75%, currentColor 100%);
+    background: linear-gradient(90deg, currentColor 0%, #C4A35A 20%, currentColor 40%, #4A90A4 60%, currentColor 80%, #8B4513 95%);
     background-size: 400% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -290,54 +290,70 @@ html, body {
   @keyframes shadowSwipe1 {
     0%, 100% {
       text-shadow: 
-        0 -1px 0 rgba(255, 255, 255, 0.6),
-        0 1px 0 rgba(139, 115, 85, 0.8),
-        0 3px 0 rgba(139, 115, 85, 0.5),
-        0 6px 12px rgba(139, 115, 85, 0.6),
-        0 12px 24px rgba(0,0,0,0.4);
+        0 -1px 0 rgba(255, 255, 255, 0.4),
+        0 1px 0 rgba(139, 115, 85, 0.5),
+        0 2px 0 rgba(139, 115, 85, 0.3),
+        0 4px 8px rgba(139, 115, 85, 0.4),
+        0 8px 16px rgba(0,0,0,0.25);
     }
-    33% {
+    25% {
       text-shadow: 
-        0 -1px 0 rgba(255, 255, 255, 0.6),
-        0 1px 0 rgba(196, 163, 90, 0.8),
-        0 3px 0 rgba(196, 163, 90, 0.5),
-        0 6px 12px rgba(196, 163, 90, 0.6),
-        0 12px 24px rgba(0,0,0,0.4);
+        0 -1px 0 rgba(255, 255, 255, 0.4),
+        0 1px 0 rgba(196, 163, 90, 0.5),
+        0 2px 0 rgba(196, 163, 90, 0.3),
+        0 4px 8px rgba(196, 163, 90, 0.4),
+        0 8px 16px rgba(0,0,0,0.25);
     }
-    66% {
+    50% {
       text-shadow: 
-        0 -1px 0 rgba(255, 255, 255, 0.6),
-        0 1px 0 rgba(112, 128, 144, 0.8),
-        0 3px 0 rgba(112, 128, 144, 0.5),
-        0 6px 12px rgba(112, 128, 144, 0.6),
-        0 12px 24px rgba(0,0,0,0.4);
+        0 -1px 0 rgba(255, 255, 255, 0.4),
+        0 1px 0 rgba(74, 144, 164, 0.5),
+        0 2px 0 rgba(74, 144, 164, 0.3),
+        0 4px 8px rgba(74, 144, 164, 0.4),
+        0 8px 16px rgba(0,0,0,0.25);
+    }
+    75% {
+      text-shadow: 
+        0 -1px 0 rgba(255, 255, 255, 0.4),
+        0 1px 0 rgba(112, 128, 144, 0.5),
+        0 2px 0 rgba(112, 128, 144, 0.3),
+        0 4px 8px rgba(112, 128, 144, 0.4),
+        0 8px 16px rgba(0,0,0,0.25);
     }
   }
 
   @keyframes shadowSwipe2 {
     0%, 100% {
       text-shadow: 
-        0 -1px 0 rgba(255, 255, 255, 0.6),
-        0 1px 0 rgba(196, 163, 90, 0.8),
-        0 3px 0 rgba(196, 163, 90, 0.5),
-        0 6px 12px rgba(196, 163, 90, 0.6),
-        0 12px 24px rgba(0,0,0,0.4);
+        0 -1px 0 rgba(255, 255, 255, 0.4),
+        0 1px 0 rgba(196, 163, 90, 0.5),
+        0 2px 0 rgba(196, 163, 90, 0.3),
+        0 4px 8px rgba(196, 163, 90, 0.4),
+        0 8px 16px rgba(0,0,0,0.25);
     }
-    33% {
+    25% {
       text-shadow: 
-        0 -1px 0 rgba(255, 255, 255, 0.6),
-        0 1px 0 rgba(139, 69, 19, 0.8),
-        0 3px 0 rgba(139, 69, 19, 0.5),
-        0 6px 12px rgba(139, 69, 19, 0.6),
-        0 12px 24px rgba(0,0,0,0.4);
+        0 -1px 0 rgba(255, 255, 255, 0.4),
+        0 1px 0 rgba(74, 144, 164, 0.5),
+        0 2px 0 rgba(74, 144, 164, 0.3),
+        0 4px 8px rgba(74, 144, 164, 0.4),
+        0 8px 16px rgba(0,0,0,0.25);
     }
-    66% {
+    50% {
       text-shadow: 
-        0 -1px 0 rgba(255, 255, 255, 0.6),
-        0 1px 0 rgba(112, 128, 144, 0.8),
-        0 3px 0 rgba(112, 128, 144, 0.5),
-        0 6px 12px rgba(112, 128, 144, 0.6),
-        0 12px 24px rgba(0,0,0,0.4);
+        0 -1px 0 rgba(255, 255, 255, 0.4),
+        0 1px 0 rgba(139, 69, 19, 0.5),
+        0 2px 0 rgba(139, 69, 19, 0.3),
+        0 4px 8px rgba(139, 69, 19, 0.4),
+        0 8px 16px rgba(0,0,0,0.25);
+    }
+    75% {
+      text-shadow: 
+        0 -1px 0 rgba(255, 255, 255, 0.4),
+        0 1px 0 rgba(112, 128, 144, 0.5),
+        0 2px 0 rgba(112, 128, 144, 0.3),
+        0 4px 8px rgba(112, 128, 144, 0.4),
+        0 8px 16px rgba(0,0,0,0.25);
     }
   }
 }
