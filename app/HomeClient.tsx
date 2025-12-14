@@ -281,9 +281,9 @@ export default function HomeClient() {
               </motion.p>
 
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3">
-                <Link href="/get-quote">
-                  <Button size="lg" className="w-full sm:w-auto bg-primary text-primary-foreground px-8 font-semibold" data-testid="button-hero-quote">
-                    Get Free Quote
+                <Link href="#services">
+                  <Button size="lg" className="w-full sm:w-auto bg-primary text-primary-foreground px-8 font-semibold" data-testid="button-hero-services">
+                    View Services
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
