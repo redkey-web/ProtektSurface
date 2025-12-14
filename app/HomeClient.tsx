@@ -279,7 +279,7 @@ export default function HomeClient() {
                 <span 
                   className={`italic font-semibold transition-opacity duration-500 inline-block ${currentTint >= 2 ? 'opacity-60' : 'opacity-100'} ${currentTint >= 2 ? 'text-sunglasses-effect-2' : ''} ${currentTint === 1 ? 'text-sunglasses-shadow-2' : ''}`}
                 >Window Tinting</span><br />
-                <span className={`transition-all duration-500 ${isCurrentTintDark ? 'text-primary opacity-100' : 'text-white opacity-60 text-sunglasses-effect-1'}`}>Sydney</span>
+                <span className={`transition-all duration-500 ${isCurrentTintDark ? 'text-primary opacity-100' : 'text-white opacity-60'}`}>Sydney</span>
               </motion.h1>
 
               <motion.p 
