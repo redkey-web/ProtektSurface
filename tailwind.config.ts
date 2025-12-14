@@ -90,10 +90,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        sans: ["var(--font-sans)", "Source Sans 3", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
         serif: ["var(--font-serif)"],
         mono: ["var(--font-mono)"],
-        display: ["var(--font-display)", "Playfair Display", "Georgia", "serif"],
+        display: ["var(--font-display)", "Source Serif 4", "Georgia", "serif"],
       },
       fontSize: {
         'display-xl': ['clamp(3rem, 8vw, 6rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],

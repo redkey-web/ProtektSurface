@@ -1,16 +1,16 @@
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Source_Sans_3, Source_Serif_4 } from 'next/font/google';
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
 import './globals.css';
 
-const inter = Inter({ 
+const sourceSans = Source_Sans_3({ 
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 });
 
-const playfair = Playfair_Display({ 
+const sourceSerif = Source_Serif_4({ 
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
@@ -71,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${sourceSans.variable} ${sourceSerif.variable}`}>
       <body className="font-sans antialiased">
         <Navigation />
         <main>{children}</main>
