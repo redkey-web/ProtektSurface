@@ -254,7 +254,7 @@ export default function HomeClient() {
               >
                 Professional<br />
                 <span className="italic font-semibold">Window Tinting</span><br />
-                <span className="text-primary">Sydney</span>
+                <span className={`transition-colors duration-500 ${isCurrentTintDark ? 'text-primary' : 'text-white'}`}>Sydney</span>
               </motion.h1>
 
               <motion.p 
