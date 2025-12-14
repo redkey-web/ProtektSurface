@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Check, Zap, Home, Heart, AlertTriangle, Wifi } from "lucide-react";
+import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Phone, Check, Zap, Home, Heart, AlertTriangle, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
