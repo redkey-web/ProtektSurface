@@ -16,6 +16,7 @@ import {
 import { Testimonials } from "@/components/Testimonials";
 import { OurProcess } from "@/components/OurProcess";
 import { TintSelectorQuiz } from "@/components/TintSelectorQuiz";
+import { TrustedSuppliers } from "@/components/TrustedSuppliers";
 
 export default function HomeClient() {
   const [currentTint, setCurrentTint] = useState(0);
@@ -501,6 +502,8 @@ export default function HomeClient() {
       </section>
 
       <Testimonials />
+
+      <TrustedSuppliers />
 
       <OurProcess />
 

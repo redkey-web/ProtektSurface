@@ -4,6 +4,9 @@ import Link from "next/link";
 import { Phone, MapPin, Check } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Testimonials } from "@/components/Testimonials";
+import { TrustedSuppliers } from "@/components/TrustedSuppliers";
+import { OurProcess } from "@/components/OurProcess";
 
 interface FeaturedLink {
   title: string;
@@ -117,6 +120,12 @@ export function ServiceAreaPage({
           </div>
         </div>
       </section>
+
+      <Testimonials />
+
+      <TrustedSuppliers />
+
+      <OurProcess compact showCTA={false} />
     </div>
   );
 }
