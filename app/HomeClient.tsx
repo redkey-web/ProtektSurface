@@ -493,14 +493,14 @@ export default function HomeClient() {
             <h2 className="font-display text-display-md">Surface Protection in Action</h2>
           </div>
           <div className="rounded-xl overflow-hidden shadow-lg">
-            <div className="overflow-hidden" style={{ marginTop: '-10px', paddingTop: '10px' }}>
+            <div className="overflow-hidden" style={{ marginTop: '-20px', paddingTop: '20px' }}>
               <video 
                 ref={videoRef}
                 autoPlay 
                 muted 
                 playsInline
                 className="w-full aspect-video object-cover"
-                style={{ marginTop: '-10px' }}
+                style={{ marginTop: '-20px' }}
                 data-testid="video-featured"
                 onEnded={() => {
                   const nextPart = currentVideoPart === '1a' ? '1b' : currentVideoPart === '1b' ? '2' : '1a';
