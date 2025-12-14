@@ -119,33 +119,39 @@ export default function HomeClient() {
           ))}
         </motion.div>
 
+        {/* Logo - Top Left */}
+        <motion.div 
+          className="absolute top-6 left-4 sm:left-6 lg:left-8 z-20"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <Image
+            src="/images/logo.webp"
+            alt="Protekt Surface Solutions"
+            width={280}
+            height={118}
+            className="h-[50px] sm:h-[60px] lg:h-[70px] w-auto"
+            style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' }}
+            priority
+            data-testid="img-hero-logo"
+          />
+        </motion.div>
+
         {/* 12-Column Grid Hero Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-0">
-          <div className="grid grid-cols-12 gap-4 lg:gap-8 items-center">
-            {/* Left Content - 7 columns on desktop */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 lg:pt-32 lg:pb-0">
+          <div className="grid grid-cols-12 gap-6 lg:gap-12 items-center">
+            {/* Left Content - 6 columns on desktop */}
             <motion.div 
-              className="col-span-12 lg:col-span-7"
+              className="col-span-12 lg:col-span-6"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
               style={{ y: contentY }}
             >
-              <motion.div variants={itemVariants} className="mb-4 lg:mb-6">
-                <Image
-                  src="/images/logo.webp"
-                  alt="Protekt Surface Solutions"
-                  width={400}
-                  height={168}
-                  className="h-[60px] sm:h-[80px] lg:h-[100px] w-auto"
-                  style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' }}
-                  priority
-                  data-testid="img-hero-logo"
-                />
-              </motion.div>
-
               <motion.h1 
                 variants={itemVariants}
-                className={`font-display text-display-lg lg:text-display-xl mb-4 lg:mb-6 transition-colors duration-500 ${isCurrentTintDark ? 'text-white' : 'text-foreground'}`}
+                className={`font-display text-display-lg lg:text-display-xl mb-6 lg:mb-8 transition-colors duration-500 ${isCurrentTintDark ? 'text-white' : 'text-foreground'}`}
               >
                 Professional<br />
                 <span className="italic">Window Tinting</span><br />
@@ -154,12 +160,12 @@ export default function HomeClient() {
 
               <motion.p 
                 variants={itemVariants}
-                className={`text-lg lg:text-xl mb-6 lg:mb-8 max-w-xl leading-relaxed transition-colors duration-500 ${isCurrentTintDark ? 'text-white/90' : 'text-foreground/80'}`}
+                className={`text-lg lg:text-xl mb-8 max-w-lg leading-relaxed transition-colors duration-500 ${isCurrentTintDark ? 'text-white/90' : 'text-foreground/80'}`}
               >
                 Premium films and protective solutions for homes, businesses and vehicles. Sydney&apos;s trusted surface protection specialists.
               </motion.p>
 
-              <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 mb-8">
+              <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3">
                 <Link href="/get-quote">
                   <Button size="lg" className="w-full sm:w-auto bg-primary text-primary-foreground px-8 font-semibold" data-testid="button-hero-quote">
                     Get Free Quote
@@ -173,21 +179,11 @@ export default function HomeClient() {
                   </Button>
                 </a>
               </motion.div>
-
-              {/* Trust Indicators */}
-              <motion.div variants={itemVariants} className="flex flex-wrap gap-4 lg:gap-6">
-                {["Lifetime Warranty", "Free Consultation", "Same Day Service"].map((item) => (
-                  <div key={item} className={`flex items-center gap-2 text-sm ${isCurrentTintDark ? 'text-white/80' : 'text-foreground/70'}`}>
-                    <Check className="w-4 h-4 text-primary" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </motion.div>
             </motion.div>
 
-            {/* Right Content - Quick Quote Form - 5 columns on desktop */}
+            {/* Right Content - Quick Quote Form - 6 columns on desktop */}
             <motion.div 
-              className="col-span-12 lg:col-span-5 mt-8 lg:mt-0"
+              className="col-span-12 lg:col-span-6 mt-8 lg:mt-0"
               variants={itemVariants}
               initial="hidden"
               animate="visible"
@@ -229,6 +225,16 @@ export default function HomeClient() {
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </form>
+              </div>
+              
+              {/* Trust Indicators - Below Form */}
+              <div className="mt-6 flex flex-col gap-3">
+                {["Warranties from 5-15 years", "Reduce heat, glare, and UV damage", "Premium ceramic and carbon films"].map((item) => (
+                  <div key={item} className="flex items-center gap-3 text-sm text-white/80">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>
