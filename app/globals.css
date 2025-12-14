@@ -266,25 +266,25 @@ html, body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: tintSwipe1 4s ease-in-out infinite;
+    animation: tintSwipe1 8s ease-in-out infinite;
   }
 
   .text-sunglasses-effect-2 {
-    background: linear-gradient(90deg, currentColor 0%, #C4A35A 25%, currentColor 50%, #8B4513 75%, currentColor 100%);
-    background-size: 400% 100%;
+    background: linear-gradient(90deg, currentColor 0%, #708090 15%, currentColor 35%, #8B4513 55%, currentColor 75%, #C4A35A 90%);
+    background-size: 350% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: tintSwipe2 3s ease-in-out infinite 0.5s;
+    animation: tintSwipe2 11s ease-in-out infinite 1.5s;
   }
 
   /* Text Sunglasses Shadow Effect - colored sweep on drop shadow and inset */
   .text-sunglasses-shadow-1 {
-    animation: shadowSwipe1 4s ease-in-out infinite;
+    animation: shadowSwipe1 9s ease-in-out infinite;
   }
 
   .text-sunglasses-shadow-2 {
-    animation: shadowSwipe2 3s ease-in-out infinite 0.5s;
+    animation: shadowSwipe2 7s ease-in-out infinite 2s;
   }
 
   @keyframes shadowSwipe1 {
