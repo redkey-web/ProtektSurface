@@ -75,19 +75,19 @@ export default function CommercialWindowTintingPage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
               Professional Solutions for Business
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
+            <p className="text-base text-muted-foreground leading-relaxed mb-6">
               Our commercial window tinting solutions are engineered to reduce
               heat, glare, and UV exposure while maintaining natural light and
               views. Perfect for office buildings, retail spaces, and commercial
               properties of all sizes.
             </p>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
+            <p className="text-base text-muted-foreground leading-relaxed mb-6">
               We work with building managers, architects, and business owners to
               deliver cost-effective solutions that improve comfort, reduce
               energy consumption, and enhance the value of your commercial
               property.
             </p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-base text-muted-foreground leading-relaxed">
               Our team is fully certified for working at heights with all relevant insurances and safety certifications. We can organise scaffolding and access equipment as needed to complete projects of any scale. All commercial installations include warranties ranging from 5 to 15 years depending on the type of film and application.
             </p>
           </div>
@@ -163,19 +163,19 @@ export default function CommercialWindowTintingPage() {
                 </div>
               </Card>
 
-              <Card className="overflow-hidden group" data-testid="gallery-conference">
+              <Card className="overflow-hidden group" data-testid="gallery-corridor">
                 <div className="aspect-video overflow-hidden relative">
                   <Image
-                    src="/images/services/conference.png"
-                    alt="Conference room with tinted windows"
+                    src="/images/services/commercial-office.png"
+                    alt="Modern office corridor with frosted glass partitions"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-4">
-                  <h4 className="font-semibold text-foreground mb-1">Meeting Rooms</h4>
-                  <p className="text-sm text-muted-foreground">Privacy and comfort for productive meetings</p>
+                  <h4 className="font-semibold text-foreground mb-1">Office Partitions</h4>
+                  <p className="text-sm text-muted-foreground">Frosted films for privacy in open-plan offices</p>
                 </div>
               </Card>
             </div>
