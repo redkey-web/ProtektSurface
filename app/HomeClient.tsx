@@ -23,6 +23,8 @@ export default function HomeClient() {
   const [isMarqueeFixed, setIsMarqueeFixed] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
   const marqueePlaceholderRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [currentVideoPart, setCurrentVideoPart] = useState(1);
   
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
@@ -492,15 +494,24 @@ export default function HomeClient() {
           </div>
           <div className="rounded-xl overflow-hidden shadow-lg">
             <video 
+              ref={videoRef}
               autoPlay 
               muted 
-              loop 
               playsInline
               className="w-full aspect-video object-cover"
               data-testid="video-featured"
+              onEnded={() => {
+                const nextPart = currentVideoPart === 1 ? 2 : 1;
+                setCurrentVideoPart(nextPart);
+                if (videoRef.current) {
+                  videoRef.current.src = `/images/hero/protekt-video-part${nextPart}.mov`;
+                  videoRef.current.load();
+                  videoRef.current.play();
+                }
+              }}
             >
-              <source src="/images/hero/protekt-video.mov" type="video/quicktime" />
-              <source src="/images/hero/protekt-video.mov" type="video/mp4" />
+              <source src={`/images/hero/protekt-video-part${currentVideoPart}.mov`} type="video/quicktime" />
+              <source src={`/images/hero/protekt-video-part${currentVideoPart}.mov`} type="video/mp4" />
             </video>
           </div>
         </div>
