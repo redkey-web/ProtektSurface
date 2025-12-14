@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Phone, Check, Zap, Home, Heart, AlertTriangle, Wifi } from "lucide-react";
+import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Check, Zap, Home, Heart, AlertTriangle, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -280,19 +280,27 @@ export default function HomeClient() {
                 Premium films and protective solutions for homes, businesses and vehicles. Sydney&apos;s trusted surface protection specialists.
               </motion.p>
 
-              <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3">
+              <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 items-center">
                 <Link href="#services">
                   <Button size="lg" className="w-full sm:w-auto bg-primary text-primary-foreground px-8 font-semibold" data-testid="button-hero-services">
                     View Services
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
-                <a href="tel:0286062842">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/30 text-white backdrop-blur-sm bg-black/20" data-testid="button-contact-hero">
-                    <Phone className="mr-2 w-5 h-5" />
-                    (02) 8606 2842
-                  </Button>
-                </a>
+                <div className="flex gap-2 items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full">
+                  <span className="text-white/80 text-xs font-medium">Tint Level:</span>
+                  <span className="text-white text-sm font-semibold min-w-[60px]">{tintVariants[currentTint].name}</span>
+                  <div className="flex gap-1.5 ml-2">
+                    {tintVariants.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentTint(index)}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${currentTint === index ? 'bg-primary scale-125' : 'bg-white/50 hover:bg-white/80'}`}
+                        data-testid={`tint-dot-${index}`}
+                      />
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             </motion.div>
 
@@ -356,24 +364,6 @@ export default function HomeClient() {
           </div>
         </div>
 
-        {/* Tint Level Indicator */}
-        <motion.div 
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 hidden lg:flex gap-2 items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full"
-          style={{ opacity }}
-        >
-          <span className="text-white/80 text-xs font-medium">Tint Level:</span>
-          <span className="text-white text-sm font-semibold min-w-[60px]">{tintVariants[currentTint].name}</span>
-          <div className="flex gap-1.5 ml-2">
-            {tintVariants.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentTint(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${currentTint === index ? 'bg-primary scale-125' : 'bg-white/50 hover:bg-white/80'}`}
-                data-testid={`tint-dot-${index}`}
-              />
-            ))}
-          </div>
-        </motion.div>
       </section>
 
       {/* BENEFITS MARQUEE - Placeholder to track original position */}
