@@ -274,25 +274,23 @@ export default function HomeClient() {
                 <span 
                   className="transition-opacity duration-500"
                   style={currentTint <= 1 ? {
-                    opacity: currentTint === 0 ? 0.5 : 0.75,
                     background: 'linear-gradient(90deg, currentColor 0%, #8B7355 15%, currentColor 30%, #4A90A4 45%, currentColor 60%, #6B8E23 75%, currentColor 90%)',
                     backgroundSize: '300% 100%',
                     WebkitBackgroundClip: 'text',
                     backgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    animation: 'tintSwipe1 4s ease-in-out infinite',
+                    animation: 'tintSwipe1 4s ease-in-out infinite, opacityRise 6s ease-out forwards',
                   } : { opacity: 1 }}
                 >Professional</span><br />
                 <span 
                   className="italic font-semibold transition-opacity duration-500"
                   style={currentTint <= 1 ? {
-                    opacity: currentTint === 0 ? 0.5 : 0.75,
                     background: 'linear-gradient(90deg, currentColor 0%, #C4A35A 20%, currentColor 40%, #708090 55%, currentColor 70%, #8B4513 85%, currentColor 100%)',
                     backgroundSize: '400% 100%',
                     WebkitBackgroundClip: 'text',
                     backgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    animation: 'tintSwipe2 3s ease-in-out infinite 0.5s',
+                    animation: 'tintSwipe2 3s ease-in-out infinite 0.5s, opacityRise 6s ease-out forwards',
                   } : { opacity: 1 }}
                 >Window Tinting</span><br />
                 <span className={`transition-colors duration-500 ${isCurrentTintDark ? 'text-primary' : 'text-white'}`}>Sydney</span>
