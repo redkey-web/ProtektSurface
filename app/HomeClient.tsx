@@ -469,8 +469,31 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* FILM TYPES - Horizontal Scroll on Mobile */}
+      {/* FEATURED VIDEO */}
       <section className="py-16 lg:py-24 bg-muted/50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <p className="text-primary font-medium uppercase tracking-wider mb-2">See Our Work</p>
+            <h2 className="font-display text-display-md">Surface Protection in Action</h2>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg">
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="w-full aspect-video object-cover"
+              data-testid="video-featured"
+            >
+              <source src="/images/hero/protekt-video.mov" type="video/quicktime" />
+              <source src="/images/hero/protekt-video.mov" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      {/* FILM TYPES - Horizontal Scroll on Mobile */}
+      <section className="py-16 lg:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-12">
             <div>
