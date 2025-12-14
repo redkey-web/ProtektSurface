@@ -78,7 +78,7 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
     target: sectionRef,
     offset: ["start end", "end start"]
   });
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["-50%", "50%"]);
 
   if (compact) {
     return (
