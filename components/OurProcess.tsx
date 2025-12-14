@@ -185,8 +185,9 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
                 <a href="tel:0286062842">
                   <Button
                     size="lg"
-                    variant="outline"
-                    className="border-white/30 text-white backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary transition-all duration-300"
+                    variant="ghost"
+                    className="border border-white/20 text-white bg-gray-800/80"
+                    style={{ boxShadow: 'inset 0 2px 0 rgba(255,255,255,0.25), 0 6px 16px rgba(0,0,0,0.3), 0 3px 6px rgba(0,0,0,0.2)' }}
                     data-testid="button-process-call"
                   >
                     <Phone className="mr-2 w-5 h-5" />
@@ -196,8 +197,9 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
                 <Link href="/get-quote">
                   <Button
                     size="lg"
-                    variant="outline"
-                    className="border-white/30 text-white backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary transition-all duration-300"
+                    variant="ghost"
+                    className="border border-white/20 text-white bg-gray-800/80"
+                    style={{ boxShadow: 'inset 0 2px 0 rgba(255,255,255,0.25), 0 6px 16px rgba(0,0,0,0.3), 0 3px 6px rgba(0,0,0,0.2)' }}
                     data-testid="button-process-quote"
                   >
                     Request a Quote
