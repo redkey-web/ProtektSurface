@@ -11,7 +11,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground border border-primary-border [box-shadow:inset_0_1px_0_rgba(255,255,255,0.3),0_4px_12px_rgba(0,0,0,0.15),0_2px_4px_rgba(0,0,0,0.1)] active:[box-shadow:inset_0_1px_0_rgba(255,255,255,0.2),0_1px_2px_rgba(0,0,0,0.1)]",
+          "bg-primary text-primary-foreground border border-primary-border [background-image:linear-gradient(90deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.15)_20%,rgba(255,255,255,0)_40%,rgba(255,255,255,0.1)_60%,rgba(255,255,255,0)_80%,rgba(255,255,255,0.12)_100%)] [box-shadow:inset_0_1px_0_rgba(255,255,255,0.4),inset_0_-1px_0_rgba(0,0,0,0.1),0_4px_12px_rgba(0,0,0,0.15),0_2px_4px_rgba(0,0,0,0.1)] active:[box-shadow:inset_0_1px_0_rgba(255,255,255,0.2),0_1px_2px_rgba(0,0,0,0.1)]",
         destructive:
           "bg-destructive text-destructive-foreground border border-destructive-border [box-shadow:inset_0_1px_0_rgba(255,255,255,0.2),0_4px_12px_rgba(0,0,0,0.15),0_2px_4px_rgba(0,0,0,0.1)] active:[box-shadow:inset_0_1px_0_rgba(255,255,255,0.1),0_1px_2px_rgba(0,0,0,0.1)]",
         outline:
