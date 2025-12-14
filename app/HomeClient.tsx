@@ -269,7 +269,12 @@ export default function HomeClient() {
                 className={`font-display font-bold text-display-lg lg:text-display-xl tracking-tight mb-6 lg:mb-8 transition-colors duration-500 ${isCurrentTintDark ? 'text-white' : 'text-foreground'}`}
               >
                 Professional<br />
-                <span className="italic font-semibold">Window Tinting</span><br />
+                <span 
+                  className="italic font-semibold"
+                  style={{ 
+                    textShadow: '0 1px 0 rgba(255,255,255,0.4), 0 2px 0 rgba(255,255,255,0.2), 0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2)'
+                  }}
+                >Window Tinting</span><br />
                 <span className={`transition-colors duration-500 ${isCurrentTintDark ? 'text-primary' : 'text-white'}`}>Sydney</span>
               </motion.h1>
 
