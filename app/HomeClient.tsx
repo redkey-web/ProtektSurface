@@ -126,24 +126,28 @@ export default function HomeClient() {
           ))}
         </motion.div>
 
-        {/* Logo - Top Left */}
-        <motion.div 
-          className="absolute top-8 left-6 sm:left-8 lg:left-12 z-20"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          <Image
-            src="/images/logo.webp"
-            alt="Protekt Surface Solutions"
-            width={280}
-            height={118}
-            className="h-[50px] sm:h-[60px] lg:h-[70px] w-auto"
-            style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' }}
-            priority
-            data-testid="img-hero-logo"
-          />
-        </motion.div>
+        {/* Logo - Aligned with header position */}
+        <div className="absolute top-0 left-0 right-0 z-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <motion.div 
+              className="pt-4 sm:pt-5"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <Image
+                src="/images/logo.webp"
+                alt="Protekt Surface Solutions"
+                width={280}
+                height={118}
+                className="h-16 sm:h-20 w-auto"
+                style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' }}
+                priority
+                data-testid="img-hero-logo"
+              />
+            </motion.div>
+          </div>
+        </div>
 
         {/* 12-Column Grid Hero Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-24 lg:pt-36 lg:pb-24">
