@@ -1,17 +1,19 @@
 import type { Metadata } from 'next';
-import { Source_Sans_3, Source_Serif_4 } from 'next/font/google';
+import { IBM_Plex_Sans, IBM_Plex_Serif } from 'next/font/google';
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
 import './globals.css';
 
-const sourceSans = Source_Sans_3({ 
+const ibmPlexSans = IBM_Plex_Sans({ 
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-sans',
   display: 'swap',
 });
 
-const sourceSerif = Source_Serif_4({ 
+const ibmPlexSerif = IBM_Plex_Serif({ 
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-display',
   display: 'swap',
 });
@@ -71,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${sourceSans.variable} ${sourceSerif.variable}`}>
+    <html lang="en" className={`${ibmPlexSans.variable} ${ibmPlexSerif.variable}`}>
       <body className="font-sans antialiased">
         <Navigation />
         <main>{children}</main>
