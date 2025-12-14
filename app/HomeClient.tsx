@@ -24,7 +24,7 @@ export default function HomeClient() {
   const heroRef = useRef<HTMLElement>(null);
   const marqueePlaceholderRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [currentVideoPart, setCurrentVideoPart] = useState(1);
+  const [currentVideoPart, setCurrentVideoPart] = useState<'1a' | '1b' | '2'>('1a');
   
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
@@ -503,7 +503,7 @@ export default function HomeClient() {
                 style={{ marginTop: '-10px' }}
                 data-testid="video-featured"
                 onEnded={() => {
-                  const nextPart = currentVideoPart === 1 ? 2 : 1;
+                  const nextPart = currentVideoPart === '1a' ? '1b' : currentVideoPart === '1b' ? '2' : '1a';
                   setCurrentVideoPart(nextPart);
                   if (videoRef.current) {
                     videoRef.current.src = `/images/hero/protekt-video-part${nextPart}.mov`;
