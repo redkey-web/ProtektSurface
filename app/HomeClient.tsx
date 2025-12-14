@@ -69,7 +69,7 @@ export default function HomeClient() {
     { name: "Limo", color: "rgb(20, 20, 20)", opacity: 0.75, isDark: true },
   ];
 
-  const isCurrentTintDark = tintVariants[currentTint].isDark;
+  const isCurrentTintDark = currentTint >= 2; // Only Dark and Limo (index 2 and 3)
 
   useEffect(() => {
     const interval = setInterval(() => {
