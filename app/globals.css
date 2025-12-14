@@ -258,4 +258,23 @@ html, body {
       opacity: 0.85;
     }
   }
+
+  /* Text Sunglasses Effect - colored tint sweep across text */
+  .text-sunglasses-effect-1 {
+    background: linear-gradient(90deg, currentColor 0%, #8B7355 15%, currentColor 30%, #4A90A4 45%, currentColor 60%, #6B8E23 75%, currentColor 90%);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: tintSwipe1 4s ease-in-out infinite;
+  }
+
+  .text-sunglasses-effect-2 {
+    background: linear-gradient(90deg, currentColor 0%, #C4A35A 20%, currentColor 40%, #708090 55%, currentColor 70%, #8B4513 85%, currentColor 100%);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: tintSwipe2 3s ease-in-out infinite 0.5s;
+  }
 }
