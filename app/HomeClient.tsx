@@ -241,7 +241,7 @@ export default function HomeClient() {
 
         {/* Hero Content with Staggered Animations */}
         <motion.div 
-          className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-16 sm:py-20"
+          className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-16 sm:py-20"
           style={{ y: contentY }}
         >
           <motion.div 
