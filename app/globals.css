@@ -231,4 +231,22 @@ html, body {
       transform: translateX(-50%);
     }
   }
+
+  @keyframes tintSwipe1 {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes tintSwipe2 {
+    0%, 100% {
+      background-position: 100% 50%;
+    }
+    50% {
+      background-position: 0% 50%;
+    }
+  }
 }

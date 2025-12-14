@@ -266,13 +266,33 @@ export default function HomeClient() {
             >
               <motion.h1 
                 variants={itemVariants}
-                className={`font-display font-bold text-display-lg lg:text-display-xl tracking-tight mb-6 lg:mb-8 transition-colors duration-500 ${isCurrentTintDark ? 'text-white' : 'text-foreground'}`}
+                className={`font-display font-bold text-display-lg lg:text-display-xl tracking-tight mb-6 lg:mb-8 transition-all duration-500 ${isCurrentTintDark ? 'text-white' : 'text-foreground'}`}
                 style={{ 
                   textShadow: '0 1px 0 rgba(255,255,255,0.4), 0 2px 0 rgba(255,255,255,0.2), 0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2)'
                 }}
               >
-                Professional<br />
-                <span className="italic font-semibold">Window Tinting</span><br />
+                <span 
+                  className={`transition-opacity duration-500 ${currentTint === 0 ? 'opacity-60' : 'opacity-100'}`}
+                  style={currentTint === 0 ? {
+                    background: 'linear-gradient(90deg, currentColor 0%, #8B7355 15%, currentColor 30%, #4A90A4 45%, currentColor 60%, #6B8E23 75%, currentColor 90%)',
+                    backgroundSize: '300% 100%',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    animation: 'tintSwipe1 4s ease-in-out infinite',
+                  } : undefined}
+                >Professional</span><br />
+                <span 
+                  className={`italic font-semibold transition-opacity duration-500 ${currentTint === 0 ? 'opacity-60' : 'opacity-100'}`}
+                  style={currentTint === 0 ? {
+                    background: 'linear-gradient(90deg, currentColor 0%, #C4A35A 20%, currentColor 40%, #708090 55%, currentColor 70%, #8B4513 85%, currentColor 100%)',
+                    backgroundSize: '400% 100%',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    animation: 'tintSwipe2 3s ease-in-out infinite 0.5s',
+                  } : undefined}
+                >Window Tinting</span><br />
                 <span className={`transition-colors duration-500 ${isCurrentTintDark ? 'text-primary' : 'text-white'}`}>Sydney</span>
               </motion.h1>
 
