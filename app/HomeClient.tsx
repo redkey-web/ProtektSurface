@@ -267,15 +267,15 @@ export default function HomeClient() {
               <motion.h1 
                 variants={itemVariants}
                 className={`font-display font-bold text-display-lg lg:text-display-xl tracking-tight mb-6 lg:mb-8 transition-all duration-500 ${isCurrentTintDark ? 'text-white' : 'text-foreground'}`}
-                style={{ 
+                style={currentTint >= 2 ? { 
                   textShadow: '0 1px 0 rgba(255,255,255,0.4), 0 2px 0 rgba(255,255,255,0.2), 0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2)'
-                }}
+                } : undefined}
               >
                 <span 
-                  className={`transition-opacity duration-500 inline-block ${currentTint >= 2 ? 'opacity-70' : 'opacity-100'} ${currentTint === 2 ? 'text-sunglasses-effect-1' : ''}`}
+                  className={`transition-opacity duration-500 inline-block ${currentTint >= 2 ? 'opacity-70' : 'opacity-100'} ${currentTint === 2 ? 'text-sunglasses-effect-1' : ''} ${currentTint <= 1 ? 'text-sunglasses-shadow-1' : ''}`}
                 >Professional</span><br />
                 <span 
-                  className={`italic font-semibold transition-opacity duration-500 inline-block ${currentTint >= 2 ? 'opacity-70' : 'opacity-100'} ${currentTint === 2 ? 'text-sunglasses-effect-2' : ''}`}
+                  className={`italic font-semibold transition-opacity duration-500 inline-block ${currentTint >= 2 ? 'opacity-70' : 'opacity-100'} ${currentTint === 2 ? 'text-sunglasses-effect-2' : ''} ${currentTint <= 1 ? 'text-sunglasses-shadow-2' : ''}`}
                 >Window Tinting</span><br />
                 <span className={`transition-colors duration-500 ${isCurrentTintDark ? 'text-primary' : 'text-white'}`}>Sydney</span>
               </motion.h1>
