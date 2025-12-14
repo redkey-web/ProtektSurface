@@ -311,7 +311,10 @@ export default function HomeClient() {
               initial="hidden"
               animate="visible"
             >
-              <div className="backdrop-blur-xl bg-gray-900/60 border border-white/20 rounded-2xl p-6 lg:p-8 shadow-2xl">
+              <div 
+                className="backdrop-blur-xl bg-gray-900/60 border border-white/20 rounded-2xl p-6 lg:p-8"
+                style={{ boxShadow: 'inset 0 2px 0 rgba(255,255,255,0.15), 0 12px 32px rgba(0,0,0,0.4), 0 6px 12px rgba(0,0,0,0.25)' }}
+              >
                 <h3 className="font-display text-2xl lg:text-3xl text-white mb-2">Get Your Quote</h3>
                 <p className="text-white/60 text-sm mb-6">Free consultation and estimate</p>
                 
@@ -320,31 +323,41 @@ export default function HomeClient() {
                     type="text"
                     name="name"
                     placeholder="Name"
-                    className="w-full px-4 py-3 rounded-xl border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
+                    className="w-full px-4 py-3 rounded-xl border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
+                    style={{ boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 2px rgba(0,0,0,0.3)' }}
                     data-testid="input-hero-name"
                   />
                   <input
                     type="tel"
                     name="phone"
                     placeholder="Phone"
-                    className="w-full px-4 py-3 rounded-xl border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
+                    className="w-full px-4 py-3 rounded-xl border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
+                    style={{ boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 2px rgba(0,0,0,0.3)' }}
                     data-testid="input-hero-phone"
                   />
                   <input
                     type="email"
                     name="email"
                     placeholder="E-mail"
-                    className="w-full px-4 py-3 rounded-xl border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
+                    className="w-full px-4 py-3 rounded-xl border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
+                    style={{ boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 2px rgba(0,0,0,0.3)' }}
                     data-testid="input-hero-email"
                   />
                   <textarea
                     name="message"
                     placeholder="Message"
                     rows={3}
-                    className="w-full px-4 py-3 rounded-xl border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60 resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60 resize-none"
+                    style={{ boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 2px rgba(0,0,0,0.3)' }}
                     data-testid="textarea-hero-message"
                   />
-                  <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground font-semibold" data-testid="button-hero-submit">
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full bg-primary text-primary-foreground font-semibold border border-primary-border" 
+                    style={{ boxShadow: 'inset 0 2px 0 rgba(255,255,255,0.25), 0 6px 16px rgba(0,0,0,0.3), 0 3px 6px rgba(0,0,0,0.2)' }}
+                    data-testid="button-hero-submit"
+                  >
                     Request Quote
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
