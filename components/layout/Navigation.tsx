@@ -22,6 +22,7 @@ export function Navigation() {
   const [openDesktopDropdown, setOpenDesktopDropdown] = useState<string | null>(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
   const [headerProgress, setHeaderProgress] = useState(0);
+  const [isQuoteHovered, setIsQuoteHovered] = useState(false);
 
   const isHomePage = pathname === "/";
 
@@ -80,14 +81,14 @@ export function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      {headerProgress > 0 && (
-        <div
-          className="absolute inset-0 bg-background border-b border-border"
-          style={{
-            opacity: Math.min(headerProgress, 0.7)
-          }}
-        />
-      )}
+      <div
+        className={`absolute inset-0 border-b border-border transition-all duration-300 ${
+          isQuoteHovered ? 'bg-[rgb(20,20,20)]' : 'bg-background'
+        }`}
+        style={{
+          opacity: isQuoteHovered ? 0.85 : Math.min(headerProgress, 0.7)
+        }}
+      />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" data-testid="link-home" className="flex-shrink-0">
@@ -153,7 +154,12 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:flex items-center gap-2 flex-shrink-0">
-            <Link href="/get-quote" data-testid="button-quote-desktop">
+            <Link 
+              href="/get-quote" 
+              data-testid="button-quote-desktop"
+              onMouseEnter={() => setIsQuoteHovered(true)}
+              onMouseLeave={() => setIsQuoteHovered(false)}
+            >
               <Button size="sm">
                 Get Quote
               </Button>
