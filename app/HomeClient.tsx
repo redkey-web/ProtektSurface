@@ -63,10 +63,10 @@ export default function HomeClient() {
   };
 
   const tintVariants = [
-    { name: "Light", color: "rgb(50, 50, 50)", opacity: 0.15, isDark: false },
-    { name: "Medium", color: "rgb(40, 40, 40)", opacity: 0.35, isDark: true },
-    { name: "Dark", color: "rgb(30, 30, 30)", opacity: 0.55, isDark: true },
-    { name: "Limo", color: "rgb(20, 20, 20)", opacity: 0.75, isDark: true },
+    { name: "Light", color: "rgb(50, 50, 50)", opacity: 0.30, isDark: false },
+    { name: "Medium", color: "rgb(40, 40, 40)", opacity: 0.50, isDark: true },
+    { name: "Dark", color: "rgb(30, 30, 30)", opacity: 0.70, isDark: true },
+    { name: "Limo", color: "rgb(20, 20, 20)", opacity: 0.85, isDark: true },
   ];
 
   const isCurrentTintDark = currentTint >= 2; // Only Dark and Limo (index 2 and 3)
