@@ -155,8 +155,11 @@ export function Navigation() {
           <div className="hidden md:flex items-center gap-2 flex-shrink-0">
             <Link href="/get-quote" data-testid="button-quote-desktop">
               <Button
-                className="bg-primary text-primary-foreground hover-elevate active-elevate-2"
+                className="bg-primary text-primary-foreground"
                 size="sm"
+                style={{
+                  boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.3), 0 4px 12px rgba(212,165,116,0.4)'
+                }}
               >
                 Get Quote
               </Button>
