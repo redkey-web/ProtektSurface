@@ -287,6 +287,96 @@ html, body {
     animation: shadowSwipe2 1.5s ease-in-out infinite 0.25s;
   }
 
+  /* Container/Button Sunglasses Effect - chrome shimmer on box shadows */
+  .box-sunglasses-effect {
+    animation: boxShadowSwipe 2s ease-in-out infinite;
+  }
+
+  .box-sunglasses-inset {
+    animation: boxInsetSwipe 1.5s ease-in-out infinite 0.25s;
+  }
+
+  @keyframes boxShadowSwipe {
+    0%, 100% {
+      box-shadow: 
+        inset 0 2px 0 rgba(192, 192, 192, 0.2),
+        0 12px 32px rgba(0, 0, 0, 0.4),
+        0 6px 12px rgba(192, 192, 192, 0.15);
+    }
+    25% {
+      box-shadow: 
+        inset 0 2px 0 rgba(232, 213, 192, 0.25),
+        0 12px 32px rgba(0, 0, 0, 0.4),
+        0 6px 12px rgba(232, 213, 192, 0.2);
+    }
+    50% {
+      box-shadow: 
+        inset 0 2px 0 rgba(232, 232, 232, 0.25),
+        0 12px 32px rgba(0, 0, 0, 0.4),
+        0 6px 12px rgba(232, 232, 232, 0.2);
+    }
+    75% {
+      box-shadow: 
+        inset 0 2px 0 rgba(212, 196, 176, 0.25),
+        0 12px 32px rgba(0, 0, 0, 0.4),
+        0 6px 12px rgba(212, 196, 176, 0.2);
+    }
+  }
+
+  @keyframes boxInsetSwipe {
+    0%, 100% {
+      box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.4),
+        inset 0 1px 2px rgba(192, 192, 192, 0.1);
+    }
+    25% {
+      box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.4),
+        inset 0 1px 2px rgba(232, 213, 192, 0.15);
+    }
+    50% {
+      box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.4),
+        inset 0 1px 2px rgba(232, 232, 232, 0.15);
+    }
+    75% {
+      box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.4),
+        inset 0 1px 2px rgba(212, 196, 176, 0.15);
+    }
+  }
+
+  @keyframes buttonShadowSwipe {
+    0%, 100% {
+      box-shadow: 
+        inset 0 2px 0 rgba(192, 192, 192, 0.3),
+        0 6px 16px rgba(0, 0, 0, 0.3),
+        0 3px 6px rgba(192, 192, 192, 0.15);
+    }
+    25% {
+      box-shadow: 
+        inset 0 2px 0 rgba(232, 213, 192, 0.35),
+        0 6px 16px rgba(0, 0, 0, 0.3),
+        0 3px 6px rgba(232, 213, 192, 0.2);
+    }
+    50% {
+      box-shadow: 
+        inset 0 2px 0 rgba(232, 232, 232, 0.35),
+        0 6px 16px rgba(0, 0, 0, 0.3),
+        0 3px 6px rgba(232, 232, 232, 0.2);
+    }
+    75% {
+      box-shadow: 
+        inset 0 2px 0 rgba(212, 196, 176, 0.35),
+        0 6px 16px rgba(0, 0, 0, 0.3),
+        0 3px 6px rgba(212, 196, 176, 0.2);
+    }
+  }
+
+  .button-sunglasses-effect {
+    animation: buttonShadowSwipe 2s ease-in-out infinite;
+  }
+
   @keyframes shadowSwipe1 {
     0%, 100% {
       text-shadow: 
