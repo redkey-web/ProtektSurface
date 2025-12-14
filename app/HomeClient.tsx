@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Phone } from "lucide-react";
+import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Phone, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -21,55 +21,28 @@ export default function HomeClient() {
   const [currentTint, setCurrentTint] = useState(0);
   const heroRef = useRef<HTMLElement>(null);
   
-  // Parallax scroll effect
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
   const contentY = useTransform(scrollY, [0, 500], [0, 100]);
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
 
-  // Staggered animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 40,
-      filter: "blur(10px)",
-    },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.8,
-        ease: [0.25, 0.4, 0.25, 1],
-      },
-    },
-  };
-
-  const wordVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 30,
-      rotateX: -40,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      rotateX: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.4, 0.25, 1],
-      },
+      transition: { duration: 0.6, ease: [0.25, 0.4, 0.25, 1] },
     },
   };
 
@@ -91,112 +64,40 @@ export default function HomeClient() {
   }, []);
 
   const filmTypes = [
-    {
-      title: "Ceramic Window Tint",
-      description: "Premium nano-ceramic technology for superior solar energy rejection without signal interference.",
-      icon: Gem,
-      path: "/ceramic-window-tint",
-      texture: "/images/textures/ceramic.png",
-    },
-    {
-      title: "Privacy Window Film",
-      description: "Elegant one-way privacy solutions that maintain natural light while blocking outside views.",
-      icon: Eye,
-      path: "/privacy-window-film",
-      texture: "/images/textures/privacy.png",
-    },
-    {
-      title: "UV Blocking Film",
-      description: "Block 99% of harmful UV rays to protect your skin, furniture, and flooring from sun damage.",
-      icon: Sun,
-      path: "/uv-blocking-film",
-      texture: "/images/textures/uv.png",
-    },
-    {
-      title: "Window Protection Film",
-      description: "Invisible strength that holds glass together on impact, enhancing safety and security.",
-      icon: Shield,
-      path: "/window-protection-film",
-      texture: "/images/textures/protection.png",
-    },
-    {
-      title: "Frosted & Decorative Film",
-      description: "Transform plain glass into elegant design features with etched glass and decorative patterns.",
-      icon: Sparkles,
-      path: "/frosted-decorative-window-film",
-      texture: "/images/textures/frosted.png",
-    },
-    {
-      title: "Natural Stone Protection",
-      description: "Invisible protective films for natural stone surfaces, preventing stains and etching.",
-      icon: Lock,
-      path: "/marble-protection-film",
-      texture: "/images/marble-tile.png",
-    },
+    { title: "Ceramic Window Tint", description: "Premium nano-ceramic technology for superior solar energy rejection.", icon: Gem, path: "/ceramic-window-tint" },
+    { title: "Privacy Window Film", description: "One-way privacy solutions that maintain natural light.", icon: Eye, path: "/privacy-window-film" },
+    { title: "UV Blocking Film", description: "Block 99% of harmful UV rays to protect interiors.", icon: Sun, path: "/uv-blocking-film" },
+    { title: "Window Protection Film", description: "Invisible strength that holds glass together on impact.", icon: Shield, path: "/window-protection-film" },
+    { title: "Frosted & Decorative", description: "Transform plain glass into elegant design features.", icon: Sparkles, path: "/frosted-decorative-window-film" },
+    { title: "Stone Protection", description: "Protective films for marble, granite surfaces.", icon: Lock, path: "/marble-protection-film" },
   ];
 
   const faqs = [
-    {
-      question: "How long does window tinting installation take?",
-      answer: "Most residential window tinting jobs are completed within 2-4 hours. Commercial projects may take 1-2 days depending on the size of the building. Automotive window tinting typically takes 1-3 hours depending on the vehicle type.",
-    },
-    {
-      question: "What is the difference between ceramic and carbon window tint?",
-      answer: "Ceramic window tint uses advanced nano-ceramic particles that provide superior solar energy rejection (up to 70%) without interfering with electronic signals. Carbon tint is more affordable and offers good heat reduction and UV protection, but ceramic provides better overall performance and clarity.",
-    },
-    {
-      question: "How long does window tint last?",
-      answer: "Quality window tint films installed by professionals typically last 15-25 years. Our premium ceramic and carbon films come with lifetime warranties, ensuring long-lasting performance and peace of mind.",
-    },
-    {
-      question: "Will window tinting make my home too dark?",
-      answer: "Not at all! Modern window films come in various shades from nearly clear to darker tints. We'll help you choose a film that reduces heat and glare while maintaining your desired level of natural light. Many of our films reject heat without significantly darkening your windows.",
-    },
-    {
-      question: "Is window tinting legal for cars in NSW?",
-      answer: "Yes, window tinting is legal in NSW with certain restrictions. The front windscreen must allow at least 75% of light through, front side windows must allow at least 35% light transmission, and there are no restrictions on rear windows. We ensure all our automotive installations comply with NSW regulations.",
-    },
-    {
-      question: "Do you offer warranties on your window tinting?",
-      answer: "Yes! We offer comprehensive warranties on all our window tinting services. Our premium ceramic films come with lifetime warranties covering bubbling, peeling, cracking, and discoloration. We stand behind the quality of our work and materials.",
-    },
+    { question: "How long does window tinting installation take?", answer: "Most residential window tinting jobs are completed within 2-4 hours. Commercial projects may take 1-2 days depending on the size of the building. Automotive window tinting typically takes 1-3 hours depending on the vehicle type." },
+    { question: "What is the difference between ceramic and carbon window tint?", answer: "Ceramic window tint uses advanced nano-ceramic particles that provide superior solar energy rejection (up to 70%) without interfering with electronic signals. Carbon tint is more affordable and offers good heat reduction and UV protection, but ceramic provides better overall performance and clarity." },
+    { question: "How long does window tint last?", answer: "Quality window tint films installed by professionals typically last 15-25 years. Our premium ceramic and carbon films come with lifetime warranties, ensuring long-lasting performance and peace of mind." },
+    { question: "Will window tinting make my home too dark?", answer: "Not at all! Modern window films come in various shades from nearly clear to darker tints. We'll help you choose a film that reduces heat and glare while maintaining your desired level of natural light." },
+    { question: "Is window tinting legal for cars in NSW?", answer: "Yes, window tinting is legal in NSW with certain restrictions. The front windscreen must allow at least 75% of light through, front side windows must allow at least 35% light transmission, and there are no restrictions on rear windows." },
   ];
 
   const services = [
-    {
-      title: "Natural Stone Protection",
-      description:
-        "Invisible protective films for marble, granite, and engineered stone surfaces. Prevent stains, etching, and damage while preserving the natural beauty of your stone.",
-      image: "/images/marble-tile.png",
-      path: "/natural-stone-protection",
-    },
-    {
-      title: "Residential Window Tinting",
-      description:
-        "Enhance your home's comfort, energy efficiency, and privacy with premium residential window films—designed to reduce heat, glare, and UV damage.",
-      image: "/images/services/residential.png",
-      path: "/residential-window-tinting",
-    },
-    {
-      title: "Commercial Window Tinting",
-      description:
-        "Boost energy efficiency, tenant comfort, and security in your commercial space with high-performance window films engineered for business environments.",
-      image: "/images/services/commercial.png",
-      path: "/commercial-window-tinting",
-    },
-    {
-      title: "Automotive Window Tinting",
-      description:
-        "Professional car window tinting by Protekt Auto. Premium ceramic and carbon films with lifetime warranty. Reduce heat, block UV rays, and enhance your vehicle.",
-      image: "/images/services/automotive.webp",
-      path: "/automotive-window-tinting",
-    },
+    { title: "Natural Stone Protection", description: "Invisible protective films for marble, granite, and engineered stone surfaces.", image: "/images/marble-tile.png", path: "/natural-stone-protection", badge: "Premium" },
+    { title: "Residential Window Tinting", description: "Enhance your home's comfort, energy efficiency, and privacy with premium films.", image: "/images/services/residential.png", path: "/residential-window-tinting", badge: "Popular" },
+    { title: "Commercial Window Tinting", description: "High-performance window films engineered for business environments.", image: "/images/services/commercial.png", path: "/commercial-window-tinting", badge: null },
+    { title: "Automotive Window Tinting", description: "Professional car window tinting by Protekt Auto with lifetime warranty.", image: "/images/services/automotive.webp", path: "/automotive-window-tinting", badge: "Workshop Only" },
+  ];
+
+  const stats = [
+    { value: "15+", label: "Years Experience" },
+    { value: "5000+", label: "Projects Completed" },
+    { value: "99%", label: "UV Protection" },
+    { value: "70%", label: "Solar Energy Rejection" },
   ];
 
   return (
     <div className="min-h-screen">
-      <section ref={heroRef} className="relative min-h-screen lg:h-[105vh] flex items-start justify-center overflow-hidden pt-20 pb-24 lg:pt-24 lg:pb-20">
-        {/* Parallax Background */}
+      {/* HERO - Full width with asymmetric grid */}
+      <section ref={heroRef} className="relative min-h-screen lg:min-h-[105vh] flex items-center overflow-hidden">
         <motion.div
           className="absolute inset-0 bg-cover will-change-transform"
           style={{
@@ -213,305 +114,248 @@ export default function HomeClient() {
               style={{
                 backgroundColor: tint.color,
                 opacity: currentTint === index ? tint.opacity : 0,
-                transform: currentTint === index ? 'translateX(0)' : currentTint > index ? 'translateX(-100%)' : 'translateX(100%)',
               }}
             />
           ))}
-
-          <motion.div 
-            className="absolute bottom-[8vh] left-1/2 -translate-x-1/2 z-30 hidden lg:flex gap-2 items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full"
-            style={{ opacity }}
-          >
-            <span className="text-white/80 text-xs font-medium">Tint Level:</span>
-            <span className="text-white text-sm font-semibold min-w-[60px]">{tintVariants[currentTint].name}</span>
-            <div className="flex gap-1.5 ml-2">
-              {tintVariants.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTint(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    currentTint === index ? 'bg-primary scale-125' : 'bg-white/50 hover:bg-white/80'
-                  }`}
-                  data-testid={`tint-dot-${index}`}
-                />
-              ))}
-            </div>
-          </motion.div>
         </motion.div>
 
-        {/* Hero Content with Staggered Animations */}
-        <motion.div 
-          className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-16 sm:py-20"
-          style={{ y: contentY }}
-        >
-          <motion.div 
-            className="relative"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-              {/* Logo */}
-              <motion.div 
-                className="flex justify-center mb-4 sm:mb-6"
-                variants={itemVariants}
-              >
+        {/* 12-Column Grid Hero Content */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-0">
+          <div className="grid grid-cols-12 gap-4 lg:gap-8 items-center">
+            {/* Left Content - 7 columns on desktop */}
+            <motion.div 
+              className="col-span-12 lg:col-span-7"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              style={{ y: contentY }}
+            >
+              <motion.div variants={itemVariants} className="mb-4 lg:mb-6">
                 <Image
                   src="/images/logo.webp"
                   alt="Protekt Surface Solutions"
-                  width={500}
-                  height={210}
-                  className="h-[70px] sm:h-[90px] md:h-[110px] w-auto"
-                  style={{
-                    filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))',
-                  }}
+                  width={400}
+                  height={168}
+                  className="h-[60px] sm:h-[80px] lg:h-[100px] w-auto"
+                  style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' }}
                   priority
                   data-testid="img-hero-logo"
                 />
               </motion.div>
 
-              {/* Animated Headline - Word by Word */}
               <motion.h1 
-                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-500 ${
-                  isCurrentTintDark ? 'text-white' : 'text-black'
-                }`}
-                style={{ perspective: "1000px" }}
+                variants={itemVariants}
+                className={`font-display text-display-lg lg:text-display-xl mb-4 lg:mb-6 transition-colors duration-500 ${isCurrentTintDark ? 'text-white' : 'text-foreground'}`}
               >
-                <motion.span className="inline-block overflow-hidden">
-                  <motion.span 
-                    className="inline-block"
-                    variants={wordVariants}
-                  >
-                    Professional{" "}
-                  </motion.span>
-                </motion.span>
-                <motion.span className="inline-block overflow-hidden">
-                  <motion.span 
-                    className="inline-block"
-                    variants={wordVariants}
-                  >
-                    Window{" "}
-                  </motion.span>
-                </motion.span>
-                <motion.span className="inline-block overflow-hidden">
-                  <motion.span 
-                    className="inline-block"
-                    variants={wordVariants}
-                  >
-                    Tinting
-                  </motion.span>
-                </motion.span>
-                <br />
-                <motion.span 
-                  className="text-primary inline-block overflow-hidden"
-                  variants={wordVariants}
-                >
-                  Sydney
-                </motion.span>
+                Professional<br />
+                <span className="italic">Window Tinting</span><br />
+                <span className="text-primary">Sydney</span>
               </motion.h1>
 
-              {/* Animated Description */}
               <motion.p 
-                className={`text-lg sm:text-xl mb-6 max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${
-                  isCurrentTintDark ? 'text-white/90' : 'text-black/80'
-                }`}
                 variants={itemVariants}
+                className={`text-lg lg:text-xl mb-6 lg:mb-8 max-w-xl leading-relaxed transition-colors duration-500 ${isCurrentTintDark ? 'text-white/90' : 'text-foreground/80'}`}
               >
-                Sydney&apos;s premier window tinting & surface protection specialists. Premium films and protective solutions for homes, businesses and vehicles
+                Premium films and protective solutions for homes, businesses and vehicles. Sydney&apos;s trusted surface protection specialists.
               </motion.p>
 
-            {/* Quick Quote Form - Glassmorphic Design */}
+              <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 mb-8">
+                <Link href="/get-quote">
+                  <Button size="lg" className="w-full sm:w-auto bg-primary text-primary-foreground px-8 font-semibold" data-testid="button-hero-quote">
+                    Get Free Quote
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <a href="tel:0286062842">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/30 text-white backdrop-blur-sm bg-black/20" data-testid="button-contact-hero">
+                    <Phone className="mr-2 w-5 h-5" />
+                    (02) 8606 2842
+                  </Button>
+                </a>
+              </motion.div>
+
+              {/* Trust Indicators */}
+              <motion.div variants={itemVariants} className="flex flex-wrap gap-4 lg:gap-6">
+                {["Lifetime Warranty", "Free Consultation", "Same Day Service"].map((item) => (
+                  <div key={item} className={`flex items-center gap-2 text-sm ${isCurrentTintDark ? 'text-white/80' : 'text-foreground/70'}`}>
+                    <Check className="w-4 h-4 text-primary" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Right Content - Quick Quote Form - 5 columns on desktop */}
             <motion.div 
-              className="backdrop-blur-md bg-gray-900/50 border border-white/20 rounded-xl p-5 sm:p-6 max-w-2xl mx-auto mb-6 shadow-2xl"
+              className="col-span-12 lg:col-span-5 mt-8 lg:mt-0"
               variants={itemVariants}
+              initial="hidden"
+              animate="visible"
             >
-              <p className="text-sm font-semibold text-white/90 mb-4 tracking-wide uppercase">Get Your Free Quote</p>
-              <form 
-                action="/get-quote" 
-                method="GET"
-                className="flex flex-col gap-3"
-              >
-                <div className="flex flex-col sm:flex-row gap-3">
+              <div className="backdrop-blur-xl bg-gray-900/60 border border-white/20 rounded-2xl p-6 lg:p-8 shadow-2xl">
+                <h3 className="font-display text-2xl lg:text-3xl text-white mb-2">Get Your Quote</h3>
+                <p className="text-white/60 text-sm mb-6">Free consultation and estimate</p>
+                
+                <form action="/get-quote" method="GET" className="flex flex-col gap-4">
                   <input
                     type="text"
                     name="name"
                     placeholder="Your Name"
-                    className="flex-1 px-4 py-3 rounded-lg border border-white/20 bg-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary/60 focus:border-primary/40 transition-all duration-200"
+                    className="w-full px-4 py-3.5 rounded-xl border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
                     data-testid="input-hero-name"
                   />
                   <input
                     type="tel"
                     name="phone"
                     placeholder="Phone Number"
-                    className="flex-1 px-4 py-3 rounded-lg border border-white/20 bg-white/10 text-white placeholder:text-white/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary/60 focus:border-primary/40 transition-all duration-200"
+                    className="w-full px-4 py-3.5 rounded-xl border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
                     data-testid="input-hero-phone"
                   />
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3">
                   <select
                     name="service"
-                    className="flex-1 px-4 py-3 rounded-lg border border-white/20 bg-white/10 text-white text-sm focus:outline-none focus:ring-2 focus:ring-primary/60 focus:border-primary/40 transition-all duration-200 appearance-none cursor-pointer"
+                    className="w-full px-4 py-3.5 rounded-xl border border-white/20 bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/60 appearance-none cursor-pointer"
                     style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: '16px' }}
                     data-testid="select-hero-service"
                     defaultValue=""
                   >
-                    <option value="" disabled className="bg-gray-900 text-white">Select Service</option>
-                    <option value="residential" className="bg-gray-900 text-white">Residential Tinting</option>
-                    <option value="commercial" className="bg-gray-900 text-white">Commercial Tinting</option>
-                    <option value="automotive" className="bg-gray-900 text-white">Automotive Tinting</option>
-                    <option value="stone" className="bg-gray-900 text-white">Natural Stone Protection</option>
+                    <option value="" disabled className="bg-gray-900">Select Service</option>
+                    <option value="residential" className="bg-gray-900">Residential Tinting</option>
+                    <option value="commercial" className="bg-gray-900">Commercial Tinting</option>
+                    <option value="automotive" className="bg-gray-900">Automotive Tinting</option>
+                    <option value="stone" className="bg-gray-900">Stone Protection</option>
                   </select>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 font-semibold shadow-lg shadow-primary/25"
-                    data-testid="button-hero-quote"
-                  >
-                    Get Quote
+                  <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground font-semibold" data-testid="button-hero-submit">
+                    Request Quote
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
-                </div>
-              </form>
+                </form>
+              </div>
             </motion.div>
+          </div>
+        </div>
 
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-              variants={itemVariants}
-            >
-              <Link href="#services">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full sm:w-auto border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] transition-all duration-300"
-                  data-testid="button-view-services"
-                >
-                  View Services
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <a href="tel:0286062842">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full sm:w-auto border-white/30 text-white px-8 backdrop-blur-md bg-gray-900/60 hover:bg-gray-900/30 hover:text-primary hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] transition-all duration-300"
-                  data-testid="button-contact-hero"
-                >
-                  <Phone className="mr-2 w-5 h-5" />
-                  (02) 8606 2842
-                </Button>
-              </a>
-            </motion.div>
-          </motion.div>
+        {/* Tint Level Indicator */}
+        <motion.div 
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 hidden lg:flex gap-2 items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full"
+          style={{ opacity }}
+        >
+          <span className="text-white/80 text-xs font-medium">Tint Level:</span>
+          <span className="text-white text-sm font-semibold min-w-[60px]">{tintVariants[currentTint].name}</span>
+          <div className="flex gap-1.5 ml-2">
+            {tintVariants.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentTint(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${currentTint === index ? 'bg-primary scale-125' : 'bg-white/50 hover:bg-white/80'}`}
+                data-testid={`tint-dot-${index}`}
+              />
+            ))}
+          </div>
         </motion.div>
       </section>
 
-      <section id="services" className="py-16 sm:py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
-              Our Services
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              From residential homes to commercial buildings, browse through our
-              services and discover the perfect solution for your surface
-              protection needs
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {services.map((service, index) => (
-              <Card
-                key={service.path}
-                className="overflow-hidden hover-elevate active-elevate-2 transition-all duration-300 group h-full"
-                data-testid={`card-service-${index}`}
-              >
-                <div className="aspect-video overflow-hidden relative">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  {service.path === "/automotive-window-tinting" && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                      <Image
-                        src="/images/brand/protekt-auto-logo.png"
-                        alt="Protekt Auto"
-                        width={280}
-                        height={120}
-                        className="w-2/3 max-w-[280px] h-auto"
-                      />
-                    </div>
-                  )}
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-primary mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">
-                    {service.description}
-                  </p>
-                  {service.path === "/automotive-window-tinting" && (
-                    <a
-                      href="https://protektauto.com.au"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block text-sm text-primary hover:underline mb-4"
-                      data-testid="link-protekt-auto-website"
-                    >
-                      Visit protektauto.com.au
-                    </a>
-                  )}
-                  <Link href={service.path}>
-                    <div className="flex items-center text-primary font-medium group-hover:gap-2 transition-all cursor-pointer">
-                      Learn More
-                      <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </div>
-                  </Link>
-                </div>
-              </Card>
+      {/* STATS BAR - Gigantic Numbers */}
+      <section className="py-12 lg:py-16 bg-foreground text-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center lg:text-left" data-testid={`stat-${index}`}>
+                <div className="font-display text-display-lg lg:text-display-xl text-primary">{stat.value}</div>
+                <div className="text-sm lg:text-base text-background/70 uppercase tracking-wider">{stat.label}</div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
-              Our Film Types
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We offer a comprehensive range of premium window films to meet every need - from solar energy rejection to privacy, UV protection to decorative solutions
-            </p>
+      {/* SERVICES - Masonry-like Grid */}
+      <section id="services" className="py-16 lg:py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-12 gap-4 lg:gap-8 mb-12 lg:mb-16">
+            <div className="col-span-12 lg:col-span-8">
+              <p className="text-primary font-medium uppercase tracking-wider mb-2">What We Offer</p>
+              <h2 className="font-display text-display-md lg:text-display-lg">
+                Professional Window Tinting<br />
+                <span className="italic text-muted-foreground">&amp; Surface Protection</span>
+              </h2>
+            </div>
+            <div className="col-span-12 lg:col-span-4 flex items-end">
+              <p className="text-muted-foreground leading-relaxed">
+                From residential homes to commercial buildings, discover the perfect solution for your protection needs.
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Services Grid - Varied Sizes */}
+          <div className="grid grid-cols-12 gap-4 lg:gap-6">
+            {services.map((service, index) => {
+              const isLarge = index === 0 || index === 1;
+              return (
+                <Link 
+                  key={service.path} 
+                  href={service.path}
+                  className={`${isLarge ? 'col-span-12 lg:col-span-6' : 'col-span-12 md:col-span-6 lg:col-span-6'}`}
+                >
+                  <Card className="overflow-hidden hover-elevate active-elevate-2 transition-all duration-300 group h-full" data-testid={`card-service-${index}`}>
+                    <div className={`relative overflow-hidden ${isLarge ? 'aspect-[16/10]' : 'aspect-video'}`}>
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      {service.badge && (
+                        <span className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                          {service.badge}
+                        </span>
+                      )}
+                      {service.path === "/automotive-window-tinting" && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <Image src="/images/brand/protekt-auto-logo.png" alt="Protekt Auto" width={200} height={80} className="w-1/2 max-w-[200px] h-auto" />
+                        </div>
+                      )}
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 className="font-display text-xl lg:text-2xl text-white mb-2">{service.title}</h3>
+                        <p className="text-white/80 text-sm line-clamp-2">{service.description}</p>
+                      </div>
+                    </div>
+                  </Card>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* FILM TYPES - Horizontal Scroll on Mobile */}
+      <section className="py-16 lg:py-24 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-12">
+            <div>
+              <p className="text-primary font-medium uppercase tracking-wider mb-2">Film Types</p>
+              <h2 className="font-display text-display-md">Premium Window Films</h2>
+            </div>
+            <Link href="/ceramic-window-tint">
+              <Button variant="outline" className="hidden lg:flex" data-testid="button-view-all-films">
+                View All Films
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {filmTypes.map((film, index) => (
               <Link key={film.path} href={film.path}>
-                <Card
-                  className="p-6 h-full hover-elevate active-elevate-2 transition-all duration-300 cursor-pointer group bg-muted relative overflow-hidden"
-                  data-testid={`card-film-type-${index}`}
-                >
-                  <div
-                    className="absolute inset-0 opacity-20 group-hover:opacity-40 pointer-events-none transition-opacity duration-300"
-                    style={{
-                      backgroundImage: `url(${film.texture})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                    }}
-                  />
-                  <div className="relative flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                <Card className="p-6 h-full hover-elevate active-elevate-2 transition-all duration-300 group bg-background" data-testid={`card-film-${index}`}>
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                       <film.icon className="w-6 h-6" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-foreground mb-2 transition-colors group-hover:text-gray-600">
-                        {film.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {film.description}
-                      </p>
+                      <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">{film.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{film.description}</p>
                     </div>
                   </div>
                 </Card>
@@ -521,87 +365,118 @@ export default function HomeClient() {
         </div>
       </section>
 
+      {/* LARGE TEXT STATEMENT */}
+      <section className="py-20 lg:py-32 bg-foreground text-background overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-12 gap-8 items-center">
+            <div className="col-span-12 lg:col-span-8">
+              <h2 className="font-display text-display-lg lg:text-display-xl leading-none">
+                Protect what<br />
+                <span className="italic text-primary">matters most</span>
+              </h2>
+            </div>
+            <div className="col-span-12 lg:col-span-4">
+              <p className="text-background/70 text-lg leading-relaxed mb-6">
+                From your family&apos;s comfort to your property&apos;s value, our premium window films deliver lasting protection and peace of mind.
+              </p>
+              <Link href="/get-quote">
+                <Button size="lg" className="bg-primary text-primary-foreground" data-testid="button-statement-cta">
+                  Start Your Project
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Testimonials />
 
       <OurProcess />
 
-      {/* Quiz Section */}
-      <section className="py-16 sm:py-24 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
-              Not Sure What You Need?
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Take our short quiz to discover the perfect window treatment for your needs. We&apos;ll help you find the right solution in just a few clicks.
-            </p>
+      {/* QUIZ SECTION */}
+      <section className="py-16 lg:py-24 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-12 gap-8 mb-12">
+            <div className="col-span-12 lg:col-span-6">
+              <p className="text-primary font-medium uppercase tracking-wider mb-2">Find Your Solution</p>
+              <h2 className="font-display text-display-md">
+                Not sure what<br />
+                <span className="italic">you need?</span>
+              </h2>
+            </div>
+            <div className="col-span-12 lg:col-span-6 flex items-end">
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Take our quick quiz to discover the perfect window treatment for your needs.
+              </p>
+            </div>
           </div>
           <TintSelectorQuiz />
         </div>
       </section>
 
-      <section className="relative py-16 sm:py-24 bg-background overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.12]"
-          style={{
-            backgroundImage: `url(/images/brand/pattern.png)`,
-            backgroundRepeat: 'repeat',
-            backgroundSize: '1200px 1200px',
-            backgroundPosition: '-50px -50px',
-            backgroundAttachment: 'fixed',
-          }}
-        />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Got questions about window tinting? We&apos;ve got answers
-            </p>
+      {/* FAQ SECTION */}
+      <section className="py-16 lg:py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-12 gap-8 lg:gap-16">
+            <div className="col-span-12 lg:col-span-5">
+              <p className="text-primary font-medium uppercase tracking-wider mb-2">FAQ</p>
+              <h2 className="font-display text-display-md mb-4">
+                Common<br />
+                <span className="italic">Questions</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Everything you need to know about our window tinting services.
+              </p>
+              <Link href="/contact">
+                <Button variant="outline" data-testid="button-faq-contact">
+                  Still have questions?
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+            <div className="col-span-12 lg:col-span-7">
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`faq-${index}`} data-testid={`accordion-faq-${index}`}>
+                    <AccordionTrigger className="text-left text-base lg:text-lg font-medium hover:text-primary transition-colors">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground leading-relaxed">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
-
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`faq-${index}`} data-testid={`accordion-faq-${index}`}>
-                <AccordionTrigger className="text-left text-base sm:text-lg font-medium hover:text-primary transition-colors">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-25"
-          style={{
-            backgroundImage: `url(/images/marble-tile.png)`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Ready to Protect Your Surfaces?
+      {/* CTA SECTION */}
+      <section className="py-20 lg:py-32 bg-primary/10 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url(/images/marble-tile.png)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-display text-display-md lg:text-display-lg mb-6">
+            Ready to get started?
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
-            Contact us today for a free consultation and quote. Our expert team
-            is ready to help you choose the perfect protection solution.
+          <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Contact us today for a free consultation and quote. Our expert team is ready to help.
           </p>
-          <a href="tel:0286062842">
-            <Button
-              size="lg"
-              className="bg-primary text-primary-foreground px-8 transition-all duration-300 hover:shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] [&:hover]:text-white [&:hover_*]:drop-shadow-[0_0_8px_rgba(212,165,116,1)]"
-              data-testid="button-get-quote-cta"
-            >
-              Get Your Free Quote
-            </Button>
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/get-quote">
+              <Button size="lg" className="bg-primary text-primary-foreground px-8" data-testid="button-cta-quote">
+                Get Your Free Quote
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+            <a href="tel:0286062842">
+              <Button size="lg" variant="outline" className="px-8" data-testid="button-cta-call">
+                <Phone className="mr-2 w-5 h-5" />
+                (02) 8606 2842
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
     </div>
