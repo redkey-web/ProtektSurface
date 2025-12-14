@@ -290,9 +290,9 @@ export default function HomeClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-12 gap-4 lg:gap-8 mb-12 lg:mb-16">
             <div className="col-span-12 lg:col-span-8">
-              <p className="text-primary font-medium uppercase tracking-wider mb-2">What We Offer</p>
+              <p className="text-primary font-medium uppercase tracking-wider mb-2">Sydney&apos;s Surface Experts</p>
               <h2 className="font-display text-display-md lg:text-display-lg">
-                Professional Window Tinting<br />
+                Premium Window Films<br />
                 <span className="italic text-muted-foreground">&amp; Surface Protection</span>
               </h2>
             </div>
