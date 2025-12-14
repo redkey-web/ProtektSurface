@@ -104,8 +104,16 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
   }
 
   return (
-    <section className="py-16 sm:py-24 bg-muted/30">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section className="py-16 sm:py-24 bg-muted/30 relative overflow-hidden">
+      <div 
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `url(/images/patterns/logo-pattern.png)`,
+          backgroundSize: '120px',
+          backgroundRepeat: 'repeat',
+        }}
+      />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             How We Work With You
