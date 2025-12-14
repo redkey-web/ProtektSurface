@@ -272,10 +272,10 @@ export default function HomeClient() {
                 } : undefined}
               >
                 <span 
-                  className={`transition-opacity duration-500 inline-block ${currentTint >= 2 ? 'opacity-60' : 'opacity-100'} ${currentTint >= 2 ? 'text-sunglasses-effect-1' : ''} ${currentTint <= 1 ? 'text-sunglasses-shadow-1' : ''}`}
+                  className={`transition-opacity duration-500 inline-block ${currentTint >= 2 ? 'opacity-60' : 'opacity-100'} ${currentTint >= 2 ? 'text-sunglasses-effect-1' : ''} ${currentTint === 1 ? 'text-sunglasses-shadow-1' : ''}`}
                 >Professional</span><br />
                 <span 
-                  className={`italic font-semibold transition-opacity duration-500 inline-block ${currentTint >= 2 ? 'opacity-60' : 'opacity-100'} ${currentTint >= 2 ? 'text-sunglasses-effect-2' : ''} ${currentTint <= 1 ? 'text-sunglasses-shadow-2' : ''}`}
+                  className={`italic font-semibold transition-opacity duration-500 inline-block ${currentTint >= 2 ? 'opacity-60' : 'opacity-100'} ${currentTint >= 2 ? 'text-sunglasses-effect-2' : ''} ${currentTint === 1 ? 'text-sunglasses-shadow-2' : ''}`}
                 >Window Tinting</span><br />
                 <span className={`transition-all duration-500 ${isCurrentTintDark ? 'text-primary opacity-100' : 'text-white opacity-60 text-sydney-effect text-sydney-shadow'}`}>Sydney</span>
               </motion.h1>
