@@ -266,31 +266,44 @@ export default function HomeClient() {
             >
               <motion.h1 
                 variants={itemVariants}
-                className={`font-display font-bold text-display-lg lg:text-display-xl tracking-tight mb-6 lg:mb-8 transition-all duration-500 ${isCurrentTintDark ? 'text-white' : 'text-foreground'}`}
+                className="font-display font-bold text-display-lg lg:text-display-xl tracking-tight mb-6 lg:mb-8 transition-all duration-500"
                 style={{ 
                   textShadow: '0 1px 0 rgba(255,255,255,0.4), 0 2px 0 rgba(255,255,255,0.2), 0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2)'
                 }}
               >
                 <span 
-                  style={currentTint <= 1 ? {
-                    background: 'linear-gradient(90deg, currentColor 0%, #8B7355 15%, currentColor 30%, #4A90A4 45%, currentColor 60%, #6B8E23 75%, currentColor 90%)',
-                    backgroundSize: '300% 100%',
+                  className="transition-all duration-700"
+                  style={{
+                    background: currentTint === 0 
+                      ? 'linear-gradient(90deg, #A8A8A8 0%, #8B7355 15%, #B8B8B8 30%, #4A90A4 45%, #C0C0C0 60%, #6B8E23 75%, #A8A8A8 90%)'
+                      : currentTint === 1
+                      ? 'linear-gradient(90deg, #B8B8B8 0%, #9A8A7A 15%, #C8C8C8 30%, #7A9AA4 45%, #D0D0D0 60%, #8A9A6A 75%, #B8B8B8 90%)'
+                      : currentTint === 2
+                      ? 'linear-gradient(90deg, #C8C8C8 0%, #B0A090 15%, #D8D8D8 30%, #A0B0B8 45%, #E0E0E0 60%, #A8B090 75%, #C8C8C8 90%)'
+                      : 'linear-gradient(90deg, #D8D8D8 0%, #C8C0B8 15%, #E8E8E8 30%, #C8D0D8 45%, #F0F0F0 60%, #C8D0C0 75%, #D8D8D8 90%)',
+                    backgroundSize: currentTint <= 1 ? '300% 100%' : '100% 100%',
                     WebkitBackgroundClip: 'text',
                     backgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    animation: 'tintSwipe1 4s ease-in-out infinite',
-                  } : undefined}
+                    animation: currentTint <= 1 ? 'tintSwipe1 4s ease-in-out infinite' : 'none',
+                  }}
                 >Professional</span><br />
                 <span 
-                  className="italic font-semibold"
-                  style={currentTint <= 1 ? {
-                    background: 'linear-gradient(90deg, currentColor 0%, #C4A35A 20%, currentColor 40%, #708090 55%, currentColor 70%, #8B4513 85%, currentColor 100%)',
-                    backgroundSize: '400% 100%',
+                  className="italic font-semibold transition-all duration-700"
+                  style={{
+                    background: currentTint === 0 
+                      ? 'linear-gradient(90deg, #A8A8A8 0%, #C4A35A 20%, #B8B8B8 40%, #708090 55%, #C0C0C0 70%, #8B4513 85%, #A8A8A8 100%)'
+                      : currentTint === 1
+                      ? 'linear-gradient(90deg, #B8B8B8 0%, #C8B080 20%, #C8C8C8 40%, #90A0A8 55%, #D0D0D0 70%, #A07050 85%, #B8B8B8 100%)'
+                      : currentTint === 2
+                      ? 'linear-gradient(90deg, #C8C8C8 0%, #D0C0A0 20%, #D8D8D8 40%, #B0B8C0 55%, #E0E0E0 70%, #B89080 85%, #C8C8C8 100%)'
+                      : 'linear-gradient(90deg, #D8D8D8 0%, #E0D8C8 20%, #E8E8E8 40%, #D0D8E0 55%, #F0F0F0 70%, #D8C0B0 85%, #D8D8D8 100%)',
+                    backgroundSize: currentTint <= 1 ? '400% 100%' : '100% 100%',
                     WebkitBackgroundClip: 'text',
                     backgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    animation: 'tintSwipe2 3s ease-in-out infinite 0.5s',
-                  } : undefined}
+                    animation: currentTint <= 1 ? 'tintSwipe2 3s ease-in-out infinite 0.5s' : 'none',
+                  }}
                 >Window Tinting</span><br />
                 <span className={`transition-colors duration-500 ${isCurrentTintDark ? 'text-primary' : 'text-white'}`}>Sydney</span>
               </motion.h1>
