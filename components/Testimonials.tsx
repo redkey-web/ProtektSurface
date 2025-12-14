@@ -19,6 +19,13 @@ const testimonials: Testimonial[] = [
     rating: 5,
     text: "Andy is fantastic at what he does! He's very friendly, professional, and always makes sure the job is done right. I've been so impressed with his attention to detail and the quality of his work. Highly recommend Protekt Surface Solutions if you want reliable service and great results!",
   },
+  {
+    name: "Richard F-P.",
+    location: "Treasury Pacific Pty. Ltd.",
+    service: "Automotive Protection Film",
+    rating: 5,
+    text: "This Applicator has applied protective film to several cars in our fleet over the past few years, including our McLaren 650s spider, Audi R8 V10 plus, Porsche 981 spyder & most recently our Mercedes SL55AMG. His work is exemplary, his organisation skills are superb, his reliability impeccable & his charges are reasonable. We have no hesitation in recommending his company to anyone seeking to have protective film applied to their vehicle.",
+  },
 ];
 
 export function Testimonials() {
