@@ -377,60 +377,6 @@ html, body {
     animation: buttonShadowSwipe 2s ease-in-out infinite;
   }
 
-  /* Sydney-specific effect - slower shimmer with prominent 3D shadow */
-  .text-sydney-effect {
-    background: linear-gradient(90deg, currentColor 0%, #C0C0C0 12%, #E8D5C0 25%, currentColor 38%, #E8E8E8 50%, currentColor 62%, #D4C4B0 75%, #A8A9AD 88%, currentColor 100%);
-    background-size: 300% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: tintSwipe1 3.5s ease-in-out infinite;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5)) drop-shadow(0 8px 12px rgba(0,0,0,0.35));
-  }
-
-  .text-sydney-shadow {
-    animation: sydneyShadowSwipe 3.5s ease-in-out infinite;
-  }
-
-  @keyframes sydneyShadowSwipe {
-    0%, 100% {
-      text-shadow: 
-        0 -2px 0 rgba(255, 255, 255, 0.7),
-        0 -1px 0 rgba(255, 255, 255, 0.5),
-        0 2px 0 rgba(192, 192, 192, 0.8),
-        0 4px 0 rgba(160, 160, 160, 0.6),
-        0 6px 12px rgba(0,0,0,0.5),
-        0 12px 24px rgba(0,0,0,0.4);
-    }
-    25% {
-      text-shadow: 
-        0 -2px 0 rgba(255, 255, 255, 0.7),
-        0 -1px 0 rgba(232, 213, 192, 0.5),
-        0 2px 0 rgba(232, 213, 192, 0.8),
-        0 4px 0 rgba(200, 180, 160, 0.6),
-        0 6px 12px rgba(0,0,0,0.5),
-        0 12px 24px rgba(0,0,0,0.4);
-    }
-    50% {
-      text-shadow: 
-        0 -2px 0 rgba(255, 255, 255, 0.7),
-        0 -1px 0 rgba(255, 255, 255, 0.5),
-        0 2px 0 rgba(232, 232, 232, 0.8),
-        0 4px 0 rgba(200, 200, 200, 0.6),
-        0 6px 12px rgba(0,0,0,0.5),
-        0 12px 24px rgba(0,0,0,0.4);
-    }
-    75% {
-      text-shadow: 
-        0 -2px 0 rgba(255, 255, 255, 0.7),
-        0 -1px 0 rgba(212, 196, 176, 0.5),
-        0 2px 0 rgba(212, 196, 176, 0.8),
-        0 4px 0 rgba(180, 165, 145, 0.6),
-        0 6px 12px rgba(0,0,0,0.5),
-        0 12px 24px rgba(0,0,0,0.4);
-    }
-  }
-
   @keyframes shadowSwipe1 {
     0%, 100% {
       text-shadow: 
