@@ -115,7 +115,7 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
   return (
     <section ref={sectionRef} className="py-16 sm:py-24 bg-foreground/5 relative overflow-hidden">
       <motion.div 
-        className="absolute inset-0 opacity-[0.08] will-change-transform"
+        className="absolute inset-0 opacity-[0.15] will-change-transform"
         style={{
           backgroundImage: `url(/images/patterns/logo-pattern.png)`,
           backgroundSize: '40px',
