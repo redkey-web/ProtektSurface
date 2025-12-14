@@ -139,7 +139,10 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
                   <Card className="p-6 hover-elevate w-full">
                     <div className={`flex items-start gap-4 ${index % 2 === 0 ? "lg:flex-row-reverse lg:text-right" : ""}`}>
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                        <div 
+                          className="w-12 h-12 bg-primary rounded-full flex items-center justify-center border border-primary-border"
+                          style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 12px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.1)' }}
+                        >
                           <step.icon className="w-6 h-6 text-primary-foreground" />
                         </div>
                       </div>
@@ -157,7 +160,10 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
                 </div>
 
                 <div className="hidden lg:flex items-center justify-center w-12 relative z-10">
-                  <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                  <div 
+                    className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg border border-primary-border"
+                    style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 12px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.1)' }}
+                  >
                     {step.number}
                   </div>
                 </div>
