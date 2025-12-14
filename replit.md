@@ -5,8 +5,8 @@ Professional window tinting website for Protekt Surface Solutions, a Sydney-base
 
 ## Project Status
 **Created**: November 17, 2025
-**Last Updated**: November 27, 2025 - Migrated to Next.js 16
-**Status**: Next.js migration complete, deployed to Vercel
+**Last Updated**: December 14, 2025 - Homepage redesign with 12-grid layout
+**Status**: Next.js migration complete, homepage redesigned with modern typography
 **Production URL**: https://protektsurface.vercel.app
 
 ## Tech Stack
