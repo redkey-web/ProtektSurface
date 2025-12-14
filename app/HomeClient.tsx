@@ -359,8 +359,8 @@ export default function HomeClient() {
         </motion.div>
       </section>
 
-      {/* BENEFITS MARQUEE - Infinite Scroll */}
-      <section className="py-6 lg:py-8 bg-muted/50 overflow-hidden">
+      {/* BENEFITS MARQUEE - Infinite Scroll - Sticky */}
+      <section className="py-4 lg:py-5 bg-muted/50 overflow-hidden sticky top-16 sm:top-20 z-40 border-b border-border/50">
         <div className="relative">
           <div className="flex animate-marquee">
             {[...benefits, ...benefits].map((benefit, index) => (
