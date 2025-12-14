@@ -23,8 +23,6 @@ export default function HomeClient() {
   const [isMarqueeFixed, setIsMarqueeFixed] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
   const marqueePlaceholderRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [currentVideoPart, setCurrentVideoPart] = useState<'1a' | '1b' | '2'>('1a');
   
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
@@ -481,41 +479,6 @@ export default function HomeClient() {
                 </Link>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED VIDEO */}
-      <section className="py-16 lg:py-24 bg-muted/50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <p className="text-primary font-medium uppercase tracking-wider mb-2">See Our Work</p>
-            <h2 className="font-display text-display-md">Surface Protection in Action</h2>
-          </div>
-          <div className="rounded-xl overflow-hidden shadow-lg">
-            <div className="overflow-hidden" style={{ marginTop: '-20px', paddingTop: '20px' }}>
-              <video 
-                ref={videoRef}
-                autoPlay 
-                muted 
-                playsInline
-                className="w-full aspect-video object-cover"
-                style={{ marginTop: '-20px' }}
-                data-testid="video-featured"
-                onEnded={() => {
-                  const nextPart = currentVideoPart === '1a' ? '1b' : currentVideoPart === '1b' ? '2' : '1a';
-                  setCurrentVideoPart(nextPart);
-                  if (videoRef.current) {
-                    videoRef.current.src = `/images/hero/protekt-video-part${nextPart}.mov`;
-                    videoRef.current.load();
-                    videoRef.current.play();
-                  }
-                }}
-              >
-                <source src={`/images/hero/protekt-video-part${currentVideoPart}.mov`} type="video/quicktime" />
-                <source src={`/images/hero/protekt-video-part${currentVideoPart}.mov`} type="video/mp4" />
-              </video>
-            </div>
           </div>
         </div>
       </section>
