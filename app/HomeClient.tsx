@@ -80,7 +80,7 @@ export default function HomeClient() {
   ];
 
   const services = [
-    { title: "Natural Stone Protection", description: "Invisible protective films for marble, granite, and engineered stone surfaces.", image: "/images/marble-tile.png", path: "/natural-stone-protection", badge: "Premium" },
+    { title: "Natural Stone Protection", description: "Invisible protective films for marble, granite, and engineered stone surfaces.", image: "/images/marble-tile.png", path: "/marble-protection-film", badge: "Premium" },
     { title: "Residential Window Tinting", description: "Enhance your home's comfort, energy efficiency, and privacy with premium films.", image: "/images/services/residential.png", path: "/residential-window-tinting", badge: "Popular" },
     { title: "Commercial Window Tinting", description: "High-performance window films engineered for business environments.", image: "/images/services/commercial.png", path: "/commercial-window-tinting", badge: null },
     { title: "Automotive Window Tinting", description: "Professional car window tinting by Protekt Auto with lifetime warranty.", image: "/images/services/automotive.webp", path: "/automotive-window-tinting", badge: "Workshop Only" },
