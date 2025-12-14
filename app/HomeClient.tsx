@@ -272,9 +272,11 @@ export default function HomeClient() {
                 }}
               >
                 <span 
-                  className="transition-opacity duration-500 inline-block opacity-80"
+                  className={`transition-opacity duration-500 inline-block ${currentTint === 0 ? 'opacity-100' : 'opacity-80'}`}
                   style={{
-                    background: 'linear-gradient(90deg, currentColor 0%, #8B7355 15%, currentColor 30%, #4A90A4 45%, currentColor 60%, #6B8E23 75%, currentColor 90%)',
+                    background: currentTint === 0 
+                      ? 'linear-gradient(90deg, #1a1a1a 0%, #5C4A3A 15%, #1a1a1a 30%, #3A7080 45%, #1a1a1a 60%, #4A6218 75%, #1a1a1a 90%)'
+                      : 'linear-gradient(90deg, currentColor 0%, #8B7355 15%, currentColor 30%, #4A90A4 45%, currentColor 60%, #6B8E23 75%, currentColor 90%)',
                     backgroundSize: '300% 100%',
                     WebkitBackgroundClip: 'text',
                     backgroundClip: 'text',
@@ -283,9 +285,11 @@ export default function HomeClient() {
                   }}
                 >Professional</span><br />
                 <span 
-                  className="italic font-semibold transition-opacity duration-500 inline-block opacity-80"
+                  className={`italic font-semibold transition-opacity duration-500 inline-block ${currentTint === 0 ? 'opacity-100' : 'opacity-80'}`}
                   style={{
-                    background: 'linear-gradient(90deg, currentColor 0%, #C4A35A 20%, currentColor 40%, #708090 55%, currentColor 70%, #8B4513 85%, currentColor 100%)',
+                    background: currentTint === 0
+                      ? 'linear-gradient(90deg, #1a1a1a 0%, #9A8242 20%, #1a1a1a 40%, #506068 55%, #1a1a1a 70%, #6A350F 85%, #1a1a1a 100%)'
+                      : 'linear-gradient(90deg, currentColor 0%, #C4A35A 20%, currentColor 40%, #708090 55%, currentColor 70%, #8B4513 85%, currentColor 100%)',
                     backgroundSize: '400% 100%',
                     WebkitBackgroundClip: 'text',
                     backgroundClip: 'text',
