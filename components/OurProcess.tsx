@@ -186,7 +186,10 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
 
         {showCTA && (
           <div className="text-center mt-12 sm:mt-16">
-            <Card className="inline-block p-8 bg-primary text-primary-foreground">
+            <Card 
+              className="inline-block p-8 bg-primary text-primary-foreground border border-primary-border"
+              style={{ boxShadow: 'inset 0 2px 0 rgba(255,255,255,0.3), 0 8px 24px rgba(0,0,0,0.25), 0 4px 8px rgba(0,0,0,0.15)' }}
+            >
               <h3 className="text-2xl font-bold mb-3">Ready to Get Started?</h3>
               <p className="text-primary-foreground/90 mb-6 max-w-md">
                 Contact us today for your free on-site consultation and quote
