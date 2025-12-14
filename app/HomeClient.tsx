@@ -453,7 +453,7 @@ export default function HomeClient() {
                       )}
                       {service.path === "/automotive-window-tinting" && (
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <Image src="/images/brand/protekt-auto-logo.png" alt="Protekt Auto" width={200} height={80} className="w-1/2 max-w-[200px] h-auto" />
+                          <Image src="/images/brand/protekt-auto-logo.png" alt="Protekt Auto" width={200} height={80} style={{ width: '50%', maxWidth: '200px', height: 'auto' }} />
                         </div>
                       )}
                       <div className="absolute bottom-0 left-0 right-0 p-6">

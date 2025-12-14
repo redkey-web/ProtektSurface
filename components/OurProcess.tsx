@@ -109,7 +109,7 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
         className="absolute inset-0 opacity-[0.08]"
         style={{
           backgroundImage: `url(/images/patterns/logo-pattern.png)`,
-          backgroundSize: '100px',
+          backgroundSize: '60px',
           backgroundRepeat: 'repeat',
         }}
       />
