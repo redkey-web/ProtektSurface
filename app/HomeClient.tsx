@@ -138,9 +138,9 @@ export default function HomeClient() {
               <Image
                 src="/images/logo.webp"
                 alt="Protekt Surface Solutions"
-                width={280}
-                height={118}
-                className="h-16 sm:h-20 w-auto"
+                width={322}
+                height={136}
+                className="h-[74px] sm:h-[92px] w-auto"
                 style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' }}
                 priority
                 data-testid="img-hero-logo"
