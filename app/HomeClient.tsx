@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Phone, Check } from "lucide-react";
+import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Phone, Check, Zap, Home, Heart, AlertTriangle, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -86,11 +86,19 @@ export default function HomeClient() {
     { title: "Automotive Window Tinting", description: "Professional car window tinting by Protekt Auto with lifetime warranty.", image: "/images/services/automotive.webp", path: "/automotive-window-tinting", badge: "Workshop Only" },
   ];
 
-  const stats = [
-    { value: "15+", label: "Years Experience" },
-    { value: "5000+", label: "Projects Completed" },
-    { value: "99%", label: "UV Protection" },
-    { value: "70%", label: "Solar Energy Rejection" },
+  const benefits = [
+    { label: "99% UV Protection", icon: Sun },
+    { label: "Solar Energy Rejection", icon: Zap },
+    { label: "Enhanced Privacy", icon: Eye },
+    { label: "Impact Resistance", icon: Shield },
+    { label: "Storm Protection", icon: Zap },
+    { label: "Preserve Interiors", icon: Home },
+    { label: "Health Protection", icon: Heart },
+    { label: "No Signal Interference", icon: Wifi },
+    { label: "Safety First", icon: AlertTriangle },
+    { label: "Security Boost", icon: Lock },
+    { label: "Elegant Aesthetics", icon: Sparkles },
+    { label: "Glare Reduction", icon: Sun },
   ];
 
   return (
@@ -259,14 +267,18 @@ export default function HomeClient() {
         </motion.div>
       </section>
 
-      {/* STATS BAR - Gigantic Numbers */}
-      <section className="py-12 lg:py-16 bg-foreground text-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center lg:text-left" data-testid={`stat-${index}`}>
-                <div className="font-display text-display-lg lg:text-display-xl text-primary">{stat.value}</div>
-                <div className="text-sm lg:text-base text-background/70 uppercase tracking-wider">{stat.label}</div>
+      {/* BENEFITS MARQUEE - Infinite Scroll */}
+      <section className="py-6 lg:py-8 bg-muted/50 overflow-hidden">
+        <div className="relative">
+          <div className="flex animate-marquee">
+            {[...benefits, ...benefits].map((benefit, index) => (
+              <div 
+                key={index} 
+                className="flex items-center gap-3 px-8 lg:px-12 flex-shrink-0"
+                data-testid={`benefit-${index}`}
+              >
+                <benefit.icon className="w-6 h-6 lg:w-7 lg:h-7 text-primary" strokeWidth={1.5} />
+                <span className="text-sm lg:text-base font-medium text-foreground whitespace-nowrap">{benefit.label}</span>
               </div>
             ))}
           </div>
