@@ -379,7 +379,7 @@ export default function HomeClient() {
       {/* BENEFITS MARQUEE - Infinite Scroll - JS-controlled Fixed */}
       <section 
         ref={marqueeRef}
-        className={`py-4 lg:py-5 bg-muted/50 overflow-hidden border-b border-border/50 shadow-sm transition-none ${
+        className={`py-2 bg-muted/50 overflow-hidden border-b border-border/50 shadow-sm transition-none ${
           isMarqueeFixed 
             ? 'fixed left-0 right-0 top-16 sm:top-20 z-[45]' 
             : 'relative z-[45]'
@@ -390,18 +390,18 @@ export default function HomeClient() {
             {[...benefits, ...benefits].map((benefit, index) => (
               <div 
                 key={index} 
-                className="flex items-center gap-3 px-8 lg:px-12 flex-shrink-0"
+                className="flex items-center gap-2 px-6 lg:px-8 flex-shrink-0"
                 data-testid={`benefit-${index}`}
               >
-                <benefit.icon className="w-6 h-6 lg:w-7 lg:h-7 text-primary" strokeWidth={1.5} />
-                <span className="text-sm lg:text-base font-medium text-foreground whitespace-nowrap">{benefit.label}</span>
+                <benefit.icon className="w-4 h-4 lg:w-5 lg:h-5 text-primary" strokeWidth={1.5} />
+                <span className="text-xs lg:text-sm font-medium text-foreground whitespace-nowrap">{benefit.label}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
       {/* Spacer when marquee is fixed */}
-      {isMarqueeFixed && <div className="h-[52px] lg:h-[60px]" />}
+      {isMarqueeFixed && <div className="h-[28px]" />}
 
       {/* SERVICES - Masonry-like Grid */}
       <section id="services" className="py-16 lg:py-24 bg-background">
