@@ -47,7 +47,6 @@ export default function HomeClient() {
   };
 
   const tintVariants = [
-    { name: "Clear", color: "transparent", opacity: 0, isDark: false },
     { name: "Light", color: "rgb(50, 50, 50)", opacity: 0.15, isDark: false },
     { name: "Medium", color: "rgb(40, 40, 40)", opacity: 0.35, isDark: true },
     { name: "Dark", color: "rgb(30, 30, 30)", opacity: 0.55, isDark: true },
