@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { quoteFormSchema, QuoteFormData, getServiceTypeLabel } from '@/lib/validations/quote';
+import { quoteFormSchema, QuoteFormData } from '@/lib/validations/quote';
 import {
   sendEmail,
   isEmailConfigured,
@@ -85,10 +85,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Send notification email to business
-    const serviceLabel = getServiceTypeLabel(data.serviceType);
     const businessEmailResult = await sendEmail({
       to: businessEmail,
-      subject: `New Quote Request - ${serviceLabel}`,
+      subject: `New Quote Request from ${data.name}`,
       html: generateBusinessNotificationHtml(data),
       text: generateBusinessNotificationText(data),
       replyTo: data.email,

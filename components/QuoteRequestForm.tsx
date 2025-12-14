@@ -17,24 +17,13 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { CheckCircle2 } from "lucide-react";
 
 const quoteFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(10, "Please enter a valid phone number"),
-  serviceType: z.string().min(1, "Please select a service type"),
-  propertyType: z.string().optional(),
-  address: z.string().min(5, "Please enter your address"),
-  urgency: z.string().min(1, "Please select a timeframe"),
+  email: z.string().email("Please enter a valid email address"),
   message: z.string().optional(),
 });
 
@@ -50,18 +39,13 @@ export function QuoteRequestForm() {
     resolver: zodResolver(quoteFormSchema),
     defaultValues: {
       name: "",
-      email: "",
       phone: "",
-      serviceType: "",
-      propertyType: "",
-      address: "",
-      urgency: "",
+      email: "",
       message: "",
     },
   });
 
   const onSubmit = async (data: QuoteFormData) => {
-    // Check for Turnstile token if configured
     if (!turnstileToken && process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY) {
       toast({
         title: "Verification required",
@@ -138,55 +122,53 @@ export function QuoteRequestForm() {
   return (
     <Card className="p-6 sm:p-8">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Full Name</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="John Smith"
-                      {...field}
-                      data-testid="input-name"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Name</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Your name"
+                    {...field}
+                    data-testid="input-name"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Phone Number</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="0400 000 000"
-                      {...field}
-                      data-testid="input-phone"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Phone</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="0400 000 000"
+                    {...field}
+                    data-testid="input-phone"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email Address</FormLabel>
+                <FormLabel>E-mail</FormLabel>
                 <FormControl>
                   <Input
                     type="email"
-                    placeholder="john@example.com"
+                    placeholder="you@example.com"
                     {...field}
                     data-testid="input-email"
                   />
@@ -198,100 +180,14 @@ export function QuoteRequestForm() {
 
           <FormField
             control={form.control}
-            name="serviceType"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Service Type</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger data-testid="select-service-type">
-                      <SelectValue placeholder="Select a service" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="residential">Residential Window Tinting</SelectItem>
-                    <SelectItem value="commercial">Commercial Window Tinting</SelectItem>
-                    <SelectItem value="automotive">Automotive Window Tinting</SelectItem>
-                    <SelectItem value="ceramic">Ceramic Window Tint</SelectItem>
-                    <SelectItem value="frosted">Frosted & Decorative Film</SelectItem>
-                    <SelectItem value="marble">Marble & Stone Protection Film</SelectItem>
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="propertyType"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Property/Vehicle Type (Optional)</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="e.g., 3-bedroom house, Toyota Camry, office building"
-                    {...field}
-                    data-testid="input-property-type"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="address"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Address/Location</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Suburb or full address"
-                    {...field}
-                    data-testid="input-address"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="urgency"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>When do you need this done?</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger data-testid="select-urgency">
-                      <SelectValue placeholder="Select timeframe" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="asap">As soon as possible</SelectItem>
-                    <SelectItem value="week">Within a week</SelectItem>
-                    <SelectItem value="month">Within a month</SelectItem>
-                    <SelectItem value="flexible">Flexible</SelectItem>
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Additional Details (Optional)</FormLabel>
+                <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Tell us more about your project, specific requirements, or questions..."
-                    className="min-h-32"
+                    placeholder="Tell us about your project..."
+                    className="min-h-24"
                     {...field}
                     data-testid="textarea-message"
                   />
@@ -301,7 +197,6 @@ export function QuoteRequestForm() {
             )}
           />
 
-          {/* Cloudflare Turnstile Widget */}
           {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
             <div className="flex justify-center">
               <Turnstile

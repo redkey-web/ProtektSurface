@@ -10,6 +10,7 @@ import {
 // Validation schema for contact form
 const contactFormSchema = z.object({
   name: z.string().min(2).max(100),
+  phone: z.string().min(10).max(20),
   email: z.string().email().max(254),
   message: z.string().min(10).max(2000),
 });
@@ -39,6 +40,12 @@ function generateBusinessNotificationHtml(data: ContactFormData): string {
             <td style="padding: 10px 0; border-bottom: 1px solid #eee;">${data.name}</td>
           </tr>
           <tr>
+            <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: 600;">Phone:</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
+              <a href="tel:${data.phone}" style="color: #0066cc;">${data.phone}</a>
+            </td>
+          </tr>
+          <tr>
             <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: 600;">Email:</td>
             <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
               <a href="mailto:${data.email}" style="color: #0066cc;">${data.email}</a>
@@ -64,6 +71,7 @@ NEW CONTACT MESSAGE
 ====================
 
 From: ${data.name}
+Phone: ${data.phone}
 Email: ${data.email}
 
 MESSAGE:

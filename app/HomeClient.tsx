@@ -291,34 +291,35 @@ export default function HomeClient() {
                 <h3 className="font-display text-2xl lg:text-3xl text-white mb-2">Get Your Quote</h3>
                 <p className="text-white/60 text-sm mb-6">Free consultation and estimate</p>
                 
-                <form action="/get-quote" method="GET" className="flex flex-col gap-4">
+                <form action="/get-quote" method="GET" className="flex flex-col gap-3">
                   <input
                     type="text"
                     name="name"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3.5 rounded-xl border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
+                    placeholder="Name"
+                    className="w-full px-4 py-3 rounded-xl border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
                     data-testid="input-hero-name"
                   />
                   <input
                     type="tel"
                     name="phone"
-                    placeholder="Phone Number"
-                    className="w-full px-4 py-3.5 rounded-xl border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
+                    placeholder="Phone"
+                    className="w-full px-4 py-3 rounded-xl border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
                     data-testid="input-hero-phone"
                   />
-                  <select
-                    name="service"
-                    className="w-full px-4 py-3.5 rounded-xl border border-white/20 bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/60 appearance-none cursor-pointer"
-                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: '16px' }}
-                    data-testid="select-hero-service"
-                    defaultValue=""
-                  >
-                    <option value="" disabled className="bg-gray-900">Select Service</option>
-                    <option value="residential" className="bg-gray-900">Residential Tinting</option>
-                    <option value="commercial" className="bg-gray-900">Commercial Tinting</option>
-                    <option value="automotive" className="bg-gray-900">Automotive Tinting</option>
-                    <option value="stone" className="bg-gray-900">Stone Protection</option>
-                  </select>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="E-mail"
+                    className="w-full px-4 py-3 rounded-xl border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
+                    data-testid="input-hero-email"
+                  />
+                  <textarea
+                    name="message"
+                    placeholder="Message"
+                    rows={3}
+                    className="w-full px-4 py-3 rounded-xl border border-white/20 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60 resize-none"
+                    data-testid="textarea-hero-message"
+                  />
                   <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground font-semibold" data-testid="button-hero-submit">
                     Request Quote
                     <ArrowRight className="ml-2 w-5 h-5" />

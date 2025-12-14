@@ -22,6 +22,7 @@ import { CheckCircle2 } from "lucide-react";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
+  phone: z.string().min(10, "Please enter a valid phone number"),
   email: z.string().email("Please enter a valid email address"),
   message: z.string().min(10, "Message must be at least 10 characters").max(2000, "Message is too long"),
 });
@@ -38,13 +39,13 @@ export function SimpleContactForm() {
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: "",
+      phone: "",
       email: "",
       message: "",
     },
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    // Check for Turnstile token if configured
     if (!turnstileToken && process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY) {
       toast({
         title: "Verification required",
@@ -120,18 +121,36 @@ export function SimpleContactForm() {
   return (
     <Card className="p-6 sm:p-8">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Full Name</FormLabel>
+                <FormLabel>Name</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="John Smith"
+                    placeholder="Your name"
                     {...field}
                     data-testid="input-contact-name"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Phone</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="0400 000 000"
+                    {...field}
+                    data-testid="input-contact-phone"
                   />
                 </FormControl>
                 <FormMessage />
@@ -144,11 +163,11 @@ export function SimpleContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email Address</FormLabel>
+                <FormLabel>E-mail</FormLabel>
                 <FormControl>
                   <Input
                     type="email"
-                    placeholder="john@example.com"
+                    placeholder="you@example.com"
                     {...field}
                     data-testid="input-contact-email"
                   />
@@ -167,7 +186,7 @@ export function SimpleContactForm() {
                 <FormControl>
                   <Textarea
                     placeholder="How can we help you?"
-                    className="min-h-32"
+                    className="min-h-24"
                     {...field}
                     data-testid="textarea-contact-message"
                   />
@@ -177,7 +196,6 @@ export function SimpleContactForm() {
             )}
           />
 
-          {/* Cloudflare Turnstile Widget */}
           {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
             <div className="flex justify-center">
               <Turnstile
