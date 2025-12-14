@@ -259,9 +259,9 @@ html, body {
     }
   }
 
-  /* Text Sunglasses Effect - sun colors (golden yellow, amber, warm orange, soft peach) */
+  /* Text Sunglasses Effect - silvery chrome colors */
   .text-sunglasses-effect-1 {
-    background: linear-gradient(90deg, currentColor 0%, #D4A574 15%, currentColor 30%, #E8A855 50%, currentColor 70%, #F5C06A 85%, currentColor 100%);
+    background: linear-gradient(90deg, currentColor 0%, #C0C0C0 15%, currentColor 30%, #E8E8E8 50%, currentColor 70%, #A8A9AD 85%, currentColor 100%);
     background-size: 300% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -270,7 +270,7 @@ html, body {
   }
 
   .text-sunglasses-effect-2 {
-    background: linear-gradient(90deg, currentColor 0%, #E8A855 20%, currentColor 40%, #D4A574 60%, currentColor 80%, #CC8844 95%);
+    background: linear-gradient(90deg, currentColor 0%, #B0C4DE 20%, currentColor 40%, #C0C0C0 60%, currentColor 80%, #D3D3D3 95%);
     background-size: 400% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -278,7 +278,7 @@ html, body {
     animation: tintSwipe2 3s ease-in-out infinite 0.5s;
   }
 
-  /* Text Sunglasses Shadow Effect - sun colors sweep on drop shadow and inset */
+  /* Text Sunglasses Shadow Effect - silvery chrome sweep on drop shadow */
   .text-sunglasses-shadow-1 {
     animation: shadowSwipe1 4s ease-in-out infinite;
   }
@@ -290,26 +290,26 @@ html, body {
   @keyframes shadowSwipe1 {
     0%, 100% {
       text-shadow: 
-        0 -1px 0 rgba(255, 255, 255, 0.4),
-        0 1px 0 rgba(212, 165, 116, 0.5),
-        0 2px 0 rgba(212, 165, 116, 0.3),
-        0 4px 8px rgba(212, 165, 116, 0.4),
+        0 -1px 0 rgba(255, 255, 255, 0.6),
+        0 1px 0 rgba(192, 192, 192, 0.6),
+        0 2px 0 rgba(192, 192, 192, 0.4),
+        0 4px 8px rgba(192, 192, 192, 0.5),
         0 8px 16px rgba(0,0,0,0.25);
     }
     33% {
       text-shadow: 
-        0 -1px 0 rgba(255, 255, 255, 0.4),
-        0 1px 0 rgba(232, 168, 85, 0.5),
-        0 2px 0 rgba(232, 168, 85, 0.3),
-        0 4px 8px rgba(232, 168, 85, 0.4),
+        0 -1px 0 rgba(255, 255, 255, 0.6),
+        0 1px 0 rgba(232, 232, 232, 0.6),
+        0 2px 0 rgba(232, 232, 232, 0.4),
+        0 4px 8px rgba(232, 232, 232, 0.5),
         0 8px 16px rgba(0,0,0,0.25);
     }
     66% {
       text-shadow: 
-        0 -1px 0 rgba(255, 255, 255, 0.4),
-        0 1px 0 rgba(245, 192, 106, 0.5),
-        0 2px 0 rgba(245, 192, 106, 0.3),
-        0 4px 8px rgba(245, 192, 106, 0.4),
+        0 -1px 0 rgba(255, 255, 255, 0.6),
+        0 1px 0 rgba(176, 196, 222, 0.6),
+        0 2px 0 rgba(176, 196, 222, 0.4),
+        0 4px 8px rgba(176, 196, 222, 0.5),
         0 8px 16px rgba(0,0,0,0.25);
     }
   }
@@ -317,26 +317,26 @@ html, body {
   @keyframes shadowSwipe2 {
     0%, 100% {
       text-shadow: 
-        0 -1px 0 rgba(255, 255, 255, 0.4),
-        0 1px 0 rgba(232, 168, 85, 0.5),
-        0 2px 0 rgba(232, 168, 85, 0.3),
-        0 4px 8px rgba(232, 168, 85, 0.4),
+        0 -1px 0 rgba(255, 255, 255, 0.6),
+        0 1px 0 rgba(211, 211, 211, 0.6),
+        0 2px 0 rgba(211, 211, 211, 0.4),
+        0 4px 8px rgba(211, 211, 211, 0.5),
         0 8px 16px rgba(0,0,0,0.25);
     }
     33% {
       text-shadow: 
-        0 -1px 0 rgba(255, 255, 255, 0.4),
-        0 1px 0 rgba(204, 136, 68, 0.5),
-        0 2px 0 rgba(204, 136, 68, 0.3),
-        0 4px 8px rgba(204, 136, 68, 0.4),
+        0 -1px 0 rgba(255, 255, 255, 0.6),
+        0 1px 0 rgba(168, 169, 173, 0.6),
+        0 2px 0 rgba(168, 169, 173, 0.4),
+        0 4px 8px rgba(168, 169, 173, 0.5),
         0 8px 16px rgba(0,0,0,0.25);
     }
     66% {
       text-shadow: 
-        0 -1px 0 rgba(255, 255, 255, 0.4),
-        0 1px 0 rgba(212, 165, 116, 0.5),
-        0 2px 0 rgba(212, 165, 116, 0.3),
-        0 4px 8px rgba(212, 165, 116, 0.4),
+        0 -1px 0 rgba(255, 255, 255, 0.6),
+        0 1px 0 rgba(192, 192, 192, 0.6),
+        0 2px 0 rgba(192, 192, 192, 0.4),
+        0 4px 8px rgba(192, 192, 192, 0.5),
         0 8px 16px rgba(0,0,0,0.25);
     }
   }
