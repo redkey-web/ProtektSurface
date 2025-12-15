@@ -69,6 +69,33 @@ export default function AutomotiveWindowTintingClient() {
         </div>
       </section>
 
+      {/* Auto-scroll Gallery Carousel */}
+      <section className="py-6 sm:py-8 bg-muted/30 overflow-hidden border-b border-border/50">
+        <div className="mb-4 px-4 sm:px-6 max-w-7xl mx-auto">
+          <h2 className="text-lg sm:text-xl font-semibold text-foreground">Our Work</h2>
+        </div>
+        <div className="relative">
+          <div className="flex animate-marquee-slow gap-4">
+            {[...galleryImages, ...galleryImages].map((image, index) => (
+              <div
+                key={index}
+                className="relative flex-shrink-0 w-64 sm:w-80 aspect-[4/3] overflow-hidden rounded-lg cursor-pointer hover-elevate active-elevate-2 transition-all duration-300"
+                onClick={() => setLightboxImage(image.src)}
+                data-testid={`carousel-image-${index}`}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="320px"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-12 sm:py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="mb-12">
