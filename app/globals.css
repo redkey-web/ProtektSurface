@@ -224,7 +224,7 @@ html, body {
   }
 
   .animate-marquee-slow {
-    animation: marquee 40s linear infinite;
+    animation: marquee 25s linear infinite;
   }
 
   @keyframes marquee {

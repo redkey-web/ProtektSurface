@@ -79,7 +79,7 @@ export default function AutomotiveWindowTintingClient() {
             {[...galleryImages, ...galleryImages].map((image, index) => (
               <div
                 key={index}
-                className="relative flex-shrink-0 w-64 sm:w-80 aspect-[4/3] overflow-hidden rounded-lg cursor-pointer hover-elevate active-elevate-2 transition-all duration-300"
+                className="relative flex-shrink-0 w-64 sm:w-80 aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group"
                 onClick={() => setLightboxImage(image.src)}
                 data-testid={`carousel-image-${index}`}
               >
@@ -88,7 +88,7 @@ export default function AutomotiveWindowTintingClient() {
                   alt={image.alt}
                   fill
                   sizes="320px"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
             ))}
