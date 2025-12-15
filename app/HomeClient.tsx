@@ -17,30 +17,17 @@ import { Testimonials } from "@/components/Testimonials";
 import { OurProcess } from "@/components/OurProcess";
 import { TintSelectorQuiz } from "@/components/TintSelectorQuiz";
 import { TrustedSuppliers } from "@/components/TrustedSuppliers";
+import { TrustTicker } from "@/components/TrustTicker";
 
 export default function HomeClient() {
   const [currentTint, setCurrentTint] = useState(0);
-  const [isMarqueeFixed, setIsMarqueeFixed] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
-  const marqueePlaceholderRef = useRef<HTMLDivElement>(null);
   
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
   const contentY = useTransform(scrollY, [0, 500], [0, 100]);
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
   
-  useEffect(() => {
-    const handleScroll = () => {
-      if (marqueePlaceholderRef.current) {
-        const placeholderRect = marqueePlaceholderRef.current.getBoundingClientRect();
-        const navHeight = window.innerWidth >= 640 ? 80 : 64;
-        setIsMarqueeFixed(placeholderRect.top <= navHeight);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -100,21 +87,6 @@ export default function HomeClient() {
     { title: "Residential Window Tinting", description: "Enhance your home's comfort, energy efficiency, and privacy with premium films.", image: "/images/services/residential.png", path: "/residential-window-tinting", badge: "Popular" },
     { title: "Commercial Window Tinting", description: "High-performance window films engineered for business environments.", image: "/images/services/commercial.png", path: "/commercial-window-tinting", badge: null },
     { title: "Automotive Window Tinting", description: "Professional car window tinting by Protekt Auto with lifetime warranty.", image: "/images/services/automotive.webp", path: "/automotive-window-tinting", badge: "Workshop Only" },
-  ];
-
-  const benefits = [
-    { label: "99% UV Protection", icon: Sun },
-    { label: "Solar Energy Rejection", icon: Zap },
-    { label: "Enhanced Privacy", icon: Eye },
-    { label: "Impact Resistance", icon: Shield },
-    { label: "Storm Protection", icon: Zap },
-    { label: "Preserve Interiors", icon: Home },
-    { label: "Health Protection", icon: Heart },
-    { label: "No Signal Interference", icon: Wifi },
-    { label: "Safety First", icon: AlertTriangle },
-    { label: "Security Boost", icon: Lock },
-    { label: "Elegant Aesthetics", icon: Sparkles },
-    { label: "Glare Reduction", icon: Sun },
   ];
 
   // Structured Data for SEO
