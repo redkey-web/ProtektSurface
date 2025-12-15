@@ -58,9 +58,9 @@ export default function AutomotiveWindowTintingClient() {
             />
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-            Professional Automotive
+            Automotive Window Tinting
             <br />
-            Window Tinting Sydney
+            Sydney
           </h1>
           <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             Premium car window tinting with professional installation and
