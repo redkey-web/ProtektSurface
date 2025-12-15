@@ -81,7 +81,7 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
       <div
-        className="absolute inset-0 border-b border-white/10 transition-all duration-300 bg-gray-900/70"
+        className="absolute inset-0 border-b border-white/10 transition-all duration-300 bg-stone-900/75"
         style={{
           opacity: Math.min(headerProgress, 0.9)
         }}
