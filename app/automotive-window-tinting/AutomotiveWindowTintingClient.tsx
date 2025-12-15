@@ -75,8 +75,8 @@ export default function AutomotiveWindowTintingClient() {
           <h2 className="text-lg sm:text-xl font-semibold text-foreground">Our Work</h2>
         </div>
         <div className="relative">
-          <div className="flex animate-marquee-slow gap-4">
-            {[...galleryImages, ...galleryImages].map((image, index) => (
+          <div className="flex animate-marquee-slow gap-4" style={{ width: 'max-content' }}>
+            {[...galleryImages, ...galleryImages, ...galleryImages].map((image, index) => (
               <div
                 key={index}
                 className="relative flex-shrink-0 w-64 sm:w-80 aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group"
