@@ -19,7 +19,7 @@ const benefits = [
 
 export function TrustTicker() {
   return (
-    <section className="py-2 bg-stone-900/90 overflow-hidden border-y border-white/10">
+    <section className="py-2 overflow-hidden border-y border-white/10" style={{ backgroundColor: '#20222C' }}>
       <div className="relative">
         <div className="flex animate-marquee">
           {[...benefits, ...benefits].map((benefit, index) => (
