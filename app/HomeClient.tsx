@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Phone, Check, Zap, Home, Heart, AlertTriangle, Wifi } from "lucide-react";
+import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Phone, Check, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -329,48 +329,6 @@ export default function HomeClient() {
 
       </section>
 
-      {/* BENEFITS MARQUEE - Placeholder to track original position */}
-      <div ref={marqueePlaceholderRef} className="h-[36px]">
-        {!isMarqueeFixed && (
-          <section className="py-2 bg-stone-900/90 overflow-hidden border-b border-white/10 shadow-sm">
-            <div className="relative">
-              <div className="flex animate-marquee">
-                {[...benefits, ...benefits].map((benefit, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-center gap-2 px-6 lg:px-8 flex-shrink-0"
-                    data-testid={`benefit-${index}`}
-                  >
-                    <benefit.icon className="w-4 h-4 lg:w-5 lg:h-5 text-primary" strokeWidth={1.5} />
-                    <span className="text-xs lg:text-sm font-medium text-white whitespace-nowrap">{benefit.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-      </div>
-      
-      {/* Fixed marquee when scrolled */}
-      {isMarqueeFixed && (
-        <section className="fixed left-0 right-0 top-16 sm:top-20 z-[45] py-2 bg-stone-900/90 overflow-hidden border-b border-white/10 shadow-sm">
-          <div className="relative">
-            <div className="flex animate-marquee">
-              {[...benefits, ...benefits].map((benefit, index) => (
-                <div 
-                  key={index} 
-                  className="flex items-center gap-2 px-6 lg:px-8 flex-shrink-0"
-                  data-testid={`benefit-fixed-${index}`}
-                >
-                  <benefit.icon className="w-4 h-4 lg:w-5 lg:h-5 text-primary" strokeWidth={1.5} />
-                  <span className="text-xs lg:text-sm font-medium text-white whitespace-nowrap">{benefit.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* SERVICES - Masonry-like Grid */}
       <section id="services" className="py-16 lg:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -431,6 +389,8 @@ export default function HomeClient() {
           </div>
         </div>
       </section>
+
+      <TrustTicker />
 
       {/* FILM TYPES - Horizontal Scroll on Mobile */}
       <section className="py-16 lg:py-24 bg-background">
@@ -495,6 +455,8 @@ export default function HomeClient() {
 
       <Testimonials />
 
+      <TrustTicker />
+
       <TrustedSuppliers />
 
       <OurProcess />
@@ -519,6 +481,8 @@ export default function HomeClient() {
           <TintSelectorQuiz />
         </div>
       </section>
+
+      <TrustTicker />
 
       {/* FAQ SECTION */}
       <section className="py-16 lg:py-24 bg-background">
