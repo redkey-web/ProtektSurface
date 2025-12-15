@@ -323,54 +323,68 @@ export default function HomeClient() {
               </div>
             </motion.div>
 
-            {/* Mobile: Compact Quote Form */}
-            <motion.div 
-              className="col-span-12 lg:hidden mt-4"
-              variants={itemVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <div className="backdrop-blur-xl bg-gray-900/60 border border-white/20 rounded-xl p-4">
-                <p className="text-white/80 text-sm font-medium mb-3 text-center">Get a Free Quote</p>
-                <form action="/get-quote" method="GET" className="flex flex-col gap-2">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    className="w-full px-3 py-2.5 text-sm rounded-lg border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
-                    data-testid="input-mobile-name"
-                  />
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    className="w-full px-3 py-2.5 text-sm rounded-lg border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60"
-                    data-testid="input-mobile-phone"
-                  />
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-primary text-primary-foreground font-semibold" 
-                    data-testid="button-mobile-submit"
-                  >
-                    Get Quote
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </form>
-              </div>
-
-              {/* Mobile Trust Indicators */}
-              <div className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1">
-                {["5-15 Year Warranty", "99% UV Block", "Free Quotes"].map((item) => (
-                  <div key={item} className="flex items-center gap-1.5 text-xs text-white/70">
-                    <Check className="w-3 h-3 text-primary flex-shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
           </div>
         </div>
 
+      </section>
+
+      {/* Mobile Quote Form - Below the Fold */}
+      <section className="lg:hidden py-8 bg-gradient-to-b from-gray-900 to-background">
+        <div className="max-w-md mx-auto px-6">
+          <div className="bg-card border border-border rounded-xl p-6 shadow-lg">
+            <h3 className="font-display text-xl text-foreground mb-1 text-center">Get Your Free Quote</h3>
+            <p className="text-muted-foreground text-sm mb-4 text-center">Free consultation and estimate</p>
+            
+            <form action="/get-quote" method="GET" className="flex flex-col gap-3">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="w-full px-4 py-3 text-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                data-testid="input-mobile-name"
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                className="w-full px-4 py-3 text-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                data-testid="input-mobile-phone"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                className="w-full px-4 py-3 text-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                data-testid="input-mobile-email"
+              />
+              <textarea
+                name="message"
+                placeholder="Tell us about your project..."
+                rows={3}
+                className="w-full px-4 py-3 text-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                data-testid="textarea-mobile-message"
+              />
+              <Button 
+                type="submit" 
+                size="lg"
+                className="w-full bg-primary text-primary-foreground font-semibold" 
+                data-testid="button-mobile-submit"
+              >
+                Request Quote
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </form>
+
+            <div className="mt-4 flex flex-col gap-2">
+              {["Warranties from 5-15 years", "Reduce heat, glare, and UV damage", "Premium ceramic and carbon films"].map((item) => (
+                <div key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* SERVICES - Masonry-like Grid */}
