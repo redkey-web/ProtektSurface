@@ -245,7 +245,10 @@ export default function HomeClient() {
                 width={322}
                 height={136}
                 className="h-[74px] sm:h-[92px] w-auto"
-                style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}
+                style={{ 
+                  filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))',
+                  transform: 'translate(5%, 2%)'
+                }}
                 priority
                 data-testid="img-hero-logo"
               />
