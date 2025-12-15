@@ -256,7 +256,7 @@ export default function HomeClient() {
                 alt="Protekt Surface Solutions"
                 width={322}
                 height={136}
-                className={`h-[74px] sm:h-[92px] w-auto absolute top-0 left-0 transition-opacity duration-1000 ${currentTint >= 2 ? 'opacity-100' : 'opacity-0'}`}
+                className={`h-[74px] sm:h-[92px] w-auto absolute top-[5%] left-0 transition-opacity duration-1000 ${currentTint >= 2 ? 'opacity-100' : 'opacity-0'}`}
                 style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}
                 priority
                 data-testid="img-hero-logo-light"
