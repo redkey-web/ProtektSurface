@@ -74,7 +74,7 @@ export default function HomeClient() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTint((prev) => (prev + 1) % tintVariants.length);
-    }, 3000);
+    }, 6000);
     return () => clearInterval(interval);
   }, []);
 
@@ -221,7 +221,7 @@ export default function HomeClient() {
           {tintVariants.map((tint, index) => (
             <div
               key={tint.name}
-              className="absolute inset-0 transition-all duration-1000 ease-in-out"
+              className="absolute inset-0 transition-all duration-[2000ms] ease-in-out"
               style={{
                 backgroundColor: tint.color,
                 opacity: currentTint === index ? tint.opacity : 0,
@@ -266,23 +266,23 @@ export default function HomeClient() {
             >
               <motion.h1 
                 variants={itemVariants}
-                className={`font-display font-bold text-display-lg lg:text-display-xl tracking-tight mb-6 lg:mb-8 transition-all duration-500 ${isCurrentTintDark ? 'text-white' : 'text-foreground'}`}
+                className={`font-display font-bold text-display-lg lg:text-display-xl tracking-tight mb-6 lg:mb-8 transition-all duration-1000 ${isCurrentTintDark ? 'text-white' : 'text-foreground'}`}
                 style={currentTint >= 2 ? { 
                   textShadow: '0 1px 0 rgba(255,255,255,0.4), 0 2px 0 rgba(255,255,255,0.2), 0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2)'
                 } : undefined}
               >
                 <span 
-                  className={`transition-opacity duration-500 inline-block ${currentTint >= 2 ? 'opacity-60' : 'opacity-100'} ${currentTint >= 2 ? 'text-sunglasses-effect-1' : ''} ${currentTint === 1 ? 'text-sunglasses-shadow-1' : ''}`}
+                  className={`transition-opacity duration-1000 inline-block ${currentTint >= 2 ? 'opacity-60' : 'opacity-100'} ${currentTint >= 2 ? 'text-sunglasses-effect-1' : ''} ${currentTint === 1 ? 'text-sunglasses-shadow-1' : ''}`}
                 >Professional</span><br />
                 <span 
-                  className={`italic font-semibold transition-opacity duration-500 inline-block ${currentTint >= 2 ? 'opacity-60' : 'opacity-100'} ${currentTint >= 2 ? 'text-sunglasses-effect-2' : ''} ${currentTint === 1 ? 'text-sunglasses-shadow-2' : ''}`}
+                  className={`italic font-semibold transition-opacity duration-1000 inline-block ${currentTint >= 2 ? 'opacity-60' : 'opacity-100'} ${currentTint >= 2 ? 'text-sunglasses-effect-2' : ''} ${currentTint === 1 ? 'text-sunglasses-shadow-2' : ''}`}
                 >Window Tinting</span><br />
-                <span className={`transition-all duration-500 ${isCurrentTintDark ? 'text-primary opacity-100' : 'text-white opacity-60'}`}>Sydney</span>
+                <span className={`transition-all duration-1000 ${isCurrentTintDark ? 'text-primary opacity-100' : 'text-white opacity-60'}`}>Sydney</span>
               </motion.h1>
 
               <motion.p 
                 variants={itemVariants}
-                className={`text-lg lg:text-xl mb-8 max-w-lg leading-relaxed transition-colors duration-500 ${isCurrentTintDark ? 'text-white/90' : 'text-foreground/80'}`}
+                className={`text-lg lg:text-xl mb-8 max-w-lg leading-relaxed transition-colors duration-1000 ${isCurrentTintDark ? 'text-white/90' : 'text-foreground/80'}`}
               >
                 Premium films and protective solutions for homes, businesses and vehicles. Sydney&apos;s trusted surface protection specialists.
               </motion.p>
