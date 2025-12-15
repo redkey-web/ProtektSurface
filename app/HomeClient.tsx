@@ -203,9 +203,9 @@ export default function HomeClient() {
         {/* 12-Column Grid Hero Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-24 lg:pt-36 lg:pb-24">
           <div className="grid grid-cols-12 gap-6 lg:gap-12 items-center">
-            {/* Left Content - 7 columns on desktop */}
+            {/* Left Content - 8 columns on desktop */}
             <motion.div 
-              className="col-span-12 lg:col-span-7"
+              className="col-span-12 lg:col-span-8"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -258,9 +258,9 @@ export default function HomeClient() {
               </motion.div>
             </motion.div>
 
-            {/* Right Content - Quick Quote Form - 5 columns on desktop */}
+            {/* Right Content - Quick Quote Form - 4 columns on desktop */}
             <motion.div 
-              className="col-span-12 lg:col-span-5 mt-8 lg:mt-0"
+              className="col-span-12 lg:col-span-4 mt-8 lg:mt-0"
               variants={itemVariants}
               initial="hidden"
               animate="visible"
