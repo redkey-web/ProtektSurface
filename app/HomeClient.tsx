@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -21,12 +21,10 @@ import { TrustTicker } from "@/components/TrustTicker";
 
 export default function HomeClient() {
   const [currentTint, setCurrentTint] = useState(0);
-  const heroRef = useRef<HTMLElement>(null);
   
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
   const contentY = useTransform(scrollY, [0, 500], [0, 100]);
-  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
   
 
   const containerVariants = {
@@ -50,10 +48,10 @@ export default function HomeClient() {
   };
 
   const tintVariants = [
-    { name: "Light", color: "rgb(50, 50, 50)", opacity: 0.30, isDark: false },
-    { name: "Medium", color: "rgb(40, 40, 40)", opacity: 0.50, isDark: true },
-    { name: "Dark", color: "rgb(30, 30, 30)", opacity: 0.70, isDark: true },
-    { name: "Limo", color: "rgb(20, 20, 20)", opacity: 0.85, isDark: true },
+    { name: "Light", color: "rgb(50, 50, 50)", opacity: 0.30 },
+    { name: "Medium", color: "rgb(40, 40, 40)", opacity: 0.50 },
+    { name: "Dark", color: "rgb(30, 30, 30)", opacity: 0.70 },
+    { name: "Limo", color: "rgb(20, 20, 20)", opacity: 0.85 },
   ];
 
   const isCurrentTintDark = currentTint >= 2; // Only Dark and Limo (index 2 and 3)
@@ -180,7 +178,7 @@ export default function HomeClient() {
       />
 
       {/* HERO - Full width with asymmetric grid */}
-      <section ref={heroRef} className="relative min-h-screen lg:min-h-[105vh] flex items-center overflow-hidden overflow-x-hidden">
+      <section className="relative min-h-screen lg:min-h-[105vh] flex items-center overflow-hidden">
         <motion.div
           className="absolute inset-0 bg-cover will-change-transform"
           style={{
