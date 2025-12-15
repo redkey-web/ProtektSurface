@@ -13,6 +13,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerDescription,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 import { Testimonials } from "@/components/Testimonials";
 import { OurProcess } from "@/components/OurProcess";
 import { TintSelectorQuiz } from "@/components/TintSelectorQuiz";
@@ -21,6 +29,7 @@ import { TrustTicker } from "@/components/TrustTicker";
 
 export default function HomeClient() {
   const [currentTint, setCurrentTint] = useState(0);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
@@ -259,9 +268,9 @@ export default function HomeClient() {
               </motion.div>
             </motion.div>
 
-            {/* Right Content - Quick Quote Form - 4 columns on desktop */}
+            {/* Right Content - Quick Quote Form - 4 columns on desktop, hidden on mobile */}
             <motion.div 
-              className="col-span-12 lg:col-span-4 mt-8 lg:mt-0"
+              className="hidden lg:block col-span-12 lg:col-span-4 mt-8 lg:mt-0"
               variants={itemVariants}
               initial="hidden"
               animate="visible"
@@ -316,6 +325,90 @@ export default function HomeClient() {
               <div className="mt-4 flex flex-col gap-2">
                 {["Warranties from 5-15 years", "Reduce heat, glare, and UV damage", "Premium ceramic and carbon films"].map((item) => (
                   <div key={item} className="flex items-center gap-2 text-xs text-white/80">
+                    <Check className="w-3 h-3 text-primary flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Mobile: Get a Free Quote Button + Bottom Sheet Drawer */}
+            <motion.div 
+              className="col-span-12 lg:hidden mt-6"
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <Drawer open={drawerOpen} onOpenChange={setDrawerOpen}>
+                <DrawerTrigger asChild>
+                  <Button 
+                    size="lg" 
+                    className="w-full bg-primary text-primary-foreground font-semibold text-lg py-6"
+                    data-testid="button-mobile-quote"
+                  >
+                    Get a Free Quote
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </DrawerTrigger>
+                <DrawerContent className="px-4 pb-8">
+                  <DrawerHeader className="text-left">
+                    <DrawerTitle className="font-display text-2xl">Get Your Free Quote</DrawerTitle>
+                    <DrawerDescription>Free consultation and estimate for your project</DrawerDescription>
+                  </DrawerHeader>
+                  <form action="/get-quote" method="GET" className="flex flex-col gap-3 px-4">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      className="w-full px-4 py-3 text-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                      data-testid="input-mobile-name"
+                    />
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      className="w-full px-4 py-3 text-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                      data-testid="input-mobile-phone"
+                    />
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
+                      className="w-full px-4 py-3 text-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                      data-testid="input-mobile-email"
+                    />
+                    <textarea
+                      name="message"
+                      placeholder="Tell us about your project..."
+                      rows={3}
+                      className="w-full px-4 py-3 text-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                      data-testid="textarea-mobile-message"
+                    />
+                    <Button 
+                      type="submit" 
+                      size="lg"
+                      className="w-full bg-primary text-primary-foreground font-semibold mt-2" 
+                      data-testid="button-mobile-submit"
+                    >
+                      Request Quote
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </form>
+                  <div className="mt-6 px-4 flex flex-col gap-2">
+                    {["Warranties from 5-15 years", "Reduce heat, glare, and UV damage", "Premium ceramic and carbon films"].map((item) => (
+                      <div key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </DrawerContent>
+              </Drawer>
+
+              {/* Mobile Trust Indicators */}
+              <div className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-2">
+                {["5-15 Year Warranty", "99% UV Protection", "Free Quotes"].map((item) => (
+                  <div key={item} className="flex items-center gap-1.5 text-xs text-white/80">
                     <Check className="w-3 h-3 text-primary flex-shrink-0" />
                     <span>{item}</span>
                   </div>
