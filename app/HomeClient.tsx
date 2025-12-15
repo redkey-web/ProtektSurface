@@ -101,10 +101,47 @@ export default function HomeClient() {
   ];
 
   const services = [
-    { title: "Natural Stone Protection", description: "Invisible protective films for marble, granite, and engineered stone surfaces.", image: "/images/marble-tile.png", path: "/marble-protection-film", badge: "Premium" },
-    { title: "Residential Window Tinting", description: "Enhance your home's comfort, energy efficiency, and privacy with premium films.", image: "/images/services/residential.png", path: "/residential-window-tinting", badge: "Popular" },
-    { title: "Commercial Window Tinting", description: "High-performance window films engineered for business environments.", image: "/images/services/commercial.png", path: "/commercial-window-tinting", badge: null },
-    { title: "Automotive Window Tinting", description: "Professional car window tinting by Protekt Auto with lifetime warranty.", image: "/images/services/automotive.webp", path: "/automotive-window-tinting", badge: "Workshop Only" },
+    { 
+      title: "Residential Window Tinting", 
+      description: "Enhance your home's comfort, energy efficiency, and privacy with premium films. Our residential solutions reduce heat by up to 70% while maintaining natural light.", 
+      image: "/images/services/living-room.png", 
+      path: "/residential-window-tinting", 
+      badge: "Popular",
+      features: ["Heat Reduction", "UV Protection", "Privacy"]
+    },
+    { 
+      title: "Commercial Window Tinting", 
+      description: "High-performance window films engineered for business environments. Reduce energy costs and create comfortable workspaces.", 
+      image: "/images/services/commercial-office.png", 
+      path: "/commercial-window-tinting", 
+      badge: null,
+      features: ["Energy Savings", "Glare Reduction", "Professional Look"]
+    },
+    { 
+      title: "Automotive Window Tinting", 
+      description: "Professional car window tinting by Protekt Auto with lifetime warranty. Premium ceramic and carbon films for ultimate protection.", 
+      image: "/images/services/automotive.webp", 
+      path: "/automotive-window-tinting", 
+      badge: "Workshop Only",
+      features: ["Ceramic Films", "Lifetime Warranty", "Legal Compliance"]
+    },
+    { 
+      title: "Natural Stone Protection", 
+      description: "Invisible protective films for marble, granite, and engineered stone surfaces. Preserve the beauty of your investment.", 
+      image: "/images/films/marble-hero.png", 
+      path: "/marble-protection-film", 
+      badge: "Premium",
+      features: ["Invisible Protection", "Stain Resistant", "Easy Maintenance"]
+    },
+  ];
+
+  const galleryImages = [
+    { src: "/images/services/residential/example-1.png", alt: "Residential tinting project", category: "Residential" },
+    { src: "/images/services/residential/example-2.png", alt: "Living room window tint", category: "Residential" },
+    { src: "/images/automotive/gallery-1.jpg", alt: "Automotive tinting", category: "Automotive" },
+    { src: "/images/services/conference.png", alt: "Commercial office tinting", category: "Commercial" },
+    { src: "/images/films/privacy-livingroom.png", alt: "Privacy film installation", category: "Privacy" },
+    { src: "/images/automotive/gallery-2.png", alt: "Car window tint", category: "Automotive" },
   ];
 
   const localBusinessSchema = {
@@ -491,57 +528,84 @@ export default function HomeClient() {
 
       </section>
 
-      {/* SERVICES - Masonry-like Grid */}
+      {/* SERVICES - Redesigned Horizontal Cards */}
       <section id="services" className="py-16 lg:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-12 gap-4 lg:gap-8 mb-12 lg:mb-16">
-            <div className="col-span-12 lg:col-span-8">
-              <p className="text-primary font-medium uppercase tracking-wider mb-2">Sydney&apos;s Surface Experts</p>
-              <h2 className="font-display text-display-md lg:text-display-lg">
-                Premium Window Films<br />
-                <span className="italic text-muted-foreground">&amp; Surface Protection</span>
-              </h2>
-            </div>
-            <div className="col-span-12 lg:col-span-4 flex items-end">
-              <p className="text-muted-foreground leading-relaxed">
-                From residential homes to commercial buildings, discover the perfect solution for your protection needs.
-              </p>
-            </div>
+          <div className="text-center mb-12 lg:mb-16">
+            <p className="text-primary font-medium uppercase tracking-wider mb-2">Sydney&apos;s Surface Experts</p>
+            <h2 className="font-display text-display-md lg:text-display-lg mb-4">
+              Premium Window Films<br />
+              <span className="italic text-muted-foreground">&amp; Surface Protection</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              From residential homes to commercial buildings, discover the perfect solution for your protection needs.
+            </p>
           </div>
 
-          {/* Services Grid - Varied Sizes */}
-          <div className="grid grid-cols-12 gap-4 lg:gap-6">
+          {/* Services - Alternating Horizontal Layout */}
+          <div className="flex flex-col gap-6 lg:gap-8">
             {services.map((service, index) => {
-              const isLarge = index === 0 || index === 1;
+              const isReversed = index % 2 === 1;
               return (
-                <Link 
-                  key={service.path} 
-                  href={service.path}
-                  className={`${isLarge ? 'col-span-12 lg:col-span-6' : 'col-span-12 md:col-span-6 lg:col-span-6'}`}
-                >
-                  <Card className="overflow-hidden hover-elevate active-elevate-2 transition-all duration-300 group h-full" data-testid={`card-service-${index}`}>
-                    <div className={`relative overflow-hidden ${isLarge ? 'aspect-[16/10]' : 'aspect-video'}`}>
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
-                      {service.badge && (
-                        <span className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
-                          {service.badge}
-                        </span>
-                      )}
-                      {service.path === "/automotive-window-tinting" && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <Image src="/images/brand/protekt-auto-logo.png" alt="Protekt Auto" width={200} height={80} style={{ width: '50%', maxWidth: '200px', height: 'auto' }} />
+                <Link key={service.path} href={service.path}>
+                  <Card 
+                    className="overflow-visible hover-elevate active-elevate-2 transition-all duration-300 group" 
+                    data-testid={`card-service-${index}`}
+                  >
+                    <div className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
+                      {/* Image Section */}
+                      <div className="relative lg:w-1/2 aspect-[16/10] lg:aspect-auto overflow-hidden rounded-t-md lg:rounded-t-none lg:rounded-l-md">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+                        {service.badge && (
+                          <span className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1.5 rounded-full">
+                            {service.badge}
+                          </span>
+                        )}
+                        {service.path === "/automotive-window-tinting" && (
+                          <div className="absolute bottom-4 left-4">
+                            <Image 
+                              src="/images/brand/protekt-auto-logo-white.webp" 
+                              alt="Protekt Auto" 
+                              width={120} 
+                              height={48} 
+                              className="opacity-90"
+                            />
+                          </div>
+                        )}
+                      </div>
+                      
+                      {/* Content Section */}
+                      <div className="lg:w-1/2 p-6 lg:p-8 flex flex-col justify-center">
+                        <h3 className="font-display text-xl lg:text-2xl text-foreground mb-3 group-hover:text-primary transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="text-muted-foreground mb-4 leading-relaxed">
+                          {service.description}
+                        </p>
+                        
+                        {/* Feature Pills */}
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {service.features.map((feature) => (
+                            <span 
+                              key={feature} 
+                              className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary"
+                            >
+                              {feature}
+                            </span>
+                          ))}
                         </div>
-                      )}
-                      <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <h3 className="font-display text-xl lg:text-2xl text-white mb-2" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{service.title}</h3>
-                        <p className="text-white/90 text-sm line-clamp-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>{service.description}</p>
+                        
+                        <div className="flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all">
+                          Learn More
+                          <ArrowRight className="w-4 h-4" />
+                        </div>
                       </div>
                     </div>
                   </Card>
@@ -552,7 +616,150 @@ export default function HomeClient() {
         </div>
       </section>
 
+      {/* PROJECT GALLERY */}
+      <section className="py-16 lg:py-24 bg-neutral-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-amber-400 font-medium uppercase tracking-wider mb-2">Our Work</p>
+            <h2 className="font-display text-display-md text-white mb-4">
+              Recent Projects
+            </h2>
+            <p className="text-neutral-400 leading-relaxed max-w-2xl mx-auto">
+              Browse through our portfolio of completed window tinting and surface protection projects across Sydney.
+            </p>
+          </div>
+
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4">
+            {galleryImages.map((image, index) => (
+              <motion.div 
+                key={index}
+                className={`relative overflow-hidden rounded-xl group ${index === 0 || index === 3 ? 'row-span-2 aspect-[3/4]' : 'aspect-square'}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <span className="text-xs font-medium px-2 py-1 rounded-full bg-amber-500/90 text-neutral-950">
+                    {image.category}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/get-quote">
+              <Button size="lg" className="bg-amber-500 hover:bg-amber-400 text-neutral-950 font-semibold" data-testid="button-gallery-quote">
+                Start Your Project
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <TrustTicker />
+
+      {/* WHY CHOOSE US - Visual Features */}
+      <section className="py-16 lg:py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Left - Images Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="relative aspect-[4/5] rounded-xl overflow-hidden">
+                  <Image
+                    src="/images/services/installation.png"
+                    alt="Professional installation"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative aspect-square rounded-xl overflow-hidden">
+                  <Image
+                    src="/images/films/ceramic-hero.png"
+                    alt="Ceramic film technology"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              <div className="space-y-4 pt-8">
+                <div className="relative aspect-square rounded-xl overflow-hidden">
+                  <Image
+                    src="/images/services/home-exterior.png"
+                    alt="Home exterior tinting"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative aspect-[4/5] rounded-xl overflow-hidden">
+                  <Image
+                    src="/images/automotive/hero.webp"
+                    alt="Automotive tinting"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Right - Content */}
+            <div>
+              <p className="text-primary font-medium uppercase tracking-wider mb-2">Why Choose Us</p>
+              <h2 className="font-display text-display-md lg:text-display-lg mb-6">
+                Sydney&apos;s Trusted<br />
+                <span className="italic text-muted-foreground">Surface Protection Experts</span>
+              </h2>
+              <p className="text-muted-foreground mb-8 leading-relaxed">
+                With over a decade of experience, we deliver premium window tinting and surface protection solutions that stand the test of time.
+              </p>
+
+              <div className="space-y-6">
+                {[
+                  { icon: Shield, title: "15+ Year Warranties", description: "Industry-leading warranties on all our premium film installations." },
+                  { icon: Gem, title: "Premium Materials", description: "We use only top-tier ceramic and carbon films from trusted suppliers." },
+                  { icon: Zap, title: "Expert Installation", description: "Factory-trained technicians ensure flawless, bubble-free results." },
+                  { icon: Check, title: "100% Satisfaction", description: "We stand behind our work with a complete satisfaction guarantee." },
+                ].map((feature) => (
+                  <div key={feature.title} className="flex gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <feature.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1">{feature.title}</h3>
+                      <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8">
+                <Link href="/about">
+                  <Button variant="outline" size="lg" data-testid="button-learn-more">
+                    Learn More About Us
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* FILM TYPES - Horizontal Scroll on Mobile */}
       <section className="py-16 lg:py-24 bg-background">
