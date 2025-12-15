@@ -28,7 +28,7 @@ import { TrustedSuppliers } from "@/components/TrustedSuppliers";
 import { TrustTicker } from "@/components/TrustTicker";
 
 export default function HomeClient() {
-  const [currentTint, setCurrentTint] = useState(0);
+  const [currentTint, setCurrentTint] = useState(3); // Start on Limo mode
   const [drawerOpen, setDrawerOpen] = useState(false);
   
   const { scrollY } = useScroll();
