@@ -213,10 +213,11 @@ export default function HomeClient() {
             >
               <motion.h1 
                 variants={itemVariants}
-                className={`font-display font-bold text-display-lg lg:text-display-xl tracking-tight mb-6 lg:mb-8 transition-all duration-1000 ${isCurrentTintDark ? 'text-white' : 'text-foreground'}`}
-                style={currentTint >= 2 ? { 
-                  textShadow: '0 1px 0 rgba(255,255,255,0.4), 0 2px 0 rgba(255,255,255,0.2), 0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2)'
-                } : undefined}
+                className="font-display font-bold text-display-lg lg:text-display-xl tracking-tight mb-6 lg:mb-8 transition-all duration-1000"
+                style={{ 
+                  color: isCurrentTintDark ? '#ffffff' : '#232328',
+                  ...(currentTint >= 2 ? { textShadow: '0 1px 0 rgba(255,255,255,0.4), 0 2px 0 rgba(255,255,255,0.2), 0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2)' } : {})
+                }}
               >
                 <span 
                   className={`transition-opacity duration-1000 inline-block ${currentTint === 3 ? 'opacity-80' : currentTint === 2 ? 'opacity-60' : 'opacity-100'} ${currentTint >= 2 ? 'text-sunglasses-effect-1' : 'text-sunglasses-shadow-1'}`}
