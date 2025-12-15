@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Testimonials } from "@/components/Testimonials";
 import { TrustedSuppliers } from "@/components/TrustedSuppliers";
 import { OurProcess } from "@/components/OurProcess";
+import { TrustTicker } from "@/components/TrustTicker";
 
 interface FeaturedLink {
   title: string;
@@ -122,6 +123,8 @@ export function ServiceAreaPage({
       </section>
 
       <Testimonials />
+
+      <TrustTicker />
 
       <TrustedSuppliers />
 

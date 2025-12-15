@@ -4,6 +4,7 @@ import { Check, Phone, Sun, Shield, Home, Zap, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { TrustTicker } from "@/components/TrustTicker";
 import { generateProductSchema, JsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
@@ -198,7 +199,9 @@ export default function UVBlockingFilmPage() {
             </div>
           </div>
 
-          <div className="bg-primary rounded-xl p-8 sm:p-12 text-center">
+          <TrustTicker />
+
+          <div className="bg-primary rounded-xl p-8 sm:p-12 text-center mt-12 sm:mt-16">
             <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
               Protect your health and home today
             </h3>

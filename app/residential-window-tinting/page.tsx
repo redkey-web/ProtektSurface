@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { OurProcess } from "@/components/OurProcess";
+import { TrustTicker } from "@/components/TrustTicker";
 import { generateServiceSchema, JsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
@@ -182,6 +183,8 @@ export default function ResidentialWindowTintingPage() {
       </section>
 
       <OurProcess showCTA={false} />
+
+      <TrustTicker />
 
       <section className="py-12 sm:py-16 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">

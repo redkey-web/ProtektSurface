@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { TrustTicker } from "@/components/TrustTicker";
 import { generateProductSchema, JsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
@@ -125,7 +126,9 @@ export default function MarbleProtectionFilmPage() {
             </div>
           </div>
 
-          <div className="relative bg-primary rounded-xl p-8 sm:p-12 text-center overflow-hidden">
+          <TrustTicker />
+
+          <div className="relative bg-primary rounded-xl p-8 sm:p-12 text-center overflow-hidden mt-12 sm:mt-16">
             <div
               className="absolute inset-0 opacity-20"
               style={{
