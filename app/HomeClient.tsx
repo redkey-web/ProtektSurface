@@ -63,10 +63,10 @@ export default function HomeClient() {
   };
 
   const tintVariants = [
-    { name: "Light", image: "/images/hero/hero-light.jpg", isDark: false },
-    { name: "Medium", image: "/images/hero/hero-medium.webp", isDark: false },
-    { name: "Dark", image: "/images/hero/hero-dark.webp", isDark: true },
-    { name: "Limo", image: "/images/hero/hero-limo.webp", isDark: true },
+    { name: "Light", color: "rgb(50, 50, 50)", opacity: 0.30, isDark: false },
+    { name: "Medium", color: "rgb(40, 40, 40)", opacity: 0.50, isDark: true },
+    { name: "Dark", color: "rgb(30, 30, 30)", opacity: 0.70, isDark: true },
+    { name: "Limo", color: "rgb(20, 20, 20)", opacity: 0.85, isDark: true },
   ];
 
   const isCurrentTintDark = currentTint >= 2; // Only Dark and Limo (index 2 and 3)
@@ -209,20 +209,26 @@ export default function HomeClient() {
 
       {/* HERO - Full width with asymmetric grid */}
       <section ref={heroRef} className="relative min-h-screen lg:min-h-[105vh] flex items-center overflow-hidden">
-        {/* Hero background images - one for each tint level */}
-        {tintVariants.map((tint, index) => (
-          <motion.div
-            key={tint.name}
-            className="absolute inset-0 bg-cover will-change-transform transition-opacity duration-1000 ease-in-out"
-            style={{
-              backgroundImage: `url(${tint.image})`,
-              backgroundPosition: 'calc(50% + 45px) 65%',
-              y: backgroundY,
-              scale: 1.1,
-              opacity: currentTint === index ? 1 : 0,
-            }}
-          />
-        ))}
+        <motion.div
+          className="absolute inset-0 bg-cover will-change-transform"
+          style={{
+            backgroundImage: `url(/images/hero/hero-background.jpg)`,
+            backgroundPosition: 'calc(50% + 45px) 65%',
+            y: backgroundY,
+            scale: 1.1,
+          }}
+        >
+          {tintVariants.map((tint, index) => (
+            <div
+              key={tint.name}
+              className="absolute inset-0 transition-all duration-1000 ease-in-out"
+              style={{
+                backgroundColor: tint.color,
+                opacity: currentTint === index ? tint.opacity : 0,
+              }}
+            />
+          ))}
+        </motion.div>
 
         {/* Logo - Aligned with header position */}
         <div className="absolute top-0 left-0 right-0 z-20">
