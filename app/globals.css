@@ -6,6 +6,16 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Hide scrollbar but allow scrolling */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 /* LIGHT MODE - Protekt Surface Solutions light theme with gold accents */
 :root {
   --button-outline: rgba(0,0,0, .10);
