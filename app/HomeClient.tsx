@@ -212,7 +212,7 @@ export default function HomeClient() {
         <motion.div
           className="absolute inset-0 bg-cover will-change-transform"
           style={{
-            backgroundImage: `url(/images/hero/hero-background.jpg)`,
+            backgroundImage: `url(/images/hero/hero-background.png)`,
             backgroundPosition: 'calc(50% + 45px) 65%',
             y: backgroundY,
             scale: 1.1,
