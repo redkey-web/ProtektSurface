@@ -364,7 +364,7 @@ export default function HomeClient() {
                         sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                       {service.badge && (
                         <span className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
                           {service.badge}
@@ -376,8 +376,8 @@ export default function HomeClient() {
                         </div>
                       )}
                       <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <h3 className="font-display text-xl lg:text-2xl text-white mb-2">{service.title}</h3>
-                        <p className="text-white/80 text-sm line-clamp-2">{service.description}</p>
+                        <h3 className="font-display text-xl lg:text-2xl text-white mb-2" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>{service.title}</h3>
+                        <p className="text-white/90 text-sm line-clamp-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>{service.description}</p>
                       </div>
                     </div>
                   </Card>
