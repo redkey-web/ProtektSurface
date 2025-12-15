@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Phone, Check, Zap } from "lucide-react";
+import { ArrowRight, Shield, Sun, Eye, Sparkles, Lock, Gem, Check, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -20,12 +20,12 @@ import { TrustedSuppliers } from "@/components/TrustedSuppliers";
 import { TrustTicker } from "@/components/TrustTicker";
 
 export default function HomeClient() {
-  const [currentTint, setCurrentTint] = useState(3); // Start on Limo mode
+  const [currentTint, setCurrentTint] = useState(3);
+  const [selectedTintLevel, setSelectedTintLevel] = useState<'dark' | 'light'>('dark');
   
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
   const contentY = useTransform(scrollY, [0, 500], [0, 100]);
-  
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -47,6 +47,26 @@ export default function HomeClient() {
     },
   };
 
+  const mobileStaggerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const mobileItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] },
+    },
+  };
+
   const tintVariants = [
     { name: "Light", color: "rgb(50, 50, 50)", opacity: 0.30 },
     { name: "Medium", color: "rgb(40, 40, 40)", opacity: 0.50 },
@@ -54,7 +74,7 @@ export default function HomeClient() {
     { name: "Limo", color: "rgb(20, 20, 20)", opacity: 0.85 },
   ];
 
-  const isCurrentTintDark = currentTint >= 2; // Only Dark and Limo (index 2 and 3)
+  const isCurrentTintDark = currentTint >= 2;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -87,7 +107,6 @@ export default function HomeClient() {
     { title: "Automotive Window Tinting", description: "Professional car window tinting by Protekt Auto with lifetime warranty.", image: "/images/services/automotive.webp", path: "/automotive-window-tinting", badge: "Workshop Only" },
   ];
 
-  // Structured Data for SEO
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -163,7 +182,6 @@ export default function HomeClient() {
 
   return (
     <div className="min-h-screen overflow-x-hidden">
-      {/* Structured Data for SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -177,8 +195,153 @@ export default function HomeClient() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
 
-      {/* HERO - Full width with asymmetric grid */}
-      <section className="relative min-h-screen lg:min-h-[105vh] flex items-center overflow-hidden">
+      {/* MOBILE HERO - Gold Standard Luxury Aesthetic */}
+      <section className="lg:hidden relative min-h-[100dvh] flex flex-col overflow-hidden">
+        {/* Background Image with Heavy Overlay */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero/hero-background.png"
+            alt="Luxury interior with window tinting"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          {/* Heavy gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/70 via-neutral-950/80 to-neutral-950/90" />
+        </div>
+
+        {/* Mobile Content */}
+        <motion.div 
+          className="relative z-10 flex-1 flex flex-col justify-between px-6 pt-24 pb-8"
+          variants={mobileStaggerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Top Section - Typography */}
+          <div className="flex-1 flex flex-col justify-center">
+            <motion.h1 
+              variants={mobileItemVariants}
+              className="font-sans font-bold text-4xl leading-[1.1] text-white mb-4"
+            >
+              Professional Window Tinting{' '}
+              <span className="text-amber-400">Sydney</span>
+            </motion.h1>
+
+            <motion.p 
+              variants={mobileItemVariants}
+              className="text-neutral-300 text-lg leading-relaxed mb-6 max-w-sm"
+            >
+              Premium films and protective solutions for homes, businesses, and vehicles.
+            </motion.p>
+
+            {/* Tint Level Selector Pill */}
+            <motion.div 
+              variants={mobileItemVariants}
+              className="mb-8"
+            >
+              <div className="inline-flex items-center gap-1 bg-neutral-800/60 backdrop-blur-sm p-1 rounded-full border border-white/10">
+                <button
+                  onClick={() => setSelectedTintLevel('light')}
+                  className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
+                    selectedTintLevel === 'light' 
+                      ? 'bg-amber-500 text-neutral-950' 
+                      : 'text-neutral-400 hover:text-white'
+                  }`}
+                  data-testid="button-tint-light"
+                >
+                  Light
+                </button>
+                <button
+                  onClick={() => setSelectedTintLevel('dark')}
+                  className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
+                    selectedTintLevel === 'dark' 
+                      ? 'bg-amber-500 text-neutral-950' 
+                      : 'text-neutral-400 hover:text-white'
+                  }`}
+                  data-testid="button-tint-dark"
+                >
+                  Dark
+                </button>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Frosted Glass Quote Form */}
+          <motion.div 
+            variants={mobileItemVariants}
+            className="bg-neutral-900/60 backdrop-blur-xl border border-white/10 rounded-3xl p-6"
+          >
+            <h3 className="font-sans font-semibold text-xl text-white mb-1">Get Your Quote</h3>
+            <p className="text-neutral-400 text-sm mb-4">Free consultation and estimate</p>
+            
+            <form action="/get-quote" method="GET" className="flex flex-col gap-3">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="w-full h-14 px-4 text-base rounded-xl border-transparent bg-neutral-800/50 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all"
+                data-testid="input-mobile-name"
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                className="w-full h-14 px-4 text-base rounded-xl border-transparent bg-neutral-800/50 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all"
+                data-testid="input-mobile-phone"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                className="w-full h-14 px-4 text-base rounded-xl border-transparent bg-neutral-800/50 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all"
+                data-testid="input-mobile-email"
+              />
+              <Button 
+                type="submit" 
+                className="w-full h-14 bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-base rounded-xl transition-all" 
+                data-testid="button-mobile-submit"
+              >
+                Get Quote
+              </Button>
+            </form>
+
+            {/* View Services - Ghost Button */}
+            <Link href="#services" className="block mt-3">
+              <Button 
+                variant="ghost"
+                className="w-full h-12 border border-white/20 text-white hover:bg-white/5 font-medium rounded-xl"
+                data-testid="button-view-services-mobile"
+              >
+                View Services
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
+          </motion.div>
+
+          {/* Bottom Trust Indicators */}
+          <motion.div 
+            variants={mobileItemVariants}
+            className="mt-6 flex justify-center gap-8"
+          >
+            <div className="flex flex-col items-center gap-1.5">
+              <Shield className="w-5 h-5 text-amber-400" />
+              <span className="text-xs text-neutral-400 uppercase tracking-widest font-medium">15yr Warranty</span>
+            </div>
+            <div className="flex flex-col items-center gap-1.5">
+              <Sun className="w-5 h-5 text-amber-400" />
+              <span className="text-xs text-neutral-400 uppercase tracking-widest font-medium">99% UV Block</span>
+            </div>
+            <div className="flex flex-col items-center gap-1.5">
+              <Zap className="w-5 h-5 text-amber-400" />
+              <span className="text-xs text-neutral-400 uppercase tracking-widest font-medium">Same Day</span>
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* DESKTOP HERO - Full width with asymmetric grid */}
+      <section className="hidden lg:flex relative min-h-screen lg:min-h-[105vh] items-center overflow-hidden">
         <motion.div
           className="absolute inset-0 bg-cover will-change-transform"
           style={{
@@ -259,9 +422,9 @@ export default function HomeClient() {
               </motion.div>
             </motion.div>
 
-            {/* Right Content - Quick Quote Form - 4 columns on desktop, hidden on mobile */}
+            {/* Right Content - Quick Quote Form - 4 columns on desktop */}
             <motion.div 
-              className="hidden lg:block col-span-12 lg:col-span-4 mt-8 lg:mt-0"
+              className="col-span-12 lg:col-span-4 mt-8 lg:mt-0"
               variants={itemVariants}
               initial="hidden"
               animate="visible"
@@ -326,65 +489,6 @@ export default function HomeClient() {
           </div>
         </div>
 
-      </section>
-
-      {/* Mobile Quote Form - Below the Fold */}
-      <section className="lg:hidden py-8 bg-gradient-to-b from-gray-900 to-background">
-        <div className="max-w-md mx-auto px-6">
-          <div className="bg-card border border-border rounded-xl p-6 shadow-lg">
-            <h3 className="font-display text-xl text-foreground mb-1 text-center">Get Your Free Quote</h3>
-            <p className="text-muted-foreground text-sm mb-4 text-center">Free consultation and estimate</p>
-            
-            <form action="/get-quote" method="GET" className="flex flex-col gap-3">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                className="w-full px-4 py-3 text-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                data-testid="input-mobile-name"
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                className="w-full px-4 py-3 text-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                data-testid="input-mobile-phone"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                className="w-full px-4 py-3 text-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                data-testid="input-mobile-email"
-              />
-              <textarea
-                name="message"
-                placeholder="Tell us about your project..."
-                rows={3}
-                className="w-full px-4 py-3 text-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                data-testid="textarea-mobile-message"
-              />
-              <Button 
-                type="submit" 
-                size="lg"
-                className="w-full bg-primary text-primary-foreground font-semibold" 
-                data-testid="button-mobile-submit"
-              >
-                Request Quote
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </form>
-
-            <div className="mt-4 flex flex-col gap-2">
-              {["Warranties from 5-15 years", "Reduce heat, glare, and UV damage", "Premium ceramic and carbon films"].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* SERVICES - Masonry-like Grid */}
@@ -466,17 +570,18 @@ export default function HomeClient() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+          {/* Film Types Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filmTypes.map((film, index) => (
               <Link key={film.path} href={film.path}>
-                <Card className="p-6 h-full hover-elevate active-elevate-2 transition-all duration-300 group bg-background" data-testid={`card-film-${index}`}>
+                <Card className="p-6 hover-elevate active-elevate-2 transition-all duration-300 group h-full" data-testid={`card-film-${index}`}>
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                      <film.icon className="w-6 h-6" />
+                    <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <film.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">{film.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{film.description}</p>
+                      <p className="text-sm text-muted-foreground line-clamp-2">{film.description}</p>
                     </div>
                   </div>
                 </Card>
@@ -486,123 +591,62 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* LARGE TEXT STATEMENT */}
-      <section className="py-20 lg:py-32 bg-foreground text-background overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-12 gap-8 items-center">
-            <div className="col-span-12 lg:col-span-8">
-              <h2 className="font-display text-display-lg lg:text-display-xl leading-none">
-                Protect what<br />
-                <span className="italic text-primary">matters most</span>
-              </h2>
-            </div>
-            <div className="col-span-12 lg:col-span-4">
-              <p className="text-background/70 text-lg leading-relaxed mb-6">
-                From your family&apos;s comfort to your property&apos;s value, our premium window films deliver lasting protection and peace of mind.
-              </p>
-              <Link href="/get-quote">
-                <Button size="lg" className="bg-primary text-primary-foreground" data-testid="button-statement-cta">
-                  Start Your Project
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Testimonials />
-
-      <TrustTicker />
-
-      <TrustedSuppliers />
-
+      {/* OUR PROCESS */}
       <OurProcess />
 
-      {/* QUIZ SECTION */}
-      <section className="py-16 lg:py-24 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-12 gap-8 mb-12">
-            <div className="col-span-12 lg:col-span-6">
-              <p className="text-primary font-medium uppercase tracking-wider mb-2">Find Your Solution</p>
-              <h2 className="font-display text-display-md">
-                Not sure what<br />
-                <span className="italic">you need?</span>
-              </h2>
-            </div>
-            <div className="col-span-12 lg:col-span-6 flex items-end">
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Take our quick quiz to discover the perfect window treatment for your needs.
-              </p>
-            </div>
-          </div>
-          <TintSelectorQuiz />
-        </div>
-      </section>
+      {/* TESTIMONIALS */}
+      <Testimonials />
 
-      <TrustTicker />
+      {/* TINT SELECTOR QUIZ */}
+      <TintSelectorQuiz />
+
+      {/* TRUSTED SUPPLIERS */}
+      <TrustedSuppliers />
 
       {/* FAQ SECTION */}
       <section className="py-16 lg:py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-12 gap-8 lg:gap-16">
-            <div className="col-span-12 lg:col-span-5">
-              <p className="text-primary font-medium uppercase tracking-wider mb-2">FAQ</p>
-              <h2 className="font-display text-display-md mb-4">
-                Common<br />
-                <span className="italic">Questions</span>
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Everything you need to know about our window tinting services.
-              </p>
-              <Link href="/contact">
-                <Button variant="outline" data-testid="button-faq-contact">
-                  Still have questions?
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
-            </div>
-            <div className="col-span-12 lg:col-span-7">
-              <Accordion type="single" collapsible className="w-full">
-                {faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`faq-${index}`} data-testid={`accordion-faq-${index}`}>
-                    <AccordionTrigger className="text-left text-base lg:text-lg font-medium hover:text-primary transition-colors">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground leading-relaxed">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary font-medium uppercase tracking-wider mb-2">FAQ</p>
+            <h2 className="font-display text-display-md">Frequently Asked Questions</h2>
           </div>
+
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger className="text-left" data-testid={`accordion-trigger-${index}`}>
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-20 lg:py-32 bg-primary/10 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url(/images/marble-tile.png)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-display-md lg:text-display-lg mb-6">
-            Ready to get started?
+      <section className="py-16 lg:py-24 bg-primary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-display text-display-md text-primary-foreground mb-4">
+            Ready to Transform Your Space?
           </h2>
-          <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Contact us today for a free consultation and quote. Our expert team is ready to help.
+          <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
+            Get a free consultation and quote for your window tinting or surface protection project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/get-quote">
-              <Button size="lg" className="bg-primary text-primary-foreground px-8" data-testid="button-cta-quote">
-                Get Your Free Quote
+              <Button size="lg" variant="secondary" className="w-full sm:w-auto px-8 font-semibold" data-testid="button-cta-quote">
+                Get Free Quote
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <a href="tel:0286062842">
-              <Button size="lg" variant="outline" className="px-8" data-testid="button-cta-call">
-                <Phone className="mr-2 w-5 h-5" />
-                (02) 8606 2842
+            <Link href="/contact">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto px-8 font-semibold bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" data-testid="button-cta-contact">
+                Contact Us
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
