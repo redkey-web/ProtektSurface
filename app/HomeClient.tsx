@@ -321,7 +321,7 @@ export default function HomeClient() {
               <div 
                 className="backdrop-blur-xl bg-gray-900/60 border border-white/20 rounded-2xl p-6 lg:p-8 box-sunglasses-effect"
               >
-                <h3 className="font-display text-2xl lg:text-3xl text-white mb-2">Get Your Quote</h3>
+                <h3 className={`font-display text-2xl lg:text-3xl text-white mb-2 transition-opacity duration-500 ${currentTint >= 2 ? 'opacity-60 text-sunglasses-effect-1' : ''} ${currentTint === 1 ? 'text-sunglasses-shadow-1' : ''}`}>Get Your Quote</h3>
                 <p className="text-white/60 text-sm mb-6">Free consultation and estimate</p>
                 
                 <form action="/get-quote" method="GET" className="flex flex-col gap-3">
