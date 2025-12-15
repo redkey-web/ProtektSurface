@@ -360,7 +360,7 @@ export default function HomeClient() {
       {/* BENEFITS MARQUEE - Placeholder to track original position */}
       <div ref={marqueePlaceholderRef} className="h-[36px]">
         {!isMarqueeFixed && (
-          <section className="py-2 bg-muted/50 overflow-hidden border-b border-border/50 shadow-sm">
+          <section className="py-2 bg-stone-900/90 overflow-hidden border-b border-white/10 shadow-sm">
             <div className="relative">
               <div className="flex animate-marquee">
                 {[...benefits, ...benefits].map((benefit, index) => (
@@ -370,7 +370,7 @@ export default function HomeClient() {
                     data-testid={`benefit-${index}`}
                   >
                     <benefit.icon className="w-4 h-4 lg:w-5 lg:h-5 text-primary" strokeWidth={1.5} />
-                    <span className="text-xs lg:text-sm font-medium text-foreground whitespace-nowrap">{benefit.label}</span>
+                    <span className="text-xs lg:text-sm font-medium text-white whitespace-nowrap">{benefit.label}</span>
                   </div>
                 ))}
               </div>
@@ -381,7 +381,7 @@ export default function HomeClient() {
       
       {/* Fixed marquee when scrolled */}
       {isMarqueeFixed && (
-        <section className="fixed left-0 right-0 top-16 sm:top-20 z-[45] py-2 bg-muted/50 overflow-hidden border-b border-border/50 shadow-sm">
+        <section className="fixed left-0 right-0 top-16 sm:top-20 z-[45] py-2 bg-stone-900/90 overflow-hidden border-b border-white/10 shadow-sm">
           <div className="relative">
             <div className="flex animate-marquee">
               {[...benefits, ...benefits].map((benefit, index) => (
@@ -391,7 +391,7 @@ export default function HomeClient() {
                   data-testid={`benefit-fixed-${index}`}
                 >
                   <benefit.icon className="w-4 h-4 lg:w-5 lg:h-5 text-primary" strokeWidth={1.5} />
-                  <span className="text-xs lg:text-sm font-medium text-foreground whitespace-nowrap">{benefit.label}</span>
+                  <span className="text-xs lg:text-sm font-medium text-white whitespace-nowrap">{benefit.label}</span>
                 </div>
               ))}
             </div>
