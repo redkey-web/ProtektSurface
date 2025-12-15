@@ -234,32 +234,20 @@ export default function HomeClient() {
         <div className="absolute top-0 left-0 right-0 z-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <motion.div 
-              className="pt-2 sm:pt-3 relative"
+              className="pt-2 sm:pt-3"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              {/* Dark logo for Light and Medium tint modes */}
-              <Image
-                src="/images/logo.webp"
-                alt="Protekt Surface Solutions"
-                width={322}
-                height={136}
-                className={`h-[74px] sm:h-[92px] w-auto transition-opacity duration-1000 ${currentTint >= 2 ? 'opacity-0' : 'opacity-100'}`}
-                style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' }}
-                priority
-                data-testid="img-hero-logo"
-              />
-              {/* Light logo for Dark and Limo tint modes */}
               <Image
                 src="/images/logos/protekt-logo-light.png"
                 alt="Protekt Surface Solutions"
                 width={322}
                 height={136}
-                className={`h-[74px] sm:h-[92px] w-auto absolute top-[5%] left-0 transition-opacity duration-1000 ${currentTint >= 2 ? 'opacity-100' : 'opacity-0'}`}
+                className="h-[74px] sm:h-[92px] w-auto"
                 style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}
                 priority
-                data-testid="img-hero-logo-light"
+                data-testid="img-hero-logo"
               />
             </motion.div>
           </div>
