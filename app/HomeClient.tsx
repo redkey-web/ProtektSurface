@@ -164,7 +164,7 @@ export default function HomeClient() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Structured Data for SEO */}
       <script
         type="application/ld+json"
@@ -180,7 +180,7 @@ export default function HomeClient() {
       />
 
       {/* HERO - Full width with asymmetric grid */}
-      <section ref={heroRef} className="relative min-h-screen lg:min-h-[105vh] flex items-center overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen lg:min-h-[105vh] flex items-center overflow-hidden overflow-x-hidden">
         <motion.div
           className="absolute inset-0 bg-cover will-change-transform"
           style={{
@@ -205,9 +205,9 @@ export default function HomeClient() {
         {/* 12-Column Grid Hero Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-24 lg:pt-36 lg:pb-24">
           <div className="grid grid-cols-12 gap-6 lg:gap-12 items-center">
-            {/* Left Content - 6 columns on desktop */}
+            {/* Left Content - 7 columns on desktop */}
             <motion.div 
-              className="col-span-12 lg:col-span-6"
+              className="col-span-12 lg:col-span-7"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -260,9 +260,9 @@ export default function HomeClient() {
               </motion.div>
             </motion.div>
 
-            {/* Right Content - Quick Quote Form - 6 columns on desktop */}
+            {/* Right Content - Quick Quote Form - 5 columns on desktop */}
             <motion.div 
-              className="col-span-12 lg:col-span-6 mt-8 lg:mt-0"
+              className="col-span-12 lg:col-span-5 mt-8 lg:mt-0"
               variants={itemVariants}
               initial="hidden"
               animate="visible"
