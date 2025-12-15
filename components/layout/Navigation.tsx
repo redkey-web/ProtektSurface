@@ -76,7 +76,7 @@ export function Navigation() {
     setOpenMobileDropdown(openMobileDropdown === title ? null : title);
   };
 
-  const logoTranslateY = (1 - headerProgress) * -150;
+  const logoTranslateY = 0;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">

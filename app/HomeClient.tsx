@@ -230,32 +230,6 @@ export default function HomeClient() {
           ))}
         </motion.div>
 
-        {/* Logo - Aligned with header position */}
-        <div className="absolute top-0 left-0 right-0 z-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <motion.div 
-              className="pt-2 sm:pt-3"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <Image
-                src="/images/logos/protekt-logo-light.png"
-                alt="Protekt Surface Solutions"
-                width={322}
-                height={136}
-                className="h-[74px] sm:h-[92px] w-auto"
-                style={{ 
-                  filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))',
-                  transform: 'translate(5%, 2%)'
-                }}
-                priority
-                data-testid="img-hero-logo"
-              />
-            </motion.div>
-          </div>
-        </div>
-
         {/* 12-Column Grid Hero Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-24 lg:pt-36 lg:pb-24">
           <div className="grid grid-cols-12 gap-6 lg:gap-12 items-center">
