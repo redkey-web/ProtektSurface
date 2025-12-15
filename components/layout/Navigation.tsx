@@ -154,6 +154,12 @@ export function Navigation() {
             <Link 
               href="/get-quote" 
               data-testid="button-quote-desktop"
+              className="transition-all duration-300"
+              style={{
+                opacity: isHomePage ? headerProgress : 1,
+                transform: isHomePage && headerProgress < 1 ? 'translateY(-8px)' : 'translateY(0)',
+                pointerEvents: isHomePage && headerProgress < 0.5 ? 'none' : 'auto',
+              }}
             >
               <Button size="sm">
                 Get Quote
