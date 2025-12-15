@@ -81,9 +81,9 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
       <div
-        className="absolute inset-0 border-b border-border transition-all duration-300 bg-background"
+        className="absolute inset-0 border-b border-white/10 transition-all duration-300 bg-gray-900/70"
         style={{
-          opacity: Math.min(headerProgress, 0.7)
+          opacity: Math.min(headerProgress, 0.9)
         }}
       />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
@@ -91,7 +91,7 @@ export function Navigation() {
           <Link href="/" data-testid="link-home" className="flex-shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/logo.webp"
+              src="/images/logos/protekt-logo-light.png"
               alt="Protekt Surface Solutions"
               className="h-16 sm:h-20 w-auto hover-elevate active-elevate-2 rounded-sm -my-3"
               style={{ transform: `translateY(${logoTranslateY}%)` }}
@@ -108,7 +108,7 @@ export function Navigation() {
                   onMouseLeave={() => setOpenDesktopDropdown(null)}
                 >
                   <button
-                    className={`px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 hover:text-primary transition-colors duration-200 ${headerProgress < 0.5 ? 'text-white' : 'text-black/90'}`}
+                    className="px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 text-white hover:text-primary transition-colors duration-200"
                     data-testid={`button-desktop-dropdown-${dropdown.title.toLowerCase().replace(/\s+/g, "-")}`}
                   >
                     {dropdown.title}
@@ -142,7 +142,7 @@ export function Navigation() {
                 href="/contact"
                 data-testid="link-desktop-contact"
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  pathname === "/contact" ? "text-primary" : headerProgress < 0.5 ? "text-white hover:text-primary" : "text-black/90 hover:text-primary"
+                  pathname === "/contact" ? "text-primary" : "text-white hover:text-primary"
                 }`}
               >
                 Contact
@@ -162,7 +162,7 @@ export function Navigation() {
 
             <a
               href="tel:0286062842"
-              className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium hover:text-primary transition-colors duration-200 ${headerProgress < 0.5 ? 'text-white' : 'text-black/90'}`}
+              className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-white hover:text-primary transition-colors duration-200"
               data-testid="link-phone-desktop"
             >
               <Phone className="w-4 h-4" />
