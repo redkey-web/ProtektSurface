@@ -268,57 +268,56 @@ export default function HomeClient() {
               animate="visible"
             >
               <div 
-                className="backdrop-blur-xl bg-gray-900/60 border border-white/20 rounded-2xl p-6 lg:p-8 box-sunglasses-effect"
+                className="backdrop-blur-xl bg-gray-900/60 border border-white/20 rounded-xl p-4 lg:p-5 box-sunglasses-effect"
               >
-                <h3 className="font-display text-2xl lg:text-3xl text-white mb-2 opacity-60 text-sunglasses-effect-1">Get Your Quote</h3>
-                <p className="text-white/60 text-sm mb-6">Free consultation and estimate</p>
+                <h3 className="font-display text-xl lg:text-2xl text-white mb-1 opacity-60 text-sunglasses-effect-1">Get Your Quote</h3>
+                <p className="text-white/60 text-xs mb-4">Free consultation and estimate</p>
                 
-                <form action="/get-quote" method="GET" className="flex flex-col gap-3">
+                <form action="/get-quote" method="GET" className="flex flex-col gap-2">
                   <input
                     type="text"
                     name="name"
                     placeholder="Name"
-                    className="w-full px-4 py-3 rounded-xl border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60 box-sunglasses-inset"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60 box-sunglasses-inset"
                     data-testid="input-hero-name"
                   />
                   <input
                     type="tel"
                     name="phone"
                     placeholder="Phone"
-                    className="w-full px-4 py-3 rounded-xl border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60 box-sunglasses-inset"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60 box-sunglasses-inset"
                     data-testid="input-hero-phone"
                   />
                   <input
                     type="email"
                     name="email"
                     placeholder="E-mail"
-                    className="w-full px-4 py-3 rounded-xl border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60 box-sunglasses-inset"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60 box-sunglasses-inset"
                     data-testid="input-hero-email"
                   />
                   <textarea
                     name="message"
                     placeholder="Message"
-                    rows={3}
-                    className="w-full px-4 py-3 rounded-xl border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60 resize-none box-sunglasses-inset"
+                    rows={2}
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-black/30 bg-black/25 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary/60 resize-none box-sunglasses-inset"
                     data-testid="textarea-hero-message"
                   />
                   <Button 
                     type="submit" 
-                    size="lg" 
                     className="w-full bg-primary text-primary-foreground font-semibold border border-primary-border button-sunglasses-effect" 
                     data-testid="button-hero-submit"
                   >
                     Request Quote
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                    <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </form>
               </div>
               
               {/* Trust Indicators - Below Form */}
-              <div className="mt-6 flex flex-col gap-3">
+              <div className="mt-4 flex flex-col gap-2">
                 {["Warranties from 5-15 years", "Reduce heat, glare, and UV damage", "Premium ceramic and carbon films"].map((item) => (
-                  <div key={item} className="flex items-center gap-3 text-sm text-white/80">
-                    <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                  <div key={item} className="flex items-center gap-2 text-xs text-white/80">
+                    <Check className="w-3 h-3 text-primary flex-shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
