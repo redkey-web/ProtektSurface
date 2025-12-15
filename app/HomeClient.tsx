@@ -285,7 +285,7 @@ export default function HomeClient() {
 
               <motion.p 
                 variants={itemVariants}
-                className={`text-lg lg:text-xl mb-8 max-w-lg leading-relaxed transition-colors duration-1000 ${isCurrentTintDark ? 'text-white/90' : 'text-foreground/80'}`}
+                className={`text-lg lg:text-xl mb-8 max-w-lg leading-relaxed transition-colors duration-1000 ${isCurrentTintDark ? 'text-white/90 text-sunglasses-effect-1' : 'text-foreground/80'}`}
               >
                 Premium films and protective solutions for homes, businesses and vehicles. Sydney&apos;s trusted surface protection specialists.
               </motion.p>
