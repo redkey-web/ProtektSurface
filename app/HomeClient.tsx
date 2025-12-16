@@ -106,7 +106,7 @@ export default function HomeClient() {
       description: "Enhance your home's comfort, energy efficiency, and privacy with premium films. Our residential solutions reduce heat by up to 70% while maintaining natural light.", 
       image: "/images/services/living-room.png", 
       path: "/residential-window-tinting", 
-      badge: "Popular",
+      badge: null,
       features: ["Heat Reduction", "UV Protection", "Privacy"]
     },
     { 
