@@ -746,7 +746,20 @@ export default function HomeClient() {
       <Testimonials />
 
       {/* TINT SELECTOR QUIZ */}
-      <TintSelectorQuiz />
+      <section className="py-16 lg:py-24 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary font-medium uppercase tracking-wider mb-2">Find Your Perfect Film</p>
+            <h2 className="font-display text-display-md lg:text-display-lg mb-4">
+              Window Film Selector
+            </h2>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              Answer a few quick questions and we&apos;ll recommend the best window film for your needs.
+            </p>
+          </div>
+          <TintSelectorQuiz />
+        </div>
+      </section>
 
       {/* TRUSTED SUPPLIERS */}
       <TrustedSuppliers />
