@@ -135,14 +135,6 @@ export default function HomeClient() {
     },
   ];
 
-  const galleryImages = [
-    { src: "/images/services/residential/example-1.png", alt: "Residential tinting project", category: "Residential" },
-    { src: "/images/services/residential/example-2.png", alt: "Living room window tint", category: "Residential" },
-    { src: "/images/automotive/gallery-1.jpg", alt: "Automotive tinting", category: "Automotive" },
-    { src: "/images/services/conference.png", alt: "Commercial office tinting", category: "Commercial" },
-    { src: "/images/films/privacy-livingroom.png", alt: "Privacy film installation", category: "Privacy" },
-    { src: "/images/automotive/gallery-2.png", alt: "Car window tint", category: "Automotive" },
-  ];
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -616,57 +608,6 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* PROJECT GALLERY */}
-      <section className="py-16 lg:py-24 bg-neutral-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-amber-400 font-medium uppercase tracking-wider mb-2">Our Work</p>
-            <h2 className="font-display text-display-md text-white mb-4">
-              Recent Projects
-            </h2>
-            <p className="text-neutral-400 leading-relaxed max-w-2xl mx-auto">
-              Browse through our portfolio of completed window tinting and surface protection projects across Sydney.
-            </p>
-          </div>
-
-          {/* Gallery Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4">
-            {galleryImages.map((image, index) => (
-              <motion.div 
-                key={index}
-                className={`relative overflow-hidden rounded-xl group ${index === 0 || index === 3 ? 'row-span-2 aspect-[3/4]' : 'aspect-square'}`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="text-xs font-medium px-2 py-1 rounded-full bg-amber-500/90 text-neutral-950">
-                    {image.category}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Link href="/get-quote">
-              <Button size="lg" className="bg-amber-500 hover:bg-amber-400 text-neutral-950 font-semibold" data-testid="button-gallery-quote">
-                Start Your Project
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       <TrustTicker />
 
