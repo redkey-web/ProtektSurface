@@ -21,7 +21,6 @@ import { TrustTicker } from "@/components/TrustTicker";
 
 export default function HomeClient() {
   const [currentTint, setCurrentTint] = useState(3);
-  const [selectedTintLevel, setSelectedTintLevel] = useState<'dark' | 'light'>('dark');
   
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
@@ -224,146 +223,135 @@ export default function HomeClient() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
 
-      {/* MOBILE HERO - Gold Standard Luxury Aesthetic */}
+      {/* MOBILE HERO - Bold Modern Luxury */}
       <section className="lg:hidden relative min-h-[100dvh] flex flex-col overflow-hidden">
-        {/* Background Image with Heavy Overlay */}
+        {/* Background Image with Cinematic Overlay */}
         <div className="absolute inset-0">
           <Image
             src="/images/hero/hero-background.png"
             alt="Luxury interior with window tinting"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-center scale-110"
             sizes="100vw"
           />
-          {/* Heavy gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/70 via-neutral-950/80 to-neutral-950/90" />
+          {/* Cinematic gradient - darker at top and bottom */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/95" />
         </div>
 
         {/* Mobile Content */}
         <motion.div 
-          className="relative z-10 flex-1 flex flex-col justify-between px-6 pt-24 pb-8"
+          className="relative z-10 flex-1 flex flex-col px-5 pt-20 pb-6"
           variants={mobileStaggerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Top Section - Typography */}
-          <div className="flex-1 flex flex-col justify-center">
+          {/* Hero Text - Centered and Bold */}
+          <div className="flex-1 flex flex-col justify-center items-center text-center py-8">
+            <motion.div 
+              variants={mobileItemVariants}
+              className="mb-3"
+            >
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-amber-500/20 border border-amber-500/30 rounded-full">
+                <Gem className="w-3.5 h-3.5 text-amber-400" />
+                <span className="text-amber-400 text-xs font-semibold uppercase tracking-wider">Premium Quality</span>
+              </span>
+            </motion.div>
+
             <motion.h1 
               variants={mobileItemVariants}
-              className="font-sans font-bold text-4xl leading-[1.1] text-white mb-4"
+              className="font-sans font-black text-[2.75rem] leading-[1.05] text-white mb-4 tracking-tight"
             >
-              Professional Window Tinting{' '}
-              <span className="text-amber-400">Sydney</span>
+              Window<br />
+              <span className="text-amber-400">Tinting</span><br />
+              <span className="text-white/90">Sydney</span>
             </motion.h1>
 
             <motion.p 
               variants={mobileItemVariants}
-              className="text-neutral-300 text-lg leading-relaxed mb-6 max-w-sm"
+              className="text-neutral-300 text-base leading-relaxed max-w-xs"
             >
-              Premium films and protective solutions for homes, businesses, and vehicles.
+              Premium films for homes, businesses & vehicles. Sydney&apos;s trusted specialists.
             </motion.p>
 
-            {/* Tint Level Selector Pill */}
+            {/* Quick Action Buttons */}
             <motion.div 
               variants={mobileItemVariants}
-              className="mb-8"
+              className="flex gap-3 mt-6"
             >
-              <div className="inline-flex items-center gap-1 bg-neutral-800/60 backdrop-blur-sm p-1 rounded-full border border-white/10">
-                <button
-                  onClick={() => setSelectedTintLevel('light')}
-                  className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-                    selectedTintLevel === 'light' 
-                      ? 'bg-amber-500 text-neutral-950' 
-                      : 'text-neutral-400 hover:text-white'
-                  }`}
-                  data-testid="button-tint-light"
-                >
-                  Light
-                </button>
-                <button
-                  onClick={() => setSelectedTintLevel('dark')}
-                  className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-                    selectedTintLevel === 'dark' 
-                      ? 'bg-amber-500 text-neutral-950' 
-                      : 'text-neutral-400 hover:text-white'
-                  }`}
-                  data-testid="button-tint-dark"
-                >
-                  Dark
-                </button>
-              </div>
+              <a href="tel:0286062842" className="flex items-center gap-2 px-5 py-3 bg-white text-neutral-950 font-bold text-sm rounded-full">
+                <Shield className="w-4 h-4" />
+                Call Now
+              </a>
+              <Link href="#services" className="flex items-center gap-2 px-5 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm rounded-full">
+                Our Services
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </motion.div>
           </div>
 
-          {/* Frosted Glass Quote Form */}
+          {/* Compact Quote Form Card */}
           <motion.div 
             variants={mobileItemVariants}
-            className="bg-neutral-900/60 backdrop-blur-xl border border-white/10 rounded-3xl p-6"
+            className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-5"
           >
-            <h3 className="font-sans font-semibold text-xl text-white mb-1">Get Your Quote</h3>
-            <p className="text-neutral-400 text-sm mb-4">Free consultation and estimate</p>
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="font-sans font-bold text-lg text-white">Get a Free Quote</h3>
+                <p className="text-neutral-400 text-xs">Quick response guaranteed</p>
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/20 rounded-full">
+                <Zap className="w-3.5 h-3.5 text-amber-400" />
+                <span className="text-amber-400 text-xs font-semibold">Fast</span>
+              </div>
+            </div>
             
-            <form action="/get-quote" method="GET" className="flex flex-col gap-3">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                className="w-full h-14 px-4 text-base rounded-xl border-transparent bg-neutral-800/50 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all"
-                data-testid="input-mobile-name"
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                className="w-full h-14 px-4 text-base rounded-xl border-transparent bg-neutral-800/50 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all"
-                data-testid="input-mobile-phone"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                className="w-full h-14 px-4 text-base rounded-xl border-transparent bg-neutral-800/50 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all"
-                data-testid="input-mobile-email"
-              />
+            <form action="/get-quote" method="GET" className="space-y-3">
+              <div className="grid grid-cols-2 gap-3">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  className="w-full h-12 px-4 text-sm rounded-xl bg-black/30 border border-white/10 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500/50 transition-all"
+                  data-testid="input-mobile-name"
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone"
+                  className="w-full h-12 px-4 text-sm rounded-xl bg-black/30 border border-white/10 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500/50 transition-all"
+                  data-testid="input-mobile-phone"
+                />
+              </div>
               <Button 
                 type="submit" 
-                className="w-full h-14 bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-base rounded-xl transition-all" 
+                className="w-full h-12 bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-sm rounded-xl transition-all shadow-lg shadow-amber-500/20" 
                 data-testid="button-mobile-submit"
               >
-                Get Quote
-              </Button>
-            </form>
-
-            {/* View Services - Ghost Button */}
-            <Link href="#services" className="block mt-3">
-              <Button 
-                variant="ghost"
-                className="w-full h-12 border border-white/20 text-white hover:bg-white/5 font-medium rounded-xl"
-                data-testid="button-view-services-mobile"
-              >
-                View Services
+                Request Quote
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-            </Link>
+            </form>
           </motion.div>
 
-          {/* Bottom Trust Indicators */}
+          {/* Trust Bar - Compact Horizontal */}
           <motion.div 
             variants={mobileItemVariants}
-            className="mt-6 flex justify-center gap-8"
+            className="mt-5 flex items-center justify-between px-2"
           >
-            <div className="flex flex-col items-center gap-1.5">
-              <Shield className="w-5 h-5 text-amber-400" />
-              <span className="text-xs text-neutral-400 uppercase tracking-widest font-medium">15yr Warranty</span>
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4 text-amber-400" />
+              <span className="text-[11px] text-neutral-400 font-medium">15yr Warranty</span>
             </div>
-            <div className="flex flex-col items-center gap-1.5">
-              <Sun className="w-5 h-5 text-amber-400" />
-              <span className="text-xs text-neutral-400 uppercase tracking-widest font-medium">99% UV Block</span>
+            <div className="w-px h-4 bg-neutral-700" />
+            <div className="flex items-center gap-2">
+              <Sun className="w-4 h-4 text-amber-400" />
+              <span className="text-[11px] text-neutral-400 font-medium">99% UV Block</span>
             </div>
-            <div className="flex flex-col items-center gap-1.5">
-              <Zap className="w-5 h-5 text-amber-400" />
-              <span className="text-xs text-neutral-400 uppercase tracking-widest font-medium">Same Day</span>
+            <div className="w-px h-4 bg-neutral-700" />
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-amber-400" />
+              <span className="text-[11px] text-neutral-400 font-medium">5-Star Rated</span>
             </div>
           </motion.div>
         </motion.div>
