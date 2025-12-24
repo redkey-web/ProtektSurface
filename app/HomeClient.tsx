@@ -252,9 +252,9 @@ export default function HomeClient() {
               variants={mobileItemVariants}
               className="mb-3"
             >
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-amber-500/20 border border-amber-500/30 rounded-full">
-                <Gem className="w-3.5 h-3.5 text-amber-400" />
-                <span className="text-amber-400 text-xs font-semibold uppercase tracking-wider">Premium Quality</span>
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#D4A574]/20 border border-[#D4A574]/30 rounded-full">
+                <Gem className="w-3.5 h-3.5 text-[#D4A574]" />
+                <span className="text-[#D4A574] text-xs font-semibold uppercase tracking-wider">Premium Quality</span>
               </span>
             </motion.div>
 
@@ -263,7 +263,7 @@ export default function HomeClient() {
               className="font-sans font-black text-[2.75rem] leading-[1.05] text-white mb-4 tracking-tight"
             >
               Window<br />
-              <span className="text-amber-400">Tinting</span><br />
+              <span className="text-[#D4A574]">Tinting</span><br />
               <span className="text-white/90">Sydney</span>
             </motion.h1>
 
@@ -300,9 +300,9 @@ export default function HomeClient() {
                 <h3 className="font-sans font-bold text-lg text-white">Get a Free Quote</h3>
                 <p className="text-neutral-400 text-xs">Quick response guaranteed</p>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/20 rounded-full">
-                <Zap className="w-3.5 h-3.5 text-amber-400" />
-                <span className="text-amber-400 text-xs font-semibold">Fast</span>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 bg-[#D4A574]/20 rounded-full">
+                <Zap className="w-3.5 h-3.5 text-[#D4A574]" />
+                <span className="text-[#D4A574] text-xs font-semibold">Fast</span>
               </div>
             </div>
             
@@ -312,20 +312,20 @@ export default function HomeClient() {
                   type="text"
                   name="name"
                   placeholder="Name"
-                  className="w-full h-12 px-4 text-sm rounded-xl bg-black/30 border border-white/10 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500/50 transition-all"
+                  className="w-full h-12 px-4 text-sm rounded-xl bg-black/30 border border-white/10 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-[#D4A574]/50 focus:border-[#D4A574]/50 transition-all"
                   data-testid="input-mobile-name"
                 />
                 <input
                   type="tel"
                   name="phone"
                   placeholder="Phone"
-                  className="w-full h-12 px-4 text-sm rounded-xl bg-black/30 border border-white/10 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500/50 transition-all"
+                  className="w-full h-12 px-4 text-sm rounded-xl bg-black/30 border border-white/10 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-[#D4A574]/50 focus:border-[#D4A574]/50 transition-all"
                   data-testid="input-mobile-phone"
                 />
               </div>
               <Button 
                 type="submit" 
-                className="w-full h-12 bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-sm rounded-xl transition-all shadow-lg shadow-amber-500/20" 
+                className="w-full h-12 bg-[#D4A574] hover:bg-[#C49A6C] text-neutral-950 font-bold text-sm rounded-xl transition-all shadow-lg shadow-[#D4A574]/20" 
                 data-testid="button-mobile-submit"
               >
                 Request Quote
@@ -340,17 +340,17 @@ export default function HomeClient() {
             className="mt-5 flex items-center justify-between px-2"
           >
             <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-amber-400" />
+              <Shield className="w-4 h-4 text-[#D4A574]" />
               <span className="text-[11px] text-neutral-400 font-medium">15yr Warranty</span>
             </div>
             <div className="w-px h-4 bg-neutral-700" />
             <div className="flex items-center gap-2">
-              <Sun className="w-4 h-4 text-amber-400" />
+              <Sun className="w-4 h-4 text-[#D4A574]" />
               <span className="text-[11px] text-neutral-400 font-medium">99% UV Block</span>
             </div>
             <div className="w-px h-4 bg-neutral-700" />
             <div className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-amber-400" />
+              <Check className="w-4 h-4 text-[#D4A574]" />
               <span className="text-[11px] text-neutral-400 font-medium">5-Star Rated</span>
             </div>
           </motion.div>
