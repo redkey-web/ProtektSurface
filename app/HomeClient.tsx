@@ -271,20 +271,35 @@ export default function HomeClient() {
               variants={mobileItemVariants}
               className="text-neutral-300 text-base leading-relaxed max-w-xs"
             >
-              Premium films for homes, businesses & vehicles. Sydney&apos;s trusted specialists.
+              Premium window films & natural stone protection for homes, businesses & vehicles.
             </motion.p>
+
+            {/* Service Pills */}
+            <motion.div 
+              variants={mobileItemVariants}
+              className="flex flex-wrap justify-center gap-2 mt-4"
+            >
+              <Link href="#services" className="flex items-center gap-1.5 px-3 py-1.5 bg-white/10 border border-white/20 rounded-full">
+                <Eye className="w-3.5 h-3.5 text-[#D4A574]" />
+                <span className="text-white/90 text-xs font-medium">Window Films</span>
+              </Link>
+              <Link href="/marble-protection-film" className="flex items-center gap-1.5 px-3 py-1.5 bg-white/10 border border-white/20 rounded-full">
+                <Gem className="w-3.5 h-3.5 text-[#D4A574]" />
+                <span className="text-white/90 text-xs font-medium">Stone Protection</span>
+              </Link>
+            </motion.div>
 
             {/* Quick Action Buttons */}
             <motion.div 
               variants={mobileItemVariants}
-              className="flex gap-3 mt-6"
+              className="flex gap-3 mt-5"
             >
               <a href="tel:0286062842" className="flex items-center gap-2 px-5 py-3 bg-white text-neutral-950 font-bold text-sm rounded-full">
                 <Shield className="w-4 h-4" />
                 Call Now
               </a>
-              <Link href="#services" className="flex items-center gap-2 px-5 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm rounded-full">
-                Our Services
+              <Link href="/get-quote" className="flex items-center gap-2 px-5 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm rounded-full">
+                Get Quote
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
