@@ -204,7 +204,7 @@ export function MobileMenuPremium({ isOpen, onToggle }: MobileMenuPremiumProps) 
     <>
       <button
         onClick={onToggle}
-        className="md:hidden relative h-6 overflow-hidden"
+        className="md:hidden relative h-6 overflow-hidden z-[60]"
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
         data-testid="button-premium-menu-toggle"
         style={{
