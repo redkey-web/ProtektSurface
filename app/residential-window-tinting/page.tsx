@@ -45,17 +45,17 @@ export default function ResidentialWindowTintingPage() {
   return (
     <>
       <JsonLd data={serviceSchema} />
-      <div className="min-h-screen pt-16 sm:pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <Breadcrumbs items={[{ label: "Services" }, { label: "Residential Window Tinting" }]} />
-      </div>
-
-      <section className="relative h-[50vh] sm:h-[60vh] flex items-center justify-center overflow-hidden">
+      <div className="min-h-screen">
+      <section className="relative min-h-[55vh] sm:min-h-[65vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(/images/services/residential.png)` }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-800/50 to-gray-900/70" style={{ mixBlendMode: 'multiply' }} />
+        </div>
+
+        <div className="absolute top-20 sm:top-24 left-0 right-0 z-20 max-w-7xl mx-auto px-4 sm:px-6">
+          <Breadcrumbs items={[{ label: "Services" }, { label: "Residential Window Tinting" }]} variant="overlay" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
