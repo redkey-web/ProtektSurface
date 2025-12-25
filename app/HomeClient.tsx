@@ -273,20 +273,6 @@ export default function HomeClient() {
               Expert window tinting & surface protection for homes, businesses & vehicles across Sydney.
             </motion.p>
 
-            {/* Service Pills */}
-            <motion.div 
-              variants={mobileItemVariants}
-              className="flex flex-wrap justify-center gap-2 mt-4"
-            >
-              <Link href="#services" className="flex items-center gap-1.5 px-3 py-1.5 bg-white/10 border border-white/20 rounded-full">
-                <Eye className="w-3.5 h-3.5 text-[#D4A574]" />
-                <span className="text-white/90 text-xs font-medium">Window Films</span>
-              </Link>
-              <Link href="/marble-protection-film" className="flex items-center gap-1.5 px-3 py-1.5 bg-white/10 border border-white/20 rounded-full">
-                <Gem className="w-3.5 h-3.5 text-[#D4A574]" />
-                <span className="text-white/90 text-xs font-medium">Stone Protection</span>
-              </Link>
-            </motion.div>
 
             {/* Quick Action Buttons */}
             <motion.div 
