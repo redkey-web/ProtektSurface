@@ -75,12 +75,12 @@ export default function AutomotiveWindowTintingClient() {
         <div className="mb-4 px-4 sm:px-6 max-w-7xl mx-auto">
           <h2 className="text-lg sm:text-xl font-semibold text-foreground">Our Work</h2>
         </div>
-        <div className="relative">
+        <div className="relative isolate">
           <div className="flex animate-marquee-slow gap-4" style={{ width: 'max-content' }}>
             {[...galleryImages, ...galleryImages, ...galleryImages].map((image, index) => (
               <div
                 key={index}
-                className="relative flex-shrink-0 w-64 sm:w-80 aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group"
+                className="relative flex-shrink-0 w-64 sm:w-80 aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group isolate bg-muted"
                 onClick={() => setLightboxImage(image.src)}
                 data-testid={`carousel-image-${index}`}
               >
@@ -230,7 +230,7 @@ export default function AutomotiveWindowTintingClient() {
               {galleryImages.map((image, index) => (
                 <div
                   key={index}
-                  className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer hover-elevate active-elevate-2 transition-all duration-300"
+                  className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer hover-elevate active-elevate-2 transition-all duration-300 isolate bg-muted"
                   onClick={() => setLightboxImage(image.src)}
                   data-testid={`gallery-image-${index}`}
                 >

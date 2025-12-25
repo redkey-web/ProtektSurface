@@ -113,8 +113,8 @@ export default function ResidentialWindowTintingPage() {
               Our Work
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="overflow-hidden group" data-testid="gallery-example-1">
-                <div className="aspect-video overflow-hidden relative">
+              <Card className="overflow-hidden group isolate" data-testid="gallery-example-1">
+                <div className="aspect-video overflow-hidden relative isolate bg-muted">
                   <Image
                     src="/images/services/residential/example-1.png"
                     alt="Residential window tinting example - living space with tinted windows"
@@ -129,8 +129,8 @@ export default function ResidentialWindowTintingPage() {
                 </div>
               </Card>
 
-              <Card className="overflow-hidden group" data-testid="gallery-example-2">
-                <div className="aspect-video overflow-hidden relative">
+              <Card className="overflow-hidden group isolate" data-testid="gallery-example-2">
+                <div className="aspect-video overflow-hidden relative isolate bg-muted">
                   <Image
                     src="/images/services/residential/example-2.png"
                     alt="Residential window tinting example - privacy window film"
@@ -145,8 +145,8 @@ export default function ResidentialWindowTintingPage() {
                 </div>
               </Card>
 
-              <Card className="overflow-hidden group" data-testid="gallery-example-3">
-                <div className="aspect-video overflow-hidden relative">
+              <Card className="overflow-hidden group isolate" data-testid="gallery-example-3">
+                <div className="aspect-video overflow-hidden relative isolate bg-muted">
                   <Image
                     src="/images/services/residential/example-3.png"
                     alt="Residential window tinting example - home exterior with tinted windows"
@@ -161,8 +161,8 @@ export default function ResidentialWindowTintingPage() {
                 </div>
               </Card>
 
-              <Card className="overflow-hidden group" data-testid="gallery-example-4">
-                <div className="aspect-video overflow-hidden relative">
+              <Card className="overflow-hidden group isolate" data-testid="gallery-example-4">
+                <div className="aspect-video overflow-hidden relative isolate bg-muted">
                   <Image
                     src="/images/services/residential/example-4.png"
                     alt="Residential window tinting example - professional installation"
