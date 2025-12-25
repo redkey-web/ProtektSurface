@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { OurProcess } from "@/components/OurProcess";
 import { TrustTicker } from "@/components/TrustTicker";
 import { generateServiceSchema, JsonLd } from '@/lib/schema';
+import { CommercialGalleryCarousel } from './CommercialWindowTintingClient';
 
 export const metadata: Metadata = {
   title: 'Commercial Window Tinting Sydney',
@@ -70,6 +71,9 @@ export default function CommercialWindowTintingPage() {
           </p>
         </div>
       </section>
+
+      {/* Auto-scroll Gallery Carousel */}
+      <CommercialGalleryCarousel />
 
       <section className="py-12 sm:py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
