@@ -252,9 +252,8 @@ export default function HomeClient() {
               variants={mobileItemVariants}
               className="mb-3"
             >
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#D4A574]/20 border border-[#D4A574]/30 rounded-full">
-                <Gem className="w-3.5 h-3.5 text-[#D4A574]" />
-                <span className="text-[#D4A574] text-xs font-semibold uppercase tracking-wider">Natural Stone Protection Film</span>
+              <span className="inline-flex items-center px-3 py-1.5 bg-[#D4A574]/20 border border-[#D4A574]/30 rounded-full">
+                <span className="text-[#D4A574] text-xs font-semibold uppercase tracking-wider">Natural Stone Protection Film +</span>
               </span>
             </motion.div>
 
