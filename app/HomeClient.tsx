@@ -279,11 +279,11 @@ export default function HomeClient() {
               variants={mobileItemVariants}
               className="flex gap-3 mt-5"
             >
-              <a href="tel:0286062842" className="flex items-center gap-2 px-5 py-3 bg-white text-neutral-950 font-bold text-sm rounded-full">
+              <a href="tel:0286062842" className="flex items-center gap-2 px-5 py-3 bg-white text-neutral-950 font-bold text-sm rounded-full transition-all duration-300 hover:bg-[#D4A574] hover:text-white">
                 <Shield className="w-4 h-4" />
                 Call Now
               </a>
-              <Link href="/get-quote" className="flex items-center gap-2 px-5 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm rounded-full">
+              <Link href="/get-quote" className="flex items-center gap-2 px-5 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm rounded-full transition-all duration-300 hover:bg-[#D4A574]/30 hover:border-[#D4A574]/50">
                 Get Quote
                 <ArrowRight className="w-4 h-4" />
               </Link>
