@@ -10,18 +10,29 @@ interface BreadcrumbItem {
 
 interface BreadcrumbsProps {
   items: BreadcrumbItem[];
+  variant?: 'default' | 'overlay';
 }
 
-export function Breadcrumbs({ items }: BreadcrumbsProps) {
+export function Breadcrumbs({ items, variant = 'overlay' }: BreadcrumbsProps) {
+  const isOverlay = variant === 'overlay';
+  
   return (
     <nav
       aria-label="Breadcrumb"
-      className="py-4"
+      className="py-3"
       data-testid="breadcrumb-navigation"
     >
-      <ol className="flex items-center gap-2 text-sm text-muted-foreground flex-wrap">
+      <ol className={`flex items-center gap-2 text-sm flex-wrap ${
+        isOverlay ? 'text-white/60' : 'text-muted-foreground'
+      }`}>
         <li>
-          <Link href="/" data-testid="breadcrumb-home" className="hover:text-primary transition-colors">
+          <Link 
+            href="/" 
+            data-testid="breadcrumb-home" 
+            className={`transition-colors ${
+              isOverlay ? 'hover:text-white' : 'hover:text-primary'
+            }`}
+          >
             Home
           </Link>
         </li>
@@ -33,13 +44,17 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
               <Link
                 href={item.path}
                 data-testid={`breadcrumb-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                className="hover:text-primary transition-colors"
+                className={`transition-colors ${
+                  isOverlay ? 'hover:text-white' : 'hover:text-primary'
+                }`}
               >
                 {item.label}
               </Link>
             ) : (
               <span
-                className="text-foreground font-medium"
+                className={`font-medium ${
+                  isOverlay ? 'text-white/90' : 'text-foreground'
+                }`}
                 data-testid={`breadcrumb-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 {item.label}
