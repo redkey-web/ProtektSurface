@@ -45,7 +45,7 @@ function useScrambleText(text: string, isActive: boolean, delay: number = 0) {
     const timeout = setTimeout(() => {
       setIsScrambling(true);
       let iteration = 0;
-      const maxIterations = text.length * 3;
+      const maxIterations = text.length * 1.5;
 
       intervalId = setInterval(() => {
         setDisplayText(
@@ -53,7 +53,7 @@ function useScrambleText(text: string, isActive: boolean, delay: number = 0) {
             .split('')
             .map((char, index) => {
               if (char === ' ') return ' ';
-              if (index < iteration / 3) return text[index];
+              if (index < iteration / 1.5) return text[index];
               return SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
             })
             .join('')
@@ -66,7 +66,7 @@ function useScrambleText(text: string, isActive: boolean, delay: number = 0) {
           setDisplayText(text);
           setIsScrambling(false);
         }
-      }, 30);
+      }, 20);
     }, delay);
 
     return () => {
