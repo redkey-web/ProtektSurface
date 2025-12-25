@@ -97,19 +97,6 @@ export default function MarbleProtectionFilmPage() {
             </p>
           </div>
 
-          <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
-            <video 
-              autoPlay 
-              muted 
-              loop 
-              playsInline
-              className="w-full aspect-video object-cover"
-              data-testid="video-stone-protection"
-            >
-              <source src="/images/hero/protekt-video.mov" type="video/quicktime" />
-              <source src="/images/hero/protekt-video.mov" type="video/mp4" />
-            </video>
-          </div>
 
           <div className="mb-12 sm:mb-16">
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">
