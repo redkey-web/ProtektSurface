@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from "next/image";
 import { TintSelectorQuiz } from "@/components/TintSelectorQuiz";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Lightbulb } from "lucide-react";
@@ -29,6 +30,25 @@ export default function TintSelectorPage() {
               Not sure which window film is right for you? Take our quick 5-question
               quiz and get a personalized recommendation!
             </p>
+          </div>
+
+          <div className="mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 text-center">
+              Tint Darkness Guide
+            </h2>
+            <p className="text-center text-muted-foreground mb-6">
+              Compare different tint percentages before you start
+            </p>
+            <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden">
+              <Image
+                src="/images/films/tint-percentages.png"
+                alt="Window tint percentage comparison from 5% to 50%"
+                fill
+                sizes="(max-width: 768px) 100vw, 800px"
+                className="object-cover"
+                data-testid="img-tint-percentages-guide"
+              />
+            </div>
           </div>
 
           <TintSelectorQuiz />

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import { Check, Phone, Zap, Shield, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -115,6 +116,25 @@ export default function CeramicWindowTintClient() {
                   <span className="text-base text-foreground">{benefit}</span>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 text-center">
+              Tint Darkness Levels
+            </h3>
+            <p className="text-center text-muted-foreground mb-6">
+              Compare different tint percentages to find your ideal darkness level
+            </p>
+            <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-8">
+              <Image
+                src="/images/films/tint-percentages.png"
+                alt="Window tint percentage comparison from 5% to 50%"
+                fill
+                sizes="(max-width: 768px) 100vw, 800px"
+                className="object-cover"
+                data-testid="img-tint-percentages"
+              />
             </div>
           </div>
 

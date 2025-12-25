@@ -13,7 +13,7 @@ const galleryImages = [
   { src: "/images/automotive/gallery-1.jpg", alt: "Black Ford Mustang with professional window tinting" },
   { src: "/images/automotive/gallery-2.png", alt: "RAM truck with ceramic window tint in workshop" },
   { src: "/images/automotive/gallery-3.png", alt: "White Tesla Model Y with tinted windows" },
-  { src: "/images/automotive/gallery-4.png", alt: "Protekt technician working on Volvo XC60" },
+  { src: "/images/films/tint-percentages.png", alt: "Window tint percentage comparison from 5% to 50%" },
   { src: "/images/automotive/gallery-5.png", alt: "White Toyota Camry Hybrid with window tinting" },
   { src: "/images/automotive/gallery-6.png", alt: "Toyota Camry Hybrid rear view in workshop" },
 ];
