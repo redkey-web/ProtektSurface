@@ -254,7 +254,7 @@ export default function HomeClient() {
             >
               <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#D4A574]/20 border border-[#D4A574]/30 rounded-full">
                 <Gem className="w-3.5 h-3.5 text-[#D4A574]" />
-                <span className="text-[#D4A574] text-xs font-semibold uppercase tracking-wider">Premium Quality</span>
+                <span className="text-[#D4A574] text-xs font-semibold uppercase tracking-wider">Natural Stone Protection Film</span>
               </span>
             </motion.div>
 
@@ -271,7 +271,7 @@ export default function HomeClient() {
               variants={mobileItemVariants}
               className="text-neutral-300 text-base leading-relaxed max-w-xs"
             >
-              Premium window films & natural stone protection for homes, businesses & vehicles.
+              Expert window tinting & surface protection for homes, businesses & vehicles across Sydney.
             </motion.p>
 
             {/* Service Pills */}
