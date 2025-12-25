@@ -5,10 +5,10 @@ import Image from "next/image";
 
 const galleryImages = [
   { src: "/images/commercial/gallery-1.jpg", alt: "Modern office building with glass facade" },
-  { src: "/images/commercial/gallery-2.jpg", alt: "Corporate skyscraper with tinted windows" },
+  { src: "/images/commercial/tinted-windows-1.png", alt: "Commercial building with professional window tinting" },
   { src: "/images/commercial/gallery-3.jpg", alt: "Retail storefront with window tinting" },
   { src: "/images/commercial/before-after-tint.png", alt: "Before and after commercial window tinting" },
-  { src: "/images/commercial/gallery-5.jpg", alt: "Modern office interior with natural light" },
+  { src: "/images/commercial/tinted-windows-2.png", alt: "Office windows with reflective tint film" },
   { src: "/images/commercial/gallery-6.jpg", alt: "Workspace with large tinted windows" },
 ];
 
