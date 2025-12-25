@@ -528,9 +528,9 @@ export default function HomeClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <p className="text-primary font-medium uppercase tracking-wider mb-2">Sydney&apos;s Surface Experts</p>
-            <h2 className="font-display text-display-md lg:text-display-lg mb-4">
+            <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
               Premium Window Films<br />
-              <span className="italic text-muted-foreground">&amp; Surface Protection</span>
+              <span className="text-muted-foreground">&amp; Surface Protection</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               From residential homes to commercial buildings, discover the perfect solution for your protection needs.
@@ -665,9 +665,9 @@ export default function HomeClient() {
             {/* Right - Content */}
             <div>
               <p className="text-primary font-medium uppercase tracking-wider mb-2">Why Choose Us</p>
-              <h2 className="font-display text-display-md lg:text-display-lg mb-6">
+              <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-6">
                 Sydney&apos;s Trusted<br />
-                <span className="italic text-muted-foreground">Surface Protection Experts</span>
+                <span className="text-muted-foreground">Surface Protection Experts</span>
               </h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
                 With over a decade of experience, we deliver premium window tinting and surface protection solutions that stand the test of time.
@@ -711,7 +711,7 @@ export default function HomeClient() {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-12">
             <div>
               <p className="text-primary font-medium uppercase tracking-wider mb-2">Film Types</p>
-              <h2 className="font-display text-display-md">Premium Window Films</h2>
+              <h2 className="text-3xl sm:text-5xl font-bold text-foreground">Premium Window Films</h2>
             </div>
             <Link href="/ceramic-window-tint">
               <Button variant="outline" className="hidden lg:flex" data-testid="button-view-all-films">
@@ -753,7 +753,7 @@ export default function HomeClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-primary font-medium uppercase tracking-wider mb-2">Find Your Perfect Film</p>
-            <h2 className="font-display text-display-md lg:text-display-lg mb-4">
+            <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
               Window Film Selector
             </h2>
             <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -772,7 +772,7 @@ export default function HomeClient() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-primary font-medium uppercase tracking-wider mb-2">FAQ</p>
-            <h2 className="font-display text-display-md">Frequently Asked Questions</h2>
+            <h2 className="text-3xl sm:text-5xl font-bold text-foreground">Frequently Asked Questions</h2>
           </div>
 
           <Accordion type="single" collapsible className="w-full">
@@ -793,7 +793,7 @@ export default function HomeClient() {
       {/* CTA SECTION */}
       <section className="py-16 lg:py-24 bg-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-display-md text-primary-foreground mb-4">
+          <h2 className="text-3xl sm:text-5xl font-bold text-primary-foreground mb-4">
             Ready to Transform Your Space?
           </h2>
           <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">

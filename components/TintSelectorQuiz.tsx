@@ -147,7 +147,7 @@ export function TintSelectorQuiz() {
       <Card className="max-w-2xl mx-auto p-6 sm:p-8" data-testid="quiz-result">
         <div className="text-center mb-8">
           <Sparkles className="w-16 h-16 text-primary mx-auto mb-4" />
-          <h2 className="text-3xl font-bold text-foreground mb-2">
+          <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-2">
             Your Perfect Match
           </h2>
           <p className="text-lg text-primary font-semibold">

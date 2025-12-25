@@ -125,7 +125,7 @@ export function OurProcess({ showCTA = true, compact = false }: OurProcessProps)
       />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="font-display text-display-md text-foreground mb-4">
+          <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
             How We Work With You
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
