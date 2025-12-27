@@ -116,7 +116,7 @@ export default function ResidentialWindowTintingPage() {
               <Card className="overflow-hidden group isolate" data-testid="gallery-example-1">
                 <div className="aspect-video overflow-hidden relative isolate bg-muted">
                   <Image
-                    src="/images/services/residential/example-1.png"
+                    src="/images/services/residential/example-1.jpg"
                     alt="Residential window tinting example - living space with tinted windows"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -132,7 +132,7 @@ export default function ResidentialWindowTintingPage() {
               <Card className="overflow-hidden group isolate" data-testid="gallery-example-2">
                 <div className="aspect-video overflow-hidden relative isolate bg-muted">
                   <Image
-                    src="/images/services/residential/example-2.png"
+                    src="/images/services/residential/example-2.jpg"
                     alt="Residential window tinting example - privacy window film"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -148,7 +148,7 @@ export default function ResidentialWindowTintingPage() {
               <Card className="overflow-hidden group isolate" data-testid="gallery-example-3">
                 <div className="aspect-video overflow-hidden relative isolate bg-muted">
                   <Image
-                    src="/images/services/residential/example-3.png"
+                    src="/images/services/residential/example-3.jpg"
                     alt="Residential window tinting example - home exterior with tinted windows"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -164,7 +164,7 @@ export default function ResidentialWindowTintingPage() {
               <Card className="overflow-hidden group isolate" data-testid="gallery-example-4">
                 <div className="aspect-video overflow-hidden relative isolate bg-muted">
                   <Image
-                    src="/images/services/residential/example-4.png"
+                    src="/images/services/residential/example-4.jpg"
                     alt="Residential window tinting example - professional installation"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
