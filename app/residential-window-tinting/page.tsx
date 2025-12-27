@@ -132,7 +132,7 @@ export default function ResidentialWindowTintingPage() {
               <Card className="overflow-hidden group isolate" data-testid="gallery-example-2">
                 <div className="aspect-video overflow-hidden relative isolate bg-muted">
                   <Image
-                    src="/images/services/residential/example-2.jpg"
+                    src="/images/services/residential/example-2.png"
                     alt="Residential window tinting example - privacy window film"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
