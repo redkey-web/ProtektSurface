@@ -52,6 +52,8 @@ export function BeforeAfterSlider({
       <img
         src={afterImage}
         alt={afterLabel}
+        width={800}
+        height={450}
         className="absolute inset-0 w-full h-full object-cover"
       />
 
@@ -63,6 +65,8 @@ export function BeforeAfterSlider({
         <img
           src={beforeImage}
           alt={beforeLabel}
+          width={800}
+          height={450}
           className="absolute inset-0 w-full h-full object-cover"
         />
       </div>

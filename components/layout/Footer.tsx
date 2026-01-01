@@ -52,6 +52,8 @@ export function Footer() {
             <img
               src="/images/logo.webp"
               alt="Protekt Surface Solutions"
+              width={215}
+              height={86}
               className="h-[86px] w-auto mb-6"
             />
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -203,6 +205,8 @@ export function Footer() {
                   <img
                     src={supplier.logo}
                     alt={supplier.name}
+                    width={isLarge ? 140 : 80}
+                    height={isLarge ? 112 : 64}
                     className={isLarge ? "h-20 sm:h-28 w-auto object-contain" : "h-12 sm:h-16 w-auto object-contain"}
                   />
                 </div>

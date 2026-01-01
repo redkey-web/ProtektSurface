@@ -100,6 +100,8 @@ export function Navigation() {
             <img
               src="/images/logos/protekt-logo-light.png"
               alt="Protekt Surface Solutions"
+              width={200}
+              height={80}
               className="h-16 sm:h-20 w-auto hover-elevate active-elevate-2 rounded-sm -my-3"
               style={{ transform: `translateY(${logoTranslateY}%)` }}
             />

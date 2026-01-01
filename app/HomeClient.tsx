@@ -297,7 +297,7 @@ export default function HomeClient() {
           >
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="font-sans font-bold text-lg text-white">Get a Free Quote</h3>
+                <p className="font-sans font-bold text-lg text-white">Get a Free Quote</p>
                 <p className="text-neutral-400 text-xs">Quick response guaranteed</p>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 bg-[#D4A574]/20 rounded-full">
@@ -359,15 +359,20 @@ export default function HomeClient() {
 
       {/* DESKTOP HERO - Full width with asymmetric grid */}
       <section className="hidden lg:flex relative min-h-screen lg:min-h-[105vh] items-center overflow-hidden">
+        {/* Optimized hero background using Next.js Image */}
         <motion.div
-          className="absolute inset-0 bg-cover will-change-transform"
-          style={{
-            backgroundImage: `url(/images/hero/hero-background.png)`,
-            backgroundPosition: 'calc(50% + 65px) 65%',
-            y: backgroundY,
-            scale: 1.1,
-          }}
+          className="absolute inset-0 will-change-transform"
+          style={{ y: backgroundY, scale: 1.1 }}
         >
+          <Image
+            src="/images/hero/hero-background.jpg"
+            alt="Sydney home interior with premium window tinting"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+            style={{ objectPosition: 'calc(50% + 65px) 65%' }}
+          />
           {tintVariants.map((tint, index) => (
             <div
               key={tint.name}
@@ -449,7 +454,7 @@ export default function HomeClient() {
               <div 
                 className="backdrop-blur-xl bg-gray-900/60 border border-white/20 rounded-xl p-4 lg:p-5 box-sunglasses-effect"
               >
-                <h3 className="font-display text-xl lg:text-2xl text-white mb-1 opacity-60 text-sunglasses-effect-1">Get Your Quote</h3>
+                <p className="font-display text-xl lg:text-2xl text-white mb-1 opacity-60 text-sunglasses-effect-1">Get Your Quote</p>
                 <p className="text-white/60 text-xs mb-4">Free consultation and estimate</p>
                 
                 <form action="/get-quote" method="GET" className="flex flex-col gap-2">

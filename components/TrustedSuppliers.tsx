@@ -36,6 +36,8 @@ export function TrustedSuppliers() {
                 <img
                   src={supplier.logo}
                   alt={supplier.name}
+                  width={isLarge ? 140 : 80}
+                  height={isLarge ? 112 : 64}
                   className={isLarge ? "h-20 sm:h-28 w-auto object-contain" : "h-12 sm:h-16 w-auto object-contain"}
                 />
               </div>
