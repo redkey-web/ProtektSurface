@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { OurProcess } from "@/components/OurProcess";
 import { TrustTicker } from "@/components/TrustTicker";
+import { SocialProofBanner } from "@/components/SocialProofBanner";
 
 const galleryImages = [
   { src: "/images/automotive/gallery-1.jpg", alt: "Black Ford Mustang with professional window tinting" },
@@ -252,6 +253,8 @@ export default function AutomotiveWindowTintingClient() {
       <OurProcess showCTA={false} />
 
       <TrustTicker />
+
+      <SocialProofBanner />
 
       <section className="py-12 sm:py-16 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">

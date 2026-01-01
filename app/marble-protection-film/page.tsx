@@ -3,6 +3,7 @@ import { Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { TrustTicker } from "@/components/TrustTicker";
+import { SocialProofBanner } from "@/components/SocialProofBanner";
 import { generateProductSchema, JsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
@@ -117,6 +118,8 @@ export default function MarbleProtectionFilmPage() {
           </div>
 
           <TrustTicker />
+
+          <SocialProofBanner variant="compact" />
 
           <div className="relative bg-primary rounded-xl p-8 sm:p-12 text-center overflow-hidden mt-12 sm:mt-16">
             <div

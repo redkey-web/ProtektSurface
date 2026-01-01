@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { TrustTicker } from "@/components/TrustTicker";
+import { SocialProofBanner } from "@/components/SocialProofBanner";
 import { generateProductSchema, JsonLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
@@ -258,6 +259,8 @@ export default function WindowProtectionFilmPage() {
           </div>
 
           <TrustTicker />
+
+          <SocialProofBanner variant="compact" />
 
           <div className="bg-primary rounded-xl p-8 sm:p-12 text-center mt-12 sm:mt-16">
             <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
