@@ -228,7 +228,7 @@ export default function HomeClient() {
         {/* Background Image with Cinematic Overlay */}
         <div className="absolute inset-0">
           <Image
-            src="/images/hero/hero-background.png"
+            src="/images/hero/hero-background-hq.webp"
             alt="Luxury interior with window tinting"
             fill
             priority
@@ -365,7 +365,7 @@ export default function HomeClient() {
           style={{ y: backgroundY, scale: 1.1 }}
         >
           <Image
-            src="/images/hero/hero-background.jpg"
+            src="/images/hero/hero-background-hq.webp"
             alt="Sydney home interior with premium window tinting"
             fill
             priority
