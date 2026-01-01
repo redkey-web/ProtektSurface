@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "project": "protekt-surface",
+  "tracking_files": [
+    ".planning/features/image-audit.md"
+  ]
+}
